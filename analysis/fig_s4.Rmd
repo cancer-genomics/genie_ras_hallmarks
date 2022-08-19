@@ -1,5 +1,5 @@
 ---
-title: "Figure S2"
+title: "Figure S4"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -31,7 +31,7 @@ multicancer <- dat %>%
     filter(grepl("12-61", ras), n > 50)
 ```
 
-```{r fig_s2, fig.width=12, fig.height=15, dev=c("png", "pdf")}
+```{r fig_s4, fig.width=12, fig.height=15, dev=c("png", "pdf")}
 cancer_order <- filter(multicancer, ras=="RAS_12-61") %>%
     select(cancer, median) %>%
     arrange(median) %>%
