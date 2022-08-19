@@ -1,0 +1,47 @@
+---
+title: "Table S2: Cohorts with sequenced matched normal"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+```{r packages, message=FALSE, warning=FALSE, echo=FALSE}
+knitr::opts_chunk$set(autodep = TRUE, echo=FALSE)
+library(magrittr)
+library(tidyverse)
+library(gt)
+library(here)
+```
+
+```{r data}
+combined <-  here("public", "table",
+                  "cohort.Rmd",
+                  "cohort.csv") %>%
+    read_csv(show_col_types=FALSE) %>%
+    filter(study_design == "Matched\nnormal")
+```
+
+```{r table_s2}
+capitalize <- Hmisc::capitalize
+tab <- combined %>%
+    mutate(cancer=capitalize(cancer),
+           cancer=factor(cancer),
+           cancer=fct_rev(cancer)) %>%
+    pivot_wider(id_cols=cancer,
+                names_from=center,
+                values_from=n,
+                values_fill=0L) %>%
+    select(sort(colnames(.)))
+colnames(tab)[1] <- "Cancer type"
+tab %>%
+    gt() %>%
+    tab_style(
+        style = list(
+            cell_text(weight = "bold")
+        ),
+        locations = cells_column_labels()) %>%
+    cols_align(align="left", column="Cancer type")
+```
