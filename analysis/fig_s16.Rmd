@@ -1,5 +1,5 @@
 ---
-title: "Figure S14: gene set enrichment for triple mutants"
+title: "Figure S16: gene set enrichment for triple mutants"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -47,7 +47,7 @@ rank.gg2 <- plot_titles %>%
     map2(rank.gg, add_qq_title)
 ```
 
-```{r fig_s14, fig.width=45, fig.height=50, dev=c("png", "pdf")}
+```{r fig_s16, fig.width=45, fig.height=50, dev=c("png", "pdf")}
 grobs <- map(rank.gg2, ggplotGrob)
 h <- grobs[[1]]$heights
 w <- grobs[[1]]$widths
@@ -92,22 +92,22 @@ grid.text(LETTERS[seq(2, 4, 2)],
 
 
 
-grobs <- map(rank.gg, ggplotGrob)
-grobs[[1]]$heights <- grobs[[2]]$heights
-grobs[[1]]$widths <- grobs[[2]]$widths
-grobs2 <- c(grobs, vfigs)
-grobs2[[5]] <- nullGrob()
-grid.newpage()
-vp <- viewport(width=unit(0.98, "npc"),
-               height=unit(0.98, "npc"))
-pushViewport(vp)
-grid.arrange(grobs=grobs2,
-             widths=c(1.2, 1),
-             heights=c(0.15, 1, 0.15, 1, 0.15), ## last row taller for x-axis
-             layout_matrix=rbind(c(1, 5),
-                                 c(1, 3),
-                                 c(5, 5),
-                                 c(2, 4),
-                                 c(2, 5)),
-             newpage=FALSE)
-```
+<!-- grobs <- map(rank.gg, ggplotGrob) -->
+<!-- grobs[[1]]$heights <- grobs[[2]]$heights -->
+<!-- grobs[[1]]$widths <- grobs[[2]]$widths -->
+<!-- grobs2 <- c(grobs, vfigs) -->
+<!-- grobs2[[5]] <- nullGrob() -->
+<!-- grid.newpage() -->
+<!-- vp <- viewport(width=unit(0.98, "npc"), -->
+<!--                height=unit(0.98, "npc")) -->
+<!-- pushViewport(vp) -->
+<!-- grid.arrange(grobs=grobs2, -->
+<!--              widths=c(1.2, 1), -->
+<!--              heights=c(0.15, 1, 0.15, 1, 0.15), ## last row taller for x-axis -->
+<!--              layout_matrix=rbind(c(1, 5), -->
+<!--                                  c(1, 3), -->
+<!--                                  c(5, 5), -->
+<!--                                  c(2, 4), -->
+<!--                                  c(2, 5)), -->
+<!--              newpage=FALSE) -->
+<!-- ``` -->
