@@ -1,0 +1,64 @@
+---
+title: "Table S20. Co-occurrence of RAS variants at codons 12, 13, or 61 with  non-RAS gene mutations stratified by TMB and mutation signatures. "
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+```{r packages, message=FALSE, warning=FALSE, echo=FALSE, include=FALSE}
+knitr::opts_chunk$set(autodep = TRUE, echo=FALSE)
+library(magrittr)
+library(tidyverse)
+library(gt)
+library(here)
+```
+
+
+
+```{r data,  message=FALSE, warning=FALSE, echo=FALSE, include=FALSE}
+comut.tmb <- read_csv(here("public", "table", "co-mutation.Rmd", "any_mutation_tmb.csv")) %>% 
+                  subset(., !is.na(variable)) %>%  mutate(variable = paste0( "TMB quintile ", variable)) %>% 
+                  mutate(variable = gsub("TMB quintile overall" ,"TMB overall", variable ))
+
+comut.msig <- read_csv(here("public", "table", "co-mutation.Rmd", "any_mutation_mutation_signature.csv"))%>% 
+                mutate(variable = gsub("Signature." ,"Signature ", variable ))%>% 
+                  mutate(variable = gsub("overall" ,"Signature overall", variable ))
+
+comut.tmb.in <-read_csv(here("public", "table", "co-mutation.Rmd", "inactivating_mutation_tmb.csv")) %>% 
+                  subset(., !is.na(variable)) %>%  mutate(variable = paste0( "TMB quintile ", variable)) %>% 
+                  mutate(variable = gsub("TMB quintile overall" ,"TMB overall", variable ))
+
+
+dat <- rbind(comut.tmb,comut.msig,comut.tmb.in) %>%
+              select (cancer, ras, nonras,alteration_group, number_ras, number_nonras,variable,
+                      mean,"2.5%" ,"97.5%",n_eff,Rhat,
+                      "00","10","01","11" ,is_driver, p)%>%
+             mutate_if(is.numeric, round, digits=2) %>%
+   dplyr::rename('Cancer type' = cancer, 
+                 'RAS' = ras, 
+                 'Non-RAS' = nonras, 
+                 'Non-RAS alteration type' = alteration_group,
+                "RAS(n)" = number_ras, 
+                 "non-RAS(n)" = number_nonras, 
+                                  "Group" = variable, 
+                        'Mean' = mean, 
+                     'Driver'= is_driver, 
+                 '-log10(p)' = p)
+
+```
+
+
+```{r table_s20}
+dat %>%
+    gt() %>%
+    tab_style(
+        style = list(
+            cell_text(weight = "bold")
+        ),
+        locations = cells_column_labels()) %>%
+    cols_align(align="left", column="Cancer type")
+
+```
