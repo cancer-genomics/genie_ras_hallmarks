@@ -1,0 +1,55 @@
+---
+title: "Table S5: Prevalence at mutant allele level"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+```{r packages, message=FALSE, warning=FALSE, echo=FALSE}
+knitr::opts_chunk$set(autodep = TRUE, echo=FALSE)
+library(magrittr)
+library(tidyverse)
+library(gt)
+library(here)
+```
+
+```{r data}
+cancerlabs <- read_csv(here("data", "cancer_labels.csv"),
+                       show_col_types=FALSE)
+dat <- here("public",
+                "table",
+                "ras_amino_acid_prev.Rmd",
+                "multicancer.csv") %>%
+    read_csv(show_col_types=FALSE) %>%
+    left_join(cancerlabs, by="cancer") %>%
+    mutate(cancer=cancer_label) %>%
+    rename(codon=codon_range) %>%
+    select(hugo_symbol, codon, cancer, y, n, mean, median, q1, q2) %>%
+    mutate(codon=str_replace_all(codon, "Codon ", "")) %>%
+    mutate(codon=str_replace_all(codon, "12", "G12"),
+           codon=str_replace_all(codon, "13", "G13"),
+           codon=str_replace_all(codon, "61","Q61")) %>%
+    set_colnames(c("HUGO symbol",
+                   "Codon",
+                   "Cancer type",
+                   "Variants (n)",
+                   "Patients (n)",
+                   "Mean",
+                   "Median",
+                   "2.5%",
+                   "97.5%"))
+```
+
+```{r table_s5}
+dat %>%
+    gt() %>%
+    tab_style(
+        style = list(
+            cell_text(weight = "bold")
+        ),
+        locations = cells_column_labels()) %>%
+    cols_align(align="left", column="Cancer type")
+```
