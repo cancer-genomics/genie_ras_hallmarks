@@ -1,0 +1,3144 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Table S16. Co-occurrence of RAS mutant alleles with hotspot non-RAS gene mutations.</title>
+
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/main/img/reproducible.png">
+<!-- Add a small amount of space between sections. -->
+<style type="text/css">
+div.section {
+  padding-top: 12px;
+}
+</style>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">genie_ras_hallmarks</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="license.html">License</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Table S16. Co-occurrence of RAS mutant alleles with hotspot non-RAS gene mutations.</h1>
+
+</div>
+
+
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
+</button>
+</p>
+<div id="workflowr-report" class="collapse">
+<ul class="nav nav-tabs">
+<li class="active">
+<a data-toggle="tab" href="#summary">Summary</a>
+</li>
+<li>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> </a>
+</li>
+<li>
+<a data-toggle="tab" href="#versions">Past versions</a>
+</li>
+</ul>
+<div class="tab-content">
+<div id="summary" class="tab-pane fade in active">
+<p>
+<strong>Last updated:</strong> 2022-08-20
+</p>
+<p>
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
+</p>
+<p>
+<strong>Knit directory:</strong> <code>genie_ras_hallmarks/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
+</p>
+<p>
+This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a> analysis was created with <a
+  href="https://github.com/workflowr/workflowr">workflowr</a> (version 1.7.0). The <em>Checks</em> tab describes the reproducibility checks that were applied when the results were created. The <em>Past versions</em> tab lists the development history.
+</p>
+<hr>
+</div>
+<div id="checks" class="tab-pane fade">
+<div id="workflowr-checks" class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted changes </a>
+</p>
+</div>
+<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
+<div class="panel-body">
+<p>The R Markdown is untracked by Git. To know which version of the R Markdown file created these results, you'll want to first commit it to the Git repo. If you're still working on the analysis, you can ignore this warning. When you're finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+</p>
+</div>
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the global environment can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it's best to always run the code in an empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20220803code"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Seed:</strong> <code>set.seed(20220803)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20220803code" class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20220803)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Session information:</strong> recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be confident that you successfully produced the results during this run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr project makes it easier to run your code on other machines.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcancergenomicsgenierashallmarkstreeefd66d8d20a3a53937d08fdf46cd6b2dfc3d985atargetblankefd66d8a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cancer-genomics/genie_ras_hallmarks/tree/efd66d8d20a3a53937d08fdf46cd6b2dfc3d985a" target="_blank">efd66d8</a> </a>
+</p>
+</div>
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomcancergenomicsgenierashallmarkstreeefd66d8d20a3a53937d08fdf46cd6b2dfc3d985atargetblankefd66d8a" class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
+</p>
+<p>
+The results in this page were generated with repository version <a href="https://github.com/cancer-genomics/genie_ras_hallmarks/tree/efd66d8d20a3a53937d08fdf46cd6b2dfc3d985a" target="_blank">efd66d8</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+</p>
+<p>
+Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
+</p>
+<pre><code>
+Ignored files:
+    Ignored:    .DS_Store
+    Ignored:    output/.DS_Store
+    Ignored:    output/co-mutation/.DS_Store
+    Ignored:    public/.DS_Store
+    Ignored:    public/table/.DS_Store
+
+Untracked files:
+    Untracked:  analysis/table_s16.Rmd
+
+Unstaged changes:
+    Modified:   analysis/table_s8.Rmd
+
+</code></pre>
+<p>
+Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div id="versions" class="tab-pane fade">
+<p>
+There are no past versions. Publish this analysis with <code>wflow_publish()</code> to start tracking its development.
+</p>
+<hr>
+</div>
+</div>
+</div>
+<div id="umyaucjadg" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#umyaucjadg .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#umyaucjadg .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#umyaucjadg .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#umyaucjadg .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#umyaucjadg .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#umyaucjadg .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#umyaucjadg .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#umyaucjadg .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#umyaucjadg .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#umyaucjadg .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#umyaucjadg .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#umyaucjadg .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#umyaucjadg .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#umyaucjadg .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#umyaucjadg .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#umyaucjadg .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#umyaucjadg .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#umyaucjadg .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#umyaucjadg .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#umyaucjadg .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#umyaucjadg .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#umyaucjadg .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#umyaucjadg .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#umyaucjadg .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#umyaucjadg .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#umyaucjadg .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#umyaucjadg .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#umyaucjadg .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#umyaucjadg .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#umyaucjadg .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#umyaucjadg .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#umyaucjadg .gt_left {
+  text-align: left;
+}
+
+#umyaucjadg .gt_center {
+  text-align: center;
+}
+
+#umyaucjadg .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#umyaucjadg .gt_font_normal {
+  font-weight: normal;
+}
+
+#umyaucjadg .gt_font_bold {
+  font-weight: bold;
+}
+
+#umyaucjadg .gt_font_italic {
+  font-style: italic;
+}
+
+#umyaucjadg .gt_super {
+  font-size: 65%;
+}
+
+#umyaucjadg .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#umyaucjadg .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#umyaucjadg .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#umyaucjadg .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#umyaucjadg .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#umyaucjadg .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;">Cancer type</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;">RAS</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;">Non-RAS</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold;">RAS(n)</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold;">non-RAS(n)</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold;">Mean</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold;">2.5%</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold;">97.5%</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold;">n_eff</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold;">Rhat</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold;">00</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold;">10</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold;">01</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold;">11</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-weight: bold;">Driver</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold;">-log10(p)</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12A</td>
+<td class="gt_row gt_left">TP53</td>
+<td class="gt_row gt_right">56</td>
+<td class="gt_row gt_right">1354</td>
+<td class="gt_row gt_right">-0.73</td>
+<td class="gt_row gt_right">-1.21</td>
+<td class="gt_row gt_right">-0.25</td>
+<td class="gt_row gt_right">1552.24</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1194</td>
+<td class="gt_row gt_right">36</td>
+<td class="gt_row gt_right">1334</td>
+<td class="gt_row gt_right">20</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">2.51</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12A</td>
+<td class="gt_row gt_left">TP53</td>
+<td class="gt_row gt_right">92</td>
+<td class="gt_row gt_right">1636</td>
+<td class="gt_row gt_right">-0.78</td>
+<td class="gt_row gt_right">-1.21</td>
+<td class="gt_row gt_right">-0.36</td>
+<td class="gt_row gt_right">1503.75</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2193</td>
+<td class="gt_row gt_right">69</td>
+<td class="gt_row gt_right">1613</td>
+<td class="gt_row gt_right">23</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">3.42</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12A</td>
+<td class="gt_row gt_left">FBXW7</td>
+<td class="gt_row gt_right">57</td>
+<td class="gt_row gt_right">194</td>
+<td class="gt_row gt_right">0.93</td>
+<td class="gt_row gt_right">0.16</td>
+<td class="gt_row gt_right">1.60</td>
+<td class="gt_row gt_right">1404.71</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2287</td>
+<td class="gt_row gt_right">47</td>
+<td class="gt_row gt_right">184</td>
+<td class="gt_row gt_right">10</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">1.98</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12A</td>
+<td class="gt_row gt_left">PIK3CA</td>
+<td class="gt_row gt_right">56</td>
+<td class="gt_row gt_right">209</td>
+<td class="gt_row gt_right">-0.25</td>
+<td class="gt_row gt_right">-1.34</td>
+<td class="gt_row gt_right">0.64</td>
+<td class="gt_row gt_right">1469.09</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2268</td>
+<td class="gt_row gt_right">52</td>
+<td class="gt_row gt_right">205</td>
+<td class="gt_row gt_right">4</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.21</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12A</td>
+<td class="gt_row gt_left">PIK3CA</td>
+<td class="gt_row gt_right">91</td>
+<td class="gt_row gt_right">82</td>
+<td class="gt_row gt_right">-0.20</td>
+<td class="gt_row gt_right">-1.71</td>
+<td class="gt_row gt_right">0.96</td>
+<td class="gt_row gt_right">1421.81</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3651</td>
+<td class="gt_row gt_right">89</td>
+<td class="gt_row gt_right">80</td>
+<td class="gt_row gt_right">2</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.12</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12A</td>
+<td class="gt_row gt_left">RNF43</td>
+<td class="gt_row gt_right">51</td>
+<td class="gt_row gt_right">126</td>
+<td class="gt_row gt_right">-5.74</td>
+<td class="gt_row gt_right">-15.35</td>
+<td class="gt_row gt_right">-0.91</td>
+<td class="gt_row gt_right">1174.95</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2120</td>
+<td class="gt_row gt_right">51</td>
+<td class="gt_row gt_right">126</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.71</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12A</td>
+<td class="gt_row gt_left">U2AF1</td>
+<td class="gt_row gt_right">88</td>
+<td class="gt_row gt_right">60</td>
+<td class="gt_row gt_right">0.95</td>
+<td class="gt_row gt_right">-0.13</td>
+<td class="gt_row gt_right">1.94</td>
+<td class="gt_row gt_right">232.02</td>
+<td class="gt_row gt_right">1.03</td>
+<td class="gt_row gt_right">3553</td>
+<td class="gt_row gt_right">84</td>
+<td class="gt_row gt_right">56</td>
+<td class="gt_row gt_right">4</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">1.08</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12A</td>
+<td class="gt_row gt_left">PTEN</td>
+<td class="gt_row gt_right">56</td>
+<td class="gt_row gt_right">97</td>
+<td class="gt_row gt_right">-1.25</td>
+<td class="gt_row gt_right">-4.03</td>
+<td class="gt_row gt_right">0.62</td>
+<td class="gt_row gt_right">1222.39</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2381</td>
+<td class="gt_row gt_right">55</td>
+<td class="gt_row gt_right">96</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.53</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12A</td>
+<td class="gt_row gt_left">CTNNB1</td>
+<td class="gt_row gt_right">91</td>
+<td class="gt_row gt_right">102</td>
+<td class="gt_row gt_right">-1.40</td>
+<td class="gt_row gt_right">-4.15</td>
+<td class="gt_row gt_right">0.39</td>
+<td class="gt_row gt_right">1395.47</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3631</td>
+<td class="gt_row gt_right">90</td>
+<td class="gt_row gt_right">101</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.62</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12A</td>
+<td class="gt_row gt_left">ARID1A</td>
+<td class="gt_row gt_right">51</td>
+<td class="gt_row gt_right">82</td>
+<td class="gt_row gt_right">-1.10</td>
+<td class="gt_row gt_right">-3.80</td>
+<td class="gt_row gt_right">0.66</td>
+<td class="gt_row gt_right">1125.22</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2161</td>
+<td class="gt_row gt_right">50</td>
+<td class="gt_row gt_right">81</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.47</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12A</td>
+<td class="gt_row gt_left">CDKN2A</td>
+<td class="gt_row gt_right">92</td>
+<td class="gt_row gt_right">93</td>
+<td class="gt_row gt_right">0.14</td>
+<td class="gt_row gt_right">-1.23</td>
+<td class="gt_row gt_right">1.18</td>
+<td class="gt_row gt_right">1605.78</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3641</td>
+<td class="gt_row gt_right">89</td>
+<td class="gt_row gt_right">90</td>
+<td class="gt_row gt_right">3</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.08</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12A</td>
+<td class="gt_row gt_left">SMAD4</td>
+<td class="gt_row gt_right">56</td>
+<td class="gt_row gt_right">144</td>
+<td class="gt_row gt_right">0.14</td>
+<td class="gt_row gt_right">-1.11</td>
+<td class="gt_row gt_right">1.11</td>
+<td class="gt_row gt_right">960.37</td>
+<td class="gt_row gt_right">1.01</td>
+<td class="gt_row gt_right">2322</td>
+<td class="gt_row gt_right">52</td>
+<td class="gt_row gt_right">140</td>
+<td class="gt_row gt_right">4</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.09</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12A</td>
+<td class="gt_row gt_left">APC</td>
+<td class="gt_row gt_right">64</td>
+<td class="gt_row gt_right">1294</td>
+<td class="gt_row gt_right">-0.09</td>
+<td class="gt_row gt_right">-0.59</td>
+<td class="gt_row gt_right">0.37</td>
+<td class="gt_row gt_right">1090.67</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1424</td>
+<td class="gt_row gt_right">35</td>
+<td class="gt_row gt_right">1265</td>
+<td class="gt_row gt_right">29</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.15</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12A</td>
+<td class="gt_row gt_left">STK11</td>
+<td class="gt_row gt_right">91</td>
+<td class="gt_row gt_right">76</td>
+<td class="gt_row gt_right">0.36</td>
+<td class="gt_row gt_right">-1.11</td>
+<td class="gt_row gt_right">1.49</td>
+<td class="gt_row gt_right">1354.13</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3657</td>
+<td class="gt_row gt_right">88</td>
+<td class="gt_row gt_right">73</td>
+<td class="gt_row gt_right">3</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.24</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12A</td>
+<td class="gt_row gt_left">EGFR</td>
+<td class="gt_row gt_right">91</td>
+<td class="gt_row gt_right">794</td>
+<td class="gt_row gt_right">-7.29</td>
+<td class="gt_row gt_right">-16.13</td>
+<td class="gt_row gt_right">-2.86</td>
+<td class="gt_row gt_right">1213.05</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3065</td>
+<td class="gt_row gt_right">91</td>
+<td class="gt_row gt_right">794</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">1.25</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12A</td>
+<td class="gt_row gt_left">BRAF</td>
+<td class="gt_row gt_right">91</td>
+<td class="gt_row gt_right">76</td>
+<td class="gt_row gt_right">-5.38</td>
+<td class="gt_row gt_right">-14.62</td>
+<td class="gt_row gt_right">-0.35</td>
+<td class="gt_row gt_right">890.88</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3654</td>
+<td class="gt_row gt_right">91</td>
+<td class="gt_row gt_right">76</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.71</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12A</td>
+<td class="gt_row gt_left">NFE2L2</td>
+<td class="gt_row gt_right">88</td>
+<td class="gt_row gt_right">53</td>
+<td class="gt_row gt_right">-0.68</td>
+<td class="gt_row gt_right">-3.46</td>
+<td class="gt_row gt_right">1.05</td>
+<td class="gt_row gt_right">1362.60</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3559</td>
+<td class="gt_row gt_right">87</td>
+<td class="gt_row gt_right">52</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">0.26</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12A</td>
+<td class="gt_row gt_left">AMER1</td>
+<td class="gt_row gt_right">51</td>
+<td class="gt_row gt_right">59</td>
+<td class="gt_row gt_right">-0.81</td>
+<td class="gt_row gt_right">-3.70</td>
+<td class="gt_row gt_right">1.10</td>
+<td class="gt_row gt_right">230.97</td>
+<td class="gt_row gt_right">1.01</td>
+<td class="gt_row gt_right">2174</td>
+<td class="gt_row gt_right">50</td>
+<td class="gt_row gt_right">58</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">0.29</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12C</td>
+<td class="gt_row gt_left">TP53</td>
+<td class="gt_row gt_right">83</td>
+<td class="gt_row gt_right">1354</td>
+<td class="gt_row gt_right">-0.36</td>
+<td class="gt_row gt_right">-0.81</td>
+<td class="gt_row gt_right">0.06</td>
+<td class="gt_row gt_right">1483.76</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1184</td>
+<td class="gt_row gt_right">46</td>
+<td class="gt_row gt_right">1317</td>
+<td class="gt_row gt_right">37</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.99</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12C</td>
+<td class="gt_row gt_left">TP53</td>
+<td class="gt_row gt_right">474</td>
+<td class="gt_row gt_right">1636</td>
+<td class="gt_row gt_right">-0.60</td>
+<td class="gt_row gt_right">-0.80</td>
+<td class="gt_row gt_right">-0.40</td>
+<td class="gt_row gt_right">1546.66</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1929</td>
+<td class="gt_row gt_right">333</td>
+<td class="gt_row gt_right">1495</td>
+<td class="gt_row gt_right">141</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">7.85</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12C</td>
+<td class="gt_row gt_left">FBXW7</td>
+<td class="gt_row gt_right">82</td>
+<td class="gt_row gt_right">194</td>
+<td class="gt_row gt_right">-0.14</td>
+<td class="gt_row gt_right">-1.14</td>
+<td class="gt_row gt_right">0.72</td>
+<td class="gt_row gt_right">1331.08</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2258</td>
+<td class="gt_row gt_right">76</td>
+<td class="gt_row gt_right">188</td>
+<td class="gt_row gt_right">6</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.12</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12C</td>
+<td class="gt_row gt_left">PIK3CA</td>
+<td class="gt_row gt_right">81</td>
+<td class="gt_row gt_right">209</td>
+<td class="gt_row gt_right">-0.39</td>
+<td class="gt_row gt_right">-1.41</td>
+<td class="gt_row gt_right">0.46</td>
+<td class="gt_row gt_right">1471.43</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2244</td>
+<td class="gt_row gt_right">76</td>
+<td class="gt_row gt_right">204</td>
+<td class="gt_row gt_right">5</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.39</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12C</td>
+<td class="gt_row gt_left">PIK3CA</td>
+<td class="gt_row gt_right">471</td>
+<td class="gt_row gt_right">82</td>
+<td class="gt_row gt_right">-0.07</td>
+<td class="gt_row gt_right">-0.78</td>
+<td class="gt_row gt_right">0.54</td>
+<td class="gt_row gt_right">1615.60</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3279</td>
+<td class="gt_row gt_right">461</td>
+<td class="gt_row gt_right">72</td>
+<td class="gt_row gt_right">10</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.08</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12C</td>
+<td class="gt_row gt_left">RNF43</td>
+<td class="gt_row gt_right">70</td>
+<td class="gt_row gt_right">126</td>
+<td class="gt_row gt_right">-6.23</td>
+<td class="gt_row gt_right">-15.54</td>
+<td class="gt_row gt_right">-1.24</td>
+<td class="gt_row gt_right">976.59</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2101</td>
+<td class="gt_row gt_right">70</td>
+<td class="gt_row gt_right">126</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.88</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12C</td>
+<td class="gt_row gt_left">U2AF1</td>
+<td class="gt_row gt_right">455</td>
+<td class="gt_row gt_right">60</td>
+<td class="gt_row gt_right">0.74</td>
+<td class="gt_row gt_right">0.16</td>
+<td class="gt_row gt_right">1.36</td>
+<td class="gt_row gt_right">190.00</td>
+<td class="gt_row gt_right">1.01</td>
+<td class="gt_row gt_right">3196</td>
+<td class="gt_row gt_right">441</td>
+<td class="gt_row gt_right">46</td>
+<td class="gt_row gt_right">14</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">1.70</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12C</td>
+<td class="gt_row gt_left">PTEN</td>
+<td class="gt_row gt_right">81</td>
+<td class="gt_row gt_right">97</td>
+<td class="gt_row gt_right">-5.82</td>
+<td class="gt_row gt_right">-14.74</td>
+<td class="gt_row gt_right">-0.88</td>
+<td class="gt_row gt_right">1381.09</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2355</td>
+<td class="gt_row gt_right">81</td>
+<td class="gt_row gt_right">97</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.80</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12C</td>
+<td class="gt_row gt_left">CTNNB1</td>
+<td class="gt_row gt_right">471</td>
+<td class="gt_row gt_right">102</td>
+<td class="gt_row gt_right">-0.57</td>
+<td class="gt_row gt_right">-1.36</td>
+<td class="gt_row gt_right">0.12</td>
+<td class="gt_row gt_right">1340.59</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3258</td>
+<td class="gt_row gt_right">463</td>
+<td class="gt_row gt_right">94</td>
+<td class="gt_row gt_right">8</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.89</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12C</td>
+<td class="gt_row gt_left">ARID1A</td>
+<td class="gt_row gt_right">70</td>
+<td class="gt_row gt_right">82</td>
+<td class="gt_row gt_right">-1.39</td>
+<td class="gt_row gt_right">-4.12</td>
+<td class="gt_row gt_right">0.43</td>
+<td class="gt_row gt_right">1170.48</td>
+<td class="gt_row gt_right">1.01</td>
+<td class="gt_row gt_right">2142</td>
+<td class="gt_row gt_right">69</td>
+<td class="gt_row gt_right">81</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.63</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12C</td>
+<td class="gt_row gt_left">CDKN2A</td>
+<td class="gt_row gt_right">472</td>
+<td class="gt_row gt_right">93</td>
+<td class="gt_row gt_right">-0.63</td>
+<td class="gt_row gt_right">-1.52</td>
+<td class="gt_row gt_right">0.11</td>
+<td class="gt_row gt_right">1518.09</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3265</td>
+<td class="gt_row gt_right">465</td>
+<td class="gt_row gt_right">86</td>
+<td class="gt_row gt_right">7</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.91</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12C</td>
+<td class="gt_row gt_left">SMAD4</td>
+<td class="gt_row gt_right">81</td>
+<td class="gt_row gt_right">144</td>
+<td class="gt_row gt_right">0.55</td>
+<td class="gt_row gt_right">-0.24</td>
+<td class="gt_row gt_right">1.24</td>
+<td class="gt_row gt_right">1354.93</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2301</td>
+<td class="gt_row gt_right">73</td>
+<td class="gt_row gt_right">136</td>
+<td class="gt_row gt_right">8</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.84</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12C</td>
+<td class="gt_row gt_left">APC</td>
+<td class="gt_row gt_right">91</td>
+<td class="gt_row gt_right">1294</td>
+<td class="gt_row gt_right">0.02</td>
+<td class="gt_row gt_right">-0.40</td>
+<td class="gt_row gt_right">0.48</td>
+<td class="gt_row gt_right">176.95</td>
+<td class="gt_row gt_right">1.02</td>
+<td class="gt_row gt_right">1411</td>
+<td class="gt_row gt_right">48</td>
+<td class="gt_row gt_right">1251</td>
+<td class="gt_row gt_right">43</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.03</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12C</td>
+<td class="gt_row gt_left">STK11</td>
+<td class="gt_row gt_right">471</td>
+<td class="gt_row gt_right">76</td>
+<td class="gt_row gt_right">0.87</td>
+<td class="gt_row gt_right">0.35</td>
+<td class="gt_row gt_right">1.40</td>
+<td class="gt_row gt_right">1530.63</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3293</td>
+<td class="gt_row gt_right">452</td>
+<td class="gt_row gt_right">57</td>
+<td class="gt_row gt_right">19</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">2.91</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12C</td>
+<td class="gt_row gt_left">EGFR</td>
+<td class="gt_row gt_right">471</td>
+<td class="gt_row gt_right">794</td>
+<td class="gt_row gt_right">-5.21</td>
+<td class="gt_row gt_right">-7.65</td>
+<td class="gt_row gt_right">-3.54</td>
+<td class="gt_row gt_right">1050.59</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2686</td>
+<td class="gt_row gt_right">470</td>
+<td class="gt_row gt_right">793</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">5.82</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12C</td>
+<td class="gt_row gt_left">BRAF</td>
+<td class="gt_row gt_right">471</td>
+<td class="gt_row gt_right">76</td>
+<td class="gt_row gt_right">-6.58</td>
+<td class="gt_row gt_right">-15.32</td>
+<td class="gt_row gt_right">-2.06</td>
+<td class="gt_row gt_right">1065.17</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3274</td>
+<td class="gt_row gt_right">471</td>
+<td class="gt_row gt_right">76</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.89</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12C</td>
+<td class="gt_row gt_left">B2M</td>
+<td class="gt_row gt_right">67</td>
+<td class="gt_row gt_right">65</td>
+<td class="gt_row gt_right">-0.15</td>
+<td class="gt_row gt_right">-1.79</td>
+<td class="gt_row gt_right">1.09</td>
+<td class="gt_row gt_right">588.24</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2099</td>
+<td class="gt_row gt_right">65</td>
+<td class="gt_row gt_right">63</td>
+<td class="gt_row gt_right">2</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">0.07</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12C</td>
+<td class="gt_row gt_left">NFE2L2</td>
+<td class="gt_row gt_right">455</td>
+<td class="gt_row gt_right">53</td>
+<td class="gt_row gt_right">0.02</td>
+<td class="gt_row gt_right">-0.81</td>
+<td class="gt_row gt_right">0.79</td>
+<td class="gt_row gt_right">1433.97</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3198</td>
+<td class="gt_row gt_right">448</td>
+<td class="gt_row gt_right">46</td>
+<td class="gt_row gt_right">7</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">0.02</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12C</td>
+<td class="gt_row gt_left">AMER1</td>
+<td class="gt_row gt_right">70</td>
+<td class="gt_row gt_right">59</td>
+<td class="gt_row gt_right">-0.12</td>
+<td class="gt_row gt_right">-1.95</td>
+<td class="gt_row gt_right">1.20</td>
+<td class="gt_row gt_right">1300.71</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2156</td>
+<td class="gt_row gt_right">68</td>
+<td class="gt_row gt_right">57</td>
+<td class="gt_row gt_right">2</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">0.06</td></tr>
+    <tr><td class="gt_row gt_left">cancer of unknown primary</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">TP53</td>
+<td class="gt_row gt_right">54</td>
+<td class="gt_row gt_right">313</td>
+<td class="gt_row gt_right">-0.10</td>
+<td class="gt_row gt_right">-0.65</td>
+<td class="gt_row gt_right">0.41</td>
+<td class="gt_row gt_right">1577.24</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">493</td>
+<td class="gt_row gt_right">34</td>
+<td class="gt_row gt_right">293</td>
+<td class="gt_row gt_right">20</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.14</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">TP53</td>
+<td class="gt_row gt_right">357</td>
+<td class="gt_row gt_right">1354</td>
+<td class="gt_row gt_right">-0.22</td>
+<td class="gt_row gt_right">-0.44</td>
+<td class="gt_row gt_right">0.00</td>
+<td class="gt_row gt_right">1406.74</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1042</td>
+<td class="gt_row gt_right">188</td>
+<td class="gt_row gt_right">1185</td>
+<td class="gt_row gt_right">169</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">1.29</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">TP53</td>
+<td class="gt_row gt_right">157</td>
+<td class="gt_row gt_right">1636</td>
+<td class="gt_row gt_right">-0.89</td>
+<td class="gt_row gt_right">-1.25</td>
+<td class="gt_row gt_right">-0.54</td>
+<td class="gt_row gt_right">1558.13</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2141</td>
+<td class="gt_row gt_right">121</td>
+<td class="gt_row gt_right">1600</td>
+<td class="gt_row gt_right">36</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">5.94</td></tr>
+    <tr><td class="gt_row gt_left">pancreatic cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">TP53</td>
+<td class="gt_row gt_right">513</td>
+<td class="gt_row gt_right">716</td>
+<td class="gt_row gt_right">0.60</td>
+<td class="gt_row gt_right">0.39</td>
+<td class="gt_row gt_right">0.80</td>
+<td class="gt_row gt_right">1532.51</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">647</td>
+<td class="gt_row gt_right">230</td>
+<td class="gt_row gt_right">433</td>
+<td class="gt_row gt_right">283</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">7.73</td></tr>
+    <tr><td class="gt_row gt_left">uterine cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">TP53</td>
+<td class="gt_row gt_right">55</td>
+<td class="gt_row gt_right">437</td>
+<td class="gt_row gt_right">-0.96</td>
+<td class="gt_row gt_right">-1.62</td>
+<td class="gt_row gt_right">-0.32</td>
+<td class="gt_row gt_right">1607.22</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">762</td>
+<td class="gt_row gt_right">46</td>
+<td class="gt_row gt_right">428</td>
+<td class="gt_row gt_right">9</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">2.52</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">FBXW7</td>
+<td class="gt_row gt_right">348</td>
+<td class="gt_row gt_right">194</td>
+<td class="gt_row gt_right">0.39</td>
+<td class="gt_row gt_right">0.02</td>
+<td class="gt_row gt_right">0.75</td>
+<td class="gt_row gt_right">1339.38</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2022</td>
+<td class="gt_row gt_right">312</td>
+<td class="gt_row gt_right">158</td>
+<td class="gt_row gt_right">36</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">1.44</td></tr>
+    <tr><td class="gt_row gt_left">uterine cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">FBXW7</td>
+<td class="gt_row gt_right">55</td>
+<td class="gt_row gt_right">92</td>
+<td class="gt_row gt_right">0.51</td>
+<td class="gt_row gt_right">-0.27</td>
+<td class="gt_row gt_right">1.25</td>
+<td class="gt_row gt_right">1590.58</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1083</td>
+<td class="gt_row gt_right">48</td>
+<td class="gt_row gt_right">85</td>
+<td class="gt_row gt_right">7</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.71</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">PIK3CA</td>
+<td class="gt_row gt_right">343</td>
+<td class="gt_row gt_right">209</td>
+<td class="gt_row gt_right">0.19</td>
+<td class="gt_row gt_right">-0.21</td>
+<td class="gt_row gt_right">0.57</td>
+<td class="gt_row gt_right">1626.16</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2010</td>
+<td class="gt_row gt_right">310</td>
+<td class="gt_row gt_right">176</td>
+<td class="gt_row gt_right">33</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.46</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">PIK3CA</td>
+<td class="gt_row gt_right">157</td>
+<td class="gt_row gt_right">82</td>
+<td class="gt_row gt_right">-0.15</td>
+<td class="gt_row gt_right">-1.31</td>
+<td class="gt_row gt_right">0.81</td>
+<td class="gt_row gt_right">1156.18</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3586</td>
+<td class="gt_row gt_right">154</td>
+<td class="gt_row gt_right">79</td>
+<td class="gt_row gt_right">3</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.10</td></tr>
+    <tr><td class="gt_row gt_left">uterine cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">PIK3CA</td>
+<td class="gt_row gt_right">59</td>
+<td class="gt_row gt_right">322</td>
+<td class="gt_row gt_right">0.54</td>
+<td class="gt_row gt_right">0.00</td>
+<td class="gt_row gt_right">1.07</td>
+<td class="gt_row gt_right">1531.37</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">922</td>
+<td class="gt_row gt_right">37</td>
+<td class="gt_row gt_right">300</td>
+<td class="gt_row gt_right">22</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">1.28</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">RNF43</td>
+<td class="gt_row gt_right">304</td>
+<td class="gt_row gt_right">126</td>
+<td class="gt_row gt_right">-0.34</td>
+<td class="gt_row gt_right">-0.97</td>
+<td class="gt_row gt_right">0.22</td>
+<td class="gt_row gt_right">979.14</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1880</td>
+<td class="gt_row gt_right">291</td>
+<td class="gt_row gt_right">113</td>
+<td class="gt_row gt_right">13</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.57</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">U2AF1</td>
+<td class="gt_row gt_right">152</td>
+<td class="gt_row gt_right">60</td>
+<td class="gt_row gt_right">0.66</td>
+<td class="gt_row gt_right">-0.35</td>
+<td class="gt_row gt_right">1.53</td>
+<td class="gt_row gt_right">1573.87</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3490</td>
+<td class="gt_row gt_right">147</td>
+<td class="gt_row gt_right">55</td>
+<td class="gt_row gt_right">5</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">0.76</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">PTEN</td>
+<td class="gt_row gt_right">343</td>
+<td class="gt_row gt_right">97</td>
+<td class="gt_row gt_right">-1.30</td>
+<td class="gt_row gt_right">-2.38</td>
+<td class="gt_row gt_right">-0.45</td>
+<td class="gt_row gt_right">1370.48</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2097</td>
+<td class="gt_row gt_right">339</td>
+<td class="gt_row gt_right">93</td>
+<td class="gt_row gt_right">4</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">2.10</td></tr>
+    <tr><td class="gt_row gt_left">uterine cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">PTEN</td>
+<td class="gt_row gt_right">62</td>
+<td class="gt_row gt_right">274</td>
+<td class="gt_row gt_right">0.97</td>
+<td class="gt_row gt_right">0.47</td>
+<td class="gt_row gt_right">1.49</td>
+<td class="gt_row gt_right">1296.27</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">962</td>
+<td class="gt_row gt_right">36</td>
+<td class="gt_row gt_right">248</td>
+<td class="gt_row gt_right">26</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">3.58</td></tr>
+    <tr><td class="gt_row gt_left">uterine cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">BCOR</td>
+<td class="gt_row gt_right">53</td>
+<td class="gt_row gt_right">70</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">0.16</td>
+<td class="gt_row gt_right">1.78</td>
+<td class="gt_row gt_right">1089.61</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">992</td>
+<td class="gt_row gt_right">45</td>
+<td class="gt_row gt_right">62</td>
+<td class="gt_row gt_right">8</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">1.84</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">CTNNB1</td>
+<td class="gt_row gt_right">158</td>
+<td class="gt_row gt_right">102</td>
+<td class="gt_row gt_right">-0.26</td>
+<td class="gt_row gt_right">-1.32</td>
+<td class="gt_row gt_right">0.64</td>
+<td class="gt_row gt_right">1494.12</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3567</td>
+<td class="gt_row gt_right">154</td>
+<td class="gt_row gt_right">98</td>
+<td class="gt_row gt_right">4</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.21</td></tr>
+    <tr><td class="gt_row gt_left">uterine cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">CTNNB1</td>
+<td class="gt_row gt_right">55</td>
+<td class="gt_row gt_right">125</td>
+<td class="gt_row gt_right">-0.69</td>
+<td class="gt_row gt_right">-1.86</td>
+<td class="gt_row gt_right">0.30</td>
+<td class="gt_row gt_right">1660.09</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1047</td>
+<td class="gt_row gt_right">52</td>
+<td class="gt_row gt_right">122</td>
+<td class="gt_row gt_right">3</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.69</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">ARID1A</td>
+<td class="gt_row gt_right">303</td>
+<td class="gt_row gt_right">82</td>
+<td class="gt_row gt_right">-0.10</td>
+<td class="gt_row gt_right">-0.81</td>
+<td class="gt_row gt_right">0.51</td>
+<td class="gt_row gt_right">1264.38</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1918</td>
+<td class="gt_row gt_right">293</td>
+<td class="gt_row gt_right">72</td>
+<td class="gt_row gt_right">10</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.12</td></tr>
+    <tr><td class="gt_row gt_left">uterine cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">ARID1A</td>
+<td class="gt_row gt_right">53</td>
+<td class="gt_row gt_right">131</td>
+<td class="gt_row gt_right">0.63</td>
+<td class="gt_row gt_right">-0.08</td>
+<td class="gt_row gt_right">1.32</td>
+<td class="gt_row gt_right">1483.54</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">947</td>
+<td class="gt_row gt_right">42</td>
+<td class="gt_row gt_right">120</td>
+<td class="gt_row gt_right">11</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">1.12</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">CDKN2A</td>
+<td class="gt_row gt_right">157</td>
+<td class="gt_row gt_right">93</td>
+<td class="gt_row gt_right">0.23</td>
+<td class="gt_row gt_right">-0.69</td>
+<td class="gt_row gt_right">1.07</td>
+<td class="gt_row gt_right">1441.92</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3578</td>
+<td class="gt_row gt_right">152</td>
+<td class="gt_row gt_right">88</td>
+<td class="gt_row gt_right">5</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.21</td></tr>
+    <tr><td class="gt_row gt_left">pancreatic cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">CDKN2A</td>
+<td class="gt_row gt_right">514</td>
+<td class="gt_row gt_right">103</td>
+<td class="gt_row gt_right">0.56</td>
+<td class="gt_row gt_right">0.17</td>
+<td class="gt_row gt_right">0.97</td>
+<td class="gt_row gt_right">1564.06</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1023</td>
+<td class="gt_row gt_right">468</td>
+<td class="gt_row gt_right">57</td>
+<td class="gt_row gt_right">46</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">2.21</td></tr>
+    <tr><td class="gt_row gt_left">uterine cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">PPP2R1A</td>
+<td class="gt_row gt_right">53</td>
+<td class="gt_row gt_right">101</td>
+<td class="gt_row gt_right">-6.21</td>
+<td class="gt_row gt_right">-15.03</td>
+<td class="gt_row gt_right">-1.47</td>
+<td class="gt_row gt_right">1394.58</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">953</td>
+<td class="gt_row gt_right">53</td>
+<td class="gt_row gt_right">101</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">1.04</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">SMAD4</td>
+<td class="gt_row gt_right">343</td>
+<td class="gt_row gt_right">144</td>
+<td class="gt_row gt_right">0.19</td>
+<td class="gt_row gt_right">-0.27</td>
+<td class="gt_row gt_right">0.64</td>
+<td class="gt_row gt_right">1615.52</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2054</td>
+<td class="gt_row gt_right">320</td>
+<td class="gt_row gt_right">121</td>
+<td class="gt_row gt_right">23</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.39</td></tr>
+    <tr><td class="gt_row gt_left">pancreatic cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">SMAD4</td>
+<td class="gt_row gt_right">513</td>
+<td class="gt_row gt_right">70</td>
+<td class="gt_row gt_right">0.21</td>
+<td class="gt_row gt_right">-0.24</td>
+<td class="gt_row gt_right">0.68</td>
+<td class="gt_row gt_right">1350.30</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1035</td>
+<td class="gt_row gt_right">487</td>
+<td class="gt_row gt_right">44</td>
+<td class="gt_row gt_right">26</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.43</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">APC</td>
+<td class="gt_row gt_right">386</td>
+<td class="gt_row gt_right">1294</td>
+<td class="gt_row gt_right">0.30</td>
+<td class="gt_row gt_right">0.08</td>
+<td class="gt_row gt_right">0.51</td>
+<td class="gt_row gt_right">1359.94</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1279</td>
+<td class="gt_row gt_right">180</td>
+<td class="gt_row gt_right">1088</td>
+<td class="gt_row gt_right">206</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">2.12</td></tr>
+    <tr><td class="gt_row gt_left">uterine cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">JAK1</td>
+<td class="gt_row gt_right">53</td>
+<td class="gt_row gt_right">69</td>
+<td class="gt_row gt_right">0.81</td>
+<td class="gt_row gt_right">-0.08</td>
+<td class="gt_row gt_right">1.65</td>
+<td class="gt_row gt_right">1221.90</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">999</td>
+<td class="gt_row gt_right">46</td>
+<td class="gt_row gt_right">62</td>
+<td class="gt_row gt_right">7</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">1.16</td></tr>
+    <tr><td class="gt_row gt_left">uterine cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">FGFR2</td>
+<td class="gt_row gt_right">55</td>
+<td class="gt_row gt_right">64</td>
+<td class="gt_row gt_right">-0.57</td>
+<td class="gt_row gt_right">-2.31</td>
+<td class="gt_row gt_right">0.74</td>
+<td class="gt_row gt_right">747.46</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1106</td>
+<td class="gt_row gt_right">53</td>
+<td class="gt_row gt_right">62</td>
+<td class="gt_row gt_right">2</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.32</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">STK11</td>
+<td class="gt_row gt_right">157</td>
+<td class="gt_row gt_right">76</td>
+<td class="gt_row gt_right">0.19</td>
+<td class="gt_row gt_right">-1.04</td>
+<td class="gt_row gt_right">1.21</td>
+<td class="gt_row gt_right">206.12</td>
+<td class="gt_row gt_right">1.03</td>
+<td class="gt_row gt_right">3592</td>
+<td class="gt_row gt_right">153</td>
+<td class="gt_row gt_right">72</td>
+<td class="gt_row gt_right">4</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.13</td></tr>
+    <tr><td class="gt_row gt_left">pancreatic cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">GNAS</td>
+<td class="gt_row gt_right">513</td>
+<td class="gt_row gt_right">54</td>
+<td class="gt_row gt_right">-0.43</td>
+<td class="gt_row gt_right">-1.04</td>
+<td class="gt_row gt_right">0.16</td>
+<td class="gt_row gt_right">514.61</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1039</td>
+<td class="gt_row gt_right">500</td>
+<td class="gt_row gt_right">41</td>
+<td class="gt_row gt_right">13</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.78</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">EGFR</td>
+<td class="gt_row gt_right">157</td>
+<td class="gt_row gt_right">794</td>
+<td class="gt_row gt_right">-3.20</td>
+<td class="gt_row gt_right">-4.95</td>
+<td class="gt_row gt_right">-2.03</td>
+<td class="gt_row gt_right">1107.39</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3001</td>
+<td class="gt_row gt_right">155</td>
+<td class="gt_row gt_right">792</td>
+<td class="gt_row gt_right">2</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">5.06</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">BRAF</td>
+<td class="gt_row gt_right">157</td>
+<td class="gt_row gt_right">76</td>
+<td class="gt_row gt_right">-0.67</td>
+<td class="gt_row gt_right">-2.54</td>
+<td class="gt_row gt_right">0.64</td>
+<td class="gt_row gt_right">623.75</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3590</td>
+<td class="gt_row gt_right">155</td>
+<td class="gt_row gt_right">74</td>
+<td class="gt_row gt_right">2</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.37</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">B2M</td>
+<td class="gt_row gt_right">292</td>
+<td class="gt_row gt_right">65</td>
+<td class="gt_row gt_right">0.02</td>
+<td class="gt_row gt_right">-0.72</td>
+<td class="gt_row gt_right">0.70</td>
+<td class="gt_row gt_right">1436.75</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1881</td>
+<td class="gt_row gt_right">283</td>
+<td class="gt_row gt_right">56</td>
+<td class="gt_row gt_right">9</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">0.02</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">NFE2L2</td>
+<td class="gt_row gt_right">152</td>
+<td class="gt_row gt_right">53</td>
+<td class="gt_row gt_right">-5.68</td>
+<td class="gt_row gt_right">-15.22</td>
+<td class="gt_row gt_right">-0.58</td>
+<td class="gt_row gt_right">1027.93</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3494</td>
+<td class="gt_row gt_right">152</td>
+<td class="gt_row gt_right">53</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">0.79</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">MSH3</td>
+<td class="gt_row gt_right">167</td>
+<td class="gt_row gt_right">55</td>
+<td class="gt_row gt_right">-1.23</td>
+<td class="gt_row gt_right">-2.55</td>
+<td class="gt_row gt_right">-0.17</td>
+<td class="gt_row gt_right">1508.24</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">977</td>
+<td class="gt_row gt_right">164</td>
+<td class="gt_row gt_right">52</td>
+<td class="gt_row gt_right">3</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">1.39</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12D</td>
+<td class="gt_row gt_left">AMER1</td>
+<td class="gt_row gt_right">302</td>
+<td class="gt_row gt_right">59</td>
+<td class="gt_row gt_right">-0.20</td>
+<td class="gt_row gt_right">-1.07</td>
+<td class="gt_row gt_right">0.53</td>
+<td class="gt_row gt_right">1225.60</td>
+<td class="gt_row gt_right">1.01</td>
+<td class="gt_row gt_right">1929</td>
+<td class="gt_row gt_right">295</td>
+<td class="gt_row gt_right">52</td>
+<td class="gt_row gt_right">7</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">0.20</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">TP53</td>
+<td class="gt_row gt_right">230</td>
+<td class="gt_row gt_right">1354</td>
+<td class="gt_row gt_right">-0.46</td>
+<td class="gt_row gt_right">-0.74</td>
+<td class="gt_row gt_right">-0.20</td>
+<td class="gt_row gt_right">1466.28</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1096</td>
+<td class="gt_row gt_right">134</td>
+<td class="gt_row gt_right">1258</td>
+<td class="gt_row gt_right">96</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">3.13</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">TP53</td>
+<td class="gt_row gt_right">177</td>
+<td class="gt_row gt_right">1636</td>
+<td class="gt_row gt_right">-0.49</td>
+<td class="gt_row gt_right">-0.81</td>
+<td class="gt_row gt_right">-0.18</td>
+<td class="gt_row gt_right">1461.98</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2141</td>
+<td class="gt_row gt_right">121</td>
+<td class="gt_row gt_right">1580</td>
+<td class="gt_row gt_right">56</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">2.73</td></tr>
+    <tr><td class="gt_row gt_left">pancreatic cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">TP53</td>
+<td class="gt_row gt_right">401</td>
+<td class="gt_row gt_right">716</td>
+<td class="gt_row gt_right">0.52</td>
+<td class="gt_row gt_right">0.30</td>
+<td class="gt_row gt_right">0.74</td>
+<td class="gt_row gt_right">1302.99</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">696</td>
+<td class="gt_row gt_right">181</td>
+<td class="gt_row gt_right">496</td>
+<td class="gt_row gt_right">220</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">5.66</td></tr>
+    <tr><td class="gt_row gt_left">uterine cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">TP53</td>
+<td class="gt_row gt_right">67</td>
+<td class="gt_row gt_right">437</td>
+<td class="gt_row gt_right">-1.12</td>
+<td class="gt_row gt_right">-1.76</td>
+<td class="gt_row gt_right">-0.54</td>
+<td class="gt_row gt_right">1329.89</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">750</td>
+<td class="gt_row gt_right">58</td>
+<td class="gt_row gt_right">428</td>
+<td class="gt_row gt_right">9</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">3.41</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">FBXW7</td>
+<td class="gt_row gt_right">226</td>
+<td class="gt_row gt_right">194</td>
+<td class="gt_row gt_right">-0.39</td>
+<td class="gt_row gt_right">-0.95</td>
+<td class="gt_row gt_right">0.14</td>
+<td class="gt_row gt_right">1565.27</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2121</td>
+<td class="gt_row gt_right">213</td>
+<td class="gt_row gt_right">181</td>
+<td class="gt_row gt_right">13</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.75</td></tr>
+    <tr><td class="gt_row gt_left">uterine cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">FBXW7</td>
+<td class="gt_row gt_right">66</td>
+<td class="gt_row gt_right">92</td>
+<td class="gt_row gt_right">-0.51</td>
+<td class="gt_row gt_right">-1.50</td>
+<td class="gt_row gt_right">0.27</td>
+<td class="gt_row gt_right">1477.06</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1068</td>
+<td class="gt_row gt_right">63</td>
+<td class="gt_row gt_right">89</td>
+<td class="gt_row gt_right">3</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.60</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">PIK3CA</td>
+<td class="gt_row gt_right">227</td>
+<td class="gt_row gt_right">209</td>
+<td class="gt_row gt_right">0.37</td>
+<td class="gt_row gt_right">-0.05</td>
+<td class="gt_row gt_right">0.78</td>
+<td class="gt_row gt_right">1546.69</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2119</td>
+<td class="gt_row gt_right">201</td>
+<td class="gt_row gt_right">183</td>
+<td class="gt_row gt_right">26</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">1.04</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">PIK3CA</td>
+<td class="gt_row gt_right">176</td>
+<td class="gt_row gt_right">82</td>
+<td class="gt_row gt_right">-0.03</td>
+<td class="gt_row gt_right">-1.06</td>
+<td class="gt_row gt_right">0.84</td>
+<td class="gt_row gt_right">1220.79</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3568</td>
+<td class="gt_row gt_right">172</td>
+<td class="gt_row gt_right">78</td>
+<td class="gt_row gt_right">4</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.02</td></tr>
+    <tr><td class="gt_row gt_left">uterine cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">PIK3CA</td>
+<td class="gt_row gt_right">71</td>
+<td class="gt_row gt_right">322</td>
+<td class="gt_row gt_right">-0.16</td>
+<td class="gt_row gt_right">-0.72</td>
+<td class="gt_row gt_right">0.39</td>
+<td class="gt_row gt_right">1632.62</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">904</td>
+<td class="gt_row gt_right">55</td>
+<td class="gt_row gt_right">306</td>
+<td class="gt_row gt_right">16</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.24</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">RNF43</td>
+<td class="gt_row gt_right">204</td>
+<td class="gt_row gt_right">126</td>
+<td class="gt_row gt_right">-2.04</td>
+<td class="gt_row gt_right">-3.87</td>
+<td class="gt_row gt_right">-0.74</td>
+<td class="gt_row gt_right">1549.07</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1969</td>
+<td class="gt_row gt_right">202</td>
+<td class="gt_row gt_right">124</td>
+<td class="gt_row gt_right">2</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">2.09</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">U2AF1</td>
+<td class="gt_row gt_right">169</td>
+<td class="gt_row gt_right">60</td>
+<td class="gt_row gt_right">1.14</td>
+<td class="gt_row gt_right">0.28</td>
+<td class="gt_row gt_right">1.87</td>
+<td class="gt_row gt_right">1356.28</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3476</td>
+<td class="gt_row gt_right">161</td>
+<td class="gt_row gt_right">52</td>
+<td class="gt_row gt_right">8</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">2.42</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">PTEN</td>
+<td class="gt_row gt_right">226</td>
+<td class="gt_row gt_right">97</td>
+<td class="gt_row gt_right">-0.27</td>
+<td class="gt_row gt_right">-1.07</td>
+<td class="gt_row gt_right">0.45</td>
+<td class="gt_row gt_right">1409.44</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2217</td>
+<td class="gt_row gt_right">219</td>
+<td class="gt_row gt_right">90</td>
+<td class="gt_row gt_right">7</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.31</td></tr>
+    <tr><td class="gt_row gt_left">uterine cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">PTEN</td>
+<td class="gt_row gt_right">70</td>
+<td class="gt_row gt_right">274</td>
+<td class="gt_row gt_right">0.20</td>
+<td class="gt_row gt_right">-0.37</td>
+<td class="gt_row gt_right">0.70</td>
+<td class="gt_row gt_right">1508.26</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">946</td>
+<td class="gt_row gt_right">52</td>
+<td class="gt_row gt_right">256</td>
+<td class="gt_row gt_right">18</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.32</td></tr>
+    <tr><td class="gt_row gt_left">uterine cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">BCOR</td>
+<td class="gt_row gt_right">58</td>
+<td class="gt_row gt_right">70</td>
+<td class="gt_row gt_right">-0.27</td>
+<td class="gt_row gt_right">-1.72</td>
+<td class="gt_row gt_right">0.68</td>
+<td class="gt_row gt_right">21.42</td>
+<td class="gt_row gt_right">1.06</td>
+<td class="gt_row gt_right">982</td>
+<td class="gt_row gt_right">55</td>
+<td class="gt_row gt_right">67</td>
+<td class="gt_row gt_right">3</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">0.19</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">CTNNB1</td>
+<td class="gt_row gt_right">176</td>
+<td class="gt_row gt_right">102</td>
+<td class="gt_row gt_right">-1.08</td>
+<td class="gt_row gt_right">-2.52</td>
+<td class="gt_row gt_right">0.07</td>
+<td class="gt_row gt_right">1577.08</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3547</td>
+<td class="gt_row gt_right">174</td>
+<td class="gt_row gt_right">100</td>
+<td class="gt_row gt_right">2</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.96</td></tr>
+    <tr><td class="gt_row gt_left">uterine cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">CTNNB1</td>
+<td class="gt_row gt_right">66</td>
+<td class="gt_row gt_right">125</td>
+<td class="gt_row gt_right">-1.02</td>
+<td class="gt_row gt_right">-2.32</td>
+<td class="gt_row gt_right">0.02</td>
+<td class="gt_row gt_right">1473.35</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1036</td>
+<td class="gt_row gt_right">63</td>
+<td class="gt_row gt_right">122</td>
+<td class="gt_row gt_right">3</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">1.10</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">ARID1A</td>
+<td class="gt_row gt_right">204</td>
+<td class="gt_row gt_right">82</td>
+<td class="gt_row gt_right">-0.84</td>
+<td class="gt_row gt_right">-2.03</td>
+<td class="gt_row gt_right">0.10</td>
+<td class="gt_row gt_right">1441.60</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2010</td>
+<td class="gt_row gt_right">201</td>
+<td class="gt_row gt_right">79</td>
+<td class="gt_row gt_right">3</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.91</td></tr>
+    <tr><td class="gt_row gt_left">uterine cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">ARID1A</td>
+<td class="gt_row gt_right">60</td>
+<td class="gt_row gt_right">131</td>
+<td class="gt_row gt_right">0.41</td>
+<td class="gt_row gt_right">-0.32</td>
+<td class="gt_row gt_right">1.04</td>
+<td class="gt_row gt_right">1556.58</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">940</td>
+<td class="gt_row gt_right">49</td>
+<td class="gt_row gt_right">120</td>
+<td class="gt_row gt_right">11</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.63</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">CDKN2A</td>
+<td class="gt_row gt_right">176</td>
+<td class="gt_row gt_right">93</td>
+<td class="gt_row gt_right">0.30</td>
+<td class="gt_row gt_right">-0.63</td>
+<td class="gt_row gt_right">1.07</td>
+<td class="gt_row gt_right">1297.06</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3560</td>
+<td class="gt_row gt_right">170</td>
+<td class="gt_row gt_right">87</td>
+<td class="gt_row gt_right">6</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.32</td></tr>
+    <tr><td class="gt_row gt_left">pancreatic cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">CDKN2A</td>
+<td class="gt_row gt_right">401</td>
+<td class="gt_row gt_right">103</td>
+<td class="gt_row gt_right">0.41</td>
+<td class="gt_row gt_right">-0.04</td>
+<td class="gt_row gt_right">0.82</td>
+<td class="gt_row gt_right">1416.40</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1124</td>
+<td class="gt_row gt_right">367</td>
+<td class="gt_row gt_right">69</td>
+<td class="gt_row gt_right">34</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">1.22</td></tr>
+    <tr><td class="gt_row gt_left">uterine cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">PPP2R1A</td>
+<td class="gt_row gt_right">58</td>
+<td class="gt_row gt_right">101</td>
+<td class="gt_row gt_right">0.46</td>
+<td class="gt_row gt_right">-0.36</td>
+<td class="gt_row gt_right">1.19</td>
+<td class="gt_row gt_right">1274.81</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">956</td>
+<td class="gt_row gt_right">50</td>
+<td class="gt_row gt_right">93</td>
+<td class="gt_row gt_right">8</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">0.61</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">SMAD4</td>
+<td class="gt_row gt_right">226</td>
+<td class="gt_row gt_right">144</td>
+<td class="gt_row gt_right">0.46</td>
+<td class="gt_row gt_right">-0.11</td>
+<td class="gt_row gt_right">0.95</td>
+<td class="gt_row gt_right">1257.55</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2168</td>
+<td class="gt_row gt_right">206</td>
+<td class="gt_row gt_right">124</td>
+<td class="gt_row gt_right">20</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">1.05</td></tr>
+    <tr><td class="gt_row gt_left">pancreatic cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">SMAD4</td>
+<td class="gt_row gt_right">401</td>
+<td class="gt_row gt_right">70</td>
+<td class="gt_row gt_right">-0.36</td>
+<td class="gt_row gt_right">-0.95</td>
+<td class="gt_row gt_right">0.21</td>
+<td class="gt_row gt_right">1550.76</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1134</td>
+<td class="gt_row gt_right">388</td>
+<td class="gt_row gt_right">57</td>
+<td class="gt_row gt_right">13</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.66</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">APC</td>
+<td class="gt_row gt_right">248</td>
+<td class="gt_row gt_right">1294</td>
+<td class="gt_row gt_right">0.01</td>
+<td class="gt_row gt_right">-0.26</td>
+<td class="gt_row gt_right">0.27</td>
+<td class="gt_row gt_right">1444.01</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1328</td>
+<td class="gt_row gt_right">131</td>
+<td class="gt_row gt_right">1177</td>
+<td class="gt_row gt_right">117</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.02</td></tr>
+    <tr><td class="gt_row gt_left">uterine cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">JAK1</td>
+<td class="gt_row gt_right">58</td>
+<td class="gt_row gt_right">69</td>
+<td class="gt_row gt_right">-0.15</td>
+<td class="gt_row gt_right">-1.73</td>
+<td class="gt_row gt_right">0.68</td>
+<td class="gt_row gt_right">5.93</td>
+<td class="gt_row gt_right">1.17</td>
+<td class="gt_row gt_right">990</td>
+<td class="gt_row gt_right">55</td>
+<td class="gt_row gt_right">66</td>
+<td class="gt_row gt_right">3</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.09</td></tr>
+    <tr><td class="gt_row gt_left">uterine cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">FGFR2</td>
+<td class="gt_row gt_right">66</td>
+<td class="gt_row gt_right">64</td>
+<td class="gt_row gt_right">-1.75</td>
+<td class="gt_row gt_right">-4.64</td>
+<td class="gt_row gt_right">0.02</td>
+<td class="gt_row gt_right">864.27</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1094</td>
+<td class="gt_row gt_right">65</td>
+<td class="gt_row gt_right">63</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.84</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">STK11</td>
+<td class="gt_row gt_right">176</td>
+<td class="gt_row gt_right">76</td>
+<td class="gt_row gt_right">0.03</td>
+<td class="gt_row gt_right">-1.15</td>
+<td class="gt_row gt_right">0.99</td>
+<td class="gt_row gt_right">689.75</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3573</td>
+<td class="gt_row gt_right">172</td>
+<td class="gt_row gt_right">72</td>
+<td class="gt_row gt_right">4</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.02</td></tr>
+    <tr><td class="gt_row gt_left">pancreatic cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">GNAS</td>
+<td class="gt_row gt_right">401</td>
+<td class="gt_row gt_right">54</td>
+<td class="gt_row gt_right">-0.18</td>
+<td class="gt_row gt_right">-0.86</td>
+<td class="gt_row gt_right">0.46</td>
+<td class="gt_row gt_right">1058.98</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1150</td>
+<td class="gt_row gt_right">389</td>
+<td class="gt_row gt_right">42</td>
+<td class="gt_row gt_right">12</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.24</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">EGFR</td>
+<td class="gt_row gt_right">176</td>
+<td class="gt_row gt_right">794</td>
+<td class="gt_row gt_right">-4.20</td>
+<td class="gt_row gt_right">-6.96</td>
+<td class="gt_row gt_right">-2.44</td>
+<td class="gt_row gt_right">1583.19</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2981</td>
+<td class="gt_row gt_right">175</td>
+<td class="gt_row gt_right">793</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">3.62</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">BRAF</td>
+<td class="gt_row gt_right">176</td>
+<td class="gt_row gt_right">76</td>
+<td class="gt_row gt_right">-1.85</td>
+<td class="gt_row gt_right">-4.74</td>
+<td class="gt_row gt_right">-0.04</td>
+<td class="gt_row gt_right">1351.02</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3570</td>
+<td class="gt_row gt_right">175</td>
+<td class="gt_row gt_right">75</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.92</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">B2M</td>
+<td class="gt_row gt_right">194</td>
+<td class="gt_row gt_right">65</td>
+<td class="gt_row gt_right">-6.49</td>
+<td class="gt_row gt_right">-16.53</td>
+<td class="gt_row gt_right">-1.58</td>
+<td class="gt_row gt_right">1135.97</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1970</td>
+<td class="gt_row gt_right">194</td>
+<td class="gt_row gt_right">65</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">0.67</td></tr>
+    <tr><td class="gt_row gt_left">non-small cell lung cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">NFE2L2</td>
+<td class="gt_row gt_right">169</td>
+<td class="gt_row gt_right">53</td>
+<td class="gt_row gt_right">-1.39</td>
+<td class="gt_row gt_right">-3.88</td>
+<td class="gt_row gt_right">0.39</td>
+<td class="gt_row gt_right">1351.47</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">3478</td>
+<td class="gt_row gt_right">168</td>
+<td class="gt_row gt_right">52</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">0.69</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">MSH3</td>
+<td class="gt_row gt_right">106</td>
+<td class="gt_row gt_right">55</td>
+<td class="gt_row gt_right">-2.12</td>
+<td class="gt_row gt_right">-5.01</td>
+<td class="gt_row gt_right">-0.28</td>
+<td class="gt_row gt_right">1520.70</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1036</td>
+<td class="gt_row gt_right">105</td>
+<td class="gt_row gt_right">54</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">1.17</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12V</td>
+<td class="gt_row gt_left">AMER1</td>
+<td class="gt_row gt_right">204</td>
+<td class="gt_row gt_right">59</td>
+<td class="gt_row gt_right">0.84</td>
+<td class="gt_row gt_right">0.09</td>
+<td class="gt_row gt_right">1.50</td>
+<td class="gt_row gt_right">1388.65</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2031</td>
+<td class="gt_row gt_right">193</td>
+<td class="gt_row gt_right">48</td>
+<td class="gt_row gt_right">11</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">1.72</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G13D</td>
+<td class="gt_row gt_left">TP53</td>
+<td class="gt_row gt_right">194</td>
+<td class="gt_row gt_right">1354</td>
+<td class="gt_row gt_right">-0.22</td>
+<td class="gt_row gt_right">-0.51</td>
+<td class="gt_row gt_right">0.10</td>
+<td class="gt_row gt_right">1319.19</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1128</td>
+<td class="gt_row gt_right">102</td>
+<td class="gt_row gt_right">1262</td>
+<td class="gt_row gt_right">92</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.79</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G13D</td>
+<td class="gt_row gt_left">FBXW7</td>
+<td class="gt_row gt_right">189</td>
+<td class="gt_row gt_right">194</td>
+<td class="gt_row gt_right">0.69</td>
+<td class="gt_row gt_right">0.23</td>
+<td class="gt_row gt_right">1.14</td>
+<td class="gt_row gt_right">687.68</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2171</td>
+<td class="gt_row gt_right">163</td>
+<td class="gt_row gt_right">168</td>
+<td class="gt_row gt_right">26</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">2.51</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G13D</td>
+<td class="gt_row gt_left">PIK3CA</td>
+<td class="gt_row gt_right">190</td>
+<td class="gt_row gt_right">209</td>
+<td class="gt_row gt_right">0.72</td>
+<td class="gt_row gt_right">0.29</td>
+<td class="gt_row gt_right">1.15</td>
+<td class="gt_row gt_right">882.60</td>
+<td class="gt_row gt_right">1.01</td>
+<td class="gt_row gt_right">2158</td>
+<td class="gt_row gt_right">162</td>
+<td class="gt_row gt_right">181</td>
+<td class="gt_row gt_right">28</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">3.02</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G13D</td>
+<td class="gt_row gt_left">RNF43</td>
+<td class="gt_row gt_right">176</td>
+<td class="gt_row gt_right">126</td>
+<td class="gt_row gt_right">-0.42</td>
+<td class="gt_row gt_right">-1.28</td>
+<td class="gt_row gt_right">0.31</td>
+<td class="gt_row gt_right">1416.85</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2002</td>
+<td class="gt_row gt_right">169</td>
+<td class="gt_row gt_right">119</td>
+<td class="gt_row gt_right">7</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.53</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G13D</td>
+<td class="gt_row gt_left">PTEN</td>
+<td class="gt_row gt_right">189</td>
+<td class="gt_row gt_right">97</td>
+<td class="gt_row gt_right">0.33</td>
+<td class="gt_row gt_right">-0.36</td>
+<td class="gt_row gt_right">0.96</td>
+<td class="gt_row gt_right">1323.99</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2257</td>
+<td class="gt_row gt_right">179</td>
+<td class="gt_row gt_right">87</td>
+<td class="gt_row gt_right">10</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.48</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G13D</td>
+<td class="gt_row gt_left">ARID1A</td>
+<td class="gt_row gt_right">174</td>
+<td class="gt_row gt_right">82</td>
+<td class="gt_row gt_right">-0.11</td>
+<td class="gt_row gt_right">-1.06</td>
+<td class="gt_row gt_right">0.69</td>
+<td class="gt_row gt_right">1028.08</td>
+<td class="gt_row gt_right">1.01</td>
+<td class="gt_row gt_right">2043</td>
+<td class="gt_row gt_right">168</td>
+<td class="gt_row gt_right">76</td>
+<td class="gt_row gt_right">6</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.09</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G13D</td>
+<td class="gt_row gt_left">SMAD4</td>
+<td class="gt_row gt_right">188</td>
+<td class="gt_row gt_right">144</td>
+<td class="gt_row gt_right">-0.95</td>
+<td class="gt_row gt_right">-2.20</td>
+<td class="gt_row gt_right">-0.04</td>
+<td class="gt_row gt_right">473.37</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2191</td>
+<td class="gt_row gt_right">183</td>
+<td class="gt_row gt_right">139</td>
+<td class="gt_row gt_right">5</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">1.21</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G13D</td>
+<td class="gt_row gt_left">APC</td>
+<td class="gt_row gt_right">211</td>
+<td class="gt_row gt_right">1294</td>
+<td class="gt_row gt_right">0.42</td>
+<td class="gt_row gt_right">0.14</td>
+<td class="gt_row gt_right">0.69</td>
+<td class="gt_row gt_right">591.07</td>
+<td class="gt_row gt_right">1.01</td>
+<td class="gt_row gt_right">1367</td>
+<td class="gt_row gt_right">92</td>
+<td class="gt_row gt_right">1175</td>
+<td class="gt_row gt_right">119</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">2.37</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G13D</td>
+<td class="gt_row gt_left">B2M</td>
+<td class="gt_row gt_right">173</td>
+<td class="gt_row gt_right">65</td>
+<td class="gt_row gt_right">0.64</td>
+<td class="gt_row gt_right">-0.14</td>
+<td class="gt_row gt_right">1.33</td>
+<td class="gt_row gt_right">1549.47</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">2000</td>
+<td class="gt_row gt_right">164</td>
+<td class="gt_row gt_right">56</td>
+<td class="gt_row gt_right">9</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">1.06</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G13D</td>
+<td class="gt_row gt_left">MSH3</td>
+<td class="gt_row gt_right">90</td>
+<td class="gt_row gt_right">55</td>
+<td class="gt_row gt_right">-0.52</td>
+<td class="gt_row gt_right">-1.88</td>
+<td class="gt_row gt_right">0.64</td>
+<td class="gt_row gt_right">1253.37</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1054</td>
+<td class="gt_row gt_right">87</td>
+<td class="gt_row gt_right">52</td>
+<td class="gt_row gt_right">3</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">0.38</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G13D</td>
+<td class="gt_row gt_left">AMER1</td>
+<td class="gt_row gt_right">174</td>
+<td class="gt_row gt_right">59</td>
+<td class="gt_row gt_right">0.58</td>
+<td class="gt_row gt_right">-0.20</td>
+<td class="gt_row gt_right">1.30</td>
+<td class="gt_row gt_right">376.63</td>
+<td class="gt_row gt_right">1.01</td>
+<td class="gt_row gt_right">2058</td>
+<td class="gt_row gt_right">166</td>
+<td class="gt_row gt_right">51</td>
+<td class="gt_row gt_right">8</td>
+<td class="gt_row gt_center">FALSE</td>
+<td class="gt_row gt_right">0.83</td></tr>
+    <tr><td class="gt_row gt_left">melanoma</td>
+<td class="gt_row gt_left">NRAS_Q61K</td>
+<td class="gt_row gt_left">TP53</td>
+<td class="gt_row gt_right">66</td>
+<td class="gt_row gt_right">160</td>
+<td class="gt_row gt_right">0.11</td>
+<td class="gt_row gt_right">-0.56</td>
+<td class="gt_row gt_right">0.75</td>
+<td class="gt_row gt_right">1432.13</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">775</td>
+<td class="gt_row gt_right">54</td>
+<td class="gt_row gt_right">148</td>
+<td class="gt_row gt_right">12</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.13</td></tr>
+    <tr><td class="gt_row gt_left">melanoma</td>
+<td class="gt_row gt_left">NRAS_Q61K</td>
+<td class="gt_row gt_left">CDKN2A</td>
+<td class="gt_row gt_right">66</td>
+<td class="gt_row gt_right">74</td>
+<td class="gt_row gt_right">0.65</td>
+<td class="gt_row gt_right">-0.07</td>
+<td class="gt_row gt_right">1.33</td>
+<td class="gt_row gt_right">525.33</td>
+<td class="gt_row gt_right">1.01</td>
+<td class="gt_row gt_right">843</td>
+<td class="gt_row gt_right">57</td>
+<td class="gt_row gt_right">65</td>
+<td class="gt_row gt_right">9</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">1.07</td></tr>
+    <tr><td class="gt_row gt_left">melanoma</td>
+<td class="gt_row gt_left">NRAS_Q61K</td>
+<td class="gt_row gt_left">SF3B1</td>
+<td class="gt_row gt_right">63</td>
+<td class="gt_row gt_right">54</td>
+<td class="gt_row gt_right">-6.01</td>
+<td class="gt_row gt_right">-15.45</td>
+<td class="gt_row gt_right">-1.16</td>
+<td class="gt_row gt_right">938.50</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">835</td>
+<td class="gt_row gt_right">63</td>
+<td class="gt_row gt_right">54</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.82</td></tr>
+    <tr><td class="gt_row gt_left">melanoma</td>
+<td class="gt_row gt_left">NRAS_Q61K</td>
+<td class="gt_row gt_left">BRAF</td>
+<td class="gt_row gt_right">65</td>
+<td class="gt_row gt_right">85</td>
+<td class="gt_row gt_right">-0.86</td>
+<td class="gt_row gt_right">-2.33</td>
+<td class="gt_row gt_right">0.25</td>
+<td class="gt_row gt_right">1216.69</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">822</td>
+<td class="gt_row gt_right">62</td>
+<td class="gt_row gt_right">82</td>
+<td class="gt_row gt_right">3</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.75</td></tr>
+    <tr><td class="gt_row gt_left">melanoma</td>
+<td class="gt_row gt_left">NRAS_Q61R</td>
+<td class="gt_row gt_left">TP53</td>
+<td class="gt_row gt_right">82</td>
+<td class="gt_row gt_right">160</td>
+<td class="gt_row gt_right">-0.38</td>
+<td class="gt_row gt_right">-1.06</td>
+<td class="gt_row gt_right">0.20</td>
+<td class="gt_row gt_right">1443.57</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">756</td>
+<td class="gt_row gt_right">73</td>
+<td class="gt_row gt_right">151</td>
+<td class="gt_row gt_right">9</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.61</td></tr>
+    <tr><td class="gt_row gt_left">thyroid cancer</td>
+<td class="gt_row gt_left">NRAS_Q61R</td>
+<td class="gt_row gt_left">TP53</td>
+<td class="gt_row gt_right">64</td>
+<td class="gt_row gt_right">59</td>
+<td class="gt_row gt_right">0.01</td>
+<td class="gt_row gt_right">-0.70</td>
+<td class="gt_row gt_right">0.75</td>
+<td class="gt_row gt_right">1540.06</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">377</td>
+<td class="gt_row gt_right">55</td>
+<td class="gt_row gt_right">50</td>
+<td class="gt_row gt_right">9</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.01</td></tr>
+    <tr><td class="gt_row gt_left">melanoma</td>
+<td class="gt_row gt_left">NRAS_Q61R</td>
+<td class="gt_row gt_left">CDKN2A</td>
+<td class="gt_row gt_right">82</td>
+<td class="gt_row gt_right">74</td>
+<td class="gt_row gt_right">-0.62</td>
+<td class="gt_row gt_right">-1.79</td>
+<td class="gt_row gt_right">0.34</td>
+<td class="gt_row gt_right">1123.00</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">822</td>
+<td class="gt_row gt_right">78</td>
+<td class="gt_row gt_right">70</td>
+<td class="gt_row gt_right">4</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.58</td></tr>
+    <tr><td class="gt_row gt_left">melanoma</td>
+<td class="gt_row gt_left">NRAS_Q61R</td>
+<td class="gt_row gt_left">SF3B1</td>
+<td class="gt_row gt_right">81</td>
+<td class="gt_row gt_right">54</td>
+<td class="gt_row gt_right">-1.16</td>
+<td class="gt_row gt_right">-3.00</td>
+<td class="gt_row gt_right">0.18</td>
+<td class="gt_row gt_right">516.79</td>
+<td class="gt_row gt_right">1.01</td>
+<td class="gt_row gt_right">819</td>
+<td class="gt_row gt_right">79</td>
+<td class="gt_row gt_right">52</td>
+<td class="gt_row gt_right">2</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.81</td></tr>
+    <tr><td class="gt_row gt_left">melanoma</td>
+<td class="gt_row gt_left">NRAS_Q61R</td>
+<td class="gt_row gt_left">BRAF</td>
+<td class="gt_row gt_right">82</td>
+<td class="gt_row gt_right">85</td>
+<td class="gt_row gt_right">-6.60</td>
+<td class="gt_row gt_right">-16.19</td>
+<td class="gt_row gt_right">-1.85</td>
+<td class="gt_row gt_right">1463.56</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">802</td>
+<td class="gt_row gt_right">82</td>
+<td class="gt_row gt_right">85</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">1.00</td></tr>
+    <tr><td class="gt_row gt_left">pancreatic cancer</td>
+<td class="gt_row gt_left">KRAS_G12R</td>
+<td class="gt_row gt_left">TP53</td>
+<td class="gt_row gt_right">180</td>
+<td class="gt_row gt_right">716</td>
+<td class="gt_row gt_right">0.22</td>
+<td class="gt_row gt_right">-0.08</td>
+<td class="gt_row gt_right">0.54</td>
+<td class="gt_row gt_right">1093.45</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">787</td>
+<td class="gt_row gt_right">90</td>
+<td class="gt_row gt_right">626</td>
+<td class="gt_row gt_right">90</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.80</td></tr>
+    <tr><td class="gt_row gt_left">pancreatic cancer</td>
+<td class="gt_row gt_left">KRAS_G12R</td>
+<td class="gt_row gt_left">CDKN2A</td>
+<td class="gt_row gt_right">180</td>
+<td class="gt_row gt_right">103</td>
+<td class="gt_row gt_right">0.01</td>
+<td class="gt_row gt_right">-0.65</td>
+<td class="gt_row gt_right">0.57</td>
+<td class="gt_row gt_right">1306.51</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1323</td>
+<td class="gt_row gt_right">168</td>
+<td class="gt_row gt_right">91</td>
+<td class="gt_row gt_right">12</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.01</td></tr>
+    <tr><td class="gt_row gt_left">pancreatic cancer</td>
+<td class="gt_row gt_left">KRAS_G12R</td>
+<td class="gt_row gt_left">SMAD4</td>
+<td class="gt_row gt_right">180</td>
+<td class="gt_row gt_right">70</td>
+<td class="gt_row gt_right">0.36</td>
+<td class="gt_row gt_right">-0.32</td>
+<td class="gt_row gt_right">0.98</td>
+<td class="gt_row gt_right">1096.79</td>
+<td class="gt_row gt_right">1.01</td>
+<td class="gt_row gt_right">1353</td>
+<td class="gt_row gt_right">169</td>
+<td class="gt_row gt_right">59</td>
+<td class="gt_row gt_right">11</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.57</td></tr>
+    <tr><td class="gt_row gt_left">pancreatic cancer</td>
+<td class="gt_row gt_left">KRAS_G12R</td>
+<td class="gt_row gt_left">GNAS</td>
+<td class="gt_row gt_right">180</td>
+<td class="gt_row gt_right">54</td>
+<td class="gt_row gt_right">-0.98</td>
+<td class="gt_row gt_right">-2.13</td>
+<td class="gt_row gt_right">0.09</td>
+<td class="gt_row gt_right">632.10</td>
+<td class="gt_row gt_right">1.01</td>
+<td class="gt_row gt_right">1362</td>
+<td class="gt_row gt_right">177</td>
+<td class="gt_row gt_right">51</td>
+<td class="gt_row gt_right">3</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">1.09</td></tr>
+    <tr><td class="gt_row gt_left">pancreatic cancer</td>
+<td class="gt_row gt_left">KRAS_Q61H</td>
+<td class="gt_row gt_left">TP53</td>
+<td class="gt_row gt_right">59</td>
+<td class="gt_row gt_right">716</td>
+<td class="gt_row gt_right">0.75</td>
+<td class="gt_row gt_right">0.19</td>
+<td class="gt_row gt_right">1.33</td>
+<td class="gt_row gt_right">1365.05</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">855</td>
+<td class="gt_row gt_right">22</td>
+<td class="gt_row gt_right">679</td>
+<td class="gt_row gt_right">37</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">2.00</td></tr>
+    <tr><td class="gt_row gt_left">pancreatic cancer</td>
+<td class="gt_row gt_left">KRAS_Q61H</td>
+<td class="gt_row gt_left">CDKN2A</td>
+<td class="gt_row gt_right">59</td>
+<td class="gt_row gt_right">103</td>
+<td class="gt_row gt_right">0.23</td>
+<td class="gt_row gt_right">-0.75</td>
+<td class="gt_row gt_right">1.12</td>
+<td class="gt_row gt_right">962.71</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1437</td>
+<td class="gt_row gt_right">54</td>
+<td class="gt_row gt_right">98</td>
+<td class="gt_row gt_right">5</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.20</td></tr>
+    <tr><td class="gt_row gt_left">pancreatic cancer</td>
+<td class="gt_row gt_left">KRAS_Q61H</td>
+<td class="gt_row gt_left">SMAD4</td>
+<td class="gt_row gt_right">59</td>
+<td class="gt_row gt_right">70</td>
+<td class="gt_row gt_right">0.35</td>
+<td class="gt_row gt_right">-0.83</td>
+<td class="gt_row gt_right">1.42</td>
+<td class="gt_row gt_right">1051.96</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1467</td>
+<td class="gt_row gt_right">55</td>
+<td class="gt_row gt_right">66</td>
+<td class="gt_row gt_right">4</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.27</td></tr>
+    <tr><td class="gt_row gt_left">pancreatic cancer</td>
+<td class="gt_row gt_left">KRAS_Q61H</td>
+<td class="gt_row gt_left">GNAS</td>
+<td class="gt_row gt_right">59</td>
+<td class="gt_row gt_right">54</td>
+<td class="gt_row gt_right">0.29</td>
+<td class="gt_row gt_right">-1.00</td>
+<td class="gt_row gt_right">1.38</td>
+<td class="gt_row gt_right">1340.16</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1483</td>
+<td class="gt_row gt_right">56</td>
+<td class="gt_row gt_right">51</td>
+<td class="gt_row gt_right">3</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.20</td></tr>
+    <tr><td class="gt_row gt_left">colorectal cancer</td>
+<td class="gt_row gt_left">KRAS_G12S</td>
+<td class="gt_row gt_left">APC</td>
+<td class="gt_row gt_right">52</td>
+<td class="gt_row gt_right">1294</td>
+<td class="gt_row gt_right">-0.03</td>
+<td class="gt_row gt_right">-0.60</td>
+<td class="gt_row gt_right">0.53</td>
+<td class="gt_row gt_right">1544.85</td>
+<td class="gt_row gt_right">1.00</td>
+<td class="gt_row gt_right">1431</td>
+<td class="gt_row gt_right">28</td>
+<td class="gt_row gt_right">1270</td>
+<td class="gt_row gt_right">24</td>
+<td class="gt_row gt_center">TRUE</td>
+<td class="gt_row gt_right">0.04</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre><code>R version 3.6.1 (2019-07-05)
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+Running under: macOS High Sierra 10.13.4
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] here_1.0.1      gt_0.6.0        forcats_0.5.1   stringr_1.4.0  
+ [5] dplyr_1.0.9     purrr_0.3.4     readr_2.1.2     tidyr_1.2.0    
+ [9] tibble_3.1.7    ggplot2_3.3.6   tidyverse_1.3.1 magrittr_2.0.3 
+[13] workflowr_1.7.0
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.8.3     lubridate_1.8.0  getPass_0.2-2    ps_1.7.0        
+ [5] assertthat_0.2.1 rprojroot_2.0.3  digest_0.6.29    utf8_1.2.2      
+ [9] R6_2.5.1         cellranger_1.1.0 backports_1.4.1  reprex_2.0.1    
+[13] evaluate_0.15    httr_1.4.3       pillar_1.7.0     rlang_1.0.2     
+[17] readxl_1.4.0     rstudioapi_0.13  whisker_0.4      callr_3.7.0     
+[21] jquerylib_0.1.4  checkmate_2.1.0  rmarkdown_2.14   bit_4.0.4       
+[25] munsell_0.5.0    broom_0.8.0      compiler_3.6.1   httpuv_1.6.5    
+[29] modelr_0.1.8     xfun_0.31        pkgconfig_2.0.3  htmltools_0.5.2 
+[33] tidyselect_1.1.2 fansi_1.0.3      withr_2.5.0      crayon_1.5.1    
+[37] tzdb_0.3.0       dbplyr_2.2.0     later_1.3.0      rappdirs_0.3.3  
+[41] grid_3.6.1       jsonlite_1.8.0   gtable_0.3.0     lifecycle_1.0.1 
+[45] DBI_1.1.2        git2r_0.30.1     scales_1.2.0     vroom_1.5.7     
+[49] cli_3.3.0        stringi_1.7.6    fs_1.5.2         promises_1.2.0.1
+[53] xml2_1.3.3       bslib_0.3.1      ellipsis_0.3.2   generics_0.1.2  
+[57] vctrs_0.4.1      tools_3.6.1      bit64_4.0.5      glue_1.6.2      
+[61] hms_1.1.1        parallel_3.6.1   processx_3.5.3   fastmap_1.1.0   
+[65] yaml_2.3.5       colorspace_2.0-3 rvest_1.0.2      knitr_1.39      
+[69] haven_2.5.0      sass_0.4.1      </code></pre>
+</div>
+
+
+<!-- Adjust MathJax settings so that all math formulae are shown using
+TeX fonts only; see
+https://docs.mathjax.org/en/latest/web/configuration.html. This will make
+the presentation more consistent at the cost of the webpage sometimes
+taking slightly longer to load. Note that this only works because the
+footer is added to webpages before the MathJax javascript. -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
