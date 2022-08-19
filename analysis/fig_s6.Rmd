@@ -1,5 +1,5 @@
 ---
-title: "Figure S4"
+title: "Figure S6"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -55,7 +55,7 @@ cancer_labs <- setNames(cancer_labels$label, cancer_labels$cancer)
 aa_levels <- sort(unique(aa_freq3$hgvsp))
 ```
 
-```{r fig_s4, fig.width=15, fig.height=12, dev=c("png", "pdf")}
+```{r fig_s6, fig.width=15, fig.height=12, dev=c("png", "pdf")}
 alleles <- c("61R", "12D", "12S",
              "13D", "61K", "61L")
 dat <- aa_freq3 %>%
