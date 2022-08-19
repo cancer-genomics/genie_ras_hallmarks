@@ -1,0 +1,77 @@
+---
+title: "Table S28. Clinical characteristics for the AACR project GENIE NSCLC cohort."
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+```{r packages, message=FALSE, warning=FALSE, echo=FALSE, include=FALSE}
+knitr::opts_chunk$set(autodep = TRUE, echo=FALSE)
+library(magrittr)
+library(tidyverse)
+library(gt)
+library(here)
+```
+
+
+
+```{r data,  message=FALSE, warning=FALSE, echo=FALSE, include=FALSE}
+
+dat <- read_tsv(here( "data", "os_annotated.tsv")) %>% 
+      select(c("PERSON_ID",
+               "Therapy",
+               "Overall_survival_censor" , 
+               "Line_of_therapy",
+               "Overal_survival_months" ,
+               "flag_KRAS_G12C",
+               "flag_STK11", 
+               "flag_KEAP1", 
+               "flag_TP53", 
+                "flag_PIK3CA" ,
+                "flag_ATM", 
+                "flag_RBM10", 
+                "flag_NTRK3",
+               "flag_AMER1",
+               "flag_ChromatinReg_pathway",
+                "flag_DDR_pathway",
+               "Survival_Analyses")) %>%
+      select_all(~gsub("flag_", "", .))%>%
+      mutate(Survival_Analyses = recode(Survival_Analyses,
+                                        "chemo_1" = "Chemo in 1st Line of Therapy", 
+                                        "chemo_2" = "Chemo in 2nd Line of Therapy",
+                                        "IO ; IO + chemo_IO" = "IO", 
+                                        "IO + chemo_IO" = "chemo_IO"))%>%
+      mutate(Survival_Analyses = ifelse(Survival_Analyses == "IO" & Line_of_therapy == 1, 
+                                        "IO in 1st Line of Therapy", Survival_Analyses))%>%
+       mutate(Survival_Analyses = ifelse(Survival_Analyses == "IO" & Line_of_therapy == 2, 
+                                        "IO in 2nd Line of Therapy", Survival_Analyses))%>%      mutate(Survival_Analyses = ifelse(Survival_Analyses == "chemo_IO" & Line_of_therapy == 1, 
+                                      "chemo_IO in 1st Line of Therapy", Survival_Analyses))%>% 
+  mutate(Survival_Analyses = ifelse(Survival_Analyses == "chemo_IO" & Line_of_therapy == 1, 
+                          "chemo_IO in 2nd Line of Therapy",Survival_Analyses ))%>%
+      dplyr::rename("Subject ID" = "PERSON_ID", 
+                    "Overall Survival Months" = "Overal_survival_months",
+                   "CHROMATIN REGULATING" =  "ChromatinReg_pathway", 
+                    "DDR" = "DDR_pathway",
+                    "Overall Survival Censor" = "Overall_survival_censor", 
+                   "Survival Analyses Group" =  "Survival_Analyses" ) %>%
+      filter(`KRAS_G12C` == 1) %>%
+      filter(Therapy != "other") 
+ 
+
+```
+
+
+```{r table_s28}
+dat %>%
+    gt() %>%
+    tab_style(
+        style = list(
+            cell_text(weight = "bold")
+        ),
+        locations = cells_column_labels()) %>%
+    cols_align(align="left", column="Subject ID")
+
+```
