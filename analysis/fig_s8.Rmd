@@ -1,5 +1,5 @@
 ---
-title: "Figure S6"
+title: "Figure S8"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -73,7 +73,7 @@ flabels <- c(rlabels, klabels, nlabels)
 ```
 
 
-```{r fig_s6, fig.width=20, fig.height=15, dev=c('png', 'pdf')}
+```{r fig_s8, fig.width=20, fig.height=15, dev=c('png', 'pdf')}
 alevels <- c("Multi-cancer", "<40", "40-50", "50-65", ">65")
 age %>%
     mutate(variable=factor(variable, alevels),
