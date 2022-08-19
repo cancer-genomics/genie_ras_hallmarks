@@ -1,5 +1,5 @@
 ---
-title: "Figure S7"
+title: "Figure S9"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -98,7 +98,7 @@ fig.labels <- c(
 ```
 
 
-```{r fig_s7, fig.width=12, fig.height=6, dev=c("png", "pdf")}
+```{r fig_s9, fig.width=12, fig.height=6, dev=c("png", "pdf")}
 
 sexlabels <-  c("Female", "Male", "Multi-cancer")
 sex %>%
