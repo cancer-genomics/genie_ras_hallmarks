@@ -1,5 +1,5 @@
 ---
-title: "Figure S13: co-occurrence and mutation signatures"
+title: "Figure S15: co-occurrence and mutation signatures"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -115,7 +115,7 @@ B <- panel_b %>%
 Bg <- ggplotGrob(B)
 ```
 
-```{r fig_s13, fig.width=12, fig.height=15, dev=c("png", "pdf")}
+```{r fig_s15, fig.width=12, fig.height=15, dev=c("png", "pdf")}
 ##index <- grep("panel-1", Bg$layout$name)
 ##Ag$widths[1:4] <- Bg$widths[1:4]
 gl <- list(Ag, Bg, nullGrob())
