@@ -1,0 +1,107 @@
+---
+title: "Table S9: Frequency of RAS-RAS co-mutations at codons 12, 13 and 61"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+```{r packages, message=FALSE, warning=FALSE, echo=FALSE, include=FALSE}
+knitr::opts_chunk$set(autodep = TRUE, echo=FALSE)
+library(magrittr)
+library(tidyverse)
+library(genie.6.1)
+library(dplyr)
+library(here)
+library(gt)
+data(mutation_data, package="genie.6.1")
+data(ras_all2, package="genie.6.1")
+data(patient_universe, package="genie.6.1")
+library(here)
+```
+
+```{r data,  message=FALSE, warning=FALSE, echo=FALSE, include=FALSE}
+
+# Define function to compute RAS/RAS freq
+compute_freq = function(cancer_df){
+  kras_df = subset(cancer_df, hugo_symbol == "KRAS")
+  nras_df = subset(cancer_df, hugo_symbol == "NRAS")
+  hras_df = subset(cancer_df, hugo_symbol == "HRAS")
+  
+  # Find co-occuring muts
+  kras_hras = intersect(kras_df$patient_id, hras_df$patient_id)
+  kras_nras = intersect(kras_df$patient_id, nras_df$patient_id)
+  hras_nras = intersect(hras_df$patient_id, nras_df$patient_id)
+  kras_kras =unique(kras_df$patient_id[duplicated(kras_df$patient_id)])
+  hras_hras =unique(hras_df$patient_id[duplicated(hras_df$patient_id)])
+  nras_nras =unique(nras_df$patient_id[duplicated(nras_df$patient_id)])
+  any_ras = unique(c(kras_hras, kras_nras,hras_nras,kras_kras,hras_hras,nras_nras))
+  
+    
+  out.df = data.frame(cancer.type = unique(cancer_df$cancer), 
+                      n.total = length(unique(cancer_df$patient_id)), 
+                      n.kras_hras = length(kras_hras), 
+                      n.kras_nras = length(kras_nras), 
+                      n.hras_nras = length(hras_nras), 
+                      n.kras_kras = length(kras_kras), 
+                      n.hras_hras = length(hras_hras), 
+                      n.nras_nras = length(nras_nras), 
+                      n.any_ras = length(any_ras)) %>%
+                     mutate(freq.kras_hras = n.kras_hras/n.total) %>%
+                     mutate(freq.kras_nras = n.kras_nras/n.total) %>%
+                     mutate(freq.hras_nras = n.hras_nras/n.total) %>%
+                     mutate(freq.kras_kras = n.kras_kras/n.total) %>%
+                     mutate(freq.hras_hras = n.hras_hras/n.total) %>%
+                     mutate(freq.nras_nras = n.nras_nras/n.total) %>%
+                     mutate(freq.any_ras = n.any_ras/n.total) %>%
+                    select(cancer.type,n.total, 
+         n.kras_hras,freq.kras_hras,
+         n.kras_nras,freq.kras_nras,    
+         n.hras_nras, freq.hras_nras,
+         n.kras_kras,freq.kras_kras,
+         n.hras_hras,freq.hras_hras,
+         n.nras_nras,freq.nras_nras,
+         n.any_ras,freq.any_ras)
+  
+  return(out.df)}
+
+matched_universe <- patient_universe %>% filter( is_matched)
+
+ras_all2 <- ras_all %>%
+  as_tibble() %>%
+  mutate(hugo_symbol=rownames(ras_all)) %>%
+  pivot_longer(cols=!hugo_symbol, names_to="sample_id",
+               values_to="mutation") %>%
+  filter(sample_id %in% matched_universe$sample_id) %>%
+  filter(mutation==1) %>%
+  mutate(x=ifelse(is.na(mutation), 0, mutation),
+         x=as.character(x)) %>%
+  left_join(matched_universe, by="sample_id") %>%
+  select(hugo_symbol, sample_id, cancer, x) %>%
+  group_by(hugo_symbol) %>%
+  filter(hugo_symbol %in% c("KRAS_12-61","HRAS_12-61","NRAS_12-61"))
+hotspot.samples = unique(ras_all2$sample_id)
+
+
+
+
+
+```
+
+```{r table_s9}
+# Compute freq for all samples, hotspot muts
+mutation_data_hp =  mutation_data %>% filter(sample_id %in% hotspot.samples)
+freq_df_hp = lapply(unique(mutation_data_hp$cancer), function(x) compute_freq(subset(mutation_data_hp ,cancer == x)))
+freq_df_hp = do.call("rbind",freq_df_hp ) %>%
+              arrange(desc(n.total))
+
+freq_df_hp %>%
+   gt() %>%
+    tab_style(
+        style = list(
+            cell_text(weight = "bold")
+        ),
+        locations = cells_column_labels()) 
+```
