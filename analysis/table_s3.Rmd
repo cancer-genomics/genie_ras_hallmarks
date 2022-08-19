@@ -1,0 +1,46 @@
+---
+title: "Table S3:  Co-occurrence and mutual exlusivity of KRAS variants at codons 12,13, and 61 with non-RAS gene mutations computed by the DISCOVER and SELECT methods"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+```{r packages, message=FALSE, warning=FALSE, echo=FALSE}
+knitr::opts_chunk$set(autodep = TRUE, echo=FALSE)
+library(magrittr)
+library(tidyverse)
+library(gt)
+library(here)
+```
+
+```{r data}
+discover.dat <- here("output", "methods-comparison",
+                     "genie_nsclc_discover.tsv")%>%
+            read_tsv()  %>%
+            mutate(method = "DISCOVER")
+discover.dat <- discover.dat[c(grep("KRAS_12-61", discover.dat$gene1 ), grep("KRAS_12-61", discover.dat$gene2 )),]
+
+
+select.dat <- here("output", "methods-comparison",
+                     "genie_nsclc_select.tsv")%>%
+            read_tsv() %>%
+            mutate(method = "SELECT")
+select.dat <- select.dat[c(grep("KRAS_12-61", select.dat$SFE_1 ), grep("KRAS_12-61", select.dat$SFE_2 )),]
+
+```
+
+```{r table_s3}
+capitalize <- Hmisc::capitalize
+tab <-   plyr::rbind.fill(discover.dat, select.dat)
+
+tab %>%
+  gt() %>%
+    tab_style(
+        style = list(
+            cell_text(weight = "bold")
+        ),
+        locations = cells_column_labels())
+```
