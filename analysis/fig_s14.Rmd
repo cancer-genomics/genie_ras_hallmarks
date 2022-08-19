@@ -1,5 +1,5 @@
 ---
-title: "Figure S12: "
+title: "Figure S14: "
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -216,7 +216,7 @@ gl <- map(ggplots, ggplotGrob)
 ```
 
 
-```{r fig_s12, fig.width=20, fig.height=12, dev=c("png", "pdf")}
+```{r fig_s14, fig.width=20, fig.height=12, dev=c("png", "pdf")}
 grid.arrange(grobs=gl,
              widths=rep(1, 3),
              heights=rep(1, 3),
