@@ -1,5 +1,5 @@
 ---
-title: "Figure S14: gene set enrichment for triple mutants"
+title: "Figure S3: method comparison"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -86,7 +86,7 @@ heatmap.dat = expand.grid(glevels, mlevels) %>%
 
 
 
-```{r fig_methods_comparison, fig.width=20, fig.height=10, dev=c("png", "pdf")}
+```{r fig_s3, fig.width=20, fig.height=10, dev=c("png", "pdf")}
 
 comut.colors <- c("#E97979","#88B5E9" )
 names(comut.colors) <- c("Co-occurence", ME = "Mut.Exclusivity")
