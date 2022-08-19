@@ -1,5 +1,5 @@
 ---
-title: "Figure S5"
+title: "Figure S7"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -122,7 +122,7 @@ BC <- dat %>%
 B <- ggplotGrob(BC)
 ```
 
-```{r fig_s5, fig.width=18, fig.height=12, dev=c("png", "pdf")}
+```{r fig_s7, fig.width=18, fig.height=12, dev=c("png", "pdf")}
 gl <- list(A, B)
 grid.arrange(grobs=gl,
              widths=c(0.55, 0.45),
