@@ -1,0 +1,71 @@
+---
+title: "Table S7: Allele-specific prevalence adjusted for potential confounders"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+```{r packages, message=FALSE, warning=FALSE, echo=FALSE, include=FALSE}
+knitr::opts_chunk$set(autodep = TRUE, echo=FALSE)
+library(magrittr)
+library(tidyverse)
+library(gt)
+library(here)
+```
+
+# Table S7
+```{r data,  message=FALSE, warning=FALSE, echo=FALSE, include=FALSE}
+age <- read_csv(here("public", "table", "ras_amino_acid_prev.Rmd", "age.csv")) %>% 
+                  mutate(variable = ifelse(is.na(variable), "Age:NA", variable)) %>%  
+                  mutate(variable = paste0( variable, "yrs")) %>%
+                  mutate(variable = recode(variable, "Age:NAyrs" = "Age:NA"))
+
+race <- read_csv(here("public", "table", "ras_amino_acid_prev.Rmd", "race.csv"))%>% 
+                  mutate(variable = ifelse(is.na(variable), "Race:NA", variable)) %>%  
+                  mutate(variable = recode(variable, "Other" = "Race:Other",
+                                                       "Undefined"="Race:Undefined" ))
+
+
+
+sex <- read_csv(here("public", "table", "ras_amino_acid_prev.Rmd", "sex.csv"))%>% 
+                  mutate(variable = ifelse(is.na(variable), "Sex:NA", variable)) 
+
+sample_type <-  read_csv(here("public", "table", "ras_amino_acid_prev.Rmd", "tumor_type.csv"))%>% 
+                  mutate(variable = ifelse(is.na(variable), "Tumor Type:NA", variable)) %>% 
+                  mutate(variable = recode(variable, "Not Applicable or Heme" = "Tumor Type:NA/Heme",
+                                                       "Unspecified"="Tumor Type:Unspecified" ))
+
+
+dat <-  rbind(age,race,sex,sample_type)  %>%
+              select(hugo_symbol, codon_range,cancer,variable, y,n, mean,median,q1,q2)%>%
+             mutate_if(is.numeric, round, digits=2) %>%
+             mutate(codon_range = gsub("12", "G12", codon_range)) %>%
+            mutate(codon_range = gsub("13", "G13", codon_range)) %>%
+            mutate(codon_range = gsub("61", "Q61", codon_range)) %>%
+          dplyr::rename('HUGO symbol' = hugo_symbol, 
+                        'Codon' = codon_range, 
+                        'Cancer type' = cancer, 
+                        'Group' = variable,
+                        'variants (n)' = y, 
+                        'patients (n)' = n, 
+                        'Mean' = mean, 
+                        'Median' = median, 
+                        '2.5%' = q1,
+                        '97.5%' = q2)
+
+
+```
+
+```{r table_s7}
+dat %>%
+    gt() %>%
+    tab_style(
+        style = list(
+            cell_text(weight = "bold")
+        ),
+        locations = cells_column_labels()) %>%
+    cols_align(align="left", column="Cancer type")
+```
