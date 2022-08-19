@@ -1,5 +1,5 @@
 ---
-title: "Table S6: Prevalence at mutant allele level stratified by age, sex and tumor type"
+title: "Table S6: Prevalence at codons 12,13 and 61 stratified by age, sex and tumor type"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
