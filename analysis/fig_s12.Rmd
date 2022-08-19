@@ -1,5 +1,5 @@
 ---
-title: "Figure S10: KRAS co-occurrence with inactivating mutations"
+title: "Figure S12: KRAS co-occurrence with inactivating mutations"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -138,7 +138,7 @@ Bg <- ggplotGrob(B)
 Bg$heights <- Ag$heights
 ```
 
-```{r fig_s10, fig.width=12, fig.height=12, dev=c("png", "pdf")}
+```{r fig_s12, fig.width=12, fig.height=12, dev=c("png", "pdf")}
 lo <- grid.layout(nrow=2, ncol=2,
                   widths=unit(c(0.5, 0.5), "npc"),
                   heights=unit(c(0.92, 0.08), "npc"))
