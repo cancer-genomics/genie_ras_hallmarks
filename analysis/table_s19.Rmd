@@ -1,0 +1,53 @@
+---
+title: "Table S19. Co-occurrence of RAS mutant allele with hotspot non-RAS gene mutations in cancer pathways and gene families. "
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+```{r packages, message=FALSE, warning=FALSE, echo=FALSE, include=FALSE}
+knitr::opts_chunk$set(autodep = TRUE, echo=FALSE)
+library(magrittr)
+library(tidyverse)
+library(gt)
+library(here)
+```
+
+
+
+```{r data,  message=FALSE, warning=FALSE, echo=FALSE, include=FALSE}
+comut.cosmic.gp <- read_csv(here("public", "table", "co_mutation_allele.Rmd", "cosmic_driver_mutation_(gene_pathways).csv"))
+
+dat <- comut.cosmic.gp %>%
+              select (cancer, ras, nonras, number_ras, number_nonras,
+                      mean,"2.5%" ,"97.5%",n_eff,Rhat,
+                      "00","10","01","11" ,is_driver, p)%>%
+             mutate_if(is.numeric, round, digits=2) %>%
+            mutate(ras = gsub("_1", "_G1", ras)) %>%
+            mutate(ras = gsub("_6", "_Q6", ras)) %>%
+   dplyr::rename('Cancer type' = cancer, 
+                 'RAS' = ras, 
+                 'Non-RAS' = nonras, 
+                 "RAS(n)" = number_ras, 
+                 "non-RAS(n)" = number_nonras, 
+                        'Mean' = mean, 
+                     'Driver'= is_driver, 
+                 '-log10(p)' = p )
+
+```
+
+
+```{r table_s19}
+dat %>%
+    gt() %>%
+    tab_style(
+        style = list(
+            cell_text(weight = "bold")
+        ),
+        locations = cells_column_labels()) %>%
+    cols_align(align="left", column="Cancer type")
+
+```
