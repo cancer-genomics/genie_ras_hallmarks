@@ -1,0 +1,73 @@
+---
+title: "Response to Reviews 1:  Additional GSEA Analyses"
+site: workflowr::wflow_site
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  workflowr::wflow_html:
+    code_folding: hide
+    toc: true
+    toc_depth: 3
+    toc_float: true
+editor_options:
+  chunk_output_type: console
+---
+
+```{r packages, message=FALSE}
+library(tidyverse)
+library(dplyr)
+library(here)
+library(grid)
+library(gridExtra)
+library(rasfuns)
+# devtools::load_all(here('rasfuns'))
+```
+
+
+```{r better_pathway_labels}
+dat.list <- here("output", "gsea_data_wrangling.Rmd",
+                 "gsea_results.rds") %>%
+    readRDS() %>%
+    filter(figure==23)
+comutant <- dat.list[["comutant"]][[1]]
+##gsea.list <- dat.list[["gsea.list"]]
+##sets <- dat.list[["sets"]]
+kras <- dat.list[["kras"]][[1]]
+
+plot_titles <- paste0(comutant, ' only mutant vs wild type PAAD')
+```
+
+
+
+```{r data_wrangling}
+stats <- dat.list[["stats"]][[1]]
+```
+
+## qq-style plot with random ranks
+
+- need facet wrap and more square aspect ratio
+- add p-value directly to panel
+
+```{r plot_qq}
+##
+## Plot up-regulated pathways first
+##
+stats2 <- map(stats, relevel_gsea_pathway)
+rank.gg <- map(stats2, gg_qq)
+rank.gg <- plot_titles %>%
+    str_wrap(width=40) %>%
+    map2(rank.gg, add_qq_title)
+```
+
+```{r resp-to-reviewers-3-1, fig.width=25, fig.height=30, dev=c("png", "pdf")}
+stripsize <- function(p){
+    p <- p + theme(strip.text=element_text(size=15))
+    p
+}
+rank.gg2 <- rank.gg %>%
+    map(stripsize) %>%
+    map(ggplotGrob)
+# h <- rank.gg2[[1]]$heights
+# rank.gg2[[5]]$heights <- h
+grid.arrange(grobs=rank.gg2[1:4],
+             layout_matrix=rbind(c(1, 2), c(3, 4)))
+```
