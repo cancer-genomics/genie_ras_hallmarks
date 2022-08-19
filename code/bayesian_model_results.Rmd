@@ -1,0 +1,59 @@
+---
+output: html_document
+---
+
+```{r packages}
+library(here)
+library(tidyverse)
+library(ggplot2)
+outdir <- here("output", "bayesian_model_results.Rmd")
+fs::dir_create(outdir)
+```
+
+```{r results}
+files <- here("output", "bayesian_model.Rmd") %>%
+    list.files() %>%
+    tibble(file=.) %>%
+    mutate(is_summary=grepl("-", file)) %>%
+    filter(is_summary)
+result.list <- files %>%
+    pull(file) %>%
+    file.path(here("output", "bayesian_model.Rmd"), .) %>%
+    map(readRDS)
+result.list2 <- vector("list", length(result.list))
+for(i in seq_along(result.list)){
+    x <- result.list[[i]] %>%
+        map_dfr(bind_rows)
+    x2 <- filter(x, grepl("lambda.RX_simulation", Lambda))
+    result.list2[[i]] <- x2
+}
+
+files2 <- here("output", "bayesian_model.Rmd") %>%
+    list.files() %>%
+    tibble(file=.) %>%
+    mutate(is_summary=grepl("-", file)) %>%
+    filter(!is_summary)
+results3 <- files2 %>%
+    pull(file) %>%
+    file.path(here("output", "bayesian_model.Rmd"), .) %>%
+    map_dfr(readRDS) %>%
+    filter(grepl("lambda.RX_simulation", Lambda))
+
+results <- do.call(bind_rows, result.list2) %>%
+    bind_rows(results3) %>%
+    rename(model=truth,
+           truth=coefficient) %>%
+    mutate(truth_in_credible_interval=truth > `2.5%` &
+               truth < `97.5%`) %>%
+    mutate(ci_width=exp(`97.5%`) - exp(`2.5%`))
+results_summary <- results %>%
+    group_by(sd.lambda, model, n_patients_simulated) %>%
+    summarize(proportion_correct=mean(truth_in_credible_interval),
+              number_simulations=n(),
+              ci_width=mean(ci_width),
+              .groups="drop") %>%
+    mutate(analysis="bayesian")
+saveRDS(results, file=file.path(outdir, "bayesian_model_results.rds"))
+saveRDS(results_summary,
+        file=file.path(outdir, "bayesian_model_summary.rds"))
+```

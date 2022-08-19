@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Methods comparison</title>
+
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/main/img/reproducible.png">
+<!-- Add a small amount of space between sections. -->
+<style type="text/css">
+div.section {
+  padding-top: 12px;
+}
+</style>
+
+
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">genie_ras_hallmarks</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="license.html">License</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Methods comparison</h1>
+
+</div>
+
+
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span>
+</button>
+</p>
+<div id="workflowr-report" class="collapse">
+<ul class="nav nav-tabs">
+<li class="active">
+<a data-toggle="tab" href="#summary">Summary</a>
+</li>
+<li>
+<a data-toggle="tab" href="#checks"> Checks <span
+class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> </a>
+</li>
+<li>
+<a data-toggle="tab" href="#versions">Past versions</a>
+</li>
+</ul>
+<div class="tab-content">
+<div id="summary" class="tab-pane fade in active">
+<p>
+<strong>Last updated:</strong> 2022-08-19
+</p>
+<p>
+<strong>Checks:</strong> <span
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 5
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> 2
+</p>
+<p>
+<strong>Knit directory:</strong> <code>genie/</code> <span
+class="glyphicon glyphicon-question-sign" aria-hidden="true"
+title="This is the local directory in which the code in this file was executed.">
+</span>
+</p>
+<p>
+This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a>
+analysis was created with <a
+  href="https://github.com/workflowr/workflowr">workflowr</a> (version
+1.7.0). The <em>Checks</em> tab describes the reproducibility checks
+that were applied when the results were created. The <em>Past
+versions</em> tab lists the development history.
+</p>
+<hr>
+</div>
+<div id="checks" class="tab-pane fade">
+<div id="workflowr-checks" class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
+changes </a>
+</p>
+</div>
+<div id="strongRMarkdownfilestronguncommittedchanges"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>The R Markdown is untracked by Git. To know which version of the R
+Markdown file created these results, you’ll want to first commit it to
+the Git repo. If you’re still working on the analysis, you can ignore
+this warning. When you’re finished, you can run
+<code>wflow_publish</code> to commit the R Markdown file and build the
+HTML.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongobjectspresent">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>Environment:</strong> objects present
+</a>
+</p>
+</div>
+<div id="strongEnvironmentstrongobjectspresent"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+The global environment had objects present when the code in the R
+Markdown file was run. These objects can affect the analysis in your R
+Markdown file in unknown ways. For reproduciblity it’s best to always
+run the code in an empty environment. Use <code>wflow_publish</code> or
+<code>wflow_build</code> to ensure that the code is always run in an
+empty environment.
+</p>
+<p>
+The following objects were defined in the global environment when these
+results were created:
+</p>
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Class
+</th>
+<th style="text-align:left;">
+Size
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+B
+</td>
+<td style="text-align:left;">
+gg;ggplot
+</td>
+<td style="text-align:left;">
+84.8 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bayes
+</td>
+<td style="text-align:left;">
+tbl_df;tbl;data.frame
+</td>
+<td style="text-align:left;">
+3.8 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bayesdir
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+232 bytes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+C
+</td>
+<td style="text-align:left;">
+gg;ggplot
+</td>
+<td style="text-align:left;">
+81.9 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cg
+</td>
+<td style="text-align:left;">
+gtable;gTree;grob;gDesc
+</td>
+<td style="text-align:left;">
+1.4 Mb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+chi2dir
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+168 bytes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+combined
+</td>
+<td style="text-align:left;">
+tbl_df;tbl;data.frame
+</td>
+<td style="text-align:left;">
+12.7 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+combined2
+</td>
+<td style="text-align:left;">
+tbl_df;tbl;data.frame
+</td>
+<td style="text-align:left;">
+7.8 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+D
+</td>
+<td style="text-align:left;">
+gg;ggplot
+</td>
+<td style="text-align:left;">
+81.9 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+datdir
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+168 bytes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dg
+</td>
+<td style="text-align:left;">
+gtable;gTree;grob;gDesc
+</td>
+<td style="text-align:left;">
+1.4 Mb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+egfr
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+203.3 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fexact.chisq
+</td>
+<td style="text-align:left;">
+tbl_df;tbl;data.frame
+</td>
+<td style="text-align:left;">
+6.2 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+genie
+</td>
+<td style="text-align:left;">
+tbl_df;tbl;data.frame
+</td>
+<td style="text-align:left;">
+3.1 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gl
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+3.5 Mb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+h
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+80 bytes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ind
+</td>
+<td style="text-align:left;">
+tbl_df;tbl;data.frame
+</td>
+<td style="text-align:left;">
+7.5 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ind.proportion
+</td>
+<td style="text-align:left;">
+tbl_df;tbl;data.frame
+</td>
+<td style="text-align:left;">
+4.8 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ind.widths
+</td>
+<td style="text-align:left;">
+tbl_df;tbl;data.frame
+</td>
+<td style="text-align:left;">
+5.5 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+label_analysis
+</td>
+<td style="text-align:left;">
+function
+</td>
+<td style="text-align:left;">
+62.7 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+label_model
+</td>
+<td style="text-align:left;">
+function
+</td>
+<td style="text-align:left;">
+57.6 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+leg
+</td>
+<td style="text-align:left;">
+gtable;gTree;grob;gDesc
+</td>
+<td style="text-align:left;">
+670.9 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lower_bound
+</td>
+<td style="text-align:left;">
+function
+</td>
+<td style="text-align:left;">
+2.5 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+m
+</td>
+<td style="text-align:left;">
+matrix;array
+</td>
+<td style="text-align:left;">
+248 bytes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+me
+</td>
+<td style="text-align:left;">
+tbl_df;tbl;data.frame
+</td>
+<td style="text-align:left;">
+7.5 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+me.proportion
+</td>
+<td style="text-align:left;">
+tbl_df;tbl;data.frame
+</td>
+<td style="text-align:left;">
+4.8 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+me.widths
+</td>
+<td style="text-align:left;">
+tbl_df;tbl;data.frame
+</td>
+<td style="text-align:left;">
+5.5 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+posterior_median
+</td>
+<td style="text-align:left;">
+function
+</td>
+<td style="text-align:left;">
+2.5 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rv
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+2.9 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+statistics
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+336 bytes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+titles
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+176 bytes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+upper_bound
+</td>
+<td style="text-align:left;">
+function
+</td>
+<td style="text-align:left;">
+2.5 Kb
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20220803code">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Seed:</strong>
+<code>set.seed(20220803)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20220803code"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20220803)</code> was run prior to running
+the code in the R Markdown file. Setting a seed ensures that any results
+that rely on randomness, e.g. subsampling or permutations, are
+reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Session information:</strong>
+recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package
+versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be
+confident that you successfully produced the results during this
+run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr
+project makes it easier to run your code on other machines.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcancergenomicsgenierashallmarkstree2d1a12608671bc7b1f965a2effeb3f65f1c076c8targetblank2d1a126a">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Repository version:</strong>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/tree/2d1a12608671bc7b1f965a2effeb3f65f1c076c8" target="_blank">2d1a126</a>
+</a>
+</p>
+</div>
+<div
+id="strongRepositoryversionstrongahrefhttpsgithubcomcancergenomicsgenierashallmarkstree2d1a12608671bc7b1f965a2effeb3f65f1c076c8targetblank2d1a126a"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+Great! You are using Git for version control. Tracking code development
+and connecting the code version to the results is critical for
+reproducibility.
+</p>
+<p>
+The results in this page were generated with repository version
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/tree/2d1a12608671bc7b1f965a2effeb3f65f1c076c8" target="_blank">2d1a126</a>.
+See the <em>Past versions</em> tab to see a history of the changes made
+to the R Markdown and HTML files.
+</p>
+<p>
+Note that you need to be careful to ensure that all relevant files for
+the analysis have been committed to Git prior to generating the results
+(you can use <code>wflow_publish</code> or
+<code>wflow_git_commit</code>). workflowr only checks the R Markdown
+file, but you know if there are other scripts or data files that it
+depends on. Below is the status of the Git repository when the results
+were generated:
+</p>
+<pre><code>
+Ignored files:
+    Ignored:    .Rhistory
+
+Untracked files:
+    Untracked:  analysis/simulation.Rmd
+    Untracked:  code/bayesian_model_results.Rmd
+    Untracked:  code/chi_square.Rmd
+    Untracked:  output/bayesian_model_results.Rmd/
+    Untracked:  output/chi_square.Rmd/
+    Untracked:  output/simulation.Rmd/
+    Untracked:  todo.org
+
+</code></pre>
+<p>
+Note that any generated files, e.g. HTML, png, CSS, etc., are not
+included in this status report because it is ok for generated content to
+have uncommitted changes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div id="versions" class="tab-pane fade">
+<p>
+There are no past versions. Publish this analysis with
+<code>wflow_publish()</code> to start tracking its development.
+</p>
+<hr>
+</div>
+</div>
+</div>
+<pre class="r"><code>library(here)
+library(tidyverse)
+library(ggplot2)
+library(kableExtra)
+library(grid)
+library(gridExtra)</code></pre>
+<pre class="r"><code>chi2dir &lt;- here(&quot;output&quot;, &quot;chi_square.Rmd&quot;)
+bayesdir &lt;- here(&quot;output&quot;, &quot;bayesian_model_results.Rmd&quot;)
+datdir &lt;- here(&quot;output&quot;, &quot;simulation.Rmd&quot;)
+fexact.chisq &lt;- chi2dir %&gt;%
+    file.path(&quot;chisq_summary.rds&quot;) %&gt;%
+    readRDS()
+label_model &lt;- function(model){
+    models &lt;- c(&quot;Mutually\nexclusive&quot;, &quot;Independent&quot;)
+    dat &lt;- tibble(model=model)
+    models2 &lt;- dat %&gt;%
+        mutate(model=case_when(model==&quot;weighted average&quot;~models[1],
+                               model==&quot;independent&quot;~models[2])) %&gt;%
+        pull(model)
+    factor(models2, models)
+}
+label_analysis &lt;- function(analysis){
+    analyses &lt;- c(&quot;Bayesian hierarchical\nmodel&quot;, &quot;Chi square&quot;,
+                  &quot;Fisher exact&quot;)
+    dat &lt;- tibble(analysis=analysis)
+    x &lt;- dat %&gt;%
+        mutate(analysis=case_when(analysis==&quot;bayesian&quot;~analyses[1],
+                                  analysis==&quot;chisq&quot;~analyses[2],
+                                  TRUE~analysis)) %&gt;%
+        pull(analysis)
+    factor(x, analyses)
+}
+bayes &lt;- bayesdir %&gt;%
+    file.path(&quot;bayesian_model_summary.rds&quot;) %&gt;%
+    readRDS() %&gt;%
+    mutate(number_bounded=number_simulations) %&gt;%
+    rename(n_patients=n_patients_simulated)
+egfr &lt;- readRDS(file.path(datdir, &quot;mutual_exclusivity.rds&quot;))
+genie &lt;- egfr[[&quot;nonras&quot;]]</code></pre>
+<div id="proportion-correct" class="section level2">
+<h2>Proportion correct</h2>
+<p>The size of the intervals for the fraction of simulations covering
+the true value also reflects the number of simulations where the
+interval was bounded. Non-bounded intervals were excluded.</p>
+<pre class="r"><code>lower_bound &lt;- function(y, n) qbeta(0.025, y+1, n-y+1)
+upper_bound &lt;- function(y, n) qbeta(0.975, y+1, n-y+1)
+posterior_median &lt;- function(y, n) qbeta(0.5, y+1, n-y+1)
+combined &lt;- bind_rows(bayes, fexact.chisq) %&gt;%
+    mutate(analysis=label_analysis(analysis)) %&gt;%
+    mutate(p=proportion_correct,
+           number_correct=as.integer(p*number_bounded),
+           lower=lower_bound(number_correct, number_bounded),
+           upper=upper_bound(number_correct, number_bounded),
+           median=posterior_median(number_correct, number_bounded)) %&gt;%
+    mutate(x=n_patients+runif(nrow(.), -10, 10)) %&gt;%
+    mutate(n_patients=factor(n_patients)) %&gt;%
+    mutate(sd.lambda=recode_factor(sd.lambda,
+                                   `0.1`= &quot;sigma==0.1&quot;,
+                                   `0.2`= &quot;sigma==0.2&quot;,
+                                   `0.5`= &quot;sigma==0.5&quot;),
+           model=label_model(model))</code></pre>
+</div>
+<div id="average-width-of-95-interval" class="section level2">
+<h2>Average width of 95% interval</h2>
+<pre class="r"><code>bayes &lt;- bayesdir %&gt;%
+    file.path(&quot;bayesian_model_results.rds&quot;) %&gt;%
+    readRDS() %&gt;%
+    group_by(model, sd.lambda) %&gt;%
+    ##summarize(ci_width=sd(ci_width), .groups=&quot;drop&quot;)
+    summarize(mean_ci_width=mean(ci_width),
+              median_ci_width=median(ci_width),
+              n_patients=unique(n_patients_simulated),
+              q1=quantile(ci_width, 0.25),
+              q3=quantile(ci_width, 0.75),
+              .groups=&quot;drop&quot;) %&gt;%
+    mutate(analysis=&quot;Bayesian hierarchical\nmodel&quot;)
+combined2 &lt;- bind_rows(bayes,
+                       select(fexact.chisq, colnames(bayes))) %&gt;%
+    mutate(sd.lambda=recode_factor(sd.lambda,
+                                   `0.1`= &quot;sigma==0.1&quot;,
+                                   `0.2`= &quot;sigma==0.2&quot;,
+                                   `0.5`= &quot;sigma==0.5&quot;)) %&gt;%
+    mutate(n_patients=factor(n_patients)) %&gt;%
+    mutate(analysis=label_analysis(analysis),
+           model=label_model(model))</code></pre>
+<pre class="r"><code>B &lt;- combined2 %&gt;%
+    ggplot(aes(n_patients, median_ci_width,
+               color=analysis)) +
+    geom_point(size=2, position=position_dodge(width=0.5)) +
+    geom_errorbar(aes(ymin=q1, ymax=q3),
+                  position=position_dodge(width=0.5),
+                  width=0.2) +
+    theme_bw(base_size=15) +
+    facet_grid(model~sd.lambda,
+               labeller=labeller(sd.lambda=label_parsed)) +
+    theme(strip.background=element_blank(),
+          panel.grid=element_blank(),
+          strip.text.y=element_text(angle=0, hjust=0),
+          legend.position=&quot;bottom&quot;) +
+    xlab(&quot;Number of patients&quot;) +
+    ylab(&quot;Width of 95%\n confidence interval&quot;) +
+    scale_y_log10() +
+    guides(color=guide_legend(title=&quot;&quot;))
+leg &lt;- cowplot::get_legend(B)</code></pre>
+</div>
+<div id="faceting-rows" class="section level1">
+<h1>Faceting rows</h1>
+<pre class="r"><code>statistics &lt;- c(&quot;Proportion of \nconfidence intervals\nspanning the\ntrue odds ratio\n(Proportion, 95% credible interval)&quot;,
+                &quot;Width of 95%\nconfidence interval\n(median, IQR)&quot;)
+me.proportion &lt;- filter(combined, model==&quot;Mutually\nexclusive&quot;) %&gt;%
+    select(n_patients, sd.lambda, analysis, median, lower, upper) %&gt;%
+    mutate(statistic=statistics[1])
+me.widths &lt;- filter(combined2, model==&quot;Mutually\nexclusive&quot;) %&gt;%
+    select(n_patients, sd.lambda, analysis,
+           median_ci_width, q1, q3) %&gt;%
+    rename(median=median_ci_width,
+           lower=q1, upper=q3) %&gt;%
+    mutate(statistic=statistics[2])
+me &lt;- bind_rows(me.proportion, me.widths) %&gt;%
+    mutate(statistic=factor(statistic, statistics))</code></pre>
+<pre class="r"><code>titles &lt;- c(&quot;A&quot;, &quot;B&quot;)
+C &lt;- me %&gt;%
+    ggplot(aes(n_patients, median,
+               color=analysis)) +
+    geom_point(size=2, position=position_dodge(width=0.5)) +
+    geom_errorbar(aes(ymin=lower, ymax=upper),
+                  position=position_dodge(width=0.5),
+                  width=0.2) +
+    theme_bw(base_size=15) +
+    facet_grid(statistic~sd.lambda,
+               labeller=labeller(sd.lambda=label_parsed),
+               scales=&quot;free_y&quot;) +
+    theme(strip.background=element_blank(),
+          panel.grid=element_blank(),
+          strip.text.y=element_text(angle=0, hjust=0),
+          legend.position=&quot;bottom&quot;) +
+    xlab(&quot;Number of patients&quot;) + ylab(&quot;&quot;) +
+    guides(color=guide_legend(title=&quot;Statistical model&quot;)) +
+    ggtitle(titles[1])</code></pre>
+<pre class="r"><code>ind.proportion &lt;- filter(combined, model==&quot;Independent&quot;) %&gt;%
+    select(n_patients, sd.lambda, analysis, median, lower, upper) %&gt;%
+    mutate(statistic=statistics[1])
+ind.widths &lt;- filter(combined2, model==&quot;Independent&quot;) %&gt;%
+    select(n_patients, sd.lambda, analysis,
+           median_ci_width, q1, q3) %&gt;%
+    rename(median=median_ci_width,
+           lower=q1, upper=q3) %&gt;%
+    mutate(statistic=statistics[2])
+ind &lt;- bind_rows(ind.proportion, ind.widths) %&gt;%
+    mutate(statistic=factor(statistic, statistics))</code></pre>
+<pre class="r"><code>D &lt;- ind %&gt;%
+    ggplot(aes(n_patients, median,
+               color=analysis)) +
+    geom_point(size=2, position=position_dodge(width=0.5)) +
+    geom_errorbar(aes(ymin=lower, ymax=upper),
+                  position=position_dodge(width=0.5),
+                  width=0.2) +
+    theme_bw(base_size=15) +
+    facet_grid(statistic~sd.lambda,
+               labeller=labeller(sd.lambda=label_parsed),
+               scales=&quot;free_y&quot;) +
+    theme(strip.background=element_blank(),
+          panel.grid=element_blank(),
+          strip.text.y=element_text(angle=0, hjust=0),
+          legend.position=&quot;bottom&quot;) +
+    xlab(&quot;Number of patients&quot;) + ylab(&quot;&quot;) +
+    guides(color=guide_legend(title=&quot;Statistical model&quot;)) +
+    ggtitle(titles[2])</code></pre>
+<pre class="r"><code>C &lt;- C+guides(color=&quot;none&quot;)
+D &lt;- D+guides(color=&quot;none&quot;)
+Cg &lt;- ggplotGrob(C)
+Dg &lt;- ggplotGrob(D)
+gl &lt;- list(leg, Cg, Dg, nullGrob())
+m &lt;- matrix(c(1, 2, 4, 3), nrow=4)
+h &lt;- c(0.2, 1, 0.1, 1)
+grid.arrange(grobs=gl,
+             layout_matrix=m,
+             heights=h)</code></pre>
+<p><img src="figure/simulation.Rmd/fig_s2-1.png" width="960" style="display: block; margin: auto;" /></p>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>R version 4.2.1 (2022-06-23)
+Platform: x86_64-apple-darwin21.5.0 (64-bit)
+Running under: macOS Monterey 12.5.1
+
+Matrix products: default
+BLAS:   /usr/local/Cellar/openblas/0.3.20/lib/libopenblasp-r0.3.20.dylib
+LAPACK: /usr/local/Cellar/r/4.2.1/lib/R/lib/libRlapack.dylib
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] grid      stats     graphics  grDevices utils     datasets  methods  
+[8] base     
+
+other attached packages:
+ [1] gridExtra_2.3    kableExtra_1.3.4 forcats_0.5.1    stringr_1.4.0   
+ [5] dplyr_1.0.9      purrr_0.3.4      readr_2.1.2      tidyr_1.2.0     
+ [9] tibble_3.1.8     ggplot2_3.3.6    tidyverse_1.3.2  here_1.0.1      
+[13] workflowr_1.7.0 
+
+loaded via a namespace (and not attached):
+ [1] httr_1.4.3          sass_0.4.2          jsonlite_1.8.0     
+ [4] viridisLite_0.4.0   modelr_0.1.8        bslib_0.4.0        
+ [7] assertthat_0.2.1    getPass_0.2-2       highr_0.9          
+[10] googlesheets4_1.0.1 cellranger_1.1.0    yaml_2.3.5         
+[13] pillar_1.8.0        backports_1.4.1     glue_1.6.2         
+[16] digest_0.6.29       promises_1.2.0.1    rvest_1.0.2        
+[19] colorspace_2.0-3    cowplot_1.1.1       htmltools_0.5.3    
+[22] httpuv_1.6.5        pkgconfig_2.0.3     broom_1.0.0        
+[25] haven_2.5.0         scales_1.2.0        webshot_0.5.3      
+[28] processx_3.7.0      svglite_2.1.0       whisker_0.4        
+[31] later_1.3.0         tzdb_0.3.0          git2r_0.30.1       
+[34] googledrive_2.0.0   farver_2.1.1        generics_0.1.3     
+[37] ellipsis_0.3.2      cachem_1.0.6        withr_2.5.0        
+[40] cli_3.3.0           magrittr_2.0.3      crayon_1.5.1       
+[43] readxl_1.4.0        evaluate_0.16       ps_1.7.1           
+[46] fs_1.5.2            fansi_1.0.3         xml2_1.3.3         
+[49] tools_4.2.1         hms_1.1.1           gargle_1.2.0       
+[52] lifecycle_1.0.1     munsell_0.5.0       reprex_2.0.1       
+[55] callr_3.7.1         compiler_4.2.1      jquerylib_0.1.4    
+[58] systemfonts_1.0.4   rlang_1.0.4         rstudioapi_0.13    
+[61] labeling_0.4.2      rmarkdown_2.14      gtable_0.3.0       
+[64] DBI_1.1.3           R6_2.5.1            lubridate_1.8.0    
+[67] knitr_1.39          fastmap_1.1.0       utf8_1.2.2         
+[70] rprojroot_2.0.3     stringi_1.7.8       Rcpp_1.0.9         
+[73] vctrs_0.4.1         dbplyr_2.2.1        tidyselect_1.1.2   
+[76] xfun_0.32          </code></pre>
+</div>
+</div>
+
+
+<!-- Adjust MathJax settings so that all math formulae are shown using
+TeX fonts only; see
+https://docs.mathjax.org/en/latest/web/configuration.html. This will make
+the presentation more consistent at the cost of the webpage sometimes
+taking slightly longer to load. Note that this only works because the
+footer is added to webpages before the MathJax javascript. -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

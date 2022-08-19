@@ -1,0 +1,131 @@
+---
+output: html_document
+---
+
+```{r packages}
+library(here)
+library(tidyverse)
+library(tidyr)
+library(broom)
+library(magrittr)
+library(epitools)
+```
+
+```{r directory_logistics}
+set.seed(99419)
+outdir <- here("output", "chi_square.Rmd")
+fs::dir_create(outdir)
+datadir <- here("output", "simulation.Rmd")
+```
+
+```{r me_data}
+me_data <- readRDS(file.path(datadir, "mutual_exclusivity.rds"))
+genie <- me_data[["nonras"]]
+sim <- me_data[["simulation"]]
+```
+
+
+```{r two_by_two}
+odds_ratio <- function(x){
+    suppressWarnings(oddsratio.wald(x, correction=TRUE)$measure[2, ])
+}
+
+two_by_two <- function(`00`, `10`, `01`, `11`,
+                       lambda.RX,
+                       n_patients, sd.lambda, model){
+    x <- matrix(c(`00`, `01`, `10`, `11`), nrow=2,
+                byrow=2) %>%
+        as.table()
+    ##result1 <- chisq.test(x, correct=FALSE)
+    tmp <- chisq.test(x, correct=FALSE) %>%
+        tidy()
+    result1 <- odds_ratio(x)
+    result2 <- fisher.test(x) %>%
+        tidy() %>%
+        select(estimate, conf.low, conf.high) %>%
+        set_colnames(c("estimate", "lower", "upper"))
+    results <- bind_rows(result1, result2) %>%
+        mutate(method=c("chi square", "Fisher exact"),
+               ## simulation model
+               model=model,
+               sd.lambda=sd.lambda,
+               n_patients=n_patients,
+               lambda.RX=lambda.RX)
+    results
+}
+sim2 <- sim %>%
+    rename(model=truth,
+           sd.lambda=sd.lambda) %>%
+    select(model, sd.lambda, n_patients,
+           `00`, `10`, `01`, `11`, "lambda.RX")
+is_missing <- rowSums(is.na(sim2)) > 0
+is_negative <- rowSums(sim2[, 1:4] < 0, na.rm=TRUE) > 0
+sim3 <- sim2[!is_missing & !is_negative, ]
+results <- pmap_dfr(sim3, two_by_two)
+```
+
+
+```{r compute_x2}
+chisq_results <- results %>%
+    filter(grepl("chi square", method)) %>%
+    mutate(truth=exp(lambda.RX)) %>%
+    mutate(truth_in_conf_interval=truth > lower &
+               truth < upper) %>%
+    mutate(not_bounded=!is.finite(lower) | !is.finite(upper),
+           truth_in_conf_interval=ifelse(not_bounded, NA, truth_in_conf_interval),
+           is_bounded=!not_bounded) %>%
+    mutate(ci_width=upper-lower,
+           ci_width=ifelse(is_bounded, ci_width, NA))
+```
+
+
+```{r compute_fe}
+fexact_results <- results %>%
+    filter(grepl("Fisher exact", method))  %>%
+    mutate(truth=exp(lambda.RX)) %>%
+    mutate(truth_in_conf_interval=truth > lower &
+               truth < upper) %>%
+    mutate(not_bounded=!is.finite(lower) | !is.finite(upper),
+           truth_in_conf_interval=ifelse(not_bounded, NA, truth_in_conf_interval),
+           is_bounded=!not_bounded) %>%
+    mutate(ci_width=upper-lower,
+           ci_width=ifelse(is_bounded, ci_width, NA))
+```
+
+
+```{r summarize}
+chisq_summary <- chisq_results %>%
+    group_by(sd.lambda, model, n_patients) %>%
+    summarize(proportion_correct=mean(truth_in_conf_interval, na.rm=TRUE),
+              number_simulations=n(),
+              number_bounded=sum(!is.na(truth_in_conf_interval)),
+              mean_ci_width=mean(ci_width, na.rm=TRUE),
+              median_ci_width=median(ci_width, na.rm=TRUE),
+              q1=quantile(ci_width, 0.25, na.rm=TRUE),
+              q3=quantile(ci_width, 0.75, na.rm=TRUE),
+              .groups="drop") %>%
+    mutate(analysis="chisq")
+fexact_summary <- fexact_results %>%
+    group_by(sd.lambda, model, n_patients) %>%
+    summarize(proportion_correct=mean(truth_in_conf_interval, na.rm=TRUE),
+              number_simulations=n(),
+              number_bounded=sum(!not_bounded),
+              mean_ci_width=mean(ci_width, na.rm=TRUE),
+              median_ci_width=median(ci_width,
+                                     na.rm=TRUE),
+              q1=quantile(ci_width, 0.25, na.rm=TRUE),
+              q3=quantile(ci_width, 0.75, na.rm=TRUE),
+              .groups="drop") %>%
+    mutate(analysis="Fisher exact")
+
+summaries <- bind_rows(chisq_summary,
+                     fexact_summary)
+saveRDS(summaries, file=file.path(outdir, "chisq_summary.rds"))
+
+fexact2 <- fexact_results %>%
+    mutate(analysis="Fisher exact")
+chisq2 <- chisq_results %>%
+    mutate(analysis="Chi square")
+results <- bind_rows(fexact2, chisq2)
+saveRDS(results, file=file.path(outdir, "chisq_results.rds"))
+```
