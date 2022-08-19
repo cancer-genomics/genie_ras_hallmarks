@@ -1,0 +1,40 @@
+---
+title: "Table S24.  Gene set enrichement analyses for double KRAS/non-RAS mutant vs KRAS only mutant colon adenocarcinomas."
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+```{r packages, message=FALSE, warning=FALSE, echo=FALSE, include=FALSE}
+knitr::opts_chunk$set(autodep = TRUE, echo=FALSE)
+library(magrittr)
+library(tidyverse)
+library(gt)
+library(here)
+```
+
+
+
+```{r data,  message=FALSE, warning=FALSE, echo=FALSE, include=FALSE}
+
+dat <- here("output", "gsea_data_wrangling.Rmd", "gsea_master_table.rds") %>%
+            readRDS() %>%
+            filter(Cancer == "COAD")
+
+```
+
+
+```{r table_s24}
+dat %>%
+    select(-Cancer) %>%
+    gt() %>%
+    tab_style(
+        style = list(
+            cell_text(weight = "bold")
+        ),
+        locations = cells_column_labels()) 
+
+```
