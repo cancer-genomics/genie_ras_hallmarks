@@ -1,5 +1,5 @@
 ---
-title: "Figure S16: Gene set enrichment comparing KRAS/TP53 co-occurrence with KRAS alone"
+title: "Figure S20: Gene set enrichment comparing KRAS/TP53 co-occurrence with KRAS alone"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -53,7 +53,7 @@ rank.gg2 <- plot_titles %>%
 ```
 
 
-```{r fig_s16, fig.width=45, fig.height=50, dev=c("png", "pdf")}
+```{r fig_s20, fig.width=45, fig.height=50, dev=c("png", "pdf")}
 grobs <- map(rank.gg2, ggplotGrob)
 h <- grobs[[1]]$heights
 w <- grobs[[1]]$widths
