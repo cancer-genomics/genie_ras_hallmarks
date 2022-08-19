@@ -1,5 +1,5 @@
 ---
-title: "Figure S9: KRAS co-occurrence"
+title: "Figure S11: KRAS co-occurrence"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -133,7 +133,7 @@ B <- signif %>%
                ncol=1, scales="free_y")
 ```
 
-```{r fig_s9, fig.width=12, fig.height=12, dev=c("png", "pdf")}
+```{r fig_s11, fig.width=12, fig.height=12, dev=c("png", "pdf")}
 lo <- grid.layout(nrow=2, ncol=2,
                   widths=unit(c(0.5, 0.5), "npc"),
                   heights=unit(c(0.92, 0.08), "npc"))
