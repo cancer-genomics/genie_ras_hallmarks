@@ -1,5 +1,5 @@
 ---
-title: "Figure S6"
+title: "Figure S10"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -139,7 +139,7 @@ fig.labels <- c(  "CRC, RAS (Codon 12)",
 ```
 
 
-```{r fig_s8, fig.width=20, fig.height=15, dev=c('png', 'pdf')}
+```{r fig_s10, fig.width=20, fig.height=15, dev=c('png', 'pdf')}
 racelevels <- c("Black", "White",
              "Asian", "Native American",
              "Other", "Undefined" ,
