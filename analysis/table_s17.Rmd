@@ -1,0 +1,43 @@
+---
+title: "Table S17. Gene sets utilized to assign individual genes in pathways and gene families."
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+```{r packages, message=FALSE, warning=FALSE, echo=FALSE, include=FALSE}
+knitr::opts_chunk$set(autodep = TRUE, echo=FALSE)
+library(magrittr)
+library(tidyverse)
+library(gt)
+library(here)
+```
+
+
+
+```{r data,  message=FALSE, warning=FALSE, echo=FALSE, include=FALSE}
+extdir <- system.file("extdata", package="genie.6.1")
+gene_pathways <- read_csv(file.path(extdir, "ras_pathways.csv")) 
+
+
+dat <- as.data.frame(gene_pathways) %>%
+   dplyr::rename('HUGO symbol' = hugo_symbol, 
+                 'Pathway' = pathway)
+
+```
+
+
+```{r table_s17}
+dat %>%
+    gt() %>%
+    tab_style(
+        style = list(
+            cell_text(weight = "bold")
+        ),
+        locations = cells_column_labels()) %>%
+    cols_align(align="left", column="Pathway")
+
+```
