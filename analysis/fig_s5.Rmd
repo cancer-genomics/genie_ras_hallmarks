@@ -1,5 +1,5 @@
 ---
-title: "Figure S3"
+title: "Figure S5"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -116,7 +116,7 @@ hras.grob <- S2g
 hras.n.grob <- Ng
 ```
 
-```{r fig_s3, fig.width=20, fig.height=20, dev=c("png", "pdf")}
+```{r fig_s5, fig.width=20, fig.height=20, dev=c("png", "pdf")}
 gl <- list(nras.grob, nras.n.grob,
            hras.grob, hras.n.grob,
            nullGrob())
