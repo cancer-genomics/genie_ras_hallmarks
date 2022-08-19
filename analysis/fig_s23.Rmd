@@ -1,5 +1,5 @@
 ---
-title: "Figure S18: KRAS mutant allele and overall survival -- TCGA cohort"
+title: "Figure S23: KRAS mutant allele and overall survival -- TCGA cohort"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -119,7 +119,7 @@ glist <- clin.df2$data %>%
     map(plot_survival, x.pval=5, y.pval=0.1)
 ```
 
-```{r fig_s18, fig.width=22, fig.height=18, dev=c("png", "pdf")}
+```{r fig_s23, fig.width=22, fig.height=18, dev=c("png", "pdf")}
 ##glist[[3]] <- nullGrob()
 glist[[7]] <- nullGrob()
 grid.newpage()
