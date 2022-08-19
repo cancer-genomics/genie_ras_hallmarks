@@ -1,5 +1,5 @@
 ---
-title: "Fig S11: KRAS-STK11 VAFs"
+title: "Fig S13: KRAS-STK11 VAFs"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -192,7 +192,7 @@ p + geom_text(data=r2.dat, aes(x=x, y=y, label=r2),
               inherit.aes=FALSE, hjust=0)
 ```
 
-```{r  fig_s11, fig.width=14, fig.height=6, dev=c("png", "pdf")}
+```{r  fig_s13, fig.width=14, fig.height=6, dev=c("png", "pdf")}
 lm_eqn <- function(df){
     df  <- df %>%
         rename(y=alt_vaf,
