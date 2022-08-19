@@ -1,0 +1,64 @@
+---
+title: "Table S11. Co-occurrence of RAS  variants at codons 12, 13, or 61 with non-RAS gene amplifications, deletions and rearrangements."
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+```{r packages, message=FALSE, warning=FALSE, echo=FALSE, include=FALSE}
+knitr::opts_chunk$set(autodep = TRUE, echo=FALSE)
+library(magrittr)
+library(tidyverse)
+library(gt)
+library(here)
+```
+
+
+
+```{r data,  message=FALSE, warning=FALSE, echo=FALSE, include=FALSE}
+amp <- read_csv(here("public", "table", "co-mutation.Rmd", "amplification.csv")) %>%
+              mutate(alteration_group = recode(alteration_group,
+                                               "Amplification" = "High copy amplification"))
+
+amp.any <- read_csv(here("public", "table", "co-mutation.Rmd", "any_amplification.csv")) 
+
+del <-read_csv(here("public", "table", "co-mutation.Rmd", "deletion.csv")) %>%
+     mutate(alteration_group = recode(alteration_group, 
+                                      "Deletion" = "Homozygous deletion"))
+
+del.any <-read_csv(here("public", "table", "co-mutation.Rmd", "any_deletion.csv")) 
+
+rearrangement <-read_csv(here("public", "table", "co-mutation.Rmd", "rearrangement.csv")) 
+
+
+dat <-rbind(amp,amp.any,del,del.any,rearrangement) %>%
+              select (cancer, ras, nonras,alteration_group, number_ras, number_nonras,
+                      mean,"2.5%" ,"97.5%",n_eff,Rhat,
+                      "00","10","01","11" ,is_driver, p)%>%
+             mutate_if(is.numeric, round, digits=2) %>%
+   dplyr::rename('Cancer type' = cancer, 
+                 'RAS' = ras, 
+                 'Non-RAS' = nonras, 
+                 'Non-RAS alteration type' = alteration_group,
+                 "RAS(n)" = number_ras, 
+                 "non-RAS(n)" = number_nonras, 
+                        'Mean' = mean, 
+                     'Driver'= is_driver, 
+                 '-log10(p)' = p)
+```
+
+
+```{r table_s11}
+dat %>%
+    gt() %>%
+    tab_style(
+        style = list(
+            cell_text(weight = "bold")
+        ),
+        locations = cells_column_labels()) %>%
+    cols_align(align="left", column="Cancer type")
+
+```
