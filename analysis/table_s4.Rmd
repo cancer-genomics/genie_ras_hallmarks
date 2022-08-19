@@ -1,0 +1,53 @@
+---
+title: "Table S4: Prevalence of RAS variants"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+```{r packages, message=FALSE, warning=FALSE, echo=FALSE}
+knitr::opts_chunk$set(autodep = TRUE, echo=FALSE)
+library(magrittr)
+library(tidyverse)
+library(gt)
+library(here)
+```
+
+```{r data}
+cancerlabs <- read_csv(here("data", "cancer_labels.csv"),
+                       show_col_types=FALSE)
+dat <- here("public", "table", "ras.Rmd", "multicancer.csv") %>%
+    read_csv(show_col_types=FALSE) %>%
+    mutate(Y=prettyNum(y, big.mark=","),
+           N=prettyNum(n, big.mark=",")) %>%
+    unite(nlabel, c(Y, N), sep="/", remove=FALSE) %>%
+    mutate(hugo_symbol=factor(hugo_symbol, c("RAS", "KRAS", "HRAS", "NRAS"))) %>%
+    left_join(cancerlabs, by="cancer") %>%
+    mutate(cancer=cancer_label) %>%
+    filter(n > 50) %>%
+    select(hugo_symbol, codon, cancer, y, n, mean, median, q1, q2) %>%
+    mutate(codon=str_replace_all(codon, "Codon ", "")) %>%
+    set_colnames(c("HUGO symbol",
+                   "Codon",
+                   "Cancer type",
+                   "Variants (n)",
+                   "Patients (n)",
+                   "Mean",
+                   "Median",
+                   "2.5%",
+                   "97.5%"))
+```
+
+```{r table_s4}
+dat %>%
+    gt() %>%
+    tab_style(
+        style = list(
+            cell_text(weight = "bold")
+        ),
+        locations = cells_column_labels()) %>%
+    cols_align(align="left", column="Cancer type")
+```
