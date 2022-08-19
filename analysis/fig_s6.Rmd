@@ -1,0 +1,98 @@
+---
+title: "Figure S6"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+# Prevalence of RAS, KRAS, and NRAS stratified by age
+
+- code from `potential_confounding.Rmd`
+
+
+```{r caching, echo=FALSE}
+knitr::opts_chunk$set(autodep = TRUE)
+```
+
+```{r packages, message=FALSE, warning=FALSE}
+library(here)
+library(magrittr)
+library(tidyverse)
+library(ggplot2)
+rename <- dplyr::rename
+```
+
+# Potential confounding
+
+```{r read_data}
+age <- here("public", "table",
+            "potential_confounding.Rmd",
+            "age.csv") %>%
+    read_csv(show_col_types=FALSE) %>%
+    mutate(hugo_symbol=factor(hugo_symbol,
+                              c("RAS", "KRAS",
+                                "NRAS"))) %>%
+    arrange(hugo_symbol)
+```
+
+
+```{r}
+uid <- unique(age$multicancer_uid)
+facet_labels <- function(uid){
+    uid2 <- strsplit(uid, "~")
+    caps <- Hmisc::capitalize
+    cancer <- sapply(uid2, "[", 1) %>%
+        str_replace_all("cancer of unknown primary", "CUP") %>%
+        str_replace_all("non-small cell lung cancer", "NSCLC") %>%
+        str_replace_all("pancreatic cancer", "PAC") %>%
+        str_replace_all("ovarian cancer", "OVCA") %>%
+        str_replace_all("colorectal cancer", "CRC") %>%
+        str_replace_all("b-lymphoblastic leukemia/lymphoma",
+                        "B ALL") %>%
+        caps()
+    gene <- sapply(uid2, "[", 2)
+    codons <- sapply(uid2, "[", 3)
+    flabels <- paste0(cancer, ", ", gene, " (", codons, ")") %>%
+        setNames(uid)
+    flabels
+}
+flabels <- facet_labels(uid)
+age.list <- age %>%
+    group_by(hugo_symbol) %>%
+    nest()
+rlabels <- flabels[names(flabels) %in%
+                   age.list$data[[1]]$multicancer_uid]
+klabels <- flabels[names(flabels) %in%
+                   age.list$data[[2]]$multicancer_uid]
+nlabels <- flabels[names(flabels) %in%
+                   age.list$data[[3]]$multicancer_uid]
+flabels <- c(rlabels, klabels, nlabels)
+```
+
+
+```{r fig_s6, fig.width=20, fig.height=15, dev=c('png', 'pdf')}
+alevels <- c("Multi-cancer", "<40", "40-50", "50-65", ">65")
+age %>%
+    mutate(variable=factor(variable, alevels),
+           variable=droplevels(variable),
+           variable=fct_rev(variable)) %>%
+    ggplot(aes(median, variable)) +
+    geom_errorbarh(aes(xmin=q1, xmax=q2), height=0.1) +
+    geom_point(pch=21, fill="white") +
+    ylab("") +
+    geom_text(x=Inf, aes(label=paste0(y, "/", n)),
+              hjust=1, size=3) +
+    theme_bw(base_size=15) +
+    scale_x_continuous(expand=expansion(mult=0.5)) +
+    theme(panel.grid=element_blank()) +
+    xlab("Prevalence") +
+    facet_wrap(~multicancer_uid, scales="free_x",
+               labeller=labeller(multicancer_uid=flabels)) +
+    theme(strip.background=element_blank()) +
+    geom_vline(data=filter(age, variable=="Multi-cancer"),
+               aes(xintercept=median), linetype="dashed",
+               color="gray")
+```

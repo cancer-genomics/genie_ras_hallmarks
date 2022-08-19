@@ -1,0 +1,116 @@
+multicancer_uid,cancer,confounder,hugo_symbol,codon,ras,cancer_group,variable,y,n,mean,median,q1,q2,codon_range
+cancer of unknown primary~RAS~Codon 12,cancer of unknown primary,Age,RAS,Codon 12,RAS_12,single,<40,6,167,0.049,0.047,0.02,0.091,12
+cancer of unknown primary~RAS~Codon 12,cancer of unknown primary,Age,RAS,Codon 12,RAS_12,single,40-50,27,211,0.128,0.127,0.088,0.174,12
+cancer of unknown primary~RAS~Codon 12,cancer of unknown primary,Age,RAS,Codon 12,RAS_12,single,50-65,138,810,0.169,0.169,0.144,0.196,12
+cancer of unknown primary~RAS~Codon 12,cancer of unknown primary,Age,RAS,Codon 12,RAS_12,single,>65,153,797,0.19,0.19,0.164,0.219,12
+cancer of unknown primary~RAS~Codon 12,cancer of unknown primary, ,RAS,Codon 12,RAS_12,multi,Multi-cancer,324,1989,0.163,0.162,0.147,0.179,12
+"cancer of unknown primary~RAS~Codon 12, 13, or 61",cancer of unknown primary,Age,RAS,"Codon 12, 13, or 61",RAS_12-61,single,<40,14,167,0.104,0.101,0.059,0.162,12-61
+"cancer of unknown primary~RAS~Codon 12, 13, or 61",cancer of unknown primary,Age,RAS,"Codon 12, 13, or 61",RAS_12-61,single,40-50,39,211,0.184,0.183,0.137,0.235,12-61
+"cancer of unknown primary~RAS~Codon 12, 13, or 61",cancer of unknown primary,Age,RAS,"Codon 12, 13, or 61",RAS_12-61,single,50-65,174,810,0.213,0.213,0.186,0.242,12-61
+"cancer of unknown primary~RAS~Codon 12, 13, or 61",cancer of unknown primary,Age,RAS,"Codon 12, 13, or 61",RAS_12-61,single,>65,189,797,0.235,0.234,0.206,0.265,12-61
+"cancer of unknown primary~RAS~Codon 12, 13, or 61",cancer of unknown primary, ,RAS,"Codon 12, 13, or 61",RAS_12-61,multi,Multi-cancer,416,1989,0.209,0.209,0.191,0.227,12-61
+melanoma~RAS~Codon 12,melanoma,Age,RAS,Codon 12,RAS_12,single,<40,0,289,0.005,0.003,0,0.018,12
+melanoma~RAS~Codon 12,melanoma,Age,RAS,Codon 12,RAS_12,single,40-50,6,282,0.021,0.02,0.008,0.04,12
+melanoma~RAS~Codon 12,melanoma,Age,RAS,Codon 12,RAS_12,single,50-65,22,1016,0.022,0.021,0.014,0.031,12
+melanoma~RAS~Codon 12,melanoma,Age,RAS,Codon 12,RAS_12,single,>65,51,1259,0.04,0.039,0.029,0.051,12
+melanoma~RAS~Codon 12,melanoma, ,RAS,Codon 12,RAS_12,multi,Multi-cancer,79,2846,0.028,0.028,0.022,0.034,12
+"melanoma~RAS~Codon 12, 13, or 61",melanoma,Age,RAS,"Codon 12, 13, or 61",RAS_12-61,single,<40,39,289,0.148,0.147,0.108,0.194,12-61
+"melanoma~RAS~Codon 12, 13, or 61",melanoma,Age,RAS,"Codon 12, 13, or 61",RAS_12-61,single,40-50,63,282,0.224,0.223,0.179,0.272,12-61
+"melanoma~RAS~Codon 12, 13, or 61",melanoma,Age,RAS,"Codon 12, 13, or 61",RAS_12-61,single,50-65,256,1016,0.251,0.251,0.225,0.277,12-61
+"melanoma~RAS~Codon 12, 13, or 61",melanoma,Age,RAS,"Codon 12, 13, or 61",RAS_12-61,single,>65,363,1259,0.286,0.286,0.262,0.312,12-61
+"melanoma~RAS~Codon 12, 13, or 61",melanoma, ,RAS,"Codon 12, 13, or 61",RAS_12-61,multi,Multi-cancer,721,2846,0.253,0.253,0.237,0.269,12-61
+non-small cell lung cancer~RAS~Codon 12,non-small cell lung cancer,Age,RAS,Codon 12,RAS_12,single,<40,10,161,0.074,0.073,0.038,0.121,12
+non-small cell lung cancer~RAS~Codon 12,non-small cell lung cancer,Age,RAS,Codon 12,RAS_12,single,40-50,87,585,0.149,0.149,0.122,0.179,12
+non-small cell lung cancer~RAS~Codon 12,non-small cell lung cancer,Age,RAS,Codon 12,RAS_12,single,50-65,910,3677,0.247,0.247,0.233,0.261,12
+non-small cell lung cancer~RAS~Codon 12,non-small cell lung cancer,Age,RAS,Codon 12,RAS_12,single,>65,1545,5698,0.271,0.271,0.259,0.282,12
+non-small cell lung cancer~RAS~Codon 12,non-small cell lung cancer, ,RAS,Codon 12,RAS_12,multi,Multi-cancer,2553,10131,0.252,0.252,0.243,0.26,12
+"non-small cell lung cancer~RAS~Codon 12, 13, or 61",non-small cell lung cancer,Age,RAS,"Codon 12, 13, or 61",RAS_12-61,single,<40,13,161,0.093,0.091,0.052,0.144,12-61
+"non-small cell lung cancer~RAS~Codon 12, 13, or 61",non-small cell lung cancer,Age,RAS,"Codon 12, 13, or 61",RAS_12-61,single,40-50,109,585,0.187,0.186,0.156,0.219,12-61
+"non-small cell lung cancer~RAS~Codon 12, 13, or 61",non-small cell lung cancer,Age,RAS,"Codon 12, 13, or 61",RAS_12-61,single,50-65,1086,3677,0.295,0.295,0.281,0.31,12-61
+"non-small cell lung cancer~RAS~Codon 12, 13, or 61",non-small cell lung cancer,Age,RAS,"Codon 12, 13, or 61",RAS_12-61,single,>65,1800,5698,0.316,0.316,0.304,0.328,12-61
+"non-small cell lung cancer~RAS~Codon 12, 13, or 61",non-small cell lung cancer, ,RAS,"Codon 12, 13, or 61",RAS_12-61,multi,Multi-cancer,3009,10131,0.297,0.297,0.288,0.306,12-61
+non-small cell lung cancer~RAS~Codon G12C,non-small cell lung cancer,Age,RAS,Codon G12C,RAS_12C,single,<40,1,161,0.015,0.014,0.002,0.037,12C
+non-small cell lung cancer~RAS~Codon G12C,non-small cell lung cancer,Age,RAS,Codon G12C,RAS_12C,single,40-50,10,585,0.019,0.018,0.009,0.033,12C
+non-small cell lung cancer~RAS~Codon G12C,non-small cell lung cancer,Age,RAS,Codon G12C,RAS_12C,single,50-65,172,3677,0.046,0.046,0.04,0.053,12C
+non-small cell lung cancer~RAS~Codon G12C,non-small cell lung cancer,Age,RAS,Codon G12C,RAS_12C,single,>65,258,5698,0.045,0.045,0.04,0.051,12C
+non-small cell lung cancer~RAS~Codon G12C,non-small cell lung cancer, ,RAS,Codon G12C,RAS_12C,multi,Multi-cancer,441,10131,0.043,0.043,0.039,0.047,12C
+ovarian cancer~RAS~Codon 12,ovarian cancer,Age,RAS,Codon 12,RAS_12,single,<40,33,141,0.218,0.217,0.153,0.292,12
+ovarian cancer~RAS~Codon 12,ovarian cancer,Age,RAS,Codon 12,RAS_12,single,40-50,30,253,0.118,0.117,0.082,0.159,12
+ovarian cancer~RAS~Codon 12,ovarian cancer,Age,RAS,Codon 12,RAS_12,single,50-65,85,1092,0.079,0.078,0.064,0.096,12
+ovarian cancer~RAS~Codon 12,ovarian cancer,Age,RAS,Codon 12,RAS_12,single,>65,57,849,0.069,0.068,0.053,0.087,12
+ovarian cancer~RAS~Codon 12,ovarian cancer, ,RAS,Codon 12,RAS_12,multi,Multi-cancer,205,2337,0.088,0.088,0.076,0.099,12
+"ovarian cancer~RAS~Codon 12, 13, or 61",ovarian cancer,Age,RAS,"Codon 12, 13, or 61",RAS_12-61,single,<40,38,141,0.253,0.252,0.183,0.33,12-61
+"ovarian cancer~RAS~Codon 12, 13, or 61",ovarian cancer,Age,RAS,"Codon 12, 13, or 61",RAS_12-61,single,40-50,38,253,0.149,0.148,0.109,0.194,12-61
+"ovarian cancer~RAS~Codon 12, 13, or 61",ovarian cancer,Age,RAS,"Codon 12, 13, or 61",RAS_12-61,single,50-65,111,1092,0.103,0.102,0.085,0.121,12-61
+"ovarian cancer~RAS~Codon 12, 13, or 61",ovarian cancer,Age,RAS,"Codon 12, 13, or 61",RAS_12-61,single,>65,72,849,0.087,0.086,0.069,0.107,12-61
+"ovarian cancer~RAS~Codon 12, 13, or 61",ovarian cancer, ,RAS,"Codon 12, 13, or 61",RAS_12-61,multi,Multi-cancer,260,2337,0.111,0.111,0.099,0.124,12-61
+pancreatic cancer~RAS~Codon 12,pancreatic cancer,Age,RAS,Codon 12,RAS_12,single,<40,22,87,0.27,0.269,0.181,0.369,12
+pancreatic cancer~RAS~Codon 12,pancreatic cancer,Age,RAS,Codon 12,RAS_12,single,40-50,105,200,0.526,0.526,0.457,0.594,12
+pancreatic cancer~RAS~Codon 12,pancreatic cancer,Age,RAS,Codon 12,RAS_12,single,50-65,669,1000,0.668,0.669,0.639,0.697,12
+pancreatic cancer~RAS~Codon 12,pancreatic cancer,Age,RAS,Codon 12,RAS_12,single,>65,883,1205,0.732,0.732,0.707,0.757,12
+pancreatic cancer~RAS~Codon 12,pancreatic cancer, ,RAS,Codon 12,RAS_12,multi,Multi-cancer,1680,2494,0.673,0.673,0.655,0.691,12
+"pancreatic cancer~RAS~Codon 12, 13, or 61",pancreatic cancer,Age,RAS,"Codon 12, 13, or 61",RAS_12-61,single,<40,23,87,0.279,0.278,0.19,0.379,12-61
+"pancreatic cancer~RAS~Codon 12, 13, or 61",pancreatic cancer,Age,RAS,"Codon 12, 13, or 61",RAS_12-61,single,40-50,119,200,0.596,0.596,0.528,0.662,12-61
+"pancreatic cancer~RAS~Codon 12, 13, or 61",pancreatic cancer,Age,RAS,"Codon 12, 13, or 61",RAS_12-61,single,50-65,723,1000,0.723,0.723,0.695,0.75,12-61
+"pancreatic cancer~RAS~Codon 12, 13, or 61",pancreatic cancer,Age,RAS,"Codon 12, 13, or 61",RAS_12-61,single,>65,982,1205,0.814,0.814,0.792,0.836,12-61
+"pancreatic cancer~RAS~Codon 12, 13, or 61",pancreatic cancer, ,RAS,"Codon 12, 13, or 61",RAS_12-61,multi,Multi-cancer,1848,2494,0.74,0.74,0.723,0.757,12-61
+cancer of unknown primary~KRAS~Codon 12,cancer of unknown primary,Age,KRAS,Codon 12,KRAS_12,single,<40,5,167,0.041,0.039,0.015,0.08,12
+cancer of unknown primary~KRAS~Codon 12,cancer of unknown primary,Age,KRAS,Codon 12,KRAS_12,single,40-50,26,211,0.123,0.121,0.083,0.168,12
+cancer of unknown primary~KRAS~Codon 12,cancer of unknown primary,Age,KRAS,Codon 12,KRAS_12,single,50-65,134,810,0.164,0.164,0.14,0.19,12
+cancer of unknown primary~KRAS~Codon 12,cancer of unknown primary,Age,KRAS,Codon 12,KRAS_12,single,>65,148,797,0.184,0.184,0.158,0.212,12
+cancer of unknown primary~KRAS~Codon 12,cancer of unknown primary, ,KRAS,Codon 12,KRAS_12,multi,Multi-cancer,313,1989,0.157,0.157,0.141,0.174,12
+"cancer of unknown primary~KRAS~Codon 12, 13, or 61",cancer of unknown primary,Age,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,<40,8,167,0.061,0.059,0.028,0.105,12-61
+"cancer of unknown primary~KRAS~Codon 12, 13, or 61",cancer of unknown primary,Age,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,40-50,33,211,0.156,0.155,0.111,0.206,12-61
+"cancer of unknown primary~KRAS~Codon 12, 13, or 61",cancer of unknown primary,Age,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,50-65,159,810,0.195,0.195,0.169,0.223,12-61
+"cancer of unknown primary~KRAS~Codon 12, 13, or 61",cancer of unknown primary,Age,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,>65,174,797,0.217,0.217,0.189,0.246,12-61
+"cancer of unknown primary~KRAS~Codon 12, 13, or 61",cancer of unknown primary, ,KRAS,"Codon 12, 13, or 61",KRAS_12-61,multi,Multi-cancer,374,1989,0.188,0.188,0.171,0.205,12-61
+non-small cell lung cancer~KRAS~Codon 12,non-small cell lung cancer,Age,KRAS,Codon 12,KRAS_12,single,<40,10,161,0.075,0.073,0.039,0.121,12
+non-small cell lung cancer~KRAS~Codon 12,non-small cell lung cancer,Age,KRAS,Codon 12,KRAS_12,single,40-50,87,585,0.15,0.149,0.122,0.179,12
+non-small cell lung cancer~KRAS~Codon 12,non-small cell lung cancer,Age,KRAS,Codon 12,KRAS_12,single,50-65,903,3677,0.245,0.245,0.232,0.259,12
+non-small cell lung cancer~KRAS~Codon 12,non-small cell lung cancer,Age,KRAS,Codon 12,KRAS_12,single,>65,1534,5698,0.269,0.269,0.258,0.281,12
+non-small cell lung cancer~KRAS~Codon 12,non-small cell lung cancer, ,KRAS,Codon 12,KRAS_12,multi,Multi-cancer,2535,10131,0.25,0.25,0.242,0.259,12
+"non-small cell lung cancer~KRAS~Codon 12, 13, or 61",non-small cell lung cancer,Age,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,<40,12,161,0.087,0.085,0.048,0.136,12-61
+"non-small cell lung cancer~KRAS~Codon 12, 13, or 61",non-small cell lung cancer,Age,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,40-50,104,585,0.178,0.178,0.149,0.21,12-61
+"non-small cell lung cancer~KRAS~Codon 12, 13, or 61",non-small cell lung cancer,Age,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,50-65,1056,3677,0.287,0.287,0.272,0.301,12-61
+"non-small cell lung cancer~KRAS~Codon 12, 13, or 61",non-small cell lung cancer,Age,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,>65,1744,5698,0.306,0.306,0.294,0.318,12-61
+"non-small cell lung cancer~KRAS~Codon 12, 13, or 61",non-small cell lung cancer, ,KRAS,"Codon 12, 13, or 61",KRAS_12-61,multi,Multi-cancer,2917,10131,0.288,0.288,0.279,0.297,12-61
+non-small cell lung cancer~KRAS~Codon G12C,non-small cell lung cancer,Age,KRAS,Codon G12C,KRAS_12C,single,<40,1,161,0.017,0.014,0.002,0.044,12C
+non-small cell lung cancer~KRAS~Codon G12C,non-small cell lung cancer,Age,KRAS,Codon G12C,KRAS_12C,single,40-50,41,585,0.07,0.07,0.051,0.093,12C
+non-small cell lung cancer~KRAS~Codon G12C,non-small cell lung cancer,Age,KRAS,Codon G12C,KRAS_12C,single,50-65,439,3677,0.119,0.119,0.109,0.13,12C
+non-small cell lung cancer~KRAS~Codon G12C,non-small cell lung cancer,Age,KRAS,Codon G12C,KRAS_12C,single,>65,731,5698,0.128,0.128,0.12,0.137,12C
+non-small cell lung cancer~KRAS~Codon G12C,non-small cell lung cancer, ,KRAS,Codon G12C,KRAS_12C,multi,Multi-cancer,1213,10131,0.12,0.12,0.113,0.126,12C
+ovarian cancer~KRAS~Codon 12,ovarian cancer,Age,KRAS,Codon 12,KRAS_12,single,<40,33,141,0.218,0.217,0.151,0.292,12
+ovarian cancer~KRAS~Codon 12,ovarian cancer,Age,KRAS,Codon 12,KRAS_12,single,40-50,29,253,0.114,0.113,0.079,0.154,12
+ovarian cancer~KRAS~Codon 12,ovarian cancer,Age,KRAS,Codon 12,KRAS_12,single,50-65,83,1092,0.077,0.077,0.062,0.093,12
+ovarian cancer~KRAS~Codon 12,ovarian cancer,Age,KRAS,Codon 12,KRAS_12,single,>65,57,849,0.069,0.068,0.053,0.087,12
+ovarian cancer~KRAS~Codon 12,ovarian cancer, ,KRAS,Codon 12,KRAS_12,multi,Multi-cancer,202,2337,0.086,0.086,0.075,0.098,12
+"ovarian cancer~KRAS~Codon 12, 13, or 61",ovarian cancer,Age,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,<40,36,141,0.24,0.239,0.173,0.315,12-61
+"ovarian cancer~KRAS~Codon 12, 13, or 61",ovarian cancer,Age,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,40-50,34,253,0.133,0.132,0.096,0.176,12-61
+"ovarian cancer~KRAS~Codon 12, 13, or 61",ovarian cancer,Age,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,50-65,92,1092,0.085,0.085,0.07,0.103,12-61
+"ovarian cancer~KRAS~Codon 12, 13, or 61",ovarian cancer,Age,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,>65,63,849,0.076,0.076,0.059,0.094,12-61
+"ovarian cancer~KRAS~Codon 12, 13, or 61",ovarian cancer, ,KRAS,"Codon 12, 13, or 61",KRAS_12-61,multi,Multi-cancer,226,2337,0.097,0.096,0.085,0.109,12-61
+pancreatic cancer~KRAS~Codon 12,pancreatic cancer,Age,KRAS,Codon 12,KRAS_12,single,<40,22,87,0.271,0.269,0.182,0.372,12
+pancreatic cancer~KRAS~Codon 12,pancreatic cancer,Age,KRAS,Codon 12,KRAS_12,single,40-50,105,200,0.526,0.526,0.457,0.594,12
+pancreatic cancer~KRAS~Codon 12,pancreatic cancer,Age,KRAS,Codon 12,KRAS_12,single,50-65,669,1000,0.668,0.668,0.639,0.697,12
+pancreatic cancer~KRAS~Codon 12,pancreatic cancer,Age,KRAS,Codon 12,KRAS_12,single,>65,881,1205,0.73,0.73,0.705,0.755,12
+pancreatic cancer~KRAS~Codon 12,pancreatic cancer, ,KRAS,Codon 12,KRAS_12,multi,Multi-cancer,1678,2494,0.672,0.672,0.653,0.691,12
+"pancreatic cancer~KRAS~Codon 12, 13, or 61",pancreatic cancer,Age,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,<40,22,87,0.268,0.266,0.18,0.368,12-61
+"pancreatic cancer~KRAS~Codon 12, 13, or 61",pancreatic cancer,Age,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,40-50,117,200,0.585,0.585,0.518,0.651,12-61
+"pancreatic cancer~KRAS~Codon 12, 13, or 61",pancreatic cancer,Age,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,50-65,717,1000,0.717,0.717,0.688,0.744,12-61
+"pancreatic cancer~KRAS~Codon 12, 13, or 61",pancreatic cancer,Age,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,>65,977,1205,0.81,0.81,0.787,0.832,12-61
+"pancreatic cancer~KRAS~Codon 12, 13, or 61",pancreatic cancer, ,KRAS,"Codon 12, 13, or 61",KRAS_12-61,multi,Multi-cancer,1834,2494,0.735,0.735,0.717,0.752,12-61
+b-lymphoblastic leukemia/lymphoma~NRAS~Codon 12,b-lymphoblastic leukemia/lymphoma,Age,NRAS,Codon 12,NRAS_12,single,<40,16,142,0.11,0.109,0.064,0.167,12
+b-lymphoblastic leukemia/lymphoma~NRAS~Codon 12,b-lymphoblastic leukemia/lymphoma,Age,NRAS,Codon 12,NRAS_12,single,40-50,0,16,0.008,0,0,0.067,12
+b-lymphoblastic leukemia/lymphoma~NRAS~Codon 12,b-lymphoblastic leukemia/lymphoma,Age,NRAS,Codon 12,NRAS_12,single,50-65,0,48,0.004,0,0,0.033,12
+b-lymphoblastic leukemia/lymphoma~NRAS~Codon 12,b-lymphoblastic leukemia/lymphoma,Age,NRAS,Codon 12,NRAS_12,single,>65,0,42,0.005,0,0,0.035,12
+b-lymphoblastic leukemia/lymphoma~NRAS~Codon 12,b-lymphoblastic leukemia/lymphoma, ,NRAS,Codon 12,NRAS_12,multi,Multi-cancer,16,248,0.061,0.06,0.035,0.094,12
+"b-lymphoblastic leukemia/lymphoma~NRAS~Codon 12, 13, or 61",b-lymphoblastic leukemia/lymphoma,Age,NRAS,"Codon 12, 13, or 61",NRAS_12-61,single,<40,26,142,0.177,0.176,0.118,0.243,12-61
+"b-lymphoblastic leukemia/lymphoma~NRAS~Codon 12, 13, or 61",b-lymphoblastic leukemia/lymphoma,Age,NRAS,"Codon 12, 13, or 61",NRAS_12-61,single,40-50,1,16,0.064,0.05,0.004,0.202,12-61
+"b-lymphoblastic leukemia/lymphoma~NRAS~Codon 12, 13, or 61",b-lymphoblastic leukemia/lymphoma,Age,NRAS,"Codon 12, 13, or 61",NRAS_12-61,single,50-65,1,48,0.028,0.023,0.002,0.086,12-61
+"b-lymphoblastic leukemia/lymphoma~NRAS~Codon 12, 13, or 61",b-lymphoblastic leukemia/lymphoma,Age,NRAS,"Codon 12, 13, or 61",NRAS_12-61,single,>65,0,42,0.016,0.009,0,0.069,12-61
+"b-lymphoblastic leukemia/lymphoma~NRAS~Codon 12, 13, or 61",b-lymphoblastic leukemia/lymphoma, ,NRAS,"Codon 12, 13, or 61",NRAS_12-61,multi,Multi-cancer,28,248,0.109,0.109,0.074,0.151,12-61
+"melanoma~NRAS~Codon 12, 13, or 61",melanoma,Age,NRAS,"Codon 12, 13, or 61",NRAS_12-61,single,<40,38,289,0.148,0.147,0.107,0.198,12-61
+"melanoma~NRAS~Codon 12, 13, or 61",melanoma,Age,NRAS,"Codon 12, 13, or 61",NRAS_12-61,single,40-50,61,282,0.215,0.215,0.173,0.261,12-61
+"melanoma~NRAS~Codon 12, 13, or 61",melanoma,Age,NRAS,"Codon 12, 13, or 61",NRAS_12-61,single,50-65,236,1016,0.231,0.23,0.206,0.256,12-61
+"melanoma~NRAS~Codon 12, 13, or 61",melanoma,Age,NRAS,"Codon 12, 13, or 61",NRAS_12-61,single,>65,314,1259,0.247,0.247,0.224,0.271,12-61
+"melanoma~NRAS~Codon 12, 13, or 61",melanoma, ,NRAS,"Codon 12, 13, or 61",NRAS_12-61,multi,Multi-cancer,649,2846,0.228,0.228,0.212,0.243,12-61

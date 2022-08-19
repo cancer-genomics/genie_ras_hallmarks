@@ -1,0 +1,167 @@
+---
+title: "Figure S6"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+# Prevalence of RAS, KRAS, and NRAS stratified by race
+
+- code from `potential_confounding.Rmd`
+
+
+```{r caching, echo=FALSE}
+knitr::opts_chunk$set(autodep = TRUE)
+```
+
+```{r packages, message=FALSE, warning=FALSE}
+library(here)
+library(magrittr)
+library(tidyverse)
+library(ggplot2)
+rename <- dplyr::rename
+```
+
+# Potential confounding
+
+```{r read_data}
+
+multi <-here("public", "table",
+            "ras.Rmd",
+            "multicancer.csv")%>%
+        read_csv(show_col_types=FALSE) %>%
+        mutate(hugo_symbol=factor(hugo_symbol,
+                              c("RAS", "KRAS",
+                                "NRAS"))) %>%
+         mutate(multicancer_uid = paste(cancer, hugo_symbol, codon, sep = "~"))%>%
+         arrange(hugo_symbol)
+
+race <- here("public", "table",
+            "ras.Rmd",
+            "race.csv") %>%
+       read_csv(show_col_types=FALSE) %>%
+       mutate(hugo_symbol=factor(hugo_symbol,
+                              c("RAS", "KRAS", "NRAS"))) %>%
+       mutate(multicancer_uid = paste(cancer, hugo_symbol, codon, sep = "~"))%>%
+       arrange(hugo_symbol)
+
+multi_aa <-  here("public", "table",
+            "ras_amino_acid_prev.Rmd",
+            "multicancer.csv")%>%
+    read_csv(show_col_types=FALSE) %>%
+    mutate(hugo_symbol=factor(hugo_symbol,
+                              c( "KRAS", "HRAS", "NRAS"))) %>%
+    select(-codon_label) %>%
+    filter(!codon_range == "12C") %>%
+    mutate(codon = paste0("Codon G", codon_range))%>%
+    mutate(codon = gsub("G6","Q6" ,codon))%>%
+    mutate(multicancer_uid = paste(cancer, hugo_symbol, codon, sep = "~"))%>%
+    arrange(hugo_symbol)
+
+race_aa <- here("public", "table",
+            "ras_amino_acid_prev.Rmd",
+            "race.csv") %>%
+    read_csv(show_col_types=FALSE) %>%
+    mutate(hugo_symbol=factor(hugo_symbol,
+                              c( "KRAS", "HRAS",  "NRAS"))) %>%
+    select(-codon_label) %>%
+    filter(!codon_range == "12C") %>%
+    mutate(codon = paste0("Codon G", codon_range))%>%
+    mutate(codon = gsub("G6","Q6" ,codon))%>%
+    mutate(multicancer_uid = paste(cancer, hugo_symbol, codon, sep = "~"))%>%
+    arrange(hugo_symbol)
+
+race <- rbind(multi, race,multi_aa, race_aa)
+```
+
+
+```{r}
+uid <- unique(race$multicancer_uid)
+facet_labels <- function(uid){
+    uid2 <- strsplit(uid, "~")
+    caps <- Hmisc::capitalize
+    cancer <- sapply(uid2, "[", 1) %>%
+        str_replace_all("cancer of unknown primary", "CUP") %>%
+        str_replace_all("non-small cell lung cancer", "NSCLC") %>%
+        str_replace_all("pancreatic cancer", "PAC") %>%
+        str_replace_all("ovarian cancer", "OVCA") %>%
+        str_replace_all("colorectal cancer", "CRC") %>%
+        str_replace_all("b-lymphoblastic leukemia/lymphoma",
+                        "B ALL") %>%
+       str_replace_all("leukemia" ,"Leukemia") %>%
+        caps()
+    gene <- sapply(uid2, "[", 2)
+    codons <- sapply(uid2, "[", 3)
+    flabels <- paste0(cancer, ", ", gene, " (", codons, ")") %>%
+        setNames(uid)
+    flabels
+}
+flabels <- facet_labels(uid)
+# race.list <- race %>%
+#     group_by(hugo_symbol) %>%
+#     nest()
+# list of labels to be displayed in fig S6
+fig.labels <- c(  "CRC, RAS (Codon 12)",
+                  "CRC, RAS (Codon 13)",
+                  "CRC, KRAS (Codon G12V)",
+                  "CRC, KRAS (Codon G13D)",
+                  "CRC, RAS (Codon 12, 13, or 61)", 
+                  "Head and neck cancer, HRAS (Codon G13R)", 
+                  "Melanoma, NRAS (Codon 61)",
+                  "Melanoma, NRAS (Codon Q61L)",
+                  "NSCLC, KRAS (Codon 12)",
+                  "NSCLC, KRAS (Codon 13)",
+                  "NSCLC, KRAS (Codon G12A)",
+                 "NSCLC, KRAS (Codon G12C)",
+                 "NSCLC, KRAS (Codon G12V)", 
+                 "NSCLC, KRAS (Codon G12D)", 
+                 "NSCLC, KRAS (Codon G13D)", 
+                 "NSCLC, RAS (Codon 12, 13, or 61)", 
+                 "Thyroid cancer, NRAS (Codon Q61K)",
+                 "Thyroid cancer, NRAS (Codon Q61R)",
+                 "Uterine cancer, KRAS (Codon G12A)", 
+                "Uterine cancer, RAS (Codon 12, 13, or 61)") 
+
+  
+ flabels <- flabels[which(flabels  %in% fig.labels  )] 
+ flabels = flabels[match( fig.labels,flabels )]
+
+ # Only retain labels that are to be displayed in fig S6
+ race <- race %>%
+        filter(multicancer_uid %in% names(flabels)) %>%
+        mutate(multicancer_uid = factor(multicancer_uid, levels = names(flabels))) %>%
+        filter(! is.na(variable)) %>%
+         mutate(variable = recode(variable, "Overall" = "Multi-cancer")) 
+                   
+```
+
+
+```{r fig_s8, fig.width=20, fig.height=15, dev=c('png', 'pdf')}
+racelevels <- c("Black", "White",
+             "Asian", "Native American",
+             "Other", "Undefined" ,
+             "Multi-cancer")
+race %>%
+    mutate(variable=factor(variable, racelevels),
+           variable=droplevels(variable)) %>%
+    ggplot(aes(median, variable)) +
+    geom_errorbarh(aes(xmin=q1, xmax=q2), height=0.1) +
+    geom_point(pch=21, fill="white") +
+    ylab("") +
+    geom_text(x=Inf, aes(label=paste0(y, "/", n)),
+              hjust=1, size=3) +
+    theme_bw(base_size=15) +
+    scale_x_continuous(expand=expansion(mult=0.5)) +
+    theme(panel.grid=element_blank()) +
+    xlab("Prevalence") +
+    facet_wrap(~multicancer_uid, scales="free_x",
+               labeller=labeller(multicancer_uid=flabels)) +
+    theme(strip.background=element_blank()) +
+    geom_vline(data=filter(race, variable=="Multi-cancer") ,
+               aes(xintercept=median), linetype="dashed",
+               color="gray")
+  
+```

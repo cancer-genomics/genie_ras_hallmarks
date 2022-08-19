@@ -1,0 +1,127 @@
+---
+title: "Figure S13: co-occurrence and mutation signatures"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+
+```{r caching, echo=FALSE}
+knitr::opts_chunk$set(autodep = TRUE, warning=FALSE, echo=FALSE)
+base.size <- 16
+gene.size <- 3
+point.size <- 3
+strip.size <- 19
+axis.text <- 14
+axis.title <- 17
+n.size <- 4
+bar.height <- 0.2
+letter.size <- 2.5 ## size of letters for caption labels
+```
+In particular, RAS codon 12, 13 and 61 mutations co-occurred less frequently with {AMER1}, {KEAP1}, {STK11} and {TP53} in NSCLC tumors harboring a C>A rich smoking related signature (Supplementary Figure \ref{sfig:msig}). In CRC, {KRAS} codon 12, 13 and 61 and {PIK3CA} mutations co-occurred more frequently in tumors that harbored an APOBEC mutational signature (Supplementary Figure \ref{sfig:msig}). Interestingly, in NSCLC and consistent with the TMB stratified analyses, {KRAS} G12C and {KEAP1} or {STK11} co-mutations were less frequent in tumors harboring a smoking-associated mutational signature. {KRAS} G12C and {STK11} co-mutations were less frequent in tumors harboring an APOBEC mutational signature.
+
+# Association between co-occurrence and mutation signatures
+
+Analyses limited to mutations in non-RAS genes (does not include copy number alterations or rearrangements in non-RAS genes).
+
+```{r packages, message=FALSE, warning=FALSE}
+library(devtools)
+library(magrittr)
+library(tidyverse)
+library(genie.6.1)
+library(kableExtra)
+library(grid)
+library(purrr)
+library(gridExtra)
+library(here)
+library(ggrepel)
+dat.list <- here("output", "mutsig_s13",
+                 "data_s13.rds") %>%
+    readRDS()
+cancerlabs <- here("data", "cancer_labels.csv") %>%
+    read_csv(show_col_types=FALSE)
+colors <- here("output", "co-mutation",
+               "summarize_models.R",
+               "colors.rds") %>%
+    readRDS() %>%
+    left_join(cancerlabs, by="cancer") %>%
+    mutate(cancer=cancer_label)
+cols <- setNames(colors$color, colors$cancer)
+```
+
+```{r A}
+panel_a <- dat.list[["A"]]
+cols <- cols[sort(names(cols))]
+A <- panel_a %>%
+    ggplot(aes(x, `50%`)) +
+    geom_abline(intercept=0, slope=1) +
+    geom_hline(yintercept=0, linetype="dashed", color="gray") +
+    geom_vline(xintercept=0, linetype="dashed", color="gray") +
+    geom_errorbar(aes(ymin=`25%`, ymax=`75%`),
+                  color="gray", width=0.01) +
+    geom_point(aes(color=cancer), size=point.size) +
+    theme_bw(base_size=base.size) +
+    ylab("Mutation signature average") +
+    xlab("Association from multi-cancer model") +
+    theme(panel.grid=element_blank(),
+          strip.background=element_blank(),
+          strip.text=element_text(size=strip.size),
+          axis.text=element_text(size=axis.text),
+          axis.title.x=element_text(size=axis.title),
+          axis.title.y=element_text(size=axis.title,
+                                    vjust=0),
+          legend.position=c(0.15, 0.7)) +
+    xlim(c(-5, 3)) + ylim(c(-5, 3)) +
+    guides(color=guide_legend(title="")) +
+    scale_color_manual(values=cols)
+Ag <- ggplotGrob(A)
+```
+
+```{r B}
+panel_b <- dat.list[["B"]]
+B <- panel_b %>%
+    ggplot(aes(`50%`, label)) +
+    geom_errorbarh(aes(xmin=`2.5%`, xmax=`97.5%`,
+                       color=cancer),
+                   height=bar.height,
+                   size=1.1) +
+    geom_point(pch=21, fill="white",
+               size=point.size,
+               aes(color=cancer)) +
+    theme_bw(base_size=base.size) +
+    geom_text(aes(x=Inf, y=label, label=n), hjust=1,
+              size=n.size, color="gray30") +
+    ylab("Mutation signature") +
+    xlab("Log odds ratio") +
+    geom_hline(yintercept=2.5) +
+    geom_vline(xintercept=0, linetype="dashed",
+               color="gray") +
+    theme(panel.border=element_rect(color="gray"),
+          axis.title.y=element_text(hjust=1,
+                                    size=axis.title,
+                                    color="white"),
+          strip.text.y=element_blank(),
+          axis.text.x=element_text(size=axis.text),
+          axis.text.y=element_text(size=axis.text),
+          panel.grid=element_blank(),
+          legend.position="bottom",
+          strip.background=element_blank()) +
+    facet_wrap(~uid) +#, nrow=1) +
+    scale_color_manual(values=cols) +
+    guides(color="none")
+Bg <- ggplotGrob(B)
+```
+
+```{r fig_s13, fig.width=12, fig.height=15, dev=c("png", "pdf")}
+##index <- grep("panel-1", Bg$layout$name)
+##Ag$widths[1:4] <- Bg$widths[1:4]
+gl <- list(Ag, Bg, nullGrob())
+grid.arrange(grobs=gl,
+             widths=c(0.08, 1),
+             heights=c(1/3, 2/3),
+             layout_matrix=rbind(c(4, 1),
+                                 c(2, 2)))
+```

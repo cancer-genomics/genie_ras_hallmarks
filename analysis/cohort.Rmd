@@ -1,0 +1,52 @@
+---
+title: "Cohort description"
+site: workflowr::wflow_site
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  workflowr::wflow_html:
+    code_folding: hide
+    toc: true
+    toc_depth: 3
+    toc_float: true
+editor_options:
+  chunk_output_type: console
+---
+
+```{r caching, echo=FALSE}
+knitr::opts_chunk$set(autodep = TRUE)
+```
+
+# Cohort description
+
+```{r packages, message=FALSE, warning=FALSE}
+library(magrittr)
+library(here)
+library(tidyverse)
+library(genie.6.1)
+library(rasfuns)
+data(patient_universe, package="genie.6.1")
+all <- patient_universe %>%
+    group_by(cancer, center) %>%
+    summarize(n=length(unique(patient_id)),
+              .groups="drop") %>%
+    mutate(study_design="All patients")
+matched <- filter(patient_universe, is_matched) %>%
+    group_by(cancer, center) %>%
+    summarize(n=length(unique(patient_id)),
+              .groups="drop")  %>%
+    mutate(study_design="Matched\nnormal")
+combined <- bind_rows(all,
+                      matched) %>%
+    mutate(study_design=factor(study_design,
+                               c("All patients",
+                                 "Matched\nnormal")))
+```
+
+# csv file
+
+```{r write_csv}
+fs::dir_create(here("public", "table", "cohort.Rmd"))
+write_csv(combined, here("public", "table", "cohort.Rmd", "cohort.csv"))
+```
+
+- Cohort description:  [csv file](table/cohort.Rmd/cohort.csv)

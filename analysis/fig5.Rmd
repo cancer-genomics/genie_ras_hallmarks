@@ -1,0 +1,531 @@
+---
+title: "Figure 5:  gene pathway; triple mutants; TMB adjusted vs multi-cancer model"
+site: workflowr::wflow_site
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  workflowr::wflow_html:
+    code_folding: hide
+    toc: true
+    toc_depth: 3
+    toc_float: true
+editor_options:
+  chunk_output_type: console
+---
+
+```{r caching, echo=FALSE}
+knitr::opts_chunk$set(autodep = TRUE)
+```
+
+# Panel A: Gene pathway results
+
+
+```{r packages, message=FALSE, warning=FALSE}
+library(ggplot2)
+library(plyr)
+library(reshape2)
+library(cowplot)
+library(tidyverse)
+library(grid)
+library(gridExtra)
+library(RColorBrewer)
+library(readxl)
+library(scales)
+library(here)
+library(ggrepel)
+library(purrr)
+library(rasfuns)
+```
+
+```{r 5bdata, message=FALSE, warning=FALSE}
+here <- here::here
+# Read any mutations csv for gene pathways
+comut_gp <- here("public",
+                 "table",
+                 "co_mutation_allele.Rmd",
+                 "any_mutation_(gene_pathways).csv") %>%
+    read_csv(show_col_types=FALSE)
+# list of co-muts and cancer types to plot
+plot_gp <- read_excel( here( "data","ras_pathway_pval.xlsx"))
+comut_gp <-  comut_gp %>%
+    mutate(ras = gsub("_1", "_G1",ras ))%>%
+    mutate(ras = gsub("_6", "_Q6",ras ))%>%
+    mutate(index = paste0(cancer, "~",
+                          ras, "~", nonras))
+gene_pathway.levels <- table(plot_gp %>% select(gene_pathway)) %>%
+    as.data.frame() %>%
+    arrange(desc(Freq))
+gene_pathway.levels <- as.character(gene_pathway.levels$Var1)
+plot.df <- plot_gp %>%
+    mutate(ras = gsub(":", "_",ras ))%>%
+    mutate(index = paste0(cancer_full, "~", ras, "~", gene_pathway))%>%
+    merge(., comut_gp %>% select(index, p, `50%`), by.x = "index", by.y = "index" , all.x = TRUE)%>%
+    mutate(cancer = factor(cancer, levels = unique(cancer))) %>%
+    mutate(gene_pathway = factor(gene_pathway, levels = gene_pathway.levels)) %>%
+    mutate(ras = factor(ras, levels = unique(ras))) %>% mutate(y=0)%>%
+    mutate(ras_cancer = paste0(cancer, '~', ras))%>%
+    mutate(ras_cancer = factor(ras_cancer, levels = unique(ras_cancer))) %>%
+    mutate(comut_type = ifelse(`50%`>0, "co-occurence" , "mutual-exclusivity"))%>%
+    mutate(comut_type =factor(comut_type, levels = unique(comut_type)) )%>%
+    select(-c("logp", "type"))
+```
+
+```{r fig5a, message=FALSE, warning=FALSE, fig.height = 12, fig.width=10, dev=c("png", "pdf")}
+col.pal <- c("#0066cc","#cc0000")
+names(col.pal) <- c( 'Mutual\nexclusivity\n', '\nCo-occurence\n')
+dat.list <- plot.df %>%
+    mutate(gene_pathway=case_when(gene_pathway=="RAS_RAF_MAPK_brief"~"RAS_RAF_MAPK",
+                                  gene_pathway=="RAS_RAF_MAPK_extended"~"RAS_RAF_MAPK",
+                                  TRUE~as.character(gene_pathway)),
+           comut_type=case_when(comut_type=="mutual-exclusivity"~"Mutual\nexclusivity\n",
+                                comut_type=="co-occurrence"~"\nCo-occurrence\n")) %>%
+    group_by(gene_pathway) %>%
+    nest()
+pathways <- tibble(label=c("RAS/RAF/MAPK pathway",
+                           "NRF2 pathway/Oxidative stress response",
+                           "PI3K/AKT pathway",
+                           "Cell cycle progression",
+                           "Chromatin regulation",
+                           "DNA damage response"),
+                   gene_pathway=dat.list$gene_pathway[c(3, 2, 1, 6, 4, 5)]) %>%
+    mutate(label=factor(label, label))
+dat.list2  <- dat.list %>%
+    left_join(pathways, by="gene_pathway") %>%
+    arrange(label)
+lollipop_plot <- function(dat){
+    dat %>%
+        ggplot(aes(ras_cancer, p,
+                   fill = comut_type,
+                   color = comut_type)) +
+        geom_point(aes(fill=comut_type))+
+        geom_linerange(aes(ymin = y, ymax = p,
+                           color = comut_type))+
+        coord_flip()+
+        scale_fill_manual(values = col.pal, name = '',
+                          guide = guide_legend(position = 'none',
+                                               direction = "vertical")) +
+        scale_color_manual(values = col.pal,
+                           name = '',
+                           guide = guide_legend(position = 'none',
+                                                direction = "vertical")) +
+        ylab("-log10 p")+
+        xlab("")+
+        theme_classic(base_size=15) +
+        theme(axis.line=element_blank(),
+              axis.ticks.x = element_blank(),
+              plot.margin = margin(0,0,0,0, "cm"),
+              axis.text.y = element_text(size=13, angle = 0),
+              ##axis.text.x = element_text(size=10, angle =0),
+              axis.text.x=element_blank(),
+              axis.title.x=element_blank(),
+              panel.grid= element_blank() ,
+              panel.border = element_rect(fill=NA),
+              plot.title = element_text(hjust=0.5, size = 10)) +
+        ylim(c(0, 9)) +
+        guides(color="none", fill="none")
+}
+gl <- map(dat.list2$data, lollipop_plot)
+names(gl) <- dat.list2$label
+for(i in 1:6){
+    gl[[i]] <- gl[[i]] + ggtitle(names(gl)[i]) +
+        theme(plot.title=element_text(size=16, hjust=0),
+              plot.margin=unit(c(1.5, 1.5, 0, 1.5), "lines"))
+}
+gl[[6]]  <- gl[[6]] +
+    theme(axis.text.x=element_text(size=13),
+          axis.title.x=element_text(size=17)) +
+    ylab(expression(-log[10](p)))
+tmp <- gl[[6]] +
+    theme(legend.text=element_text(size=17)) +
+    guides(color=guide_legend(title=""))
+leg <- cowplot::get_legend(tmp)
+gl <- map(gl, ggplotGrob)
+w <- gl[[1]]$widths
+for(i in 2:6) gl[[i]]$widths <- w
+gl[[7]] <- leg
+heights <- map_int(dat.list2$data, nrow)
+heights[heights==1] <- 1.5
+## compensate for x-axis and title
+heights[6] <- 2.2
+grid.arrange(grobs=gl,
+             widths=c(1, 0.22),
+             heights=heights,
+             layout_matrix=cbind(1:6, 7))
+A  <- arrangeGrob(grobs=gl,
+                  widths=c(1, 0.22),
+                  heights=heights,
+                  layout_matrix=cbind(1:6, 7))
+## todo
+## add title to each panel
+## use classic theme
+```
+
+
+# Panel B: Triple mutations
+
+```{r data, message=FALSE, warning=FALSE}
+load(here("output", "co-mutation","kras12c_tripleMuts.rda"))
+threshold <- 1
+plot.df <- c()
+for(cancer in names(kras12c_tripleMuts)){
+    tmp.df <- kras12c_tripleMuts [[cancer]] %>%
+        filter(intersect.percent >= threshold)%>%
+        mutate(cancer_type = cancer)
+    plot.df = rbind(plot.df ,tmp.df )
+}
+plot.df  <-  plot.df %>%
+    mutate(cancer_type = recode(cancer_type, "non-small cell lung cancer"="NSCLC" ,
+                                "cancer of unknown primary"  = "CUP",
+                                "colorectal cancer" = "CRC",
+                                "pancreatic cancer" = "PAC",
+                                "uterine cancer" = "Uterine")) %>%
+    mutate(gene = paste0("KRAS_", gene)) %>%
+    arrange(desc(intersect.percent))
+cancer.levels <- c("CUP", "CRC" ,
+                   "PAC", "Uterine",
+                   "NSCLC")
+plot.df$cancer_type <- factor(plot.df$cancer_type, levels = cancer.levels)
+
+gene.levels <- data.frame(table(plot.df$gene)) %>% arrange(desc(Freq))
+gene.levels <- gene.levels$Var1
+plot.df <- plot.df %>%
+    arrange(desc(intersect.percent))  %>%
+    arrange(factor(gene, levels = gene.levels))
+tmp.df <- plot.df[-c(1:4), ] %>%
+    arrange(desc(intersect.percent))  %>%
+    arrange(factor(cancer_type, levels = cancer.levels))
+plot.df <- rbind(plot.df[c(1:4), ], tmp.df)
+```
+
+
+
+```{r fig5b, message=FALSE, warning=FALSE,  fig.height = 4, fig.width = 8, dev=c("png", "pdf")}
+base <- expand.grid(unique(plot.df$cancer_type),
+                    unique(plot.df$gene))
+base$gene <- rev(base$gene)
+colnames(base) <- c('cancer_type', 'gene')
+base$cancer_type <- factor(base$cancer_type,
+                           levels = unique(cancer.levels))
+base$gene <- factor(base$gene,
+                    levels = rev(unique(base$gene)))
+genelevels <- unique(base$gene[1:100]) %>%
+    str_replace_all("_", " / ") %>%
+    str_replace_all("KRAS / ", "")
+base2 <- base[c(1:100), ] %>%
+    mutate(gene=as.character(gene)) %>%
+    mutate(gene=str_replace_all(gene, "_", " / ")) %>%
+    mutate(gene=str_replace_all(gene, "KRAS / ", "")) %>%
+    mutate(gene=factor(gene, genelevels))
+plot.df <- plot.df %>%
+    mutate(gene=as.character(gene)) %>%
+    mutate(gene=str_replace_all(gene, "_", " / ")) %>%
+    mutate(gene=str_replace_all(gene, "KRAS / ", "")) %>%
+    mutate(gene=factor(gene, genelevels))
+cm4 <- ggplot(base2, aes(x = gene, y = cancer_type)) +
+    geom_tile(fill = '#ffffff',
+              color = '#deebf7',
+              width = 0.8,
+              height = 0.8) +
+    theme_minimal() +
+    geom_tile(data = plot.df %>%
+                  subset(gene %in% unique(base2[ , 'gene'])),
+              aes(fill = intersect.percent),
+              size = 0.8,
+              width = 0.8,
+              height= 0.8) +
+    scale_fill_distiller(palette = 'Reds',
+                         name = 'Prevalence (%)',
+                         values = rescale(1:10),
+                         guide = guide_colorbar(direction = "vertical"),
+                         trans = "reverse") +
+    theme(#axis.ticks.x = element_blank(),
+        plot.margin = margin(-0.5,-0.5,-0.5,-0.5, "cm"),
+        axis.text.x = element_text(size = 12,
+                                   angle = 70,
+                                   hjust=1),
+        axis.text.y = element_text(size = 15, angle = 0),
+        panel.grid = element_blank(),
+        title = element_text(size = 8),
+        strip.background = element_blank(),
+        strip.text = element_blank(),
+        legend.title=element_text(size=16),
+        legend.text=element_text(size=14),
+        plot.title=element_text(size=18))+
+    ylab("") + xlab("") +
+    ggtitle("KRAS G12C triple mutants")
+aggregate.plot3 <- plot_grid(NULL, cm4, NULL ,
+                             nrow = 1,
+                             rel_widths = c(0.25, 8, 0.25))
+B <- plot_grid(NULL, aggregate.plot3,
+               NULL , ncol = 1,
+               rel_heights = c(0.30, 8, 0.25))
+Bg <- ggplotGrob(B)
+B
+```
+
+# Panel C: Concordance of estimated gene-gene dependencies between TMB adjusted model and multi-cancer model
+
+```{r figoptions, echo=FALSE}
+knitr::opts_chunk$set(autodep = TRUE, warning=FALSE)
+base.size <- 16
+gene.size <- 3
+point.size <- 3
+strip.size <- 19
+axis.text <- 16
+axis.title <- 17
+n.size <- 4
+bar.height <- 0.2
+letter.size <- 2.5 ## size of letters for caption labels
+```
+
+
+```{r 5c_data}
+#source(here("code", "co-mutation", "stan_funs.R"))
+##devtools::load_all(here("code", "rasfuns"))
+cancerlabs <- read_csv(here("data", "cancer_labels.csv"))
+colors <- readRDS(here("output", "co-mutation",
+                       "summarize_models.R",
+                       "colors.rds")) %>%
+    left_join(cancerlabs, by="cancer") %>%
+    mutate(cancer=cancer_label)
+cols <- setNames(colors$color, colors$cancer)
+```
+
+```{r tmb_labels}
+extdir <- system.file("extdata", package="genie.6.1")
+fname <- file.path(extdir, "tumor_normal_predictions.csv")
+data(mutation_tmb, package="contingency.table")
+data(patient_universe, package="genie.6.1")
+matched_universe <- filter(patient_universe, is_matched)
+tmb_labels <- read_csv(fname) %>%
+    rasfuns:::attach_tmb_label(matched_universe)
+```
+
+Select the following:
+STK11 and KEAP1 in NSCLC
+TP53, inactivating APC in CRC
+
+```{r read_mutations}
+comutation <- here("output", "co-mutation", "summarize_models.R",
+                   "combined.rds") %>%
+    readRDS() %>%
+    unnest(data) %>%
+    ungroup() %>%
+    left_join(cancerlabs, by="cancer") %>%
+    mutate(cancer=cancer_label) %>%
+    group_by(cancer_group, alteration_group, confounder) %>%
+    nest()
+
+## significant associations in multi-cancer model
+## -log10p > 6
+sig_multicancer <- rasfuns:::significant_multicancer
+filter_sig <- rasfuns:::filter_by_signif
+signif <- sig_multicancer(comutation,
+                          group_="Any mutation",
+                          ras_="RAS_12-61",
+                          p_cutoff=6)
+isignif <- sig_multicancer(comutation,
+                           group_="Inactivating mutation",
+                           ras_="RAS_12-61",
+                           p_cutoff=6) %>%
+    filter(!nonras %in% signif$nonras & cancer %in% signif$cancer)
+signif <- bind_rows(signif, isignif)
+add_tmb_label <- rasfuns:::add_tmb_label
+filter_by <- rasfuns:::filter_by
+x  <- comutation %>%
+    filter_by(c("Any mutation",
+                "Inactivating mutation"),
+              "RAS_12-61", "TMB") %>%
+    add_tmb_label(tmb_labels) %>%
+    filter_sig(signif)
+ylist <- rasfuns:::list_signif_by(signif, x$uid)
+effect_list <- rasfuns:::list_confounding(ylist, x)
+```
+
+## Co-mutation of RAS (any codon) and any non-RAS mutation
+
+Identify co-mutations in the stratified analysis with 95% credible intervals that do not overlap the 95% credible interval in the multi-cancer model.  Focus on the set of co-mutations in which the association in the multi-cancer model was statistically significant.
+
+Several co-mutations significant in the multi-cancer model are not in the stratified analyses.  In the stratified analyses, we required that the number of RAS mutations and the number of non-RAS mutations must each be > 100 (l. 133, `contingency.table/data-derived/mutations_tmb.R`).
+
+Below, we plot overall versus multi-cancer, highlighting the genes with apparent discordance in 1 or more TMB strata.
+
+```{r concordance, fig.width=12, fig.height=7, dev=c("png", "pdf")}
+rename <- dplyr::rename
+multicancer <- effect_list$data[[1]] %>%
+    select(nonras, alteration_group, cancer, `50%`) %>%
+    unite("uid", c(nonras, alteration_group, cancer)) %>%
+    rename(x="50%")
+tmb  <- effect_list$data[[2]] %>%
+    map_dfr(function(x) filter(x, grepl("mu_beta", Parameter))) %>%
+    select(nonras, alteration_group, cancer, `50%`, `2.5%`, `97.5%`) %>%
+    unite("uid", c(nonras, alteration_group, cancer)) %>%
+    rename(y="50%")
+dat <- left_join(multicancer, tmb, by="uid") %>%
+    separate(uid, c("nonras", "alt_group", "cancer"), sep="_")
+multicancer2 <- effect_list$data[[3]] %>%
+    select(nonras, alteration_group, cancer, `50%`) %>%
+    unite("uid", c(nonras, alteration_group, cancer)) %>%
+    rename(x="50%")
+tmb2  <- effect_list$data[[4]] %>%
+    map_dfr(function(x) filter(x, grepl("mu_beta", Parameter))) %>%
+    select(nonras, alteration_group, cancer, `50%`, `25%`, `75%`) %>%
+    unite("uid", c(nonras, alteration_group, cancer)) %>%
+    rename(y="50%")
+dat2 <- left_join(multicancer2, tmb2, by="uid")  %>%
+    separate(uid, c("nonras", "alt_group", "cancer"), sep="_")
+all <- bind_rows(dat, dat2) %>%
+    mutate(cancer=factor(cancer, sort(unique(cancer))))
+dat <- dat %>%
+    mutate(cancer=factor(cancer, levels(all$cancer)))
+##stop()
+cols <- cols[levels(all$cancer)]
+C <- all %>%
+    ggplot(aes(x, y)) +
+    geom_abline(intercept=0, slope=1) +
+    geom_hline(yintercept=0, linetype="dashed", color="gray") +
+    geom_vline(xintercept=0, linetype="dashed", color="gray") +
+    geom_errorbar(aes(ymin=`25%`, ymax=`75%`),
+                  color="gray", width=0.01) +
+    geom_point(aes(color=cancer), size=point.size) +
+    theme_bw(base_size=base.size) +
+    ##geom_point(size=point.size, pch=21) +
+    geom_point(data=dat,
+               aes(color=cancer)) +
+    geom_label_repel(data=dat,
+                    aes(label=nonras),
+                    fill="white", segment.color="black",
+                    ##alpha=0.3,
+                    size=gene.size,
+                    max.overlaps=Inf,
+                    box.padding=0.5) + ##color="transparent") +
+    ylab("Cross-TMB average") +
+    xlab("Association from multi-cancer model") +
+    theme(panel.grid=element_blank(),
+          legend.position=c(0.1, 0.8),
+          ##legend.position="bottom",
+          strip.background=element_blank(),
+          strip.text=element_text(size=strip.size),
+          axis.text=element_text(size=axis.text),
+          axis.title=element_text(size=axis.title)) +
+    xlim(c(-5, 3)) + ylim(c(-5, 3)) +
+    guides(color=guide_legend(title="")) +
+    scale_color_manual(values=cols)
+##A_leg <- cowplot::get_legend(fig)
+##A <- fig + guides(color=FALSE)
+C
+Cg <- ggplotGrob(C)
+```
+
+# Panel D: Gene-gene dependencies within TMB strata
+
+### plot intervals for overall and multicancer for genes with possible tmb confounding
+
+
+```{r paneld}
+goi <- c("STK11", "KEAP1", "TP53", "APC")
+multicancer <- effect_list$data[[1]] %>%
+    select(nonras, alteration_group,
+           cancer, n, `50%`, `2.5%`, `97.5%`) %>%
+    unite("uid", c(nonras, alteration_group, cancer), remove=FALSE) %>%
+    mutate(analysis="Multi-cancer") %>%
+    filter(nonras %in% goi)
+tmb  <- effect_list$data[[2]] %>%
+    map_dfr(function(x) filter(x, grepl("mu_beta", Parameter))) %>%
+    select(nonras, alteration_group,
+           cancer, n, `50%`, `2.5%`, `97.5%`) %>%
+    unite("uid", c(nonras, alteration_group, cancer), remove=FALSE) %>%
+    filter(uid %in% multicancer$uid) %>%
+    mutate(analysis="Overall\n(TMB model)")
+dat <- bind_rows(multicancer, tmb) %>%
+    select(-uid) %>%
+    unite(uid, c("nonras", "cancer"), sep=" in ", remove=FALSE)
+dat <-  dat %>%
+    filter(!uid %in% "TP53 in Pancreatic") %>%
+    mutate(analysis=factor(analysis,
+                           c("Multi-cancer", "Overall\n(TMB model)")),
+           analysis=fct_rev(analysis))
+tmb  <- effect_list$data[[2]] %>%
+    map_dfr(function(x) filter(x, grepl("^beta", Parameter))) %>%
+    select(nonras, alteration_group,
+           cancer, label, n, `50%`, `2.5%`, `97.5%`) %>%
+    unite("uid", c(nonras, alteration_group, cancer), remove=FALSE) %>%
+    filter(uid %in% multicancer$uid) %>%
+    select(-uid) %>%
+    unite("uid", c(nonras, cancer), sep=" in ", remove=FALSE)
+levels <- c(levels(dat$analysis), levels(tmb$label))
+dat2 <- dat %>%
+    rename(label=analysis)  %>%
+    bind_rows(tmb) %>%
+    mutate(label=factor(label, levels))
+
+dat3 <- dat2 %>%
+    filter(!uid %in% "TP53 in Pancreatic") %>%
+    mutate(uid=factor(uid,
+                      levels=c("KEAP1 in NSCLC",
+                               "STK11 in NSCLC", "TP53 in NSCLC",
+                               "APC in CRC", "TP53 in CRC")))
+D <- dat3 %>%
+    ggplot(aes(`50%`, label)) +
+    geom_errorbarh(aes(xmin=`2.5%`, xmax=`97.5%`,
+                       color=cancer), height=bar.height,
+                   size=1.5) +
+    geom_point(##pch=21, fill="white",
+               size=point.size, aes(color=cancer)) +
+    theme_bw(base_size=base.size) +
+    geom_text(aes(x=Inf, y=label, label=n), hjust=1,
+              size=n.size, color="gray30") +
+    ylab("TMB strata") +
+    xlab("Log odds ratio") +
+    geom_hline(yintercept=2.5) +
+    geom_vline(xintercept=0, linetype="dashed", color="gray") +
+    theme(panel.border=element_rect(color="gray"),
+          axis.title=element_text(size=axis.title+1),
+          ##axis.title.y=element_blank(),
+          strip.text.y=element_blank(),
+          strip.text.x=element_text(size=axis.title+2),
+          axis.text.x=element_text(size=axis.text),
+          axis.text.y=element_text(size=axis.text),
+          panel.grid=element_blank(),
+          legend.position="bottom",
+          strip.background=element_blank()) +
+    facet_wrap(~uid, ncol=5) +#, nrow=1) +
+    scale_color_manual(values=cols) +
+    guides(color='none')
+D
+Dg <- ggplotGrob(D)
+```
+
+# Figure 5
+
+```{r fig5, fig.width=25, fig.height=17, dev=c("png", "pdf")}
+grid.newpage()
+gl <- list(A,
+           Bg,
+           Cg,
+           Dg,
+           grob(),
+           grob(),
+           grob())
+vp <- viewport(width=unit(0.98, "npc"),
+               height=unit(0.98, "npc"))
+pushViewport(vp)
+grid.arrange(grobs=gl,
+             heights=c(1, 0.05, 1, 0.1, 1),
+             widths=c(1, 0.1, 1),
+             newpage=FALSE,
+             layout_matrix=rbind(c(1, 6, 2),
+                                 c(1, 6, 7), ## space between panels B and C
+                                 c(1, 6, 3),
+                                 c(5, 6, 5),
+                                 c(4, 6, 4)))
+upViewport()
+grid.text("A", x=unit(0.015, "npc"), y=unit(0.98, "npc"),
+          gp=gpar(cex=2.5))
+grid.text("B", x=unit(0.5, "npc"), y=unit(0.98, "npc"),
+          gp=gpar(cex=2.5))
+grid.text("C", x=unit(0.5, "npc"), y=unit(0.67, "npc"),
+          gp=gpar(cex=2.5))
+grid.text("D", x=unit(0.015, "npc"), y=unit(0.33, "npc"),
+          gp=gpar(cex=2.5))
+gc()
+```

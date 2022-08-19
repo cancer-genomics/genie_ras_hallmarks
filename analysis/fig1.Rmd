@@ -1,0 +1,238 @@
+---
+title: "KRAS prevalence: Figure 1"
+site: workflowr::wflow_site
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  workflowr::wflow_html:
+    code_folding: hide
+    toc: true
+    toc_depth: 3
+    toc_float: true
+editor_options:
+  chunk_output_type: console
+---
+
+```{r caching, echo=FALSE}
+knitr::opts_chunk$set(autodep = TRUE)
+```
+
+```{r sizes}
+ylabel.size <- 4
+ytext.size <- 15
+point.size <- c(1.5, 1.5)
+base_size <- 17
+axis.text.x <- 17
+axis.text.y <- 17
+axis.title.x <- 25
+strip.text <- 24
+axis.title.y <- 25
+grid.cex <- 3
+hras.text.x <- 12
+hras.strip.text <- 19
+hras.strip.text.y <- 19
+hras.ylabel.size <- 3
+hras.ytext.size <- 12
+```
+
+```{r packages, message=FALSE, warning=FALSE}
+library(grid)
+library(gridExtra)
+library(magrittr)
+library(tidyverse)
+library(purrr)
+library(ggplot2)
+library(here)
+library(viridis)
+library(hrbrthemes)
+```
+
+# Panel A: prevalence of KRAS mutations
+
+```{r files, results="hide"}
+cancerlabs <- read_csv(here("data", "cancer_labels.csv"))
+dat <- here("public", "table", "ras.Rmd", "multicancer.csv") %>%
+    read_csv() %>%
+    mutate(Y=prettyNum(y, big.mark=","),
+           N=prettyNum(n, big.mark=",")) %>%
+    unite(nlabel, c(Y, N), sep="/", remove=FALSE) %>%
+    filter(hugo_symbol=="KRAS") %>%
+    filter(n > 50) %>%
+    filter(codon %in% c("Codon 12", "Codon 13", "Codon 61", "Codon G12C")) %>%
+    left_join(cancerlabs, by="cancer") %>%
+    mutate(cancer=cancer_label)
+cancer_order <- filter(dat, ras=="KRAS_12") %>%
+    select(cancer, median) %>%
+    arrange(median) %>%
+    mutate(cancerf=factor(cancer, cancer),
+           index=as.integer(cancerf),
+           label=levels(cancerf)) %>%
+    select(-median)
+```
+
+```{r fig1a, fig.width=15, fig.height=8, dev=c("png", "pdf")}
+dat2  <- dat %>%
+    left_join(cancer_order, by="cancer") %>%
+    rename("2.5%"=q1,
+           "97.5%"=q2)
+A <- dat2 %>%
+    ggplot(aes(median, cancerf)) +
+    geom_errorbarh(height=0.2,
+                   aes(xmin=`2.5%`, xmax=`97.5%`)) +
+    geom_point(aes(x=y/n), color="gray50",
+               fill="gray70",
+               size=point.size[1], shape=21) +
+    geom_point(color="steelblue", shape=21,
+               fill="white", size=point.size[2]) +
+    theme_bw(base_size=base_size) +
+    theme(axis.text.y=element_text(size=ytext.size,
+                                   lineheight=0.6),
+          axis.text.x=element_text(size=axis.text.x),
+          axis.title.x=element_text(size=axis.title.x),
+          panel.grid.minor.y=element_blank(),
+          strip.background=element_blank(),
+          strip.text=element_text(size=strip.text),
+          panel.grid=element_blank()) +
+##    geom_text(aes(x=1, label=nlabel),
+##              hjust=1, size=ylabel.size) +
+    ylab("") +
+    xlab("Prevalence") +
+    facet_wrap(~codon, ncol=4, scales="free_x")
+A
+```
+
+# Panel B: KRAS prevalence by amino acid
+
+
+```{r paths, message=FALSE, warning=FALSE}
+prev.df <- read_csv(here("public",
+                         "table",
+                         "ras_amino_acid_prev.Rmd",
+                         "multicancer.csv"),
+                    show_col_types=FALSE) %>%
+    left_join(cancerlabs, by="cancer") %>%
+    mutate(cancer=cancer_label) %>%
+    left_join(cancer_order, by="cancer")
+plot.df <-  prev.df %>%
+    mutate(codon_range = gsub("12","G12", codon_range)) %>%
+    mutate(codon_range = gsub("13","G13", codon_range)) %>%
+    mutate(codon_range = gsub("61","Q61", codon_range)) %>%
+    mutate(mut_allele =  paste0(hugo_symbol, ":", codon_range)) %>%
+    ##mutate(cancer = factor(cancer, levels  = unique(cancer))) %>%
+    mutate(codon_range = factor(codon_range, levels  = unique(codon_range))) %>%
+    ##mutate(cancer = fct_rev(cancer)) %>%
+    mutate(median = ifelse(median == 0, NA, median)) %>%
+    filter(n>50)
+```
+
+```{r fig1B, fig.height=16, fig.width=12, dev=c("png", "pdf")}
+ras.gene <- "KRAS"
+kras.dat <- plot.df %>%
+    subset(hugo_symbol == ras.gene) %>%
+    subset(!codon_range %in% c("G13R", "G13V"))
+kras <- kras.dat %>%
+    ggplot(aes(codon_range, cancerf))+
+    geom_point(aes(size=median), color="red") +
+    theme_classic(base_size=15) +
+    theme(plot.title=element_text(size=20),
+          panel.grid=element_blank(),
+          axis.text.x=element_text( size=14),
+          axis.text.y=element_text( size=14),
+          strip.background=element_blank(),
+          strip.text=element_text(size=12),
+          ##legend.position="bottom",
+          legend.text = element_text(size=10)) +
+    ylab("") +
+    xlab("") +
+    scale_size(range = c(2,12),
+               name="KRAS\nmedian\nprevalence")
+kras
+```
+
+# Panel C: NRAS prevalence by amino acid
+
+```{r fig1c, fig.width=12, fig.height=16, dev=c("png", "pdf")}
+ras.gene <- "NRAS"
+nras.dat <- plot.df %>%
+    subset(hugo_symbol == ras.gene) %>%
+    subset(., hugo_symbol == ras.gene) %>%
+    subset(., !codon_range == "G12F")
+nras <- nras.dat %>%
+    ggplot(aes(codon_range, cancerf)) +
+    geom_point(aes(size=median), color="steelblue" ) +
+    theme_classic(base_size=15) +
+    theme(plot.title=element_text(size=20),
+          panel.grid=element_blank(),
+          axis.text.x=element_text( size=14),
+          ##axis.text.y=element_text( size=14),
+          axis.text.y=element_blank(),
+          strip.background=element_blank(),
+          strip.text=element_text(size=12),
+          ##legend.position="bottom",
+          legend.text = element_text(size=8)) +
+    ylab("") +
+    xlab("") +
+    scale_size(range = c(2,12), name="NRAS\nmedian\nprevalence")
+nras
+kras_leg <- cowplot::get_legend(kras)
+nras_leg <- cowplot::get_legend(nras)
+kras <- kras +
+    guides(size=FALSE) ##+
+    ##ggtitle("KRAS") +
+    ##theme(plot.title=element_text(size=25))
+nras <- nras +
+    guides(size=FALSE) ##+
+##    ggtitle("NRAS") +
+    ##theme(plot.title=element_text(size=25))
+nrasg <- ggplotGrob(nras)
+krasg <- ggplotGrob(kras)
+##nrasg$widths <- krasg$widths
+```
+
+```{r fig1bc, eval=FALSE}
+ras <- bind_rows(kras.dat, nras.dat)
+ras %>%
+    mutate(hugo_symbol=factor(hugo_symbol, c("KRAS", "NRAS"))) %>%
+    ggplot(aes(codon_range, cancerf)) +
+    geom_point(aes(size=median,  color = hugo_symbol) ) +
+    theme_classic(base_size=15) +
+    theme(panel.grid.major.x=element_blank(),
+          panel.grid.minor.x=element_blank(),
+          axis.text.x=element_text( size=14),
+          axis.text.y=element_text( size=14),
+          strip.background=element_blank(),
+          strip.text=element_text(size=20),
+          legend.position="bottom",
+          legend.text = element_text(size=8)) +
+    ylab("") +
+    xlab("") +
+    ##scale_colour_gradient(low = "#C3D8EE", high  =  "#1581EE")+
+    scale_color_manual(values=c("red", "steelblue")) +
+    scale_size(range = c(2,12), name="Median\nprevalence") +
+    facet_wrap(~hugo_symbol, ncol=2, scales="free_x") +
+    guides(color=FALSE)
+```
+
+# Composite
+
+```{r fig1, fig.width=25, fig.height=30, dev=c("png", "pdf")}
+gl <- list(ggplotGrob(A),
+           krasg,
+           nrasg,
+           kras_leg,
+           nras_leg)
+vp <- viewport(width=unit(0.98, "npc"),
+               height=unit(0.98, "npc"))
+pushViewport(vp)
+grid.arrange(grobs=gl,
+             widths=c(1.1, 0.1, 1),
+             heights=c(1.3, 1, 1),
+             layout_matrix=rbind(c(1, 1, 1),
+                                 c(2, 4, 3),
+                                 c(2, 5, 3)),
+             newpage=FALSE)
+upViewport()
+grid.text("A", x=unit(0.015, "npc"), y=unit(0.98, "npc"),
+          gp=gpar(cex=3.5))
+grid.text("B", x=unit(0.015, "npc"), y=unit(0.61, "npc"),
+          gp=gpar(cex=3.5))
+```

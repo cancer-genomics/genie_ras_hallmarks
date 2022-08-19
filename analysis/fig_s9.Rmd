@@ -1,0 +1,179 @@
+---
+title: "Figure S9: KRAS co-occurrence"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+
+```{r packages, message=FALSE}
+library(tidyverse)
+library(here)
+library(grid)
+library(gridExtra)
+results <- here("output", "co-mutation",
+                "summarize_models.R",
+                "combined.rds")  %>%
+    readRDS()
+cancerlabs <- read_csv(here("data",
+                            "cancer_labels.csv"))
+```
+
+# Co-occurrence of mutations in non-RAS genes
+
+For volcano plots, highlight genes with adjusted p-value less than 0.01 and color code the different cancers.
+
+```{r alt_group}
+alt_group <- "Any mutation"
+colors <- readRDS(here("output", "co-mutation",
+                       "summarize_models.R",
+                       "colors.rds")) %>%
+    left_join(cancerlabs, by="cancer") %>%
+    mutate(cancer=cancer_label)
+cols <- setNames(colors$color, colors$cancer)
+ras_levels <- c("KRAS_12C", "KRAS_12", "KRAS_13", "KRAS_12-61")
+ras_labels <- paste("KRAS", c("Codon G12C",
+                "Codon 12",
+                "Codon 13",
+                "Codons 12, 13, or 61")) %>%
+    setNames(ras_levels)
+```
+
+```{r significance}
+dat <- results %>%
+    filter(cancer_group=="multi") %>%
+    unnest("data") %>%
+    left_join(cancerlabs, by="cancer") %>%
+    mutate(cancer=cancer_label)
+mut <- dat %>%
+    filter(ras %in% ras_levels,
+           alteration_group %in% alt_group) %>%
+    mutate(ras=factor(ras, ras_levels))
+```
+
+```{r signif_subset}
+dat0 <- mut %>%
+    filter(p < cutoff_ntest)
+signif <- filter(mut, p >= cutoff_ntest)
+```
+
+```{r rlevels}
+rlevels <- levels(dat0$ras)
+rlevels[1] <- rlevels[4]
+rlevels[4] <- levels(dat0$ras)[1]
+```
+
+```{r volcano}
+cancer.levels <- sort(unique(dat0$cancer))
+cols <- cols[cancer.levels]
+cols <- cols[!is.na(cols)]
+A <- dat0 %>%
+    mutate(cancer=factor(cancer, cancer.levels)) %>%
+    mutate(ras=factor(ras, rlevels)) %>%
+    ggplot(aes(`50%`, p)) +
+    geom_vline(xintercept=0, color="gray", linetype="dashed") +
+    geom_point(color="gray", size=0.7) +
+    theme_bw(base_size=15) +
+    xlab("Log odds ratio") +
+    ##ylab("") +
+    ylab(expression(-log[10](p))) +
+    geom_point(data=signif,
+               size=2,
+               aes(color=cancer)) +
+    geom_text(data=signif,
+              aes(label=nonras),
+              nudge_x=0.15,
+              size=3,
+              hjust=0,
+              check_overlap=TRUE) +
+    scale_x_continuous(expand=expansion(mult=0.1)) +
+    scale_color_manual(values=cols) +
+    guides(color=guide_legend(title="", ##reverse=TRUE,
+                              override.aes=list(size=3))) +
+    theme(legend.position="bottom",
+          strip.background=element_blank(),
+          strip.text=element_text(size=15),
+          panel.grid=element_blank()) +
+    facet_wrap(~ras, scales="free_y",
+               ncol=1,
+               labeller=labeller(ras=ras_labels))
+A_leg <- cowplot::get_legend(A)
+A <- A +
+    guides(color=FALSE)
+```
+
+```{r credible_intervals}
+genelevels <- rev(sort(unique(signif$nonras)))
+B <- signif %>%
+    mutate(nonras=factor(nonras, genelevels),
+           ras=factor(ras, rlevels)) %>%
+    ggplot(aes(nonras, `50%`, group=cancer)) +
+    geom_errorbar(aes(ymin=`2.5%`, ymax=`97.5%`, color=cancer),
+                  position=position_dodge(width=0.9),
+                  width=0.2) +
+    geom_point(aes(color=cancer), position=position_dodge(width=0.9)) +
+    facet_wrap(~alteration_group, ncol=1) +
+    theme_bw(base_size=15) +
+    scale_y_continuous(expand=expansion(mult=0.1)) +
+    theme(panel.grid=element_blank(),
+          legend.position="bottom",
+          strip.background=element_blank(),
+          strip.text=element_text(size=15),
+          strip.text.y=element_text(angle=0),
+          axis.text.y=element_text(size=8)) +
+    coord_flip() +
+    xlab("") + ylab("Log odds ratio") +
+    geom_hline(yintercept=0, color="gray", linetype="dashed") +
+    scale_color_manual(values=cols) +
+    guides(color=FALSE) +
+    facet_wrap(~ras, labeller=labeller(ras=ras_labels),
+               ncol=1, scales="free_y")
+```
+
+```{r fig_s9, fig.width=12, fig.height=12, dev=c("png", "pdf")}
+lo <- grid.layout(nrow=2, ncol=2,
+                  widths=unit(c(0.5, 0.5), "npc"),
+                  heights=unit(c(0.92, 0.08), "npc"))
+vp <- viewport(x=unit(0.98, "npc"), y=unit(0.99, "npc"))
+grid.newpage()
+##pushViewport(vp)
+pushViewport(viewport(layout=lo))
+pushViewport(viewport(layout.pos.col=1, layout.pos.row=1))
+pushViewport(viewport(x=unit(0.04, "npc"),
+                      y=unit(0.99, "npc"),
+                      height=unit(0.99, "npc"),
+                      width=unit(0.95, "npc"),
+                      just=c("left", "top")))
+print(A, newpage=FALSE)
+popViewport(2)
+pushViewport(viewport(layout.pos.col=2, layout.pos.row=1))
+pushViewport(viewport(x=unit(0.02, "npc"),
+                      y=unit(0.99, "npc"),
+                      height=unit(0.99, "npc"),
+                      width=unit(0.98, "npc"),
+                      just=c("left", "top")))
+print(B, newpage=FALSE)
+popViewport(2)
+pushViewport(viewport(layout.pos.row=2))
+pushViewport(viewport(y=unit(0.99, "npc"),
+                      x=unit(0.5, "npc"),
+                      height=unit(0.94, "npc"),
+                      width=unit(0.6, "npc"),
+                      just=c("center", "top")))
+grid.draw(A_leg)
+popViewport(3)
+yunits <- unit(c(0.98, 0.759, 0.54, 0.32), "npc")
+xunits <- unit(rep(0.015, 4), "npc")
+grid.text(LETTERS[seq(1, 8, 2)],
+          x=xunits,
+          y=yunits,
+          gp=gpar(cex=1.8))
+xunits <- unit(rep(0.53, 4), "npc")
+grid.text(LETTERS[seq(2, 9, 2)],
+          x=xunits,
+          y=yunits,
+          gp=gpar(cex=1.8))
+```

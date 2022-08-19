@@ -1,0 +1,2206 @@
+cancer_group,confounder,hugo_symbol,cancer,variable,y,n,mean,median,q1,q2,ras,codon_range,codon_label
+multi, ,KRAS,appendiceal cancer,Overall,1,341,0.003,0.002,0,0.009,KRAS_12A,12A,NA
+multi, ,KRAS,colorectal cancer,Overall,145,6724,0.021,0.021,0.018,0.025,KRAS_12A,12A,NA
+multi, ,KRAS,cancer of unknown primary,Overall,14,1989,0.007,0.007,0.004,0.011,KRAS_12A,12A,NA
+multi, ,KRAS,non-small cell lung cancer,Overall,226,10131,0.022,0.022,0.019,0.025,KRAS_12A,12A,NA
+multi, ,KRAS,breast cancer,Overall,6,9333,0.001,0.001,0,0.001,KRAS_12A,12A,NA
+multi, ,KRAS,soft tissue sarcoma,Overall,0,2773,0,0,0,0.001,KRAS_12A,12A,NA
+multi, ,KRAS,pancreatic cancer,Overall,13,2494,0.005,0.005,0.003,0.008,KRAS_12A,12A,NA
+multi, ,KRAS,leukemia,Overall,5,1567,0.003,0.003,0.001,0.006,KRAS_12A,12A,NA
+multi, ,KRAS,melanoma,Overall,1,2846,0.001,0.001,0,0.002,KRAS_12A,12A,NA
+multi, ,KRAS,head and neck cancer,Overall,1,1743,0.001,0.001,0,0.003,KRAS_12A,12A,NA
+multi, ,KRAS,uterine cancer,Overall,31,2254,0.013,0.013,0.009,0.018,KRAS_12A,12A,NA
+multi, ,KRAS,non-melanoma skin cancers,Overall,0,513,0.001,0.001,0,0.004,KRAS_12A,12A,NA
+multi, ,KRAS,myelodysplastic/myeloproliferative syndromes,Overall,1,1207,0.001,0.001,0,0.003,KRAS_12A,12A,NA
+multi, ,KRAS,adrenocortical carcinoma,Overall,0,134,0.002,0.001,0,0.009,KRAS_12A,12A,NA
+multi, ,KRAS,ovarian cancer,Overall,14,2337,0.006,0.006,0.003,0.009,KRAS_12A,12A,NA
+multi, ,KRAS,esophagogastric cancer,Overall,6,1802,0.003,0.003,0.001,0.006,KRAS_12A,12A,NA
+multi, ,KRAS,thyroid cancer,Overall,0,1017,0.001,0.001,0,0.003,KRAS_12A,12A,NA
+multi, ,KRAS,cervical cancer,Overall,1,367,0.003,0.002,0,0.009,KRAS_12A,12A,NA
+multi, ,KRAS,hepatobiliary cancer,Overall,7,1375,0.005,0.005,0.002,0.009,KRAS_12A,12A,NA
+multi, ,KRAS,kidney cancer,Overall,0,1422,0.001,0,0,0.002,KRAS_12A,12A,NA
+multi, ,KRAS,mature t and nk neoplasms,Overall,0,231,0.002,0.001,0,0.007,KRAS_12A,12A,NA
+multi, ,KRAS,cns cancer,Overall,6,4565,0.001,0.001,0.001,0.003,KRAS_12A,12A,NA
+multi, ,KRAS,prostate cancer,Overall,0,2440,0,0,0,0.001,KRAS_12A,12A,NA
+multi, ,KRAS,anal cancer,Overall,1,149,0.005,0.004,0,0.016,KRAS_12A,12A,NA
+multi, ,KRAS,neuroendocrine tumors,Overall,1,359,0.003,0.002,0,0.009,KRAS_12A,12A,NA
+multi, ,KRAS,bladder cancer,Overall,3,1581,0.002,0.002,0.001,0.004,KRAS_12A,12A,NA
+multi, ,KRAS,b-lymphoblastic leukemia/lymphoma,Overall,1,248,0.004,0.003,0,0.011,KRAS_12A,12A,NA
+multi, ,KRAS,small bowel cancer,Overall,4,210,0.014,0.013,0.004,0.032,KRAS_12A,12A,NA
+multi, ,KRAS,sex cord stromal tumor,Overall,0,108,0.002,0.001,0,0.01,KRAS_12A,12A,NA
+multi, ,KRAS,bone cancer,Overall,2,570,0.003,0.003,0.001,0.008,KRAS_12A,12A,NA
+multi, ,KRAS,vaginal cancer,Overall,1,78,0.007,0.005,0.001,0.026,KRAS_12A,12A,NA
+multi, ,KRAS,thymic tumor,Overall,0,156,0.002,0.001,0,0.008,KRAS_12A,12A,NA
+multi, ,KRAS,ampullary cancer,Overall,1,106,0.006,0.004,0.001,0.021,KRAS_12A,12A,NA
+multi, ,KRAS,small cell lung cancer,Overall,1,398,0.003,0.002,0,0.008,KRAS_12A,12A,NA
+multi, ,KRAS,mesothelioma,Overall,0,497,0.001,0.001,0,0.004,KRAS_12A,12A,NA
+multi, ,KRAS,germ cell tumor,Overall,7,886,0.007,0.007,0.003,0.013,KRAS_12A,12A,NA
+multi, ,KRAS,nerve sheath tumor,Overall,1,154,0.005,0.003,0,0.016,KRAS_12A,12A,NA
+multi, ,KRAS,penile cancer,Overall,0,25,0.004,0.002,0,0.018,KRAS_12A,12A,NA
+multi, ,KRAS,pheochromocytoma,Overall,0,25,0.004,0.002,0,0.018,KRAS_12A,12A,NA
+multi, ,KRAS,pineal tumor,Overall,0,21,0.004,0.002,0,0.019,KRAS_12A,12A,NA
+multi, ,KRAS,b cell lymphoma,Overall,2,962,0.002,0.002,0,0.005,KRAS_12A,12A,NA
+multi, ,KRAS,non-hodgkin lymphoma,Overall,0,23,0.004,0.002,0,0.019,KRAS_12A,12A,NA
+multi, ,KRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.003,0.002,0,0.015,KRAS_12A,12A,NA
+multi, ,KRAS,retinoblastoma,Overall,0,51,0.003,0.002,0,0.014,KRAS_12A,12A,NA
+multi, ,KRAS,hodgkin lymphoma,Overall,0,40,0.003,0.002,0,0.015,KRAS_12A,12A,NA
+multi, ,KRAS,lung cancer,Overall,0,25,0.003,0.002,0,0.018,KRAS_12A,12A,NA
+multi, ,KRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.004,0.002,0,0.021,KRAS_12A,12A,NA
+multi, ,KRAS,peritoneal cancer,Overall,0,19,0.004,0.002,0,0.02,KRAS_12A,12A,NA
+multi, ,KRAS,parathyroid cancer,Overall,0,16,0.004,0.002,0,0.02,KRAS_12A,12A,NA
+multi, ,KRAS,appendiceal cancer,Overall,9,341,0.025,0.024,0.011,0.043,KRAS_12C,12C,NA
+multi, ,KRAS,colorectal cancer,Overall,212,6724,0.031,0.031,0.027,0.036,KRAS_12C,12C,NA
+multi, ,KRAS,cancer of unknown primary,Overall,61,1989,0.03,0.03,0.023,0.038,KRAS_12C,12C,NA
+multi, ,KRAS,non-small cell lung cancer,Overall,1213,10131,0.12,0.12,0.113,0.126,KRAS_12C,12C,NA
+multi, ,KRAS,breast cancer,Overall,8,9333,0.001,0.001,0,0.002,KRAS_12C,12C,NA
+multi, ,KRAS,soft tissue sarcoma,Overall,5,2773,0.002,0.002,0.001,0.004,KRAS_12C,12C,NA
+multi, ,KRAS,pancreatic cancer,Overall,22,2494,0.009,0.009,0.005,0.013,KRAS_12C,12C,NA
+multi, ,KRAS,leukemia,Overall,0,1567,0,0,0,0.002,KRAS_12C,12C,NA
+multi, ,KRAS,melanoma,Overall,2,2846,0.001,0.001,0,0.002,KRAS_12C,12C,NA
+multi, ,KRAS,head and neck cancer,Overall,2,1743,0.001,0.001,0,0.003,KRAS_12C,12C,NA
+multi, ,KRAS,uterine cancer,Overall,26,2254,0.011,0.011,0.007,0.016,KRAS_12C,12C,NA
+multi, ,KRAS,non-melanoma skin cancers,Overall,0,513,0.001,0,0,0.004,KRAS_12C,12C,NA
+multi, ,KRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1207,0,0,0,0.002,KRAS_12C,12C,NA
+multi, ,KRAS,adrenocortical carcinoma,Overall,0,134,0.002,0.001,0,0.01,KRAS_12C,12C,NA
+multi, ,KRAS,ovarian cancer,Overall,10,2337,0.004,0.004,0.002,0.007,KRAS_12C,12C,NA
+multi, ,KRAS,esophagogastric cancer,Overall,5,1802,0.003,0.003,0.001,0.006,KRAS_12C,12C,NA
+multi, ,KRAS,thyroid cancer,Overall,2,1017,0.002,0.002,0,0.005,KRAS_12C,12C,NA
+multi, ,KRAS,cervical cancer,Overall,1,367,0.003,0.002,0,0.009,KRAS_12C,12C,NA
+multi, ,KRAS,hepatobiliary cancer,Overall,10,1375,0.007,0.007,0.003,0.012,KRAS_12C,12C,NA
+multi, ,KRAS,kidney cancer,Overall,1,1422,0.001,0.001,0,0.003,KRAS_12C,12C,NA
+multi, ,KRAS,mature t and nk neoplasms,Overall,0,231,0.001,0.001,0,0.007,KRAS_12C,12C,NA
+multi, ,KRAS,cns cancer,Overall,0,4565,0,0,0,0.001,KRAS_12C,12C,NA
+multi, ,KRAS,prostate cancer,Overall,0,2440,0,0,0,0.001,KRAS_12C,12C,NA
+multi, ,KRAS,anal cancer,Overall,0,149,0.002,0.001,0,0.009,KRAS_12C,12C,NA
+multi, ,KRAS,neuroendocrine tumors,Overall,2,359,0.005,0.004,0.001,0.014,KRAS_12C,12C,NA
+multi, ,KRAS,bladder cancer,Overall,8,1581,0.005,0.005,0.002,0.009,KRAS_12C,12C,NA
+multi, ,KRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0.001,0.001,0,0.006,KRAS_12C,12C,NA
+multi, ,KRAS,small bowel cancer,Overall,8,210,0.035,0.033,0.015,0.063,KRAS_12C,12C,NA
+multi, ,KRAS,sex cord stromal tumor,Overall,0,108,0.002,0.001,0,0.011,KRAS_12C,12C,NA
+multi, ,KRAS,bone cancer,Overall,0,570,0.001,0,0,0.003,KRAS_12C,12C,NA
+multi, ,KRAS,vaginal cancer,Overall,1,78,0.009,0.006,0,0.035,KRAS_12C,12C,NA
+multi, ,KRAS,thymic tumor,Overall,0,156,0.002,0.001,0,0.009,KRAS_12C,12C,NA
+multi, ,KRAS,ampullary cancer,Overall,4,106,0.032,0.029,0.008,0.071,KRAS_12C,12C,NA
+multi, ,KRAS,small cell lung cancer,Overall,3,398,0.007,0.006,0.001,0.016,KRAS_12C,12C,NA
+multi, ,KRAS,mesothelioma,Overall,0,497,0.001,0,0,0.004,KRAS_12C,12C,NA
+multi, ,KRAS,germ cell tumor,Overall,4,886,0.004,0.004,0.001,0.009,KRAS_12C,12C,NA
+multi, ,KRAS,nerve sheath tumor,Overall,0,154,0.002,0.001,0,0.009,KRAS_12C,12C,NA
+multi, ,KRAS,penile cancer,Overall,0,25,0.004,0.001,0,0.029,KRAS_12C,12C,NA
+multi, ,KRAS,pheochromocytoma,Overall,0,25,0.004,0.001,0,0.029,KRAS_12C,12C,NA
+multi, ,KRAS,pineal tumor,Overall,0,21,0.005,0.001,0,0.032,KRAS_12C,12C,NA
+multi, ,KRAS,b cell lymphoma,Overall,0,962,0.001,0,0,0.002,KRAS_12C,12C,NA
+multi, ,KRAS,non-hodgkin lymphoma,Overall,0,23,0.005,0.001,0,0.029,KRAS_12C,12C,NA
+multi, ,KRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.004,0.001,0,0.021,KRAS_12C,12C,NA
+multi, ,KRAS,retinoblastoma,Overall,0,51,0.003,0.001,0,0.019,KRAS_12C,12C,NA
+multi, ,KRAS,hodgkin lymphoma,Overall,0,40,0.004,0.001,0,0.021,KRAS_12C,12C,NA
+multi, ,KRAS,lung cancer,Overall,2,25,0.05,0.04,0.005,0.153,KRAS_12C,12C,NA
+multi, ,KRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.006,0.002,0,0.039,KRAS_12C,12C,NA
+multi, ,KRAS,peritoneal cancer,Overall,0,19,0.005,0.001,0,0.034,KRAS_12C,12C,NA
+multi, ,KRAS,parathyroid cancer,Overall,0,16,0.005,0.002,0,0.034,KRAS_12C,12C,NA
+multi, ,KRAS,appendiceal cancer,Overall,92,341,0.266,0.266,0.22,0.314,KRAS_12D,12D,NA
+multi, ,KRAS,colorectal cancer,Overall,885,6724,0.131,0.131,0.123,0.14,KRAS_12D,12D,NA
+multi, ,KRAS,cancer of unknown primary,Overall,107,1989,0.054,0.053,0.044,0.064,KRAS_12D,12D,NA
+multi, ,KRAS,non-small cell lung cancer,Overall,432,10131,0.043,0.043,0.039,0.047,KRAS_12D,12D,NA
+multi, ,KRAS,breast cancer,Overall,11,9333,0.001,0.001,0.001,0.002,KRAS_12D,12D,NA
+multi, ,KRAS,soft tissue sarcoma,Overall,11,2773,0.004,0.004,0.002,0.007,KRAS_12D,12D,NA
+multi, ,KRAS,pancreatic cancer,Overall,782,2494,0.313,0.313,0.295,0.332,KRAS_12D,12D,NA
+multi, ,KRAS,leukemia,Overall,21,1567,0.013,0.013,0.008,0.02,KRAS_12D,12D,NA
+multi, ,KRAS,melanoma,Overall,14,2846,0.005,0.005,0.003,0.008,KRAS_12D,12D,NA
+multi, ,KRAS,head and neck cancer,Overall,4,1743,0.003,0.002,0.001,0.005,KRAS_12D,12D,NA
+multi, ,KRAS,uterine cancer,Overall,102,2254,0.045,0.045,0.037,0.054,KRAS_12D,12D,NA
+multi, ,KRAS,non-melanoma skin cancers,Overall,1,513,0.003,0.002,0,0.008,KRAS_12D,12D,NA
+multi, ,KRAS,myelodysplastic/myeloproliferative syndromes,Overall,4,1207,0.004,0.003,0.001,0.008,KRAS_12D,12D,NA
+multi, ,KRAS,adrenocortical carcinoma,Overall,0,134,0.003,0.002,0,0.015,KRAS_12D,12D,NA
+multi, ,KRAS,ovarian cancer,Overall,82,2337,0.035,0.035,0.028,0.043,KRAS_12D,12D,NA
+multi, ,KRAS,esophagogastric cancer,Overall,33,1802,0.018,0.018,0.013,0.025,KRAS_12D,12D,NA
+multi, ,KRAS,thyroid cancer,Overall,3,1017,0.003,0.003,0.001,0.007,KRAS_12D,12D,NA
+multi, ,KRAS,cervical cancer,Overall,10,367,0.026,0.026,0.013,0.045,KRAS_12D,12D,NA
+multi, ,KRAS,hepatobiliary cancer,Overall,55,1375,0.04,0.039,0.03,0.051,KRAS_12D,12D,NA
+multi, ,KRAS,kidney cancer,Overall,5,1422,0.004,0.003,0.001,0.007,KRAS_12D,12D,NA
+multi, ,KRAS,mature t and nk neoplasms,Overall,0,231,0.002,0.001,0,0.01,KRAS_12D,12D,NA
+multi, ,KRAS,cns cancer,Overall,8,4565,0.002,0.002,0.001,0.003,KRAS_12D,12D,NA
+multi, ,KRAS,prostate cancer,Overall,2,2440,0.001,0.001,0,0.003,KRAS_12D,12D,NA
+multi, ,KRAS,anal cancer,Overall,1,149,0.008,0.006,0.001,0.025,KRAS_12D,12D,NA
+multi, ,KRAS,neuroendocrine tumors,Overall,14,359,0.038,0.037,0.021,0.06,KRAS_12D,12D,NA
+multi, ,KRAS,bladder cancer,Overall,32,1581,0.02,0.02,0.014,0.028,KRAS_12D,12D,NA
+multi, ,KRAS,b-lymphoblastic leukemia/lymphoma,Overall,8,248,0.031,0.03,0.013,0.055,KRAS_12D,12D,NA
+multi, ,KRAS,small bowel cancer,Overall,25,210,0.115,0.114,0.076,0.163,KRAS_12D,12D,NA
+multi, ,KRAS,sex cord stromal tumor,Overall,0,108,0.004,0.002,0,0.017,KRAS_12D,12D,NA
+multi, ,KRAS,bone cancer,Overall,2,570,0.004,0.003,0.001,0.01,KRAS_12D,12D,NA
+multi, ,KRAS,vaginal cancer,Overall,1,78,0.013,0.01,0.001,0.042,KRAS_12D,12D,NA
+multi, ,KRAS,thymic tumor,Overall,0,156,0.003,0.002,0,0.013,KRAS_12D,12D,NA
+multi, ,KRAS,ampullary cancer,Overall,28,106,0.254,0.253,0.177,0.341,KRAS_12D,12D,NA
+multi, ,KRAS,small cell lung cancer,Overall,4,398,0.01,0.009,0.003,0.021,KRAS_12D,12D,NA
+multi, ,KRAS,mesothelioma,Overall,0,497,0.001,0.001,0,0.005,KRAS_12D,12D,NA
+multi, ,KRAS,germ cell tumor,Overall,9,886,0.01,0.01,0.005,0.018,KRAS_12D,12D,NA
+multi, ,KRAS,nerve sheath tumor,Overall,0,154,0.003,0.002,0,0.013,KRAS_12D,12D,NA
+multi, ,KRAS,penile cancer,Overall,0,25,0.009,0.004,0,0.049,KRAS_12D,12D,NA
+multi, ,KRAS,pheochromocytoma,Overall,0,25,0.009,0.004,0,0.047,KRAS_12D,12D,NA
+multi, ,KRAS,pineal tumor,Overall,0,21,0.01,0.004,0,0.053,KRAS_12D,12D,NA
+multi, ,KRAS,b cell lymphoma,Overall,3,962,0.003,0.003,0.001,0.008,KRAS_12D,12D,NA
+multi, ,KRAS,non-hodgkin lymphoma,Overall,0,23,0.01,0.004,0,0.051,KRAS_12D,12D,NA
+multi, ,KRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.007,0.004,0,0.035,KRAS_12D,12D,NA
+multi, ,KRAS,retinoblastoma,Overall,0,51,0.006,0.003,0,0.03,KRAS_12D,12D,NA
+multi, ,KRAS,hodgkin lymphoma,Overall,0,40,0.007,0.004,0,0.036,KRAS_12D,12D,NA
+multi, ,KRAS,lung cancer,Overall,0,25,0.009,0.004,0,0.049,KRAS_12D,12D,NA
+multi, ,KRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,1,13,0.048,0.033,0.002,0.183,KRAS_12D,12D,NA
+multi, ,KRAS,peritoneal cancer,Overall,0,19,0.011,0.005,0,0.059,KRAS_12D,12D,NA
+multi, ,KRAS,parathyroid cancer,Overall,0,16,0.011,0.005,0,0.063,KRAS_12D,12D,NA
+multi, ,KRAS,appendiceal cancer,Overall,0,341,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,colorectal cancer,Overall,1,6724,0,0,0,0,KRAS_12F,12F,NA
+multi, ,KRAS,cancer of unknown primary,Overall,3,1989,0.001,0.001,0,0.003,KRAS_12F,12F,NA
+multi, ,KRAS,non-small cell lung cancer,Overall,32,10131,0.003,0.003,0.002,0.004,KRAS_12F,12F,NA
+multi, ,KRAS,breast cancer,Overall,0,9333,0,0,0,0,KRAS_12F,12F,NA
+multi, ,KRAS,soft tissue sarcoma,Overall,0,2773,0,0,0,0,KRAS_12F,12F,NA
+multi, ,KRAS,pancreatic cancer,Overall,1,2494,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,leukemia,Overall,0,1567,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,melanoma,Overall,0,2846,0,0,0,0,KRAS_12F,12F,NA
+multi, ,KRAS,head and neck cancer,Overall,0,1743,0,0,0,0,KRAS_12F,12F,NA
+multi, ,KRAS,uterine cancer,Overall,0,2254,0,0,0,0,KRAS_12F,12F,NA
+multi, ,KRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1207,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,adrenocortical carcinoma,Overall,0,134,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,ovarian cancer,Overall,1,2337,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0,KRAS_12F,12F,NA
+multi, ,KRAS,thyroid cancer,Overall,0,1017,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,cervical cancer,Overall,0,367,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,hepatobiliary cancer,Overall,0,1375,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,mature t and nk neoplasms,Overall,0,231,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,cns cancer,Overall,0,4565,0,0,0,0,KRAS_12F,12F,NA
+multi, ,KRAS,prostate cancer,Overall,0,2440,0,0,0,0,KRAS_12F,12F,NA
+multi, ,KRAS,anal cancer,Overall,0,149,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,bladder cancer,Overall,0,1581,0,0,0,0,KRAS_12F,12F,NA
+multi, ,KRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,small bowel cancer,Overall,0,210,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,sex cord stromal tumor,Overall,0,108,0,0,0,0.002,KRAS_12F,12F,NA
+multi, ,KRAS,bone cancer,Overall,0,570,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,vaginal cancer,Overall,0,78,0,0,0,0.002,KRAS_12F,12F,NA
+multi, ,KRAS,thymic tumor,Overall,0,156,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,ampullary cancer,Overall,0,106,0,0,0,0.002,KRAS_12F,12F,NA
+multi, ,KRAS,small cell lung cancer,Overall,0,398,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,mesothelioma,Overall,0,497,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,germ cell tumor,Overall,0,886,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,nerve sheath tumor,Overall,0,154,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,penile cancer,Overall,0,25,0,0,0,0.002,KRAS_12F,12F,NA
+multi, ,KRAS,pheochromocytoma,Overall,0,25,0,0,0,0.002,KRAS_12F,12F,NA
+multi, ,KRAS,pineal tumor,Overall,0,21,0,0,0,0.002,KRAS_12F,12F,NA
+multi, ,KRAS,b cell lymphoma,Overall,0,962,0,0,0,0.001,KRAS_12F,12F,NA
+multi, ,KRAS,non-hodgkin lymphoma,Overall,0,23,0,0,0,0.002,KRAS_12F,12F,NA
+multi, ,KRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0,0,0,0.002,KRAS_12F,12F,NA
+multi, ,KRAS,retinoblastoma,Overall,0,51,0,0,0,0.002,KRAS_12F,12F,NA
+multi, ,KRAS,hodgkin lymphoma,Overall,0,40,0,0,0,0.002,KRAS_12F,12F,NA
+multi, ,KRAS,lung cancer,Overall,0,25,0,0,0,0.002,KRAS_12F,12F,NA
+multi, ,KRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0,0,0,0.002,KRAS_12F,12F,NA
+multi, ,KRAS,peritoneal cancer,Overall,0,19,0,0,0,0.002,KRAS_12F,12F,NA
+multi, ,KRAS,parathyroid cancer,Overall,0,16,0,0,0,0.002,KRAS_12F,12F,NA
+multi, ,KRAS,appendiceal cancer,Overall,3,341,0.007,0.006,0.002,0.017,KRAS_12R,12R,NA
+multi, ,KRAS,colorectal cancer,Overall,34,6724,0.005,0.005,0.003,0.007,KRAS_12R,12R,NA
+multi, ,KRAS,cancer of unknown primary,Overall,17,1989,0.008,0.008,0.005,0.012,KRAS_12R,12R,NA
+multi, ,KRAS,non-small cell lung cancer,Overall,36,10131,0.004,0.003,0.002,0.005,KRAS_12R,12R,NA
+multi, ,KRAS,breast cancer,Overall,4,9333,0,0,0,0.001,KRAS_12R,12R,NA
+multi, ,KRAS,soft tissue sarcoma,Overall,3,2773,0.001,0.001,0,0.003,KRAS_12R,12R,NA
+multi, ,KRAS,pancreatic cancer,Overall,276,2494,0.11,0.11,0.098,0.122,KRAS_12R,12R,NA
+multi, ,KRAS,leukemia,Overall,2,1567,0.001,0.001,0,0.004,KRAS_12R,12R,NA
+multi, ,KRAS,melanoma,Overall,3,2846,0.001,0.001,0,0.003,KRAS_12R,12R,NA
+multi, ,KRAS,head and neck cancer,Overall,0,1743,0,0,0,0.002,KRAS_12R,12R,NA
+multi, ,KRAS,uterine cancer,Overall,2,2254,0.001,0.001,0,0.003,KRAS_12R,12R,NA
+multi, ,KRAS,non-melanoma skin cancers,Overall,0,513,0.001,0.001,0,0.004,KRAS_12R,12R,NA
+multi, ,KRAS,myelodysplastic/myeloproliferative syndromes,Overall,2,1207,0.002,0.001,0,0.004,KRAS_12R,12R,NA
+multi, ,KRAS,adrenocortical carcinoma,Overall,0,134,0.002,0.001,0,0.009,KRAS_12R,12R,NA
+multi, ,KRAS,ovarian cancer,Overall,10,2337,0.004,0.004,0.002,0.007,KRAS_12R,12R,NA
+multi, ,KRAS,esophagogastric cancer,Overall,2,1802,0.001,0.001,0,0.003,KRAS_12R,12R,NA
+multi, ,KRAS,thyroid cancer,Overall,1,1017,0.001,0.001,0,0.004,KRAS_12R,12R,NA
+multi, ,KRAS,cervical cancer,Overall,1,367,0.003,0.002,0,0.008,KRAS_12R,12R,NA
+multi, ,KRAS,hepatobiliary cancer,Overall,3,1375,0.002,0.002,0.001,0.005,KRAS_12R,12R,NA
+multi, ,KRAS,kidney cancer,Overall,0,1422,0.001,0,0,0.002,KRAS_12R,12R,NA
+multi, ,KRAS,mature t and nk neoplasms,Overall,0,231,0.001,0.001,0,0.006,KRAS_12R,12R,NA
+multi, ,KRAS,cns cancer,Overall,2,4565,0.001,0.001,0,0.001,KRAS_12R,12R,NA
+multi, ,KRAS,prostate cancer,Overall,3,2440,0.001,0.001,0,0.003,KRAS_12R,12R,NA
+multi, ,KRAS,anal cancer,Overall,0,149,0.002,0.001,0,0.008,KRAS_12R,12R,NA
+multi, ,KRAS,neuroendocrine tumors,Overall,2,359,0.004,0.004,0.001,0.013,KRAS_12R,12R,NA
+multi, ,KRAS,bladder cancer,Overall,3,1581,0.002,0.002,0,0.004,KRAS_12R,12R,NA
+multi, ,KRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0.001,0.001,0,0.006,KRAS_12R,12R,NA
+multi, ,KRAS,small bowel cancer,Overall,3,210,0.01,0.009,0.002,0.026,KRAS_12R,12R,NA
+multi, ,KRAS,sex cord stromal tumor,Overall,0,108,0.002,0.001,0,0.01,KRAS_12R,12R,NA
+multi, ,KRAS,bone cancer,Overall,0,570,0.001,0.001,0,0.003,KRAS_12R,12R,NA
+multi, ,KRAS,vaginal cancer,Overall,0,78,0.002,0.001,0,0.011,KRAS_12R,12R,NA
+multi, ,KRAS,thymic tumor,Overall,0,156,0.002,0.001,0,0.008,KRAS_12R,12R,NA
+multi, ,KRAS,ampullary cancer,Overall,3,106,0.018,0.016,0.003,0.048,KRAS_12R,12R,NA
+multi, ,KRAS,small cell lung cancer,Overall,0,398,0.001,0.001,0,0.004,KRAS_12R,12R,NA
+multi, ,KRAS,mesothelioma,Overall,0,497,0.001,0.001,0,0.004,KRAS_12R,12R,NA
+multi, ,KRAS,germ cell tumor,Overall,8,886,0.008,0.008,0.004,0.015,KRAS_12R,12R,NA
+multi, ,KRAS,nerve sheath tumor,Overall,0,154,0.002,0.001,0,0.008,KRAS_12R,12R,NA
+multi, ,KRAS,penile cancer,Overall,1,25,0.013,0.007,0.001,0.06,KRAS_12R,12R,NA
+multi, ,KRAS,pheochromocytoma,Overall,0,25,0.003,0.001,0,0.017,KRAS_12R,12R,NA
+multi, ,KRAS,pineal tumor,Overall,0,21,0.003,0.001,0,0.019,KRAS_12R,12R,NA
+multi, ,KRAS,b cell lymphoma,Overall,2,962,0.002,0.002,0,0.005,KRAS_12R,12R,NA
+multi, ,KRAS,non-hodgkin lymphoma,Overall,0,23,0.003,0.001,0,0.018,KRAS_12R,12R,NA
+multi, ,KRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.003,0.001,0,0.015,KRAS_12R,12R,NA
+multi, ,KRAS,retinoblastoma,Overall,0,51,0.003,0.001,0,0.014,KRAS_12R,12R,NA
+multi, ,KRAS,hodgkin lymphoma,Overall,0,40,0.003,0.001,0,0.016,KRAS_12R,12R,NA
+multi, ,KRAS,lung cancer,Overall,0,25,0.003,0.001,0,0.018,KRAS_12R,12R,NA
+multi, ,KRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.004,0.001,0,0.021,KRAS_12R,12R,NA
+multi, ,KRAS,peritoneal cancer,Overall,0,19,0.003,0.001,0,0.019,KRAS_12R,12R,NA
+multi, ,KRAS,parathyroid cancer,Overall,0,16,0.003,0.001,0,0.02,KRAS_12R,12R,NA
+multi, ,KRAS,appendiceal cancer,Overall,1,341,0.002,0.002,0,0.008,KRAS_12S,12S,NA
+multi, ,KRAS,colorectal cancer,Overall,126,6724,0.019,0.018,0.015,0.022,KRAS_12S,12S,NA
+multi, ,KRAS,cancer of unknown primary,Overall,5,1989,0.002,0.002,0.001,0.005,KRAS_12S,12S,NA
+multi, ,KRAS,non-small cell lung cancer,Overall,52,10131,0.005,0.005,0.004,0.007,KRAS_12S,12S,NA
+multi, ,KRAS,breast cancer,Overall,6,9333,0.001,0.001,0,0.001,KRAS_12S,12S,NA
+multi, ,KRAS,soft tissue sarcoma,Overall,0,2773,0,0,0,0.001,KRAS_12S,12S,NA
+multi, ,KRAS,pancreatic cancer,Overall,0,2494,0,0,0,0.001,KRAS_12S,12S,NA
+multi, ,KRAS,leukemia,Overall,1,1567,0.001,0.001,0,0.002,KRAS_12S,12S,NA
+multi, ,KRAS,melanoma,Overall,1,2846,0,0,0,0.001,KRAS_12S,12S,NA
+multi, ,KRAS,head and neck cancer,Overall,0,1743,0,0,0,0.001,KRAS_12S,12S,NA
+multi, ,KRAS,uterine cancer,Overall,6,2254,0.002,0.002,0.001,0.005,KRAS_12S,12S,NA
+multi, ,KRAS,non-melanoma skin cancers,Overall,0,513,0.001,0,0,0.003,KRAS_12S,12S,NA
+multi, ,KRAS,myelodysplastic/myeloproliferative syndromes,Overall,2,1207,0.002,0.001,0,0.004,KRAS_12S,12S,NA
+multi, ,KRAS,adrenocortical carcinoma,Overall,0,134,0.001,0.001,0,0.006,KRAS_12S,12S,NA
+multi, ,KRAS,ovarian cancer,Overall,1,2337,0.001,0,0,0.002,KRAS_12S,12S,NA
+multi, ,KRAS,esophagogastric cancer,Overall,4,1802,0.002,0.002,0.001,0.004,KRAS_12S,12S,NA
+multi, ,KRAS,thyroid cancer,Overall,0,1017,0,0,0,0.002,KRAS_12S,12S,NA
+multi, ,KRAS,cervical cancer,Overall,3,367,0.006,0.005,0.001,0.015,KRAS_12S,12S,NA
+multi, ,KRAS,hepatobiliary cancer,Overall,2,1375,0.001,0.001,0,0.004,KRAS_12S,12S,NA
+multi, ,KRAS,kidney cancer,Overall,1,1422,0.001,0.001,0,0.003,KRAS_12S,12S,NA
+multi, ,KRAS,mature t and nk neoplasms,Overall,0,231,0.001,0.001,0,0.005,KRAS_12S,12S,NA
+multi, ,KRAS,cns cancer,Overall,0,4565,0,0,0,0.001,KRAS_12S,12S,NA
+multi, ,KRAS,prostate cancer,Overall,0,2440,0,0,0,0.001,KRAS_12S,12S,NA
+multi, ,KRAS,anal cancer,Overall,0,149,0.001,0.001,0,0.006,KRAS_12S,12S,NA
+multi, ,KRAS,neuroendocrine tumors,Overall,0,359,0.001,0,0,0.004,KRAS_12S,12S,NA
+multi, ,KRAS,bladder cancer,Overall,2,1581,0.001,0.001,0,0.003,KRAS_12S,12S,NA
+multi, ,KRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0.001,0.001,0,0.005,KRAS_12S,12S,NA
+multi, ,KRAS,small bowel cancer,Overall,3,210,0.009,0.008,0.002,0.025,KRAS_12S,12S,NA
+multi, ,KRAS,sex cord stromal tumor,Overall,0,108,0.001,0.001,0,0.007,KRAS_12S,12S,NA
+multi, ,KRAS,bone cancer,Overall,0,570,0.001,0,0,0.003,KRAS_12S,12S,NA
+multi, ,KRAS,vaginal cancer,Overall,0,78,0.001,0.001,0,0.008,KRAS_12S,12S,NA
+multi, ,KRAS,thymic tumor,Overall,0,156,0.001,0.001,0,0.006,KRAS_12S,12S,NA
+multi, ,KRAS,ampullary cancer,Overall,1,106,0.005,0.003,0,0.019,KRAS_12S,12S,NA
+multi, ,KRAS,small cell lung cancer,Overall,0,398,0.001,0,0,0.003,KRAS_12S,12S,NA
+multi, ,KRAS,mesothelioma,Overall,0,497,0.001,0,0,0.003,KRAS_12S,12S,NA
+multi, ,KRAS,germ cell tumor,Overall,4,886,0.004,0.003,0.001,0.009,KRAS_12S,12S,NA
+multi, ,KRAS,nerve sheath tumor,Overall,0,154,0.001,0.001,0,0.006,KRAS_12S,12S,NA
+multi, ,KRAS,penile cancer,Overall,0,25,0.002,0.001,0,0.011,KRAS_12S,12S,NA
+multi, ,KRAS,pheochromocytoma,Overall,0,25,0.002,0.001,0,0.012,KRAS_12S,12S,NA
+multi, ,KRAS,pineal tumor,Overall,0,21,0.002,0.001,0,0.013,KRAS_12S,12S,NA
+multi, ,KRAS,b cell lymphoma,Overall,3,962,0.003,0.002,0.001,0.006,KRAS_12S,12S,NA
+multi, ,KRAS,non-hodgkin lymphoma,Overall,0,23,0.002,0.001,0,0.012,KRAS_12S,12S,NA
+multi, ,KRAS,t-lymphoblastic leukemia/lymphoma,Overall,1,40,0.008,0.004,0,0.037,KRAS_12S,12S,NA
+multi, ,KRAS,retinoblastoma,Overall,0,51,0.002,0.001,0,0.009,KRAS_12S,12S,NA
+multi, ,KRAS,hodgkin lymphoma,Overall,0,40,0.002,0.001,0,0.01,KRAS_12S,12S,NA
+multi, ,KRAS,lung cancer,Overall,0,25,0.002,0.001,0,0.012,KRAS_12S,12S,NA
+multi, ,KRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.002,0.001,0,0.014,KRAS_12S,12S,NA
+multi, ,KRAS,peritoneal cancer,Overall,0,19,0.002,0.001,0,0.013,KRAS_12S,12S,NA
+multi, ,KRAS,parathyroid cancer,Overall,0,16,0.002,0.001,0,0.013,KRAS_12S,12S,NA
+multi, ,KRAS,appendiceal cancer,Overall,41,341,0.118,0.117,0.086,0.154,KRAS_12V,12V,NA
+multi, ,KRAS,colorectal cancer,Overall,620,6724,0.092,0.092,0.085,0.099,KRAS_12V,12V,NA
+multi, ,KRAS,cancer of unknown primary,Overall,107,1989,0.053,0.053,0.044,0.063,KRAS_12V,12V,NA
+multi, ,KRAS,non-small cell lung cancer,Overall,548,10131,0.054,0.054,0.05,0.059,KRAS_12V,12V,NA
+multi, ,KRAS,breast cancer,Overall,30,9333,0.003,0.003,0.002,0.005,KRAS_12V,12V,NA
+multi, ,KRAS,soft tissue sarcoma,Overall,4,2773,0.002,0.001,0,0.003,KRAS_12V,12V,NA
+multi, ,KRAS,pancreatic cancer,Overall,583,2494,0.233,0.233,0.217,0.25,KRAS_12V,12V,NA
+multi, ,KRAS,leukemia,Overall,16,1567,0.01,0.01,0.006,0.016,KRAS_12V,12V,NA
+multi, ,KRAS,melanoma,Overall,2,2846,0.001,0.001,0,0.002,KRAS_12V,12V,NA
+multi, ,KRAS,head and neck cancer,Overall,1,1743,0.001,0.001,0,0.003,KRAS_12V,12V,NA
+multi, ,KRAS,uterine cancer,Overall,112,2254,0.049,0.049,0.041,0.059,KRAS_12V,12V,NA
+multi, ,KRAS,non-melanoma skin cancers,Overall,1,513,0.003,0.002,0,0.008,KRAS_12V,12V,NA
+multi, ,KRAS,myelodysplastic/myeloproliferative syndromes,Overall,2,1207,0.002,0.002,0,0.005,KRAS_12V,12V,NA
+multi, ,KRAS,adrenocortical carcinoma,Overall,0,134,0.003,0.002,0,0.014,KRAS_12V,12V,NA
+multi, ,KRAS,ovarian cancer,Overall,83,2337,0.035,0.035,0.028,0.043,KRAS_12V,12V,NA
+multi, ,KRAS,esophagogastric cancer,Overall,15,1802,0.008,0.008,0.005,0.013,KRAS_12V,12V,NA
+multi, ,KRAS,thyroid cancer,Overall,6,1017,0.006,0.006,0.002,0.011,KRAS_12V,12V,NA
+multi, ,KRAS,cervical cancer,Overall,11,367,0.029,0.028,0.015,0.048,KRAS_12V,12V,NA
+multi, ,KRAS,hepatobiliary cancer,Overall,38,1375,0.027,0.027,0.019,0.037,KRAS_12V,12V,NA
+multi, ,KRAS,kidney cancer,Overall,4,1422,0.003,0.003,0.001,0.006,KRAS_12V,12V,NA
+multi, ,KRAS,mature t and nk neoplasms,Overall,1,231,0.005,0.004,0,0.016,KRAS_12V,12V,NA
+multi, ,KRAS,cns cancer,Overall,8,4565,0.002,0.002,0.001,0.003,KRAS_12V,12V,NA
+multi, ,KRAS,prostate cancer,Overall,2,2440,0.001,0.001,0,0.003,KRAS_12V,12V,NA
+multi, ,KRAS,anal cancer,Overall,0,149,0.003,0.002,0,0.013,KRAS_12V,12V,NA
+multi, ,KRAS,neuroendocrine tumors,Overall,6,359,0.016,0.015,0.006,0.031,KRAS_12V,12V,NA
+multi, ,KRAS,bladder cancer,Overall,19,1581,0.012,0.012,0.007,0.018,KRAS_12V,12V,NA
+multi, ,KRAS,b-lymphoblastic leukemia/lymphoma,Overall,1,248,0.005,0.004,0,0.015,KRAS_12V,12V,NA
+multi, ,KRAS,small bowel cancer,Overall,25,210,0.115,0.114,0.076,0.161,KRAS_12V,12V,NA
+multi, ,KRAS,sex cord stromal tumor,Overall,2,108,0.017,0.014,0.002,0.046,KRAS_12V,12V,NA
+multi, ,KRAS,bone cancer,Overall,0,570,0.001,0.001,0,0.005,KRAS_12V,12V,NA
+multi, ,KRAS,vaginal cancer,Overall,0,78,0.004,0.002,0,0.02,KRAS_12V,12V,NA
+multi, ,KRAS,thymic tumor,Overall,0,156,0.003,0.002,0,0.012,KRAS_12V,12V,NA
+multi, ,KRAS,ampullary cancer,Overall,12,106,0.106,0.103,0.056,0.17,KRAS_12V,12V,NA
+multi, ,KRAS,small cell lung cancer,Overall,3,398,0.008,0.007,0.002,0.018,KRAS_12V,12V,NA
+multi, ,KRAS,mesothelioma,Overall,0,497,0.001,0.001,0,0.005,KRAS_12V,12V,NA
+multi, ,KRAS,germ cell tumor,Overall,18,886,0.02,0.02,0.012,0.03,KRAS_12V,12V,NA
+multi, ,KRAS,nerve sheath tumor,Overall,0,154,0.003,0.002,0,0.012,KRAS_12V,12V,NA
+multi, ,KRAS,penile cancer,Overall,0,25,0.008,0.003,0,0.044,KRAS_12V,12V,NA
+multi, ,KRAS,pheochromocytoma,Overall,0,25,0.008,0.003,0,0.043,KRAS_12V,12V,NA
+multi, ,KRAS,pineal tumor,Overall,0,21,0.009,0.004,0,0.048,KRAS_12V,12V,NA
+multi, ,KRAS,b cell lymphoma,Overall,4,962,0.004,0.004,0.001,0.009,KRAS_12V,12V,NA
+multi, ,KRAS,non-hodgkin lymphoma,Overall,0,23,0.008,0.004,0,0.047,KRAS_12V,12V,NA
+multi, ,KRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.006,0.003,0,0.032,KRAS_12V,12V,NA
+multi, ,KRAS,retinoblastoma,Overall,0,51,0.006,0.003,0,0.028,KRAS_12V,12V,NA
+multi, ,KRAS,hodgkin lymphoma,Overall,0,40,0.006,0.003,0,0.033,KRAS_12V,12V,NA
+multi, ,KRAS,lung cancer,Overall,2,25,0.057,0.047,0.007,0.163,KRAS_12V,12V,NA
+multi, ,KRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.011,0.004,0,0.063,KRAS_12V,12V,NA
+multi, ,KRAS,peritoneal cancer,Overall,0,19,0.009,0.004,0,0.052,KRAS_12V,12V,NA
+multi, ,KRAS,parathyroid cancer,Overall,0,16,0.01,0.004,0,0.057,KRAS_12V,12V,NA
+multi, ,KRAS,appendiceal cancer,Overall,0,341,0,0,0,0.002,KRAS_13C,13C,NA
+multi, ,KRAS,colorectal cancer,Overall,24,6724,0.003,0.003,0.002,0.005,KRAS_13C,13C,NA
+multi, ,KRAS,cancer of unknown primary,Overall,8,1989,0.004,0.004,0.002,0.007,KRAS_13C,13C,NA
+multi, ,KRAS,non-small cell lung cancer,Overall,109,10131,0.011,0.011,0.009,0.013,KRAS_13C,13C,NA
+multi, ,KRAS,breast cancer,Overall,0,9333,0,0,0,0,KRAS_13C,13C,NA
+multi, ,KRAS,soft tissue sarcoma,Overall,1,2773,0,0,0,0.001,KRAS_13C,13C,NA
+multi, ,KRAS,pancreatic cancer,Overall,0,2494,0,0,0,0.001,KRAS_13C,13C,NA
+multi, ,KRAS,leukemia,Overall,1,1567,0.001,0,0,0.002,KRAS_13C,13C,NA
+multi, ,KRAS,melanoma,Overall,0,2846,0,0,0,0.001,KRAS_13C,13C,NA
+multi, ,KRAS,head and neck cancer,Overall,0,1743,0,0,0,0.001,KRAS_13C,13C,NA
+multi, ,KRAS,uterine cancer,Overall,5,2254,0.002,0.002,0.001,0.004,KRAS_13C,13C,NA
+multi, ,KRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0.002,KRAS_13C,13C,NA
+multi, ,KRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1207,0,0,0,0.001,KRAS_13C,13C,NA
+multi, ,KRAS,adrenocortical carcinoma,Overall,0,134,0.001,0,0,0.004,KRAS_13C,13C,NA
+multi, ,KRAS,ovarian cancer,Overall,1,2337,0,0,0,0.001,KRAS_13C,13C,NA
+multi, ,KRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0.001,KRAS_13C,13C,NA
+multi, ,KRAS,thyroid cancer,Overall,0,1017,0,0,0,0.001,KRAS_13C,13C,NA
+multi, ,KRAS,cervical cancer,Overall,0,367,0,0,0,0.002,KRAS_13C,13C,NA
+multi, ,KRAS,hepatobiliary cancer,Overall,0,1375,0,0,0,0.001,KRAS_13C,13C,NA
+multi, ,KRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,KRAS_13C,13C,NA
+multi, ,KRAS,mature t and nk neoplasms,Overall,0,231,0,0,0,0.003,KRAS_13C,13C,NA
+multi, ,KRAS,cns cancer,Overall,0,4565,0,0,0,0,KRAS_13C,13C,NA
+multi, ,KRAS,prostate cancer,Overall,0,2440,0,0,0,0.001,KRAS_13C,13C,NA
+multi, ,KRAS,anal cancer,Overall,1,149,0.003,0.002,0,0.015,KRAS_13C,13C,NA
+multi, ,KRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0.002,KRAS_13C,13C,NA
+multi, ,KRAS,bladder cancer,Overall,0,1581,0,0,0,0.001,KRAS_13C,13C,NA
+multi, ,KRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0,0,0,0.003,KRAS_13C,13C,NA
+multi, ,KRAS,small bowel cancer,Overall,0,210,0,0,0,0.003,KRAS_13C,13C,NA
+multi, ,KRAS,sex cord stromal tumor,Overall,0,108,0.001,0,0,0.004,KRAS_13C,13C,NA
+multi, ,KRAS,bone cancer,Overall,0,570,0,0,0,0.002,KRAS_13C,13C,NA
+multi, ,KRAS,vaginal cancer,Overall,1,78,0.006,0.003,0,0.027,KRAS_13C,13C,NA
+multi, ,KRAS,thymic tumor,Overall,0,156,0,0,0,0.003,KRAS_13C,13C,NA
+multi, ,KRAS,ampullary cancer,Overall,0,106,0.001,0,0,0.004,KRAS_13C,13C,NA
+multi, ,KRAS,small cell lung cancer,Overall,0,398,0,0,0,0.002,KRAS_13C,13C,NA
+multi, ,KRAS,mesothelioma,Overall,0,497,0,0,0,0.002,KRAS_13C,13C,NA
+multi, ,KRAS,germ cell tumor,Overall,0,886,0,0,0,0.001,KRAS_13C,13C,NA
+multi, ,KRAS,nerve sheath tumor,Overall,0,154,0,0,0,0.004,KRAS_13C,13C,NA
+multi, ,KRAS,penile cancer,Overall,0,25,0.001,0,0,0.007,KRAS_13C,13C,NA
+multi, ,KRAS,pheochromocytoma,Overall,0,25,0.001,0,0,0.007,KRAS_13C,13C,NA
+multi, ,KRAS,pineal tumor,Overall,0,21,0.001,0,0,0.008,KRAS_13C,13C,NA
+multi, ,KRAS,b cell lymphoma,Overall,1,962,0.001,0.001,0,0.003,KRAS_13C,13C,NA
+multi, ,KRAS,non-hodgkin lymphoma,Overall,0,23,0.001,0,0,0.007,KRAS_13C,13C,NA
+multi, ,KRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.001,0,0,0.006,KRAS_13C,13C,NA
+multi, ,KRAS,retinoblastoma,Overall,0,51,0.001,0,0,0.006,KRAS_13C,13C,NA
+multi, ,KRAS,hodgkin lymphoma,Overall,0,40,0.001,0,0,0.006,KRAS_13C,13C,NA
+multi, ,KRAS,lung cancer,Overall,0,25,0.001,0,0,0.007,KRAS_13C,13C,NA
+multi, ,KRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.001,0,0,0.009,KRAS_13C,13C,NA
+multi, ,KRAS,peritoneal cancer,Overall,0,19,0.001,0,0,0.008,KRAS_13C,13C,NA
+multi, ,KRAS,parathyroid cancer,Overall,0,16,0.001,0,0,0.008,KRAS_13C,13C,NA
+multi, ,KRAS,appendiceal cancer,Overall,14,341,0.039,0.038,0.021,0.062,KRAS_13D,13D,NA
+multi, ,KRAS,colorectal cancer,Overall,501,6724,0.074,0.074,0.068,0.081,KRAS_13D,13D,NA
+multi, ,KRAS,cancer of unknown primary,Overall,26,1989,0.013,0.013,0.008,0.018,KRAS_13D,13D,NA
+multi, ,KRAS,non-small cell lung cancer,Overall,87,10131,0.009,0.009,0.007,0.01,KRAS_13D,13D,NA
+multi, ,KRAS,breast cancer,Overall,5,9333,0.001,0.001,0,0.001,KRAS_13D,13D,NA
+multi, ,KRAS,soft tissue sarcoma,Overall,0,2773,0,0,0,0.001,KRAS_13D,13D,NA
+multi, ,KRAS,pancreatic cancer,Overall,14,2494,0.006,0.005,0.003,0.009,KRAS_13D,13D,NA
+multi, ,KRAS,leukemia,Overall,25,1567,0.016,0.015,0.01,0.022,KRAS_13D,13D,NA
+multi, ,KRAS,melanoma,Overall,7,2846,0.002,0.002,0.001,0.005,KRAS_13D,13D,NA
+multi, ,KRAS,head and neck cancer,Overall,3,1743,0.002,0.002,0,0.004,KRAS_13D,13D,NA
+multi, ,KRAS,uterine cancer,Overall,46,2254,0.02,0.02,0.015,0.026,KRAS_13D,13D,NA
+multi, ,KRAS,non-melanoma skin cancers,Overall,0,513,0.001,0.001,0,0.004,KRAS_13D,13D,NA
+multi, ,KRAS,myelodysplastic/myeloproliferative syndromes,Overall,7,1207,0.006,0.005,0.002,0.01,KRAS_13D,13D,NA
+multi, ,KRAS,adrenocortical carcinoma,Overall,0,134,0.002,0.001,0,0.011,KRAS_13D,13D,NA
+multi, ,KRAS,ovarian cancer,Overall,10,2337,0.004,0.004,0.002,0.007,KRAS_13D,13D,NA
+multi, ,KRAS,esophagogastric cancer,Overall,22,1802,0.012,0.012,0.008,0.018,KRAS_13D,13D,NA
+multi, ,KRAS,thyroid cancer,Overall,0,1017,0.001,0,0,0.002,KRAS_13D,13D,NA
+multi, ,KRAS,cervical cancer,Overall,4,367,0.01,0.009,0.003,0.022,KRAS_13D,13D,NA
+multi, ,KRAS,hepatobiliary cancer,Overall,9,1375,0.006,0.006,0.003,0.011,KRAS_13D,13D,NA
+multi, ,KRAS,kidney cancer,Overall,0,1422,0,0,0,0.002,KRAS_13D,13D,NA
+multi, ,KRAS,mature t and nk neoplasms,Overall,0,231,0.002,0.001,0,0.007,KRAS_13D,13D,NA
+multi, ,KRAS,cns cancer,Overall,0,4565,0,0,0,0.001,KRAS_13D,13D,NA
+multi, ,KRAS,prostate cancer,Overall,1,2440,0.001,0,0,0.002,KRAS_13D,13D,NA
+multi, ,KRAS,anal cancer,Overall,1,149,0.006,0.004,0,0.021,KRAS_13D,13D,NA
+multi, ,KRAS,neuroendocrine tumors,Overall,6,359,0.015,0.015,0.006,0.03,KRAS_13D,13D,NA
+multi, ,KRAS,bladder cancer,Overall,4,1581,0.003,0.002,0.001,0.006,KRAS_13D,13D,NA
+multi, ,KRAS,b-lymphoblastic leukemia/lymphoma,Overall,8,248,0.03,0.028,0.013,0.053,KRAS_13D,13D,NA
+multi, ,KRAS,small bowel cancer,Overall,13,210,0.058,0.057,0.031,0.092,KRAS_13D,13D,NA
+multi, ,KRAS,sex cord stromal tumor,Overall,0,108,0.002,0.001,0,0.012,KRAS_13D,13D,NA
+multi, ,KRAS,bone cancer,Overall,0,570,0.001,0,0,0.004,KRAS_13D,13D,NA
+multi, ,KRAS,vaginal cancer,Overall,0,78,0.003,0.001,0,0.016,KRAS_13D,13D,NA
+multi, ,KRAS,thymic tumor,Overall,0,156,0.002,0.001,0,0.01,KRAS_13D,13D,NA
+multi, ,KRAS,ampullary cancer,Overall,5,106,0.04,0.038,0.013,0.083,KRAS_13D,13D,NA
+multi, ,KRAS,small cell lung cancer,Overall,0,398,0.001,0.001,0,0.005,KRAS_13D,13D,NA
+multi, ,KRAS,mesothelioma,Overall,0,497,0.001,0.001,0,0.004,KRAS_13D,13D,NA
+multi, ,KRAS,germ cell tumor,Overall,1,886,0.001,0.001,0,0.004,KRAS_13D,13D,NA
+multi, ,KRAS,nerve sheath tumor,Overall,0,154,0.002,0.001,0,0.01,KRAS_13D,13D,NA
+multi, ,KRAS,penile cancer,Overall,0,25,0.005,0.002,0,0.031,KRAS_13D,13D,NA
+multi, ,KRAS,pheochromocytoma,Overall,0,25,0.005,0.002,0,0.032,KRAS_13D,13D,NA
+multi, ,KRAS,pineal tumor,Overall,1,21,0.026,0.016,0.001,0.109,KRAS_13D,13D,NA
+multi, ,KRAS,b cell lymphoma,Overall,7,962,0.007,0.007,0.003,0.013,KRAS_13D,13D,NA
+multi, ,KRAS,non-hodgkin lymphoma,Overall,0,23,0.005,0.002,0,0.033,KRAS_13D,13D,NA
+multi, ,KRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.004,0.002,0,0.023,KRAS_13D,13D,NA
+multi, ,KRAS,retinoblastoma,Overall,0,51,0.004,0.001,0,0.02,KRAS_13D,13D,NA
+multi, ,KRAS,hodgkin lymphoma,Overall,0,40,0.004,0.002,0,0.024,KRAS_13D,13D,NA
+multi, ,KRAS,lung cancer,Overall,0,25,0.005,0.002,0,0.031,KRAS_13D,13D,NA
+multi, ,KRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.007,0.002,0,0.043,KRAS_13D,13D,NA
+multi, ,KRAS,peritoneal cancer,Overall,0,19,0.006,0.002,0,0.036,KRAS_13D,13D,NA
+multi, ,KRAS,parathyroid cancer,Overall,0,16,0.006,0.002,0,0.039,KRAS_13D,13D,NA
+multi, ,KRAS,appendiceal cancer,Overall,0,341,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,colorectal cancer,Overall,2,6724,0,0,0,0.001,KRAS_13R,13R,NA
+multi, ,KRAS,cancer of unknown primary,Overall,1,1989,0,0,0,0.001,KRAS_13R,13R,NA
+multi, ,KRAS,non-small cell lung cancer,Overall,6,10131,0,0,0,0.001,KRAS_13R,13R,NA
+multi, ,KRAS,breast cancer,Overall,0,9333,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,soft tissue sarcoma,Overall,0,2773,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,pancreatic cancer,Overall,0,2494,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,leukemia,Overall,0,1567,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,melanoma,Overall,0,2846,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,head and neck cancer,Overall,0,1743,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,uterine cancer,Overall,0,2254,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1207,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,adrenocortical carcinoma,Overall,0,134,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,ovarian cancer,Overall,0,2337,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,thyroid cancer,Overall,0,1017,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,cervical cancer,Overall,0,367,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,hepatobiliary cancer,Overall,0,1375,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,kidney cancer,Overall,0,1422,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,mature t and nk neoplasms,Overall,0,231,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,cns cancer,Overall,1,4565,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,prostate cancer,Overall,0,2440,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,anal cancer,Overall,0,149,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,bladder cancer,Overall,0,1581,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,small bowel cancer,Overall,0,210,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,sex cord stromal tumor,Overall,0,108,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,bone cancer,Overall,0,570,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,vaginal cancer,Overall,0,78,0,0,0,0.001,KRAS_13R,13R,NA
+multi, ,KRAS,thymic tumor,Overall,0,156,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,ampullary cancer,Overall,0,106,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,small cell lung cancer,Overall,0,398,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,mesothelioma,Overall,0,497,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,germ cell tumor,Overall,0,886,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,nerve sheath tumor,Overall,0,154,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,penile cancer,Overall,0,25,0,0,0,0.001,KRAS_13R,13R,NA
+multi, ,KRAS,pheochromocytoma,Overall,0,25,0,0,0,0.001,KRAS_13R,13R,NA
+multi, ,KRAS,pineal tumor,Overall,0,21,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,b cell lymphoma,Overall,0,962,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,non-hodgkin lymphoma,Overall,0,23,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0,0,0,0,KRAS_13R,13R,NA
+multi, ,KRAS,retinoblastoma,Overall,0,51,0,0,0,0.001,KRAS_13R,13R,NA
+multi, ,KRAS,hodgkin lymphoma,Overall,0,40,0,0,0,0.001,KRAS_13R,13R,NA
+multi, ,KRAS,lung cancer,Overall,0,25,0,0,0,0.001,KRAS_13R,13R,NA
+multi, ,KRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0,0,0,0.001,KRAS_13R,13R,NA
+multi, ,KRAS,peritoneal cancer,Overall,0,19,0,0,0,0.001,KRAS_13R,13R,NA
+multi, ,KRAS,parathyroid cancer,Overall,0,16,0,0,0,0.001,KRAS_13R,13R,NA
+multi, ,KRAS,appendiceal cancer,Overall,0,341,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,colorectal cancer,Overall,2,6724,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,cancer of unknown primary,Overall,0,1989,0,0,0,0,KRAS_13V,13V,NA
+multi, ,KRAS,non-small cell lung cancer,Overall,4,10131,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,breast cancer,Overall,0,9333,0,0,0,0,KRAS_13V,13V,NA
+multi, ,KRAS,soft tissue sarcoma,Overall,0,2773,0,0,0,0,KRAS_13V,13V,NA
+multi, ,KRAS,pancreatic cancer,Overall,2,2494,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,leukemia,Overall,0,1567,0,0,0,0,KRAS_13V,13V,NA
+multi, ,KRAS,melanoma,Overall,0,2846,0,0,0,0,KRAS_13V,13V,NA
+multi, ,KRAS,head and neck cancer,Overall,0,1743,0,0,0,0,KRAS_13V,13V,NA
+multi, ,KRAS,uterine cancer,Overall,0,2254,0,0,0,0,KRAS_13V,13V,NA
+multi, ,KRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1207,0,0,0,0,KRAS_13V,13V,NA
+multi, ,KRAS,adrenocortical carcinoma,Overall,0,134,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,ovarian cancer,Overall,0,2337,0,0,0,0,KRAS_13V,13V,NA
+multi, ,KRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0,KRAS_13V,13V,NA
+multi, ,KRAS,thyroid cancer,Overall,0,1017,0,0,0,0,KRAS_13V,13V,NA
+multi, ,KRAS,cervical cancer,Overall,0,367,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,hepatobiliary cancer,Overall,0,1375,0,0,0,0,KRAS_13V,13V,NA
+multi, ,KRAS,kidney cancer,Overall,0,1422,0,0,0,0,KRAS_13V,13V,NA
+multi, ,KRAS,mature t and nk neoplasms,Overall,0,231,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,cns cancer,Overall,0,4565,0,0,0,0,KRAS_13V,13V,NA
+multi, ,KRAS,prostate cancer,Overall,0,2440,0,0,0,0,KRAS_13V,13V,NA
+multi, ,KRAS,anal cancer,Overall,0,149,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,bladder cancer,Overall,0,1581,0,0,0,0,KRAS_13V,13V,NA
+multi, ,KRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,small bowel cancer,Overall,0,210,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,sex cord stromal tumor,Overall,0,108,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,bone cancer,Overall,0,570,0,0,0,0,KRAS_13V,13V,NA
+multi, ,KRAS,vaginal cancer,Overall,0,78,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,thymic tumor,Overall,0,156,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,ampullary cancer,Overall,0,106,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,small cell lung cancer,Overall,0,398,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,mesothelioma,Overall,0,497,0,0,0,0,KRAS_13V,13V,NA
+multi, ,KRAS,germ cell tumor,Overall,1,886,0,0,0,0.002,KRAS_13V,13V,NA
+multi, ,KRAS,nerve sheath tumor,Overall,0,154,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,penile cancer,Overall,0,25,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,pheochromocytoma,Overall,0,25,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,pineal tumor,Overall,0,21,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,b cell lymphoma,Overall,0,962,0,0,0,0,KRAS_13V,13V,NA
+multi, ,KRAS,non-hodgkin lymphoma,Overall,0,23,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,retinoblastoma,Overall,0,51,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,hodgkin lymphoma,Overall,0,40,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,lung cancer,Overall,0,25,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,peritoneal cancer,Overall,0,19,0,0,0,0.001,KRAS_13V,13V,NA
+multi, ,KRAS,parathyroid cancer,Overall,1,16,0.003,0,0,0.028,KRAS_13V,13V,NA
+multi, ,KRAS,appendiceal cancer,Overall,3,341,0.007,0.006,0.002,0.018,KRAS_61H,61H,NA
+multi, ,KRAS,colorectal cancer,Overall,64,6724,0.009,0.009,0.007,0.012,KRAS_61H,61H,NA
+multi, ,KRAS,cancer of unknown primary,Overall,15,1989,0.007,0.007,0.004,0.011,KRAS_61H,61H,NA
+multi, ,KRAS,non-small cell lung cancer,Overall,131,10131,0.013,0.013,0.011,0.015,KRAS_61H,61H,NA
+multi, ,KRAS,breast cancer,Overall,0,9333,0,0,0,0,KRAS_61H,61H,NA
+multi, ,KRAS,soft tissue sarcoma,Overall,1,2773,0.001,0,0,0.002,KRAS_61H,61H,NA
+multi, ,KRAS,pancreatic cancer,Overall,86,2494,0.034,0.034,0.027,0.042,KRAS_61H,61H,NA
+multi, ,KRAS,leukemia,Overall,4,1567,0.002,0.002,0.001,0.005,KRAS_61H,61H,NA
+multi, ,KRAS,melanoma,Overall,2,2846,0.001,0.001,0,0.002,KRAS_61H,61H,NA
+multi, ,KRAS,head and neck cancer,Overall,0,1743,0,0,0,0.001,KRAS_61H,61H,NA
+multi, ,KRAS,uterine cancer,Overall,6,2254,0.003,0.002,0.001,0.005,KRAS_61H,61H,NA
+multi, ,KRAS,non-melanoma skin cancers,Overall,0,513,0.001,0,0,0.003,KRAS_61H,61H,NA
+multi, ,KRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1207,0,0,0,0.002,KRAS_61H,61H,NA
+multi, ,KRAS,adrenocortical carcinoma,Overall,0,134,0.002,0.001,0,0.009,KRAS_61H,61H,NA
+multi, ,KRAS,ovarian cancer,Overall,9,2337,0.004,0.004,0.002,0.007,KRAS_61H,61H,NA
+multi, ,KRAS,esophagogastric cancer,Overall,2,1802,0.001,0.001,0,0.003,KRAS_61H,61H,NA
+multi, ,KRAS,thyroid cancer,Overall,0,1017,0.001,0,0,0.002,KRAS_61H,61H,NA
+multi, ,KRAS,cervical cancer,Overall,0,367,0.001,0.001,0,0.004,KRAS_61H,61H,NA
+multi, ,KRAS,hepatobiliary cancer,Overall,14,1375,0.01,0.009,0.005,0.016,KRAS_61H,61H,NA
+multi, ,KRAS,kidney cancer,Overall,1,1422,0.001,0.001,0,0.003,KRAS_61H,61H,NA
+multi, ,KRAS,mature t and nk neoplasms,Overall,2,231,0.007,0.006,0.001,0.019,KRAS_61H,61H,NA
+multi, ,KRAS,cns cancer,Overall,3,4565,0.001,0.001,0,0.002,KRAS_61H,61H,NA
+multi, ,KRAS,prostate cancer,Overall,1,2440,0.001,0,0,0.002,KRAS_61H,61H,NA
+multi, ,KRAS,anal cancer,Overall,0,149,0.002,0.001,0,0.008,KRAS_61H,61H,NA
+multi, ,KRAS,neuroendocrine tumors,Overall,1,359,0.003,0.002,0,0.009,KRAS_61H,61H,NA
+multi, ,KRAS,bladder cancer,Overall,3,1581,0.002,0.002,0,0.004,KRAS_61H,61H,NA
+multi, ,KRAS,b-lymphoblastic leukemia/lymphoma,Overall,3,248,0.01,0.008,0.002,0.024,KRAS_61H,61H,NA
+multi, ,KRAS,small bowel cancer,Overall,6,210,0.024,0.023,0.008,0.048,KRAS_61H,61H,NA
+multi, ,KRAS,sex cord stromal tumor,Overall,0,108,0.002,0.001,0,0.01,KRAS_61H,61H,NA
+multi, ,KRAS,bone cancer,Overall,1,570,0.002,0.001,0,0.006,KRAS_61H,61H,NA
+multi, ,KRAS,vaginal cancer,Overall,0,78,0.002,0.001,0,0.012,KRAS_61H,61H,NA
+multi, ,KRAS,thymic tumor,Overall,0,156,0.002,0.001,0,0.008,KRAS_61H,61H,NA
+multi, ,KRAS,ampullary cancer,Overall,2,106,0.013,0.01,0.001,0.038,KRAS_61H,61H,NA
+multi, ,KRAS,small cell lung cancer,Overall,0,398,0.001,0.001,0,0.004,KRAS_61H,61H,NA
+multi, ,KRAS,mesothelioma,Overall,0,497,0.001,0,0,0.004,KRAS_61H,61H,NA
+multi, ,KRAS,germ cell tumor,Overall,0,886,0.001,0,0,0.002,KRAS_61H,61H,NA
+multi, ,KRAS,nerve sheath tumor,Overall,0,154,0.002,0.001,0,0.008,KRAS_61H,61H,NA
+multi, ,KRAS,penile cancer,Overall,0,25,0.003,0.001,0,0.02,KRAS_61H,61H,NA
+multi, ,KRAS,pheochromocytoma,Overall,0,25,0.003,0.001,0,0.02,KRAS_61H,61H,NA
+multi, ,KRAS,pineal tumor,Overall,0,21,0.003,0.001,0,0.021,KRAS_61H,61H,NA
+multi, ,KRAS,b cell lymphoma,Overall,10,962,0.01,0.009,0.005,0.017,KRAS_61H,61H,NA
+multi, ,KRAS,non-hodgkin lymphoma,Overall,0,23,0.003,0.001,0,0.021,KRAS_61H,61H,NA
+multi, ,KRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.003,0.001,0,0.016,KRAS_61H,61H,NA
+multi, ,KRAS,retinoblastoma,Overall,0,51,0.003,0.001,0,0.015,KRAS_61H,61H,NA
+multi, ,KRAS,hodgkin lymphoma,Overall,0,40,0.003,0.001,0,0.016,KRAS_61H,61H,NA
+multi, ,KRAS,lung cancer,Overall,0,25,0.003,0.001,0,0.021,KRAS_61H,61H,NA
+multi, ,KRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.004,0.001,0,0.028,KRAS_61H,61H,NA
+multi, ,KRAS,peritoneal cancer,Overall,0,19,0.004,0.001,0,0.024,KRAS_61H,61H,NA
+multi, ,KRAS,parathyroid cancer,Overall,0,16,0.004,0.001,0,0.025,KRAS_61H,61H,NA
+multi, ,KRAS,appendiceal cancer,Overall,0,341,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,colorectal cancer,Overall,12,6724,0.001,0.001,0.001,0.003,KRAS_61K,61K,NA
+multi, ,KRAS,cancer of unknown primary,Overall,1,1989,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,non-small cell lung cancer,Overall,2,10131,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,breast cancer,Overall,0,9333,0,0,0,0,KRAS_61K,61K,NA
+multi, ,KRAS,soft tissue sarcoma,Overall,0,2773,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,pancreatic cancer,Overall,3,2494,0.001,0.001,0,0.002,KRAS_61K,61K,NA
+multi, ,KRAS,leukemia,Overall,0,1567,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,melanoma,Overall,0,2846,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,head and neck cancer,Overall,0,1743,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,uterine cancer,Overall,1,2254,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1207,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,adrenocortical carcinoma,Overall,0,134,0,0,0,0.002,KRAS_61K,61K,NA
+multi, ,KRAS,ovarian cancer,Overall,1,2337,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,thyroid cancer,Overall,1,1017,0.001,0,0,0.002,KRAS_61K,61K,NA
+multi, ,KRAS,cervical cancer,Overall,0,367,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,hepatobiliary cancer,Overall,0,1375,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,mature t and nk neoplasms,Overall,0,231,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,cns cancer,Overall,2,4565,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,prostate cancer,Overall,1,2440,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,anal cancer,Overall,1,149,0.001,0.001,0,0.005,KRAS_61K,61K,NA
+multi, ,KRAS,neuroendocrine tumors,Overall,1,359,0.001,0,0,0.003,KRAS_61K,61K,NA
+multi, ,KRAS,bladder cancer,Overall,0,1581,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,small bowel cancer,Overall,0,210,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,sex cord stromal tumor,Overall,0,108,0,0,0,0.002,KRAS_61K,61K,NA
+multi, ,KRAS,bone cancer,Overall,0,570,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,vaginal cancer,Overall,0,78,0,0,0,0.002,KRAS_61K,61K,NA
+multi, ,KRAS,thymic tumor,Overall,0,156,0,0,0,0.002,KRAS_61K,61K,NA
+multi, ,KRAS,ampullary cancer,Overall,0,106,0,0,0,0.002,KRAS_61K,61K,NA
+multi, ,KRAS,small cell lung cancer,Overall,0,398,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,mesothelioma,Overall,0,497,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,germ cell tumor,Overall,0,886,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,nerve sheath tumor,Overall,0,154,0,0,0,0.002,KRAS_61K,61K,NA
+multi, ,KRAS,penile cancer,Overall,0,25,0,0,0,0.002,KRAS_61K,61K,NA
+multi, ,KRAS,pheochromocytoma,Overall,0,25,0,0,0,0.002,KRAS_61K,61K,NA
+multi, ,KRAS,pineal tumor,Overall,0,21,0,0,0,0.002,KRAS_61K,61K,NA
+multi, ,KRAS,b cell lymphoma,Overall,0,962,0,0,0,0.001,KRAS_61K,61K,NA
+multi, ,KRAS,non-hodgkin lymphoma,Overall,0,23,0,0,0,0.002,KRAS_61K,61K,NA
+multi, ,KRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0,0,0,0.002,KRAS_61K,61K,NA
+multi, ,KRAS,retinoblastoma,Overall,0,51,0,0,0,0.002,KRAS_61K,61K,NA
+multi, ,KRAS,hodgkin lymphoma,Overall,0,40,0,0,0,0.002,KRAS_61K,61K,NA
+multi, ,KRAS,lung cancer,Overall,0,25,0,0,0,0.002,KRAS_61K,61K,NA
+multi, ,KRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0,0,0,0.002,KRAS_61K,61K,NA
+multi, ,KRAS,peritoneal cancer,Overall,0,19,0,0,0,0.002,KRAS_61K,61K,NA
+multi, ,KRAS,parathyroid cancer,Overall,0,16,0,0,0,0.002,KRAS_61K,61K,NA
+multi, ,KRAS,appendiceal cancer,Overall,1,341,0.001,0.001,0,0.005,KRAS_61L,61L,NA
+multi, ,KRAS,colorectal cancer,Overall,24,6724,0.003,0.003,0.002,0.005,KRAS_61L,61L,NA
+multi, ,KRAS,cancer of unknown primary,Overall,3,1989,0.001,0.001,0,0.003,KRAS_61L,61L,NA
+multi, ,KRAS,non-small cell lung cancer,Overall,37,10131,0.003,0.003,0.002,0.005,KRAS_61L,61L,NA
+multi, ,KRAS,breast cancer,Overall,1,9333,0,0,0,0.001,KRAS_61L,61L,NA
+multi, ,KRAS,soft tissue sarcoma,Overall,0,2773,0,0,0,0.001,KRAS_61L,61L,NA
+multi, ,KRAS,pancreatic cancer,Overall,6,2494,0.002,0.002,0.001,0.004,KRAS_61L,61L,NA
+multi, ,KRAS,leukemia,Overall,1,1567,0.001,0.001,0,0.002,KRAS_61L,61L,NA
+multi, ,KRAS,melanoma,Overall,2,2846,0.001,0.001,0,0.002,KRAS_61L,61L,NA
+multi, ,KRAS,head and neck cancer,Overall,0,1743,0,0,0,0.001,KRAS_61L,61L,NA
+multi, ,KRAS,uterine cancer,Overall,2,2254,0.001,0.001,0,0.002,KRAS_61L,61L,NA
+multi, ,KRAS,non-melanoma skin cancers,Overall,0,513,0.001,0,0,0.002,KRAS_61L,61L,NA
+multi, ,KRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1207,0,0,0,0.001,KRAS_61L,61L,NA
+multi, ,KRAS,adrenocortical carcinoma,Overall,0,134,0.001,0,0,0.003,KRAS_61L,61L,NA
+multi, ,KRAS,ovarian cancer,Overall,1,2337,0.001,0,0,0.001,KRAS_61L,61L,NA
+multi, ,KRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0.001,KRAS_61L,61L,NA
+multi, ,KRAS,thyroid cancer,Overall,0,1017,0,0,0,0.002,KRAS_61L,61L,NA
+multi, ,KRAS,cervical cancer,Overall,0,367,0.001,0,0,0.002,KRAS_61L,61L,NA
+multi, ,KRAS,hepatobiliary cancer,Overall,2,1375,0.001,0.001,0,0.003,KRAS_61L,61L,NA
+multi, ,KRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,KRAS_61L,61L,NA
+multi, ,KRAS,mature t and nk neoplasms,Overall,0,231,0.001,0,0,0.003,KRAS_61L,61L,NA
+multi, ,KRAS,cns cancer,Overall,2,4565,0,0,0,0.001,KRAS_61L,61L,NA
+multi, ,KRAS,prostate cancer,Overall,1,2440,0,0,0,0.001,KRAS_61L,61L,NA
+multi, ,KRAS,anal cancer,Overall,0,149,0.001,0,0,0.003,KRAS_61L,61L,NA
+multi, ,KRAS,neuroendocrine tumors,Overall,0,359,0.001,0,0,0.002,KRAS_61L,61L,NA
+multi, ,KRAS,bladder cancer,Overall,1,1581,0.001,0.001,0,0.002,KRAS_61L,61L,NA
+multi, ,KRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0.001,0,0,0.003,KRAS_61L,61L,NA
+multi, ,KRAS,small bowel cancer,Overall,0,210,0.001,0,0,0.003,KRAS_61L,61L,NA
+multi, ,KRAS,sex cord stromal tumor,Overall,0,108,0.001,0,0,0.004,KRAS_61L,61L,NA
+multi, ,KRAS,bone cancer,Overall,0,570,0.001,0,0,0.002,KRAS_61L,61L,NA
+multi, ,KRAS,vaginal cancer,Overall,0,78,0.001,0,0,0.004,KRAS_61L,61L,NA
+multi, ,KRAS,thymic tumor,Overall,0,156,0.001,0,0,0.003,KRAS_61L,61L,NA
+multi, ,KRAS,ampullary cancer,Overall,0,106,0.001,0,0,0.003,KRAS_61L,61L,NA
+multi, ,KRAS,small cell lung cancer,Overall,0,398,0.001,0,0,0.002,KRAS_61L,61L,NA
+multi, ,KRAS,mesothelioma,Overall,0,497,0.001,0,0,0.002,KRAS_61L,61L,NA
+multi, ,KRAS,germ cell tumor,Overall,0,886,0,0,0,0.002,KRAS_61L,61L,NA
+multi, ,KRAS,nerve sheath tumor,Overall,0,154,0.001,0,0,0.003,KRAS_61L,61L,NA
+multi, ,KRAS,penile cancer,Overall,1,25,0.003,0.002,0,0.018,KRAS_61L,61L,NA
+multi, ,KRAS,pheochromocytoma,Overall,0,25,0.001,0,0,0.004,KRAS_61L,61L,NA
+multi, ,KRAS,pineal tumor,Overall,0,21,0.001,0,0,0.004,KRAS_61L,61L,NA
+multi, ,KRAS,b cell lymphoma,Overall,1,962,0.001,0.001,0,0.003,KRAS_61L,61L,NA
+multi, ,KRAS,non-hodgkin lymphoma,Overall,0,23,0.001,0,0,0.004,KRAS_61L,61L,NA
+multi, ,KRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.001,0,0,0.004,KRAS_61L,61L,NA
+multi, ,KRAS,retinoblastoma,Overall,0,51,0.001,0,0,0.004,KRAS_61L,61L,NA
+multi, ,KRAS,hodgkin lymphoma,Overall,0,40,0.001,0,0,0.004,KRAS_61L,61L,NA
+multi, ,KRAS,lung cancer,Overall,0,25,0.001,0,0,0.004,KRAS_61L,61L,NA
+multi, ,KRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.001,0,0,0.004,KRAS_61L,61L,NA
+multi, ,KRAS,peritoneal cancer,Overall,0,19,0.001,0,0,0.004,KRAS_61L,61L,NA
+multi, ,KRAS,parathyroid cancer,Overall,0,16,0.001,0,0,0.004,KRAS_61L,61L,NA
+multi, ,KRAS,appendiceal cancer,Overall,1,341,0.002,0.001,0,0.007,KRAS_61R,61R,NA
+multi, ,KRAS,colorectal cancer,Overall,20,6724,0.003,0.003,0.002,0.004,KRAS_61R,61R,NA
+multi, ,KRAS,cancer of unknown primary,Overall,3,1989,0.001,0.001,0,0.003,KRAS_61R,61R,NA
+multi, ,KRAS,non-small cell lung cancer,Overall,7,10131,0.001,0.001,0,0.001,KRAS_61R,61R,NA
+multi, ,KRAS,breast cancer,Overall,1,9333,0,0,0,0,KRAS_61R,61R,NA
+multi, ,KRAS,soft tissue sarcoma,Overall,0,2773,0,0,0,0.001,KRAS_61R,61R,NA
+multi, ,KRAS,pancreatic cancer,Overall,38,2494,0.015,0.015,0.01,0.02,KRAS_61R,61R,NA
+multi, ,KRAS,leukemia,Overall,1,1567,0.001,0.001,0,0.002,KRAS_61R,61R,NA
+multi, ,KRAS,melanoma,Overall,3,2846,0.001,0.001,0,0.002,KRAS_61R,61R,NA
+multi, ,KRAS,head and neck cancer,Overall,0,1743,0,0,0,0.001,KRAS_61R,61R,NA
+multi, ,KRAS,uterine cancer,Overall,0,2254,0,0,0,0.001,KRAS_61R,61R,NA
+multi, ,KRAS,non-melanoma skin cancers,Overall,0,513,0.001,0,0,0.002,KRAS_61R,61R,NA
+multi, ,KRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1207,0,0,0,0.001,KRAS_61R,61R,NA
+multi, ,KRAS,adrenocortical carcinoma,Overall,0,134,0.001,0,0,0.005,KRAS_61R,61R,NA
+multi, ,KRAS,ovarian cancer,Overall,2,2337,0.001,0.001,0,0.002,KRAS_61R,61R,NA
+multi, ,KRAS,esophagogastric cancer,Overall,1,1802,0.001,0,0,0.002,KRAS_61R,61R,NA
+multi, ,KRAS,thyroid cancer,Overall,15,1017,0.013,0.013,0.007,0.021,KRAS_61R,61R,NA
+multi, ,KRAS,cervical cancer,Overall,0,367,0.001,0,0,0.003,KRAS_61R,61R,NA
+multi, ,KRAS,hepatobiliary cancer,Overall,2,1375,0.001,0.001,0,0.003,KRAS_61R,61R,NA
+multi, ,KRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,KRAS_61R,61R,NA
+multi, ,KRAS,mature t and nk neoplasms,Overall,0,231,0.001,0,0,0.004,KRAS_61R,61R,NA
+multi, ,KRAS,cns cancer,Overall,4,4565,0.001,0.001,0,0.002,KRAS_61R,61R,NA
+multi, ,KRAS,prostate cancer,Overall,1,2440,0,0,0,0.002,KRAS_61R,61R,NA
+multi, ,KRAS,anal cancer,Overall,0,149,0.001,0,0,0.005,KRAS_61R,61R,NA
+multi, ,KRAS,neuroendocrine tumors,Overall,0,359,0.001,0,0,0.003,KRAS_61R,61R,NA
+multi, ,KRAS,bladder cancer,Overall,1,1581,0.001,0.001,0,0.002,KRAS_61R,61R,NA
+multi, ,KRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0.001,0,0,0.004,KRAS_61R,61R,NA
+multi, ,KRAS,small bowel cancer,Overall,0,210,0.001,0,0,0.004,KRAS_61R,61R,NA
+multi, ,KRAS,sex cord stromal tumor,Overall,0,108,0.001,0,0,0.005,KRAS_61R,61R,NA
+multi, ,KRAS,bone cancer,Overall,0,570,0.001,0,0,0.002,KRAS_61R,61R,NA
+multi, ,KRAS,vaginal cancer,Overall,0,78,0.001,0,0,0.006,KRAS_61R,61R,NA
+multi, ,KRAS,thymic tumor,Overall,0,156,0.001,0,0,0.005,KRAS_61R,61R,NA
+multi, ,KRAS,ampullary cancer,Overall,2,106,0.009,0.007,0.001,0.031,KRAS_61R,61R,NA
+multi, ,KRAS,small cell lung cancer,Overall,0,398,0.001,0,0,0.003,KRAS_61R,61R,NA
+multi, ,KRAS,mesothelioma,Overall,0,497,0.001,0,0,0.003,KRAS_61R,61R,NA
+multi, ,KRAS,germ cell tumor,Overall,0,886,0,0,0,0.002,KRAS_61R,61R,NA
+multi, ,KRAS,nerve sheath tumor,Overall,0,154,0.001,0,0,0.005,KRAS_61R,61R,NA
+multi, ,KRAS,penile cancer,Overall,0,25,0.001,0.001,0,0.009,KRAS_61R,61R,NA
+multi, ,KRAS,pheochromocytoma,Overall,0,25,0.001,0,0,0.009,KRAS_61R,61R,NA
+multi, ,KRAS,pineal tumor,Overall,0,21,0.001,0,0,0.01,KRAS_61R,61R,NA
+multi, ,KRAS,b cell lymphoma,Overall,3,962,0.002,0.002,0.001,0.006,KRAS_61R,61R,NA
+multi, ,KRAS,non-hodgkin lymphoma,Overall,0,23,0.001,0.001,0,0.009,KRAS_61R,61R,NA
+multi, ,KRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.001,0,0,0.008,KRAS_61R,61R,NA
+multi, ,KRAS,retinoblastoma,Overall,0,51,0.001,0,0,0.007,KRAS_61R,61R,NA
+multi, ,KRAS,hodgkin lymphoma,Overall,0,40,0.001,0,0,0.008,KRAS_61R,61R,NA
+multi, ,KRAS,lung cancer,Overall,0,25,0.001,0,0,0.008,KRAS_61R,61R,NA
+multi, ,KRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.002,0.001,0,0.01,KRAS_61R,61R,NA
+multi, ,KRAS,peritoneal cancer,Overall,0,19,0.002,0.001,0,0.009,KRAS_61R,61R,NA
+multi, ,KRAS,parathyroid cancer,Overall,0,16,0.002,0.001,0,0.01,KRAS_61R,61R,NA
+multi, ,HRAS,appendiceal cancer,Overall,0,341,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,colorectal cancer,Overall,0,6720,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,cancer of unknown primary,Overall,0,1985,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,non-small cell lung cancer,Overall,0,10131,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,breast cancer,Overall,0,9332,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,pancreatic cancer,Overall,0,2493,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,leukemia,Overall,0,1560,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,melanoma,Overall,0,2846,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,head and neck cancer,Overall,1,1743,0,0,0,0.001,HRAS_12A,12A,NA
+multi, ,HRAS,uterine cancer,Overall,0,2248,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1206,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,adrenocortical carcinoma,Overall,0,134,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,soft tissue sarcoma,Overall,0,2738,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,ovarian cancer,Overall,0,2337,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,thyroid cancer,Overall,0,1017,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,cervical cancer,Overall,0,367,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,hepatobiliary cancer,Overall,0,1374,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,kidney cancer,Overall,0,1422,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,cns cancer,Overall,0,4564,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,prostate cancer,Overall,0,2440,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,anal cancer,Overall,0,149,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,bladder cancer,Overall,0,1580,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,small bowel cancer,Overall,0,210,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,sex cord stromal tumor,Overall,0,107,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,bone cancer,Overall,0,555,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,vaginal cancer,Overall,0,78,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,thymic tumor,Overall,0,154,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,ampullary cancer,Overall,0,106,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,small cell lung cancer,Overall,0,398,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,mature t and nk neoplasms,Overall,0,230,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,mesothelioma,Overall,0,497,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,germ cell tumor,Overall,0,885,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,nerve sheath tumor,Overall,0,151,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,penile cancer,Overall,0,25,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,pheochromocytoma,Overall,0,25,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,pineal tumor,Overall,0,21,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,b cell lymphoma,Overall,0,961,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,non-hodgkin lymphoma,Overall,0,23,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,retinoblastoma,Overall,0,51,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,hodgkin lymphoma,Overall,0,40,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,lung cancer,Overall,0,25,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,peritoneal cancer,Overall,0,19,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,parathyroid cancer,Overall,0,16,0,0,0,0,HRAS_12A,12A,NA
+multi, ,HRAS,appendiceal cancer,Overall,0,341,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,colorectal cancer,Overall,0,6720,0,0,0,0,HRAS_12C,12C,NA
+multi, ,HRAS,cancer of unknown primary,Overall,0,1985,0,0,0,0,HRAS_12C,12C,NA
+multi, ,HRAS,non-small cell lung cancer,Overall,0,10131,0,0,0,0,HRAS_12C,12C,NA
+multi, ,HRAS,breast cancer,Overall,2,9332,0,0,0,0,HRAS_12C,12C,NA
+multi, ,HRAS,pancreatic cancer,Overall,0,2493,0,0,0,0,HRAS_12C,12C,NA
+multi, ,HRAS,leukemia,Overall,0,1560,0,0,0,0,HRAS_12C,12C,NA
+multi, ,HRAS,melanoma,Overall,0,2846,0,0,0,0,HRAS_12C,12C,NA
+multi, ,HRAS,head and neck cancer,Overall,0,1743,0,0,0,0,HRAS_12C,12C,NA
+multi, ,HRAS,uterine cancer,Overall,0,2248,0,0,0,0,HRAS_12C,12C,NA
+multi, ,HRAS,non-melanoma skin cancers,Overall,1,513,0.001,0,0,0.004,HRAS_12C,12C,NA
+multi, ,HRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1206,0,0,0,0,HRAS_12C,12C,NA
+multi, ,HRAS,adrenocortical carcinoma,Overall,0,134,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,soft tissue sarcoma,Overall,0,2738,0,0,0,0,HRAS_12C,12C,NA
+multi, ,HRAS,ovarian cancer,Overall,0,2337,0,0,0,0,HRAS_12C,12C,NA
+multi, ,HRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0,HRAS_12C,12C,NA
+multi, ,HRAS,thyroid cancer,Overall,0,1017,0,0,0,0,HRAS_12C,12C,NA
+multi, ,HRAS,cervical cancer,Overall,0,367,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,hepatobiliary cancer,Overall,0,1374,0,0,0,0,HRAS_12C,12C,NA
+multi, ,HRAS,kidney cancer,Overall,0,1422,0,0,0,0,HRAS_12C,12C,NA
+multi, ,HRAS,cns cancer,Overall,0,4564,0,0,0,0,HRAS_12C,12C,NA
+multi, ,HRAS,prostate cancer,Overall,0,2440,0,0,0,0,HRAS_12C,12C,NA
+multi, ,HRAS,anal cancer,Overall,0,149,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,bladder cancer,Overall,3,1580,0.001,0.001,0,0.004,HRAS_12C,12C,NA
+multi, ,HRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,small bowel cancer,Overall,0,210,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,sex cord stromal tumor,Overall,0,107,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,bone cancer,Overall,0,555,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,vaginal cancer,Overall,0,78,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,thymic tumor,Overall,0,154,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,ampullary cancer,Overall,0,106,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,small cell lung cancer,Overall,1,398,0.001,0,0,0.005,HRAS_12C,12C,NA
+multi, ,HRAS,mature t and nk neoplasms,Overall,0,230,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,mesothelioma,Overall,0,497,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,germ cell tumor,Overall,0,885,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,nerve sheath tumor,Overall,0,151,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,penile cancer,Overall,0,25,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,pheochromocytoma,Overall,0,25,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,pineal tumor,Overall,0,21,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,b cell lymphoma,Overall,0,961,0,0,0,0,HRAS_12C,12C,NA
+multi, ,HRAS,non-hodgkin lymphoma,Overall,0,23,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,retinoblastoma,Overall,0,51,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,hodgkin lymphoma,Overall,0,40,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,lung cancer,Overall,0,25,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,peritoneal cancer,Overall,0,19,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,parathyroid cancer,Overall,0,16,0,0,0,0.001,HRAS_12C,12C,NA
+multi, ,HRAS,appendiceal cancer,Overall,0,341,0,0,0,0.002,HRAS_12D,12D,NA
+multi, ,HRAS,colorectal cancer,Overall,3,6720,0,0,0,0.001,HRAS_12D,12D,NA
+multi, ,HRAS,cancer of unknown primary,Overall,0,1985,0,0,0,0.001,HRAS_12D,12D,NA
+multi, ,HRAS,non-small cell lung cancer,Overall,1,10131,0,0,0,0,HRAS_12D,12D,NA
+multi, ,HRAS,breast cancer,Overall,3,9332,0,0,0,0.001,HRAS_12D,12D,NA
+multi, ,HRAS,pancreatic cancer,Overall,0,2493,0,0,0,0.001,HRAS_12D,12D,NA
+multi, ,HRAS,leukemia,Overall,0,1560,0,0,0,0.001,HRAS_12D,12D,NA
+multi, ,HRAS,melanoma,Overall,7,2846,0.002,0.002,0.001,0.004,HRAS_12D,12D,NA
+multi, ,HRAS,head and neck cancer,Overall,2,1743,0.001,0.001,0,0.002,HRAS_12D,12D,NA
+multi, ,HRAS,uterine cancer,Overall,2,2248,0.001,0.001,0,0.002,HRAS_12D,12D,NA
+multi, ,HRAS,non-melanoma skin cancers,Overall,1,513,0.001,0.001,0,0.004,HRAS_12D,12D,NA
+multi, ,HRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1206,0,0,0,0.001,HRAS_12D,12D,NA
+multi, ,HRAS,adrenocortical carcinoma,Overall,0,134,0,0,0,0.002,HRAS_12D,12D,NA
+multi, ,HRAS,soft tissue sarcoma,Overall,1,2738,0,0,0,0.001,HRAS_12D,12D,NA
+multi, ,HRAS,ovarian cancer,Overall,0,2337,0,0,0,0.001,HRAS_12D,12D,NA
+multi, ,HRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0.001,HRAS_12D,12D,NA
+multi, ,HRAS,thyroid cancer,Overall,1,1017,0.001,0,0,0.002,HRAS_12D,12D,NA
+multi, ,HRAS,cervical cancer,Overall,0,367,0,0,0,0.002,HRAS_12D,12D,NA
+multi, ,HRAS,hepatobiliary cancer,Overall,0,1374,0,0,0,0.001,HRAS_12D,12D,NA
+multi, ,HRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,HRAS_12D,12D,NA
+multi, ,HRAS,cns cancer,Overall,0,4564,0,0,0,0,HRAS_12D,12D,NA
+multi, ,HRAS,prostate cancer,Overall,0,2440,0,0,0,0.001,HRAS_12D,12D,NA
+multi, ,HRAS,anal cancer,Overall,0,149,0,0,0,0.002,HRAS_12D,12D,NA
+multi, ,HRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0.002,HRAS_12D,12D,NA
+multi, ,HRAS,bladder cancer,Overall,9,1580,0.005,0.004,0.002,0.009,HRAS_12D,12D,NA
+multi, ,HRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0,0,0,0.002,HRAS_12D,12D,NA
+multi, ,HRAS,small bowel cancer,Overall,0,210,0,0,0,0.002,HRAS_12D,12D,NA
+multi, ,HRAS,sex cord stromal tumor,Overall,0,107,0,0,0,0.002,HRAS_12D,12D,NA
+multi, ,HRAS,bone cancer,Overall,0,555,0,0,0,0.001,HRAS_12D,12D,NA
+multi, ,HRAS,vaginal cancer,Overall,0,78,0,0,0,0.003,HRAS_12D,12D,NA
+multi, ,HRAS,thymic tumor,Overall,0,154,0,0,0,0.002,HRAS_12D,12D,NA
+multi, ,HRAS,ampullary cancer,Overall,0,106,0,0,0,0.002,HRAS_12D,12D,NA
+multi, ,HRAS,small cell lung cancer,Overall,0,398,0,0,0,0.002,HRAS_12D,12D,NA
+multi, ,HRAS,mature t and nk neoplasms,Overall,0,230,0,0,0,0.002,HRAS_12D,12D,NA
+multi, ,HRAS,mesothelioma,Overall,0,497,0,0,0,0.001,HRAS_12D,12D,NA
+multi, ,HRAS,germ cell tumor,Overall,0,885,0,0,0,0.001,HRAS_12D,12D,NA
+multi, ,HRAS,nerve sheath tumor,Overall,0,151,0,0,0,0.002,HRAS_12D,12D,NA
+multi, ,HRAS,penile cancer,Overall,0,25,0.001,0,0,0.003,HRAS_12D,12D,NA
+multi, ,HRAS,pheochromocytoma,Overall,0,25,0.001,0,0,0.003,HRAS_12D,12D,NA
+multi, ,HRAS,pineal tumor,Overall,0,21,0.001,0,0,0.003,HRAS_12D,12D,NA
+multi, ,HRAS,b cell lymphoma,Overall,0,961,0,0,0,0.001,HRAS_12D,12D,NA
+multi, ,HRAS,non-hodgkin lymphoma,Overall,0,23,0.001,0,0,0.003,HRAS_12D,12D,NA
+multi, ,HRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.001,0,0,0.003,HRAS_12D,12D,NA
+multi, ,HRAS,retinoblastoma,Overall,0,51,0,0,0,0.003,HRAS_12D,12D,NA
+multi, ,HRAS,hodgkin lymphoma,Overall,0,40,0.001,0,0,0.003,HRAS_12D,12D,NA
+multi, ,HRAS,lung cancer,Overall,0,25,0.001,0,0,0.003,HRAS_12D,12D,NA
+multi, ,HRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.001,0,0,0.003,HRAS_12D,12D,NA
+multi, ,HRAS,peritoneal cancer,Overall,0,19,0.001,0,0,0.003,HRAS_12D,12D,NA
+multi, ,HRAS,parathyroid cancer,Overall,0,16,0.001,0,0,0.003,HRAS_12D,12D,NA
+multi, ,HRAS,appendiceal cancer,Overall,0,341,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,colorectal cancer,Overall,0,6720,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,cancer of unknown primary,Overall,0,1985,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,non-small cell lung cancer,Overall,0,10131,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,breast cancer,Overall,0,9332,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,pancreatic cancer,Overall,0,2493,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,leukemia,Overall,0,1560,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,melanoma,Overall,0,2846,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,head and neck cancer,Overall,0,1743,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,uterine cancer,Overall,0,2248,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1206,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,adrenocortical carcinoma,Overall,0,134,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,soft tissue sarcoma,Overall,0,2738,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,ovarian cancer,Overall,0,2337,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,thyroid cancer,Overall,0,1017,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,cervical cancer,Overall,0,367,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,hepatobiliary cancer,Overall,0,1374,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,kidney cancer,Overall,0,1422,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,cns cancer,Overall,0,4564,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,prostate cancer,Overall,0,2440,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,anal cancer,Overall,0,149,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,bladder cancer,Overall,1,1580,0,0,0,0.001,HRAS_12F,12F,NA
+multi, ,HRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,small bowel cancer,Overall,0,210,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,sex cord stromal tumor,Overall,0,107,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,bone cancer,Overall,0,555,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,vaginal cancer,Overall,0,78,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,thymic tumor,Overall,0,154,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,ampullary cancer,Overall,0,106,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,small cell lung cancer,Overall,0,398,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,mature t and nk neoplasms,Overall,0,230,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,mesothelioma,Overall,0,497,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,germ cell tumor,Overall,0,885,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,nerve sheath tumor,Overall,0,151,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,penile cancer,Overall,0,25,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,pheochromocytoma,Overall,0,25,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,pineal tumor,Overall,0,21,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,b cell lymphoma,Overall,0,961,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,non-hodgkin lymphoma,Overall,0,23,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,retinoblastoma,Overall,0,51,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,hodgkin lymphoma,Overall,0,40,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,lung cancer,Overall,0,25,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,peritoneal cancer,Overall,0,19,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,parathyroid cancer,Overall,0,16,0,0,0,0,HRAS_12F,12F,NA
+multi, ,HRAS,appendiceal cancer,Overall,0,341,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,colorectal cancer,Overall,0,6720,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,cancer of unknown primary,Overall,0,1985,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,non-small cell lung cancer,Overall,0,10131,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,breast cancer,Overall,0,9332,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,pancreatic cancer,Overall,0,2493,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,leukemia,Overall,0,1560,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,melanoma,Overall,0,2846,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,head and neck cancer,Overall,0,1743,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,uterine cancer,Overall,0,2248,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1206,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,adrenocortical carcinoma,Overall,0,134,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,soft tissue sarcoma,Overall,0,2738,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,ovarian cancer,Overall,0,2337,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,thyroid cancer,Overall,0,1017,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,cervical cancer,Overall,0,367,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,hepatobiliary cancer,Overall,0,1374,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,kidney cancer,Overall,0,1422,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,cns cancer,Overall,0,4564,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,prostate cancer,Overall,0,2440,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,anal cancer,Overall,0,149,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,bladder cancer,Overall,0,1580,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,small bowel cancer,Overall,0,210,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,sex cord stromal tumor,Overall,0,107,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,bone cancer,Overall,0,555,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,vaginal cancer,Overall,0,78,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,thymic tumor,Overall,0,154,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,ampullary cancer,Overall,0,106,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,small cell lung cancer,Overall,0,398,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,mature t and nk neoplasms,Overall,0,230,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,mesothelioma,Overall,0,497,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,germ cell tumor,Overall,0,885,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,nerve sheath tumor,Overall,0,151,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,penile cancer,Overall,0,25,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,pheochromocytoma,Overall,0,25,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,pineal tumor,Overall,0,21,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,b cell lymphoma,Overall,0,961,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,non-hodgkin lymphoma,Overall,0,23,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,retinoblastoma,Overall,0,51,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,hodgkin lymphoma,Overall,0,40,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,lung cancer,Overall,0,25,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,peritoneal cancer,Overall,0,19,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,parathyroid cancer,Overall,0,16,0,0,0,0,HRAS_12R,12R,NA
+multi, ,HRAS,appendiceal cancer,Overall,0,341,0,0,0,0.002,HRAS_12S,12S,NA
+multi, ,HRAS,colorectal cancer,Overall,1,6720,0,0,0,0.001,HRAS_12S,12S,NA
+multi, ,HRAS,cancer of unknown primary,Overall,1,1985,0,0,0,0.001,HRAS_12S,12S,NA
+multi, ,HRAS,non-small cell lung cancer,Overall,0,10131,0,0,0,0,HRAS_12S,12S,NA
+multi, ,HRAS,breast cancer,Overall,3,9332,0,0,0,0.001,HRAS_12S,12S,NA
+multi, ,HRAS,pancreatic cancer,Overall,0,2493,0,0,0,0.001,HRAS_12S,12S,NA
+multi, ,HRAS,leukemia,Overall,0,1560,0,0,0,0.001,HRAS_12S,12S,NA
+multi, ,HRAS,melanoma,Overall,0,2846,0,0,0,0.001,HRAS_12S,12S,NA
+multi, ,HRAS,head and neck cancer,Overall,11,1743,0.006,0.005,0.003,0.01,HRAS_12S,12S,NA
+multi, ,HRAS,uterine cancer,Overall,2,2248,0.001,0.001,0,0.002,HRAS_12S,12S,NA
+multi, ,HRAS,non-melanoma skin cancers,Overall,2,513,0.002,0.002,0,0.008,HRAS_12S,12S,NA
+multi, ,HRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1206,0,0,0,0.001,HRAS_12S,12S,NA
+multi, ,HRAS,adrenocortical carcinoma,Overall,0,134,0,0,0,0.003,HRAS_12S,12S,NA
+multi, ,HRAS,soft tissue sarcoma,Overall,0,2738,0,0,0,0.001,HRAS_12S,12S,NA
+multi, ,HRAS,ovarian cancer,Overall,1,2337,0,0,0,0.001,HRAS_12S,12S,NA
+multi, ,HRAS,esophagogastric cancer,Overall,1,1802,0,0,0,0.002,HRAS_12S,12S,NA
+multi, ,HRAS,thyroid cancer,Overall,0,1017,0,0,0,0.001,HRAS_12S,12S,NA
+multi, ,HRAS,cervical cancer,Overall,0,367,0,0,0,0.002,HRAS_12S,12S,NA
+multi, ,HRAS,hepatobiliary cancer,Overall,0,1374,0,0,0,0.001,HRAS_12S,12S,NA
+multi, ,HRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,HRAS_12S,12S,NA
+multi, ,HRAS,cns cancer,Overall,0,4564,0,0,0,0,HRAS_12S,12S,NA
+multi, ,HRAS,prostate cancer,Overall,0,2440,0,0,0,0.001,HRAS_12S,12S,NA
+multi, ,HRAS,anal cancer,Overall,0,149,0,0,0,0.003,HRAS_12S,12S,NA
+multi, ,HRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0.002,HRAS_12S,12S,NA
+multi, ,HRAS,bladder cancer,Overall,3,1580,0.001,0.001,0,0.004,HRAS_12S,12S,NA
+multi, ,HRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0,0,0,0.002,HRAS_12S,12S,NA
+multi, ,HRAS,small bowel cancer,Overall,0,210,0,0,0,0.002,HRAS_12S,12S,NA
+multi, ,HRAS,sex cord stromal tumor,Overall,0,107,0,0,0,0.003,HRAS_12S,12S,NA
+multi, ,HRAS,bone cancer,Overall,0,555,0,0,0,0.002,HRAS_12S,12S,NA
+multi, ,HRAS,vaginal cancer,Overall,1,78,0.004,0.002,0,0.02,HRAS_12S,12S,NA
+multi, ,HRAS,thymic tumor,Overall,1,154,0.002,0.001,0,0.012,HRAS_12S,12S,NA
+multi, ,HRAS,ampullary cancer,Overall,0,106,0,0,0,0.003,HRAS_12S,12S,NA
+multi, ,HRAS,small cell lung cancer,Overall,0,398,0,0,0,0.002,HRAS_12S,12S,NA
+multi, ,HRAS,mature t and nk neoplasms,Overall,0,230,0,0,0,0.002,HRAS_12S,12S,NA
+multi, ,HRAS,mesothelioma,Overall,0,497,0,0,0,0.002,HRAS_12S,12S,NA
+multi, ,HRAS,germ cell tumor,Overall,0,885,0,0,0,0.001,HRAS_12S,12S,NA
+multi, ,HRAS,nerve sheath tumor,Overall,0,151,0,0,0,0.003,HRAS_12S,12S,NA
+multi, ,HRAS,penile cancer,Overall,0,25,0.001,0,0,0.005,HRAS_12S,12S,NA
+multi, ,HRAS,pheochromocytoma,Overall,0,25,0.001,0,0,0.005,HRAS_12S,12S,NA
+multi, ,HRAS,pineal tumor,Overall,0,21,0.001,0,0,0.004,HRAS_12S,12S,NA
+multi, ,HRAS,b cell lymphoma,Overall,0,961,0,0,0,0.001,HRAS_12S,12S,NA
+multi, ,HRAS,non-hodgkin lymphoma,Overall,0,23,0.001,0,0,0.005,HRAS_12S,12S,NA
+multi, ,HRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.001,0,0,0.004,HRAS_12S,12S,NA
+multi, ,HRAS,retinoblastoma,Overall,0,51,0.001,0,0,0.004,HRAS_12S,12S,NA
+multi, ,HRAS,hodgkin lymphoma,Overall,0,40,0.001,0,0,0.004,HRAS_12S,12S,NA
+multi, ,HRAS,lung cancer,Overall,0,25,0.001,0,0,0.005,HRAS_12S,12S,NA
+multi, ,HRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.001,0,0,0.005,HRAS_12S,12S,NA
+multi, ,HRAS,peritoneal cancer,Overall,0,19,0.001,0,0,0.005,HRAS_12S,12S,NA
+multi, ,HRAS,parathyroid cancer,Overall,0,16,0.001,0,0,0.005,HRAS_12S,12S,NA
+multi, ,HRAS,appendiceal cancer,Overall,0,341,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,colorectal cancer,Overall,0,6720,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,cancer of unknown primary,Overall,1,1985,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,non-small cell lung cancer,Overall,0,10131,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,breast cancer,Overall,1,9332,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,pancreatic cancer,Overall,0,2493,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,leukemia,Overall,0,1560,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,melanoma,Overall,0,2846,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,head and neck cancer,Overall,0,1743,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,uterine cancer,Overall,0,2248,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1206,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,adrenocortical carcinoma,Overall,0,134,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,soft tissue sarcoma,Overall,2,2738,0,0,0,0.001,HRAS_12V,12V,NA
+multi, ,HRAS,ovarian cancer,Overall,0,2337,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,thyroid cancer,Overall,0,1017,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,cervical cancer,Overall,1,367,0,0,0,0.001,HRAS_12V,12V,NA
+multi, ,HRAS,hepatobiliary cancer,Overall,0,1374,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,kidney cancer,Overall,0,1422,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,cns cancer,Overall,0,4564,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,prostate cancer,Overall,0,2440,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,anal cancer,Overall,0,149,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,bladder cancer,Overall,0,1580,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,small bowel cancer,Overall,0,210,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,sex cord stromal tumor,Overall,0,107,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,bone cancer,Overall,0,555,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,vaginal cancer,Overall,0,78,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,thymic tumor,Overall,0,154,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,ampullary cancer,Overall,0,106,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,small cell lung cancer,Overall,0,398,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,mature t and nk neoplasms,Overall,0,230,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,mesothelioma,Overall,0,497,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,germ cell tumor,Overall,0,885,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,nerve sheath tumor,Overall,0,151,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,penile cancer,Overall,0,25,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,pheochromocytoma,Overall,0,25,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,pineal tumor,Overall,0,21,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,b cell lymphoma,Overall,0,961,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,non-hodgkin lymphoma,Overall,0,23,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,retinoblastoma,Overall,0,51,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,hodgkin lymphoma,Overall,0,40,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,lung cancer,Overall,0,25,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,peritoneal cancer,Overall,0,19,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,parathyroid cancer,Overall,0,16,0,0,0,0,HRAS_12V,12V,NA
+multi, ,HRAS,appendiceal cancer,Overall,0,341,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,colorectal cancer,Overall,0,6720,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,cancer of unknown primary,Overall,0,1985,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,non-small cell lung cancer,Overall,0,10131,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,breast cancer,Overall,0,9332,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,pancreatic cancer,Overall,0,2493,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,leukemia,Overall,0,1560,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,melanoma,Overall,1,2846,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,head and neck cancer,Overall,1,1743,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,uterine cancer,Overall,0,2248,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1206,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,adrenocortical carcinoma,Overall,0,134,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,soft tissue sarcoma,Overall,0,2738,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,ovarian cancer,Overall,0,2337,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,thyroid cancer,Overall,0,1017,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,cervical cancer,Overall,0,367,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,hepatobiliary cancer,Overall,0,1374,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,kidney cancer,Overall,0,1422,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,cns cancer,Overall,1,4564,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,prostate cancer,Overall,0,2440,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,anal cancer,Overall,0,149,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,bladder cancer,Overall,0,1580,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,small bowel cancer,Overall,0,210,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,sex cord stromal tumor,Overall,0,107,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,bone cancer,Overall,0,555,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,vaginal cancer,Overall,0,78,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,thymic tumor,Overall,0,154,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,ampullary cancer,Overall,0,106,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,small cell lung cancer,Overall,0,398,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,mature t and nk neoplasms,Overall,0,230,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,mesothelioma,Overall,0,497,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,germ cell tumor,Overall,0,885,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,nerve sheath tumor,Overall,0,151,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,penile cancer,Overall,0,25,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,pheochromocytoma,Overall,0,25,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,pineal tumor,Overall,0,21,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,b cell lymphoma,Overall,0,961,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,non-hodgkin lymphoma,Overall,0,23,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,retinoblastoma,Overall,0,51,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,hodgkin lymphoma,Overall,0,40,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,lung cancer,Overall,0,25,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,peritoneal cancer,Overall,0,19,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,parathyroid cancer,Overall,0,16,0,0,0,0,HRAS_13C,13C,NA
+multi, ,HRAS,appendiceal cancer,Overall,0,341,0,0,0,0.001,HRAS_13D,13D,NA
+multi, ,HRAS,colorectal cancer,Overall,0,6720,0,0,0,0,HRAS_13D,13D,NA
+multi, ,HRAS,cancer of unknown primary,Overall,0,1985,0,0,0,0,HRAS_13D,13D,NA
+multi, ,HRAS,non-small cell lung cancer,Overall,0,10131,0,0,0,0,HRAS_13D,13D,NA
+multi, ,HRAS,breast cancer,Overall,0,9332,0,0,0,0,HRAS_13D,13D,NA
+multi, ,HRAS,pancreatic cancer,Overall,0,2493,0,0,0,0,HRAS_13D,13D,NA
+multi, ,HRAS,leukemia,Overall,0,1560,0,0,0,0.001,HRAS_13D,13D,NA
+multi, ,HRAS,melanoma,Overall,6,2846,0.002,0.002,0.001,0.004,HRAS_13D,13D,NA
+multi, ,HRAS,head and neck cancer,Overall,0,1743,0,0,0,0.001,HRAS_13D,13D,NA
+multi, ,HRAS,uterine cancer,Overall,0,2248,0,0,0,0,HRAS_13D,13D,NA
+multi, ,HRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0.001,HRAS_13D,13D,NA
+multi, ,HRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1206,0,0,0,0.001,HRAS_13D,13D,NA
+multi, ,HRAS,adrenocortical carcinoma,Overall,0,134,0,0,0,0.002,HRAS_13D,13D,NA
+multi, ,HRAS,soft tissue sarcoma,Overall,0,2738,0,0,0,0,HRAS_13D,13D,NA
+multi, ,HRAS,ovarian cancer,Overall,1,2337,0,0,0,0.001,HRAS_13D,13D,NA
+multi, ,HRAS,esophagogastric cancer,Overall,1,1802,0,0,0,0.001,HRAS_13D,13D,NA
+multi, ,HRAS,thyroid cancer,Overall,0,1017,0,0,0,0.001,HRAS_13D,13D,NA
+multi, ,HRAS,cervical cancer,Overall,0,367,0,0,0,0.001,HRAS_13D,13D,NA
+multi, ,HRAS,hepatobiliary cancer,Overall,0,1374,0,0,0,0.001,HRAS_13D,13D,NA
+multi, ,HRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,HRAS_13D,13D,NA
+multi, ,HRAS,cns cancer,Overall,0,4564,0,0,0,0,HRAS_13D,13D,NA
+multi, ,HRAS,prostate cancer,Overall,2,2440,0.001,0,0,0.002,HRAS_13D,13D,NA
+multi, ,HRAS,anal cancer,Overall,0,149,0,0,0,0.002,HRAS_13D,13D,NA
+multi, ,HRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0.001,HRAS_13D,13D,NA
+multi, ,HRAS,bladder cancer,Overall,2,1580,0.001,0.001,0,0.003,HRAS_13D,13D,NA
+multi, ,HRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0,0,0,0.001,HRAS_13D,13D,NA
+multi, ,HRAS,small bowel cancer,Overall,0,210,0,0,0,0.001,HRAS_13D,13D,NA
+multi, ,HRAS,sex cord stromal tumor,Overall,0,107,0,0,0,0.002,HRAS_13D,13D,NA
+multi, ,HRAS,bone cancer,Overall,0,555,0,0,0,0.001,HRAS_13D,13D,NA
+multi, ,HRAS,vaginal cancer,Overall,0,78,0,0,0,0.002,HRAS_13D,13D,NA
+multi, ,HRAS,thymic tumor,Overall,1,154,0.002,0.001,0,0.012,HRAS_13D,13D,NA
+multi, ,HRAS,ampullary cancer,Overall,0,106,0,0,0,0.002,HRAS_13D,13D,NA
+multi, ,HRAS,small cell lung cancer,Overall,0,398,0,0,0,0.001,HRAS_13D,13D,NA
+multi, ,HRAS,mature t and nk neoplasms,Overall,0,230,0,0,0,0.001,HRAS_13D,13D,NA
+multi, ,HRAS,mesothelioma,Overall,0,497,0,0,0,0.001,HRAS_13D,13D,NA
+multi, ,HRAS,germ cell tumor,Overall,0,885,0,0,0,0.001,HRAS_13D,13D,NA
+multi, ,HRAS,nerve sheath tumor,Overall,0,151,0,0,0,0.002,HRAS_13D,13D,NA
+multi, ,HRAS,penile cancer,Overall,0,25,0,0,0,0.003,HRAS_13D,13D,NA
+multi, ,HRAS,pheochromocytoma,Overall,0,25,0,0,0,0.002,HRAS_13D,13D,NA
+multi, ,HRAS,pineal tumor,Overall,0,21,0,0,0,0.002,HRAS_13D,13D,NA
+multi, ,HRAS,b cell lymphoma,Overall,0,961,0,0,0,0.001,HRAS_13D,13D,NA
+multi, ,HRAS,non-hodgkin lymphoma,Overall,0,23,0,0,0,0.003,HRAS_13D,13D,NA
+multi, ,HRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0,0,0,0.002,HRAS_13D,13D,NA
+multi, ,HRAS,retinoblastoma,Overall,0,51,0,0,0,0.002,HRAS_13D,13D,NA
+multi, ,HRAS,hodgkin lymphoma,Overall,0,40,0,0,0,0.002,HRAS_13D,13D,NA
+multi, ,HRAS,lung cancer,Overall,0,25,0,0,0,0.002,HRAS_13D,13D,NA
+multi, ,HRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0,0,0,0.003,HRAS_13D,13D,NA
+multi, ,HRAS,peritoneal cancer,Overall,0,19,0,0,0,0.003,HRAS_13D,13D,NA
+multi, ,HRAS,parathyroid cancer,Overall,0,16,0,0,0,0.003,HRAS_13D,13D,NA
+multi, ,HRAS,appendiceal cancer,Overall,0,341,0,0,0,0.002,HRAS_13R,13R,NA
+multi, ,HRAS,colorectal cancer,Overall,0,6720,0,0,0,0,HRAS_13R,13R,NA
+multi, ,HRAS,cancer of unknown primary,Overall,3,1985,0.001,0.001,0,0.003,HRAS_13R,13R,NA
+multi, ,HRAS,non-small cell lung cancer,Overall,4,10131,0,0,0,0.001,HRAS_13R,13R,NA
+multi, ,HRAS,breast cancer,Overall,5,9332,0.001,0,0,0.001,HRAS_13R,13R,NA
+multi, ,HRAS,pancreatic cancer,Overall,1,2493,0,0,0,0.001,HRAS_13R,13R,NA
+multi, ,HRAS,leukemia,Overall,0,1560,0,0,0,0.001,HRAS_13R,13R,NA
+multi, ,HRAS,melanoma,Overall,2,2846,0.001,0.001,0,0.002,HRAS_13R,13R,NA
+multi, ,HRAS,head and neck cancer,Overall,10,1743,0.005,0.005,0.002,0.009,HRAS_13R,13R,NA
+multi, ,HRAS,uterine cancer,Overall,0,2248,0,0,0,0.001,HRAS_13R,13R,NA
+multi, ,HRAS,non-melanoma skin cancers,Overall,1,513,0.001,0.001,0,0.004,HRAS_13R,13R,NA
+multi, ,HRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1206,0,0,0,0.001,HRAS_13R,13R,NA
+multi, ,HRAS,adrenocortical carcinoma,Overall,0,134,0.001,0,0,0.003,HRAS_13R,13R,NA
+multi, ,HRAS,soft tissue sarcoma,Overall,4,2738,0.001,0.001,0,0.003,HRAS_13R,13R,NA
+multi, ,HRAS,ovarian cancer,Overall,0,2337,0,0,0,0.001,HRAS_13R,13R,NA
+multi, ,HRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0.001,HRAS_13R,13R,NA
+multi, ,HRAS,thyroid cancer,Overall,2,1017,0.001,0.001,0,0.004,HRAS_13R,13R,NA
+multi, ,HRAS,cervical cancer,Overall,0,367,0,0,0,0.002,HRAS_13R,13R,NA
+multi, ,HRAS,hepatobiliary cancer,Overall,0,1374,0,0,0,0.001,HRAS_13R,13R,NA
+multi, ,HRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,HRAS_13R,13R,NA
+multi, ,HRAS,cns cancer,Overall,1,4564,0,0,0,0.001,HRAS_13R,13R,NA
+multi, ,HRAS,prostate cancer,Overall,1,2440,0,0,0,0.001,HRAS_13R,13R,NA
+multi, ,HRAS,anal cancer,Overall,0,149,0.001,0,0,0.003,HRAS_13R,13R,NA
+multi, ,HRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0.002,HRAS_13R,13R,NA
+multi, ,HRAS,bladder cancer,Overall,8,1580,0.004,0.004,0.002,0.008,HRAS_13R,13R,NA
+multi, ,HRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0.001,0,0,0.003,HRAS_13R,13R,NA
+multi, ,HRAS,small bowel cancer,Overall,0,210,0.001,0,0,0.003,HRAS_13R,13R,NA
+multi, ,HRAS,sex cord stromal tumor,Overall,0,107,0.001,0,0,0.003,HRAS_13R,13R,NA
+multi, ,HRAS,bone cancer,Overall,0,555,0,0,0,0.002,HRAS_13R,13R,NA
+multi, ,HRAS,vaginal cancer,Overall,0,78,0.001,0,0,0.003,HRAS_13R,13R,NA
+multi, ,HRAS,thymic tumor,Overall,0,154,0.001,0,0,0.003,HRAS_13R,13R,NA
+multi, ,HRAS,ampullary cancer,Overall,0,106,0.001,0,0,0.003,HRAS_13R,13R,NA
+multi, ,HRAS,small cell lung cancer,Overall,0,398,0,0,0,0.002,HRAS_13R,13R,NA
+multi, ,HRAS,mature t and nk neoplasms,Overall,0,230,0.001,0,0,0.003,HRAS_13R,13R,NA
+multi, ,HRAS,mesothelioma,Overall,0,497,0,0,0,0.002,HRAS_13R,13R,NA
+multi, ,HRAS,germ cell tumor,Overall,1,885,0.001,0.001,0,0.003,HRAS_13R,13R,NA
+multi, ,HRAS,nerve sheath tumor,Overall,0,151,0.001,0,0,0.003,HRAS_13R,13R,NA
+multi, ,HRAS,penile cancer,Overall,0,25,0.001,0,0,0.004,HRAS_13R,13R,NA
+multi, ,HRAS,pheochromocytoma,Overall,0,25,0.001,0,0,0.004,HRAS_13R,13R,NA
+multi, ,HRAS,pineal tumor,Overall,0,21,0.001,0,0,0.005,HRAS_13R,13R,NA
+multi, ,HRAS,b cell lymphoma,Overall,0,961,0,0,0,0.001,HRAS_13R,13R,NA
+multi, ,HRAS,non-hodgkin lymphoma,Overall,0,23,0.001,0,0,0.004,HRAS_13R,13R,NA
+multi, ,HRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.001,0,0,0.004,HRAS_13R,13R,NA
+multi, ,HRAS,retinoblastoma,Overall,0,51,0.001,0,0,0.004,HRAS_13R,13R,NA
+multi, ,HRAS,hodgkin lymphoma,Overall,0,40,0.001,0,0,0.004,HRAS_13R,13R,NA
+multi, ,HRAS,lung cancer,Overall,0,25,0.001,0,0,0.004,HRAS_13R,13R,NA
+multi, ,HRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.001,0,0,0.004,HRAS_13R,13R,NA
+multi, ,HRAS,peritoneal cancer,Overall,0,19,0.001,0,0,0.004,HRAS_13R,13R,NA
+multi, ,HRAS,parathyroid cancer,Overall,0,16,0.001,0,0,0.004,HRAS_13R,13R,NA
+multi, ,HRAS,appendiceal cancer,Overall,0,341,0,0,0,0.001,HRAS_13V,13V,NA
+multi, ,HRAS,colorectal cancer,Overall,0,6720,0,0,0,0,HRAS_13V,13V,NA
+multi, ,HRAS,cancer of unknown primary,Overall,1,1985,0,0,0,0.001,HRAS_13V,13V,NA
+multi, ,HRAS,non-small cell lung cancer,Overall,6,10131,0.001,0,0,0.001,HRAS_13V,13V,NA
+multi, ,HRAS,breast cancer,Overall,1,9332,0,0,0,0,HRAS_13V,13V,NA
+multi, ,HRAS,pancreatic cancer,Overall,0,2493,0,0,0,0.001,HRAS_13V,13V,NA
+multi, ,HRAS,leukemia,Overall,0,1560,0,0,0,0.001,HRAS_13V,13V,NA
+multi, ,HRAS,melanoma,Overall,3,2846,0.001,0.001,0,0.002,HRAS_13V,13V,NA
+multi, ,HRAS,head and neck cancer,Overall,3,1743,0.001,0.001,0,0.003,HRAS_13V,13V,NA
+multi, ,HRAS,uterine cancer,Overall,1,2248,0,0,0,0.001,HRAS_13V,13V,NA
+multi, ,HRAS,non-melanoma skin cancers,Overall,2,513,0.002,0.001,0,0.006,HRAS_13V,13V,NA
+multi, ,HRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1206,0,0,0,0.001,HRAS_13V,13V,NA
+multi, ,HRAS,adrenocortical carcinoma,Overall,0,134,0,0,0,0.002,HRAS_13V,13V,NA
+multi, ,HRAS,soft tissue sarcoma,Overall,0,2738,0,0,0,0.001,HRAS_13V,13V,NA
+multi, ,HRAS,ovarian cancer,Overall,0,2337,0,0,0,0.001,HRAS_13V,13V,NA
+multi, ,HRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0.001,HRAS_13V,13V,NA
+multi, ,HRAS,thyroid cancer,Overall,0,1017,0,0,0,0.001,HRAS_13V,13V,NA
+multi, ,HRAS,cervical cancer,Overall,0,367,0,0,0,0.001,HRAS_13V,13V,NA
+multi, ,HRAS,hepatobiliary cancer,Overall,0,1374,0,0,0,0.001,HRAS_13V,13V,NA
+multi, ,HRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,HRAS_13V,13V,NA
+multi, ,HRAS,cns cancer,Overall,0,4564,0,0,0,0,HRAS_13V,13V,NA
+multi, ,HRAS,prostate cancer,Overall,0,2440,0,0,0,0.001,HRAS_13V,13V,NA
+multi, ,HRAS,anal cancer,Overall,0,149,0,0,0,0.002,HRAS_13V,13V,NA
+multi, ,HRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0.001,HRAS_13V,13V,NA
+multi, ,HRAS,bladder cancer,Overall,3,1580,0.001,0.001,0,0.003,HRAS_13V,13V,NA
+multi, ,HRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0,0,0,0.002,HRAS_13V,13V,NA
+multi, ,HRAS,small bowel cancer,Overall,0,210,0,0,0,0.002,HRAS_13V,13V,NA
+multi, ,HRAS,sex cord stromal tumor,Overall,0,107,0,0,0,0.002,HRAS_13V,13V,NA
+multi, ,HRAS,bone cancer,Overall,0,555,0,0,0,0.001,HRAS_13V,13V,NA
+multi, ,HRAS,vaginal cancer,Overall,0,78,0,0,0,0.002,HRAS_13V,13V,NA
+multi, ,HRAS,thymic tumor,Overall,0,154,0,0,0,0.002,HRAS_13V,13V,NA
+multi, ,HRAS,ampullary cancer,Overall,0,106,0,0,0,0.002,HRAS_13V,13V,NA
+multi, ,HRAS,small cell lung cancer,Overall,1,398,0.001,0,0,0.004,HRAS_13V,13V,NA
+multi, ,HRAS,mature t and nk neoplasms,Overall,0,230,0,0,0,0.001,HRAS_13V,13V,NA
+multi, ,HRAS,mesothelioma,Overall,0,497,0,0,0,0.001,HRAS_13V,13V,NA
+multi, ,HRAS,germ cell tumor,Overall,0,885,0,0,0,0.001,HRAS_13V,13V,NA
+multi, ,HRAS,nerve sheath tumor,Overall,0,151,0,0,0,0.002,HRAS_13V,13V,NA
+multi, ,HRAS,penile cancer,Overall,0,25,0,0,0,0.002,HRAS_13V,13V,NA
+multi, ,HRAS,pheochromocytoma,Overall,0,25,0,0,0,0.002,HRAS_13V,13V,NA
+multi, ,HRAS,pineal tumor,Overall,0,21,0,0,0,0.002,HRAS_13V,13V,NA
+multi, ,HRAS,b cell lymphoma,Overall,0,961,0,0,0,0.001,HRAS_13V,13V,NA
+multi, ,HRAS,non-hodgkin lymphoma,Overall,0,23,0,0,0,0.003,HRAS_13V,13V,NA
+multi, ,HRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0,0,0,0.002,HRAS_13V,13V,NA
+multi, ,HRAS,retinoblastoma,Overall,0,51,0,0,0,0.002,HRAS_13V,13V,NA
+multi, ,HRAS,hodgkin lymphoma,Overall,0,40,0,0,0,0.002,HRAS_13V,13V,NA
+multi, ,HRAS,lung cancer,Overall,0,25,0,0,0,0.002,HRAS_13V,13V,NA
+multi, ,HRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0,0,0,0.002,HRAS_13V,13V,NA
+multi, ,HRAS,peritoneal cancer,Overall,0,19,0,0,0,0.002,HRAS_13V,13V,NA
+multi, ,HRAS,parathyroid cancer,Overall,0,16,0,0,0,0.003,HRAS_13V,13V,NA
+multi, ,HRAS,appendiceal cancer,Overall,0,341,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,colorectal cancer,Overall,0,6720,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,cancer of unknown primary,Overall,0,1985,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,non-small cell lung cancer,Overall,2,10131,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,breast cancer,Overall,0,9332,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,pancreatic cancer,Overall,0,2493,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,leukemia,Overall,0,1560,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,melanoma,Overall,0,2846,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,head and neck cancer,Overall,0,1743,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,uterine cancer,Overall,1,2248,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1206,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,adrenocortical carcinoma,Overall,0,134,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,soft tissue sarcoma,Overall,0,2738,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,ovarian cancer,Overall,0,2337,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,thyroid cancer,Overall,0,1017,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,cervical cancer,Overall,0,367,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,hepatobiliary cancer,Overall,0,1374,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,kidney cancer,Overall,0,1422,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,cns cancer,Overall,0,4564,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,prostate cancer,Overall,0,2440,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,anal cancer,Overall,0,149,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,bladder cancer,Overall,0,1580,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,small bowel cancer,Overall,0,210,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,sex cord stromal tumor,Overall,0,107,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,bone cancer,Overall,0,555,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,vaginal cancer,Overall,0,78,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,thymic tumor,Overall,0,154,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,ampullary cancer,Overall,0,106,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,small cell lung cancer,Overall,0,398,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,mature t and nk neoplasms,Overall,0,230,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,mesothelioma,Overall,0,497,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,germ cell tumor,Overall,0,885,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,nerve sheath tumor,Overall,0,151,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,penile cancer,Overall,0,25,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,pheochromocytoma,Overall,0,25,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,pineal tumor,Overall,0,21,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,b cell lymphoma,Overall,0,961,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,non-hodgkin lymphoma,Overall,0,23,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,retinoblastoma,Overall,0,51,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,hodgkin lymphoma,Overall,0,40,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,lung cancer,Overall,0,25,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,peritoneal cancer,Overall,0,19,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,parathyroid cancer,Overall,0,16,0,0,0,0,HRAS_61H,61H,NA
+multi, ,HRAS,appendiceal cancer,Overall,0,341,0,0,0,0.002,HRAS_61K,61K,NA
+multi, ,HRAS,colorectal cancer,Overall,0,6720,0,0,0,0,HRAS_61K,61K,NA
+multi, ,HRAS,cancer of unknown primary,Overall,3,1985,0.001,0.001,0,0.003,HRAS_61K,61K,NA
+multi, ,HRAS,non-small cell lung cancer,Overall,0,10131,0,0,0,0,HRAS_61K,61K,NA
+multi, ,HRAS,breast cancer,Overall,2,9332,0,0,0,0.001,HRAS_61K,61K,NA
+multi, ,HRAS,pancreatic cancer,Overall,1,2493,0,0,0,0.001,HRAS_61K,61K,NA
+multi, ,HRAS,leukemia,Overall,0,1560,0,0,0,0.001,HRAS_61K,61K,NA
+multi, ,HRAS,melanoma,Overall,8,2846,0.003,0.002,0.001,0.005,HRAS_61K,61K,NA
+multi, ,HRAS,head and neck cancer,Overall,5,1743,0.003,0.002,0.001,0.005,HRAS_61K,61K,NA
+multi, ,HRAS,uterine cancer,Overall,0,2248,0,0,0,0.001,HRAS_61K,61K,NA
+multi, ,HRAS,non-melanoma skin cancers,Overall,2,513,0.003,0.002,0,0.009,HRAS_61K,61K,NA
+multi, ,HRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1206,0,0,0,0.001,HRAS_61K,61K,NA
+multi, ,HRAS,adrenocortical carcinoma,Overall,0,134,0.001,0,0,0.004,HRAS_61K,61K,NA
+multi, ,HRAS,soft tissue sarcoma,Overall,1,2738,0,0,0,0.001,HRAS_61K,61K,NA
+multi, ,HRAS,ovarian cancer,Overall,0,2337,0,0,0,0.001,HRAS_61K,61K,NA
+multi, ,HRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0.001,HRAS_61K,61K,NA
+multi, ,HRAS,thyroid cancer,Overall,12,1017,0.011,0.011,0.005,0.018,HRAS_61K,61K,NA
+multi, ,HRAS,cervical cancer,Overall,0,367,0,0,0,0.002,HRAS_61K,61K,NA
+multi, ,HRAS,hepatobiliary cancer,Overall,1,1374,0.001,0,0,0.002,HRAS_61K,61K,NA
+multi, ,HRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,HRAS_61K,61K,NA
+multi, ,HRAS,cns cancer,Overall,0,4564,0,0,0,0,HRAS_61K,61K,NA
+multi, ,HRAS,prostate cancer,Overall,6,2440,0.002,0.002,0.001,0.004,HRAS_61K,61K,NA
+multi, ,HRAS,anal cancer,Overall,0,149,0.001,0,0,0.004,HRAS_61K,61K,NA
+multi, ,HRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0.002,HRAS_61K,61K,NA
+multi, ,HRAS,bladder cancer,Overall,5,1580,0.003,0.003,0.001,0.006,HRAS_61K,61K,NA
+multi, ,HRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0,0,0,0.003,HRAS_61K,61K,NA
+multi, ,HRAS,small bowel cancer,Overall,0,210,0,0,0,0.003,HRAS_61K,61K,NA
+multi, ,HRAS,sex cord stromal tumor,Overall,0,107,0.001,0,0,0.005,HRAS_61K,61K,NA
+multi, ,HRAS,bone cancer,Overall,0,555,0,0,0,0.002,HRAS_61K,61K,NA
+multi, ,HRAS,vaginal cancer,Overall,0,78,0.001,0,0,0.005,HRAS_61K,61K,NA
+multi, ,HRAS,thymic tumor,Overall,0,154,0.001,0,0,0.004,HRAS_61K,61K,NA
+multi, ,HRAS,ampullary cancer,Overall,0,106,0.001,0,0,0.005,HRAS_61K,61K,NA
+multi, ,HRAS,small cell lung cancer,Overall,0,398,0,0,0,0.002,HRAS_61K,61K,NA
+multi, ,HRAS,mature t and nk neoplasms,Overall,0,230,0,0,0,0.003,HRAS_61K,61K,NA
+multi, ,HRAS,mesothelioma,Overall,0,497,0,0,0,0.002,HRAS_61K,61K,NA
+multi, ,HRAS,germ cell tumor,Overall,0,885,0,0,0,0.001,HRAS_61K,61K,NA
+multi, ,HRAS,nerve sheath tumor,Overall,0,151,0.001,0,0,0.004,HRAS_61K,61K,NA
+multi, ,HRAS,penile cancer,Overall,0,25,0.001,0,0,0.008,HRAS_61K,61K,NA
+multi, ,HRAS,pheochromocytoma,Overall,0,25,0.001,0,0,0.009,HRAS_61K,61K,NA
+multi, ,HRAS,pineal tumor,Overall,0,21,0.001,0,0,0.009,HRAS_61K,61K,NA
+multi, ,HRAS,b cell lymphoma,Overall,0,961,0,0,0,0.001,HRAS_61K,61K,NA
+multi, ,HRAS,non-hodgkin lymphoma,Overall,0,23,0.001,0,0,0.008,HRAS_61K,61K,NA
+multi, ,HRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.001,0,0,0.007,HRAS_61K,61K,NA
+multi, ,HRAS,retinoblastoma,Overall,0,51,0.001,0,0,0.007,HRAS_61K,61K,NA
+multi, ,HRAS,hodgkin lymphoma,Overall,0,40,0.001,0,0,0.007,HRAS_61K,61K,NA
+multi, ,HRAS,lung cancer,Overall,0,25,0.001,0,0,0.008,HRAS_61K,61K,NA
+multi, ,HRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.001,0,0,0.01,HRAS_61K,61K,NA
+multi, ,HRAS,peritoneal cancer,Overall,0,19,0.001,0,0,0.009,HRAS_61K,61K,NA
+multi, ,HRAS,parathyroid cancer,Overall,1,16,0.017,0.006,0,0.098,HRAS_61K,61K,NA
+multi, ,HRAS,appendiceal cancer,Overall,0,341,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,colorectal cancer,Overall,0,6720,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,cancer of unknown primary,Overall,0,1985,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,non-small cell lung cancer,Overall,0,10131,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,breast cancer,Overall,0,9332,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,pancreatic cancer,Overall,0,2493,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,leukemia,Overall,0,1560,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,melanoma,Overall,0,2846,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,head and neck cancer,Overall,0,1743,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,uterine cancer,Overall,0,2248,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1206,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,adrenocortical carcinoma,Overall,0,134,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,soft tissue sarcoma,Overall,1,2738,0,0,0,0.001,HRAS_61L,61L,NA
+multi, ,HRAS,ovarian cancer,Overall,0,2337,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,thyroid cancer,Overall,0,1017,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,cervical cancer,Overall,0,367,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,hepatobiliary cancer,Overall,0,1374,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,kidney cancer,Overall,0,1422,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,cns cancer,Overall,0,4564,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,prostate cancer,Overall,0,2440,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,anal cancer,Overall,0,149,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,bladder cancer,Overall,0,1580,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,small bowel cancer,Overall,0,210,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,sex cord stromal tumor,Overall,0,107,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,bone cancer,Overall,0,555,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,vaginal cancer,Overall,0,78,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,thymic tumor,Overall,0,154,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,ampullary cancer,Overall,0,106,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,small cell lung cancer,Overall,0,398,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,mature t and nk neoplasms,Overall,0,230,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,mesothelioma,Overall,0,497,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,germ cell tumor,Overall,0,885,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,nerve sheath tumor,Overall,0,151,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,penile cancer,Overall,0,25,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,pheochromocytoma,Overall,0,25,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,pineal tumor,Overall,0,21,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,b cell lymphoma,Overall,0,961,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,non-hodgkin lymphoma,Overall,0,23,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,retinoblastoma,Overall,0,51,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,hodgkin lymphoma,Overall,0,40,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,lung cancer,Overall,0,25,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,peritoneal cancer,Overall,0,19,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,parathyroid cancer,Overall,0,16,0,0,0,0,HRAS_61L,61L,NA
+multi, ,HRAS,appendiceal cancer,Overall,0,341,0,0,0,0.003,HRAS_61R,61R,NA
+multi, ,HRAS,colorectal cancer,Overall,0,6720,0,0,0,0,HRAS_61R,61R,NA
+multi, ,HRAS,cancer of unknown primary,Overall,0,1985,0,0,0,0.001,HRAS_61R,61R,NA
+multi, ,HRAS,non-small cell lung cancer,Overall,3,10131,0,0,0,0.001,HRAS_61R,61R,NA
+multi, ,HRAS,breast cancer,Overall,4,9332,0,0,0,0.001,HRAS_61R,61R,NA
+multi, ,HRAS,pancreatic cancer,Overall,1,2493,0,0,0,0.001,HRAS_61R,61R,NA
+multi, ,HRAS,leukemia,Overall,0,1560,0,0,0,0.001,HRAS_61R,61R,NA
+multi, ,HRAS,melanoma,Overall,5,2846,0.002,0.002,0.001,0.003,HRAS_61R,61R,NA
+multi, ,HRAS,head and neck cancer,Overall,9,1743,0.005,0.005,0.002,0.008,HRAS_61R,61R,NA
+multi, ,HRAS,uterine cancer,Overall,0,2248,0,0,0,0.001,HRAS_61R,61R,NA
+multi, ,HRAS,non-melanoma skin cancers,Overall,1,513,0.001,0.001,0,0.005,HRAS_61R,61R,NA
+multi, ,HRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1206,0,0,0,0.001,HRAS_61R,61R,NA
+multi, ,HRAS,adrenocortical carcinoma,Overall,0,134,0.001,0,0,0.005,HRAS_61R,61R,NA
+multi, ,HRAS,soft tissue sarcoma,Overall,1,2738,0,0,0,0.001,HRAS_61R,61R,NA
+multi, ,HRAS,ovarian cancer,Overall,0,2337,0,0,0,0.001,HRAS_61R,61R,NA
+multi, ,HRAS,esophagogastric cancer,Overall,1,1802,0.001,0,0,0.002,HRAS_61R,61R,NA
+multi, ,HRAS,thyroid cancer,Overall,30,1017,0.028,0.028,0.019,0.039,HRAS_61R,61R,NA
+multi, ,HRAS,cervical cancer,Overall,0,367,0,0,0,0.003,HRAS_61R,61R,NA
+multi, ,HRAS,hepatobiliary cancer,Overall,0,1374,0,0,0,0.001,HRAS_61R,61R,NA
+multi, ,HRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,HRAS_61R,61R,NA
+multi, ,HRAS,cns cancer,Overall,0,4564,0,0,0,0,HRAS_61R,61R,NA
+multi, ,HRAS,prostate cancer,Overall,6,2440,0.002,0.002,0.001,0.004,HRAS_61R,61R,NA
+multi, ,HRAS,anal cancer,Overall,0,149,0.001,0,0,0.004,HRAS_61R,61R,NA
+multi, ,HRAS,neuroendocrine tumors,Overall,1,359,0.002,0.001,0,0.007,HRAS_61R,61R,NA
+multi, ,HRAS,bladder cancer,Overall,16,1580,0.01,0.009,0.005,0.015,HRAS_61R,61R,NA
+multi, ,HRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0.001,0,0,0.003,HRAS_61R,61R,NA
+multi, ,HRAS,small bowel cancer,Overall,0,210,0.001,0,0,0.004,HRAS_61R,61R,NA
+multi, ,HRAS,sex cord stromal tumor,Overall,0,107,0.001,0,0,0.005,HRAS_61R,61R,NA
+multi, ,HRAS,bone cancer,Overall,0,555,0,0,0,0.002,HRAS_61R,61R,NA
+multi, ,HRAS,vaginal cancer,Overall,0,78,0.001,0,0,0.007,HRAS_61R,61R,NA
+multi, ,HRAS,thymic tumor,Overall,1,154,0.004,0.002,0,0.016,HRAS_61R,61R,NA
+multi, ,HRAS,ampullary cancer,Overall,0,106,0.001,0,0,0.005,HRAS_61R,61R,NA
+multi, ,HRAS,small cell lung cancer,Overall,0,398,0,0,0,0.002,HRAS_61R,61R,NA
+multi, ,HRAS,mature t and nk neoplasms,Overall,0,230,0.001,0,0,0.004,HRAS_61R,61R,NA
+multi, ,HRAS,mesothelioma,Overall,0,497,0,0,0,0.002,HRAS_61R,61R,NA
+multi, ,HRAS,germ cell tumor,Overall,0,885,0,0,0,0.001,HRAS_61R,61R,NA
+multi, ,HRAS,nerve sheath tumor,Overall,0,151,0.001,0,0,0.004,HRAS_61R,61R,NA
+multi, ,HRAS,penile cancer,Overall,0,25,0.001,0,0,0.01,HRAS_61R,61R,NA
+multi, ,HRAS,pheochromocytoma,Overall,1,25,0.013,0.006,0,0.07,HRAS_61R,61R,NA
+multi, ,HRAS,pineal tumor,Overall,0,21,0.001,0,0,0.01,HRAS_61R,61R,NA
+multi, ,HRAS,b cell lymphoma,Overall,0,961,0,0,0,0.001,HRAS_61R,61R,NA
+multi, ,HRAS,non-hodgkin lymphoma,Overall,0,23,0.001,0,0,0.01,HRAS_61R,61R,NA
+multi, ,HRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.001,0,0,0.008,HRAS_61R,61R,NA
+multi, ,HRAS,retinoblastoma,Overall,0,51,0.001,0,0,0.008,HRAS_61R,61R,NA
+multi, ,HRAS,hodgkin lymphoma,Overall,0,40,0.001,0,0,0.009,HRAS_61R,61R,NA
+multi, ,HRAS,lung cancer,Overall,0,25,0.001,0,0,0.01,HRAS_61R,61R,NA
+multi, ,HRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.002,0,0,0.012,HRAS_61R,61R,NA
+multi, ,HRAS,peritoneal cancer,Overall,0,19,0.001,0,0,0.011,HRAS_61R,61R,NA
+multi, ,HRAS,parathyroid cancer,Overall,0,16,0.002,0,0,0.012,HRAS_61R,61R,NA
+multi, ,NRAS,appendiceal cancer,Overall,0,341,0,0,0,0.002,NRAS_12A,12A,NA
+multi, ,NRAS,colorectal cancer,Overall,5,6720,0.001,0.001,0,0.001,NRAS_12A,12A,NA
+multi, ,NRAS,cancer of unknown primary,Overall,0,1988,0,0,0,0.001,NRAS_12A,12A,NA
+multi, ,NRAS,non-small cell lung cancer,Overall,2,10131,0,0,0,0.001,NRAS_12A,12A,NA
+multi, ,NRAS,breast cancer,Overall,0,9332,0,0,0,0,NRAS_12A,12A,NA
+multi, ,NRAS,soft tissue sarcoma,Overall,0,2773,0,0,0,0,NRAS_12A,12A,NA
+multi, ,NRAS,pancreatic cancer,Overall,0,2493,0,0,0,0,NRAS_12A,12A,NA
+multi, ,NRAS,leukemia,Overall,14,1567,0.008,0.008,0.004,0.013,NRAS_12A,12A,NA
+multi, ,NRAS,melanoma,Overall,5,2846,0.002,0.001,0,0.003,NRAS_12A,12A,NA
+multi, ,NRAS,head and neck cancer,Overall,0,1743,0,0,0,0.001,NRAS_12A,12A,NA
+multi, ,NRAS,uterine cancer,Overall,0,2253,0,0,0,0.001,NRAS_12A,12A,NA
+multi, ,NRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0.001,NRAS_12A,12A,NA
+multi, ,NRAS,myelodysplastic/myeloproliferative syndromes,Overall,4,1207,0.003,0.003,0.001,0.006,NRAS_12A,12A,NA
+multi, ,NRAS,adrenocortical carcinoma,Overall,0,134,0,0,0,0.003,NRAS_12A,12A,NA
+multi, ,NRAS,ovarian cancer,Overall,0,2337,0,0,0,0.001,NRAS_12A,12A,NA
+multi, ,NRAS,esophagogastric cancer,Overall,1,1802,0,0,0,0.002,NRAS_12A,12A,NA
+multi, ,NRAS,thyroid cancer,Overall,0,1017,0,0,0,0.001,NRAS_12A,12A,NA
+multi, ,NRAS,cervical cancer,Overall,0,367,0,0,0,0.002,NRAS_12A,12A,NA
+multi, ,NRAS,hepatobiliary cancer,Overall,0,1374,0,0,0,0.001,NRAS_12A,12A,NA
+multi, ,NRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,NRAS_12A,12A,NA
+multi, ,NRAS,mature t and nk neoplasms,Overall,0,231,0,0,0,0.002,NRAS_12A,12A,NA
+multi, ,NRAS,cns cancer,Overall,0,4565,0,0,0,0,NRAS_12A,12A,NA
+multi, ,NRAS,prostate cancer,Overall,0,2440,0,0,0,0,NRAS_12A,12A,NA
+multi, ,NRAS,anal cancer,Overall,0,149,0,0,0,0.003,NRAS_12A,12A,NA
+multi, ,NRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0.002,NRAS_12A,12A,NA
+multi, ,NRAS,bladder cancer,Overall,0,1580,0,0,0,0.001,NRAS_12A,12A,NA
+multi, ,NRAS,b-lymphoblastic leukemia/lymphoma,Overall,2,248,0.005,0.004,0,0.017,NRAS_12A,12A,NA
+multi, ,NRAS,small bowel cancer,Overall,0,210,0,0,0,0.002,NRAS_12A,12A,NA
+multi, ,NRAS,sex cord stromal tumor,Overall,0,107,0,0,0,0.004,NRAS_12A,12A,NA
+multi, ,NRAS,bone cancer,Overall,0,570,0,0,0,0.001,NRAS_12A,12A,NA
+multi, ,NRAS,vaginal cancer,Overall,0,78,0,0,0,0.003,NRAS_12A,12A,NA
+multi, ,NRAS,thymic tumor,Overall,0,156,0,0,0,0.003,NRAS_12A,12A,NA
+multi, ,NRAS,ampullary cancer,Overall,0,106,0,0,0,0.003,NRAS_12A,12A,NA
+multi, ,NRAS,small cell lung cancer,Overall,0,398,0,0,0,0.002,NRAS_12A,12A,NA
+multi, ,NRAS,mesothelioma,Overall,0,497,0,0,0,0.001,NRAS_12A,12A,NA
+multi, ,NRAS,germ cell tumor,Overall,1,886,0.001,0,0,0.003,NRAS_12A,12A,NA
+multi, ,NRAS,nerve sheath tumor,Overall,0,154,0,0,0,0.003,NRAS_12A,12A,NA
+multi, ,NRAS,penile cancer,Overall,0,25,0.001,0,0,0.005,NRAS_12A,12A,NA
+multi, ,NRAS,pheochromocytoma,Overall,0,25,0.001,0,0,0.005,NRAS_12A,12A,NA
+multi, ,NRAS,pineal tumor,Overall,0,21,0.001,0,0,0.005,NRAS_12A,12A,NA
+multi, ,NRAS,b cell lymphoma,Overall,0,962,0,0,0,0.001,NRAS_12A,12A,NA
+multi, ,NRAS,non-hodgkin lymphoma,Overall,0,23,0.001,0,0,0.006,NRAS_12A,12A,NA
+multi, ,NRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.001,0,0,0.004,NRAS_12A,12A,NA
+multi, ,NRAS,retinoblastoma,Overall,0,51,0.001,0,0,0.004,NRAS_12A,12A,NA
+multi, ,NRAS,hodgkin lymphoma,Overall,0,40,0.001,0,0,0.005,NRAS_12A,12A,NA
+multi, ,NRAS,lung cancer,Overall,0,25,0.001,0,0,0.005,NRAS_12A,12A,NA
+multi, ,NRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.001,0,0,0.006,NRAS_12A,12A,NA
+multi, ,NRAS,peritoneal cancer,Overall,0,19,0.001,0,0,0.006,NRAS_12A,12A,NA
+multi, ,NRAS,parathyroid cancer,Overall,0,16,0.001,0,0,0.006,NRAS_12A,12A,NA
+multi, ,NRAS,appendiceal cancer,Overall,1,341,0.001,0.001,0,0.006,NRAS_12C,12C,NA
+multi, ,NRAS,colorectal cancer,Overall,16,6720,0.002,0.002,0.001,0.003,NRAS_12C,12C,NA
+multi, ,NRAS,cancer of unknown primary,Overall,2,1988,0.001,0.001,0,0.002,NRAS_12C,12C,NA
+multi, ,NRAS,non-small cell lung cancer,Overall,3,10131,0,0,0,0.001,NRAS_12C,12C,NA
+multi, ,NRAS,breast cancer,Overall,0,9332,0,0,0,0,NRAS_12C,12C,NA
+multi, ,NRAS,soft tissue sarcoma,Overall,0,2773,0,0,0,0.001,NRAS_12C,12C,NA
+multi, ,NRAS,pancreatic cancer,Overall,1,2493,0,0,0,0.001,NRAS_12C,12C,NA
+multi, ,NRAS,leukemia,Overall,8,1567,0.004,0.004,0.002,0.008,NRAS_12C,12C,NA
+multi, ,NRAS,melanoma,Overall,12,2846,0.004,0.004,0.002,0.006,NRAS_12C,12C,NA
+multi, ,NRAS,head and neck cancer,Overall,1,1743,0.001,0,0,0.002,NRAS_12C,12C,NA
+multi, ,NRAS,uterine cancer,Overall,5,2253,0.002,0.002,0.001,0.004,NRAS_12C,12C,NA
+multi, ,NRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0.002,NRAS_12C,12C,NA
+multi, ,NRAS,myelodysplastic/myeloproliferative syndromes,Overall,1,1207,0.001,0.001,0,0.002,NRAS_12C,12C,NA
+multi, ,NRAS,adrenocortical carcinoma,Overall,0,134,0.001,0,0,0.003,NRAS_12C,12C,NA
+multi, ,NRAS,ovarian cancer,Overall,0,2337,0,0,0,0.001,NRAS_12C,12C,NA
+multi, ,NRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0.001,NRAS_12C,12C,NA
+multi, ,NRAS,thyroid cancer,Overall,0,1017,0,0,0,0.001,NRAS_12C,12C,NA
+multi, ,NRAS,cervical cancer,Overall,0,367,0.001,0,0,0.002,NRAS_12C,12C,NA
+multi, ,NRAS,hepatobiliary cancer,Overall,2,1374,0.001,0.001,0,0.003,NRAS_12C,12C,NA
+multi, ,NRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,NRAS_12C,12C,NA
+multi, ,NRAS,mature t and nk neoplasms,Overall,0,231,0.001,0,0,0.003,NRAS_12C,12C,NA
+multi, ,NRAS,cns cancer,Overall,2,4565,0,0,0,0.001,NRAS_12C,12C,NA
+multi, ,NRAS,prostate cancer,Overall,0,2440,0,0,0,0.001,NRAS_12C,12C,NA
+multi, ,NRAS,anal cancer,Overall,0,149,0.001,0,0,0.003,NRAS_12C,12C,NA
+multi, ,NRAS,neuroendocrine tumors,Overall,0,359,0.001,0,0,0.002,NRAS_12C,12C,NA
+multi, ,NRAS,bladder cancer,Overall,1,1580,0.001,0,0,0.002,NRAS_12C,12C,NA
+multi, ,NRAS,b-lymphoblastic leukemia/lymphoma,Overall,1,248,0.002,0.001,0,0.007,NRAS_12C,12C,NA
+multi, ,NRAS,small bowel cancer,Overall,0,210,0.001,0,0,0.003,NRAS_12C,12C,NA
+multi, ,NRAS,sex cord stromal tumor,Overall,0,107,0.001,0,0,0.004,NRAS_12C,12C,NA
+multi, ,NRAS,bone cancer,Overall,0,570,0,0,0,0.002,NRAS_12C,12C,NA
+multi, ,NRAS,vaginal cancer,Overall,0,78,0.001,0,0,0.004,NRAS_12C,12C,NA
+multi, ,NRAS,thymic tumor,Overall,0,156,0.001,0,0,0.003,NRAS_12C,12C,NA
+multi, ,NRAS,ampullary cancer,Overall,0,106,0.001,0,0,0.004,NRAS_12C,12C,NA
+multi, ,NRAS,small cell lung cancer,Overall,0,398,0.001,0,0,0.002,NRAS_12C,12C,NA
+multi, ,NRAS,mesothelioma,Overall,0,497,0,0,0,0.002,NRAS_12C,12C,NA
+multi, ,NRAS,germ cell tumor,Overall,1,886,0.001,0.001,0,0.003,NRAS_12C,12C,NA
+multi, ,NRAS,nerve sheath tumor,Overall,0,154,0.001,0,0,0.003,NRAS_12C,12C,NA
+multi, ,NRAS,penile cancer,Overall,0,25,0.001,0,0,0.005,NRAS_12C,12C,NA
+multi, ,NRAS,pheochromocytoma,Overall,0,25,0.001,0,0,0.005,NRAS_12C,12C,NA
+multi, ,NRAS,pineal tumor,Overall,0,21,0.001,0,0,0.005,NRAS_12C,12C,NA
+multi, ,NRAS,b cell lymphoma,Overall,0,962,0,0,0,0.001,NRAS_12C,12C,NA
+multi, ,NRAS,non-hodgkin lymphoma,Overall,0,23,0.001,0,0,0.005,NRAS_12C,12C,NA
+multi, ,NRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.001,0,0,0.005,NRAS_12C,12C,NA
+multi, ,NRAS,retinoblastoma,Overall,0,51,0.001,0,0,0.004,NRAS_12C,12C,NA
+multi, ,NRAS,hodgkin lymphoma,Overall,0,40,0.001,0,0,0.005,NRAS_12C,12C,NA
+multi, ,NRAS,lung cancer,Overall,0,25,0.001,0,0,0.005,NRAS_12C,12C,NA
+multi, ,NRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.001,0,0,0.005,NRAS_12C,12C,NA
+multi, ,NRAS,peritoneal cancer,Overall,0,19,0.001,0,0,0.005,NRAS_12C,12C,NA
+multi, ,NRAS,parathyroid cancer,Overall,0,16,0.001,0,0,0.005,NRAS_12C,12C,NA
+multi, ,NRAS,appendiceal cancer,Overall,0,341,0.001,0,0,0.004,NRAS_12D,12D,NA
+multi, ,NRAS,colorectal cancer,Overall,53,6720,0.008,0.008,0.006,0.01,NRAS_12D,12D,NA
+multi, ,NRAS,cancer of unknown primary,Overall,3,1988,0.001,0.001,0,0.003,NRAS_12D,12D,NA
+multi, ,NRAS,non-small cell lung cancer,Overall,8,10131,0.001,0.001,0,0.001,NRAS_12D,12D,NA
+multi, ,NRAS,breast cancer,Overall,0,9332,0,0,0,0,NRAS_12D,12D,NA
+multi, ,NRAS,soft tissue sarcoma,Overall,2,2773,0.001,0.001,0,0.002,NRAS_12D,12D,NA
+multi, ,NRAS,pancreatic cancer,Overall,1,2493,0,0,0,0.002,NRAS_12D,12D,NA
+multi, ,NRAS,leukemia,Overall,71,1567,0.045,0.044,0.035,0.056,NRAS_12D,12D,NA
+multi, ,NRAS,melanoma,Overall,17,2846,0.006,0.006,0.003,0.009,NRAS_12D,12D,NA
+multi, ,NRAS,head and neck cancer,Overall,3,1743,0.002,0.001,0,0.004,NRAS_12D,12D,NA
+multi, ,NRAS,uterine cancer,Overall,8,2253,0.003,0.003,0.001,0.006,NRAS_12D,12D,NA
+multi, ,NRAS,non-melanoma skin cancers,Overall,1,513,0.002,0.001,0,0.006,NRAS_12D,12D,NA
+multi, ,NRAS,myelodysplastic/myeloproliferative syndromes,Overall,20,1207,0.016,0.016,0.01,0.024,NRAS_12D,12D,NA
+multi, ,NRAS,adrenocortical carcinoma,Overall,0,134,0.001,0,0,0.007,NRAS_12D,12D,NA
+multi, ,NRAS,ovarian cancer,Overall,2,2337,0.001,0.001,0,0.002,NRAS_12D,12D,NA
+multi, ,NRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0.001,NRAS_12D,12D,NA
+multi, ,NRAS,thyroid cancer,Overall,0,1017,0,0,0,0.002,NRAS_12D,12D,NA
+multi, ,NRAS,cervical cancer,Overall,0,367,0.001,0,0,0.004,NRAS_12D,12D,NA
+multi, ,NRAS,hepatobiliary cancer,Overall,4,1374,0.003,0.002,0.001,0.006,NRAS_12D,12D,NA
+multi, ,NRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,NRAS_12D,12D,NA
+multi, ,NRAS,mature t and nk neoplasms,Overall,0,231,0.001,0,0,0.005,NRAS_12D,12D,NA
+multi, ,NRAS,cns cancer,Overall,2,4565,0,0,0,0.001,NRAS_12D,12D,NA
+multi, ,NRAS,prostate cancer,Overall,0,2440,0,0,0,0.001,NRAS_12D,12D,NA
+multi, ,NRAS,anal cancer,Overall,0,149,0.001,0,0,0.007,NRAS_12D,12D,NA
+multi, ,NRAS,neuroendocrine tumors,Overall,1,359,0.002,0.002,0,0.008,NRAS_12D,12D,NA
+multi, ,NRAS,bladder cancer,Overall,1,1580,0.001,0.001,0,0.002,NRAS_12D,12D,NA
+multi, ,NRAS,b-lymphoblastic leukemia/lymphoma,Overall,10,248,0.036,0.035,0.017,0.063,NRAS_12D,12D,NA
+multi, ,NRAS,small bowel cancer,Overall,0,210,0.001,0,0,0.006,NRAS_12D,12D,NA
+multi, ,NRAS,sex cord stromal tumor,Overall,0,107,0.001,0.001,0,0.008,NRAS_12D,12D,NA
+multi, ,NRAS,bone cancer,Overall,0,570,0.001,0,0,0.003,NRAS_12D,12D,NA
+multi, ,NRAS,vaginal cancer,Overall,0,78,0.002,0.001,0,0.01,NRAS_12D,12D,NA
+multi, ,NRAS,thymic tumor,Overall,0,156,0.001,0,0,0.007,NRAS_12D,12D,NA
+multi, ,NRAS,ampullary cancer,Overall,0,106,0.001,0,0,0.009,NRAS_12D,12D,NA
+multi, ,NRAS,small cell lung cancer,Overall,0,398,0.001,0,0,0.004,NRAS_12D,12D,NA
+multi, ,NRAS,mesothelioma,Overall,0,497,0.001,0,0,0.003,NRAS_12D,12D,NA
+multi, ,NRAS,germ cell tumor,Overall,2,886,0.002,0.002,0,0.006,NRAS_12D,12D,NA
+multi, ,NRAS,nerve sheath tumor,Overall,0,154,0.001,0,0,0.007,NRAS_12D,12D,NA
+multi, ,NRAS,penile cancer,Overall,0,25,0.003,0.001,0,0.018,NRAS_12D,12D,NA
+multi, ,NRAS,pheochromocytoma,Overall,0,25,0.003,0.001,0,0.018,NRAS_12D,12D,NA
+multi, ,NRAS,pineal tumor,Overall,0,21,0.003,0.001,0,0.019,NRAS_12D,12D,NA
+multi, ,NRAS,b cell lymphoma,Overall,1,962,0.001,0.001,0,0.004,NRAS_12D,12D,NA
+multi, ,NRAS,non-hodgkin lymphoma,Overall,0,23,0.003,0.001,0,0.019,NRAS_12D,12D,NA
+multi, ,NRAS,t-lymphoblastic leukemia/lymphoma,Overall,1,40,0.012,0.007,0,0.055,NRAS_12D,12D,NA
+multi, ,NRAS,retinoblastoma,Overall,0,51,0.002,0.001,0,0.013,NRAS_12D,12D,NA
+multi, ,NRAS,hodgkin lymphoma,Overall,0,40,0.002,0.001,0,0.014,NRAS_12D,12D,NA
+multi, ,NRAS,lung cancer,Overall,0,25,0.003,0.001,0,0.018,NRAS_12D,12D,NA
+multi, ,NRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,2,13,0.075,0.056,0.005,0.253,NRAS_12D,12D,NA
+multi, ,NRAS,peritoneal cancer,Overall,0,19,0.003,0.001,0,0.021,NRAS_12D,12D,NA
+multi, ,NRAS,parathyroid cancer,Overall,0,16,0.003,0.001,0,0.022,NRAS_12D,12D,NA
+multi, ,NRAS,appendiceal cancer,Overall,0,341,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,colorectal cancer,Overall,0,6720,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,cancer of unknown primary,Overall,0,1988,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,non-small cell lung cancer,Overall,0,10131,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,breast cancer,Overall,0,9332,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,soft tissue sarcoma,Overall,0,2773,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,pancreatic cancer,Overall,0,2493,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,leukemia,Overall,0,1567,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,melanoma,Overall,0,2846,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,head and neck cancer,Overall,0,1743,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,uterine cancer,Overall,0,2253,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1207,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,adrenocortical carcinoma,Overall,0,134,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,ovarian cancer,Overall,0,2337,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,thyroid cancer,Overall,0,1017,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,cervical cancer,Overall,0,367,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,hepatobiliary cancer,Overall,0,1374,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,kidney cancer,Overall,0,1422,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,mature t and nk neoplasms,Overall,0,231,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,cns cancer,Overall,0,4565,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,prostate cancer,Overall,0,2440,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,anal cancer,Overall,0,149,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,bladder cancer,Overall,0,1580,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,small bowel cancer,Overall,0,210,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,sex cord stromal tumor,Overall,0,107,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,bone cancer,Overall,0,570,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,vaginal cancer,Overall,0,78,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,thymic tumor,Overall,0,156,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,ampullary cancer,Overall,0,106,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,small cell lung cancer,Overall,0,398,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,mesothelioma,Overall,0,497,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,germ cell tumor,Overall,0,886,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,nerve sheath tumor,Overall,0,154,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,penile cancer,Overall,0,25,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,pheochromocytoma,Overall,0,25,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,pineal tumor,Overall,0,21,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,b cell lymphoma,Overall,0,962,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,non-hodgkin lymphoma,Overall,0,23,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,retinoblastoma,Overall,0,51,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,hodgkin lymphoma,Overall,0,40,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,lung cancer,Overall,0,25,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,peritoneal cancer,Overall,0,19,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,parathyroid cancer,Overall,0,16,0,0,0,0,NRAS_12F,12F,NA
+multi, ,NRAS,appendiceal cancer,Overall,0,341,0,0,0,0.001,NRAS_12R,12R,NA
+multi, ,NRAS,colorectal cancer,Overall,0,6720,0,0,0,0,NRAS_12R,12R,NA
+multi, ,NRAS,cancer of unknown primary,Overall,0,1988,0,0,0,0,NRAS_12R,12R,NA
+multi, ,NRAS,non-small cell lung cancer,Overall,0,10131,0,0,0,0,NRAS_12R,12R,NA
+multi, ,NRAS,breast cancer,Overall,0,9332,0,0,0,0,NRAS_12R,12R,NA
+multi, ,NRAS,soft tissue sarcoma,Overall,0,2773,0,0,0,0,NRAS_12R,12R,NA
+multi, ,NRAS,pancreatic cancer,Overall,0,2493,0,0,0,0,NRAS_12R,12R,NA
+multi, ,NRAS,leukemia,Overall,3,1567,0.001,0.001,0,0.004,NRAS_12R,12R,NA
+multi, ,NRAS,melanoma,Overall,3,2846,0.001,0.001,0,0.002,NRAS_12R,12R,NA
+multi, ,NRAS,head and neck cancer,Overall,1,1743,0,0,0,0.002,NRAS_12R,12R,NA
+multi, ,NRAS,uterine cancer,Overall,1,2253,0,0,0,0.001,NRAS_12R,12R,NA
+multi, ,NRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0.001,NRAS_12R,12R,NA
+multi, ,NRAS,myelodysplastic/myeloproliferative syndromes,Overall,5,1207,0.003,0.003,0.001,0.007,NRAS_12R,12R,NA
+multi, ,NRAS,adrenocortical carcinoma,Overall,0,134,0,0,0,0.002,NRAS_12R,12R,NA
+multi, ,NRAS,ovarian cancer,Overall,0,2337,0,0,0,0,NRAS_12R,12R,NA
+multi, ,NRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0.001,NRAS_12R,12R,NA
+multi, ,NRAS,thyroid cancer,Overall,0,1017,0,0,0,0.001,NRAS_12R,12R,NA
+multi, ,NRAS,cervical cancer,Overall,0,367,0,0,0,0.001,NRAS_12R,12R,NA
+multi, ,NRAS,hepatobiliary cancer,Overall,0,1374,0,0,0,0.001,NRAS_12R,12R,NA
+multi, ,NRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,NRAS_12R,12R,NA
+multi, ,NRAS,mature t and nk neoplasms,Overall,0,231,0,0,0,0.001,NRAS_12R,12R,NA
+multi, ,NRAS,cns cancer,Overall,0,4565,0,0,0,0,NRAS_12R,12R,NA
+multi, ,NRAS,prostate cancer,Overall,0,2440,0,0,0,0,NRAS_12R,12R,NA
+multi, ,NRAS,anal cancer,Overall,0,149,0,0,0,0.002,NRAS_12R,12R,NA
+multi, ,NRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0.001,NRAS_12R,12R,NA
+multi, ,NRAS,bladder cancer,Overall,0,1580,0,0,0,0.001,NRAS_12R,12R,NA
+multi, ,NRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0,0,0,0.001,NRAS_12R,12R,NA
+multi, ,NRAS,small bowel cancer,Overall,0,210,0,0,0,0.002,NRAS_12R,12R,NA
+multi, ,NRAS,sex cord stromal tumor,Overall,0,107,0,0,0,0.002,NRAS_12R,12R,NA
+multi, ,NRAS,bone cancer,Overall,0,570,0,0,0,0.001,NRAS_12R,12R,NA
+multi, ,NRAS,vaginal cancer,Overall,0,78,0,0,0,0.002,NRAS_12R,12R,NA
+multi, ,NRAS,thymic tumor,Overall,0,156,0,0,0,0.002,NRAS_12R,12R,NA
+multi, ,NRAS,ampullary cancer,Overall,0,106,0,0,0,0.002,NRAS_12R,12R,NA
+multi, ,NRAS,small cell lung cancer,Overall,0,398,0,0,0,0.001,NRAS_12R,12R,NA
+multi, ,NRAS,mesothelioma,Overall,0,497,0,0,0,0.001,NRAS_12R,12R,NA
+multi, ,NRAS,germ cell tumor,Overall,0,886,0,0,0,0.001,NRAS_12R,12R,NA
+multi, ,NRAS,nerve sheath tumor,Overall,0,154,0,0,0,0.002,NRAS_12R,12R,NA
+multi, ,NRAS,penile cancer,Overall,0,25,0,0,0,0.003,NRAS_12R,12R,NA
+multi, ,NRAS,pheochromocytoma,Overall,0,25,0,0,0,0.003,NRAS_12R,12R,NA
+multi, ,NRAS,pineal tumor,Overall,0,21,0,0,0,0.003,NRAS_12R,12R,NA
+multi, ,NRAS,b cell lymphoma,Overall,1,962,0.001,0,0,0.003,NRAS_12R,12R,NA
+multi, ,NRAS,non-hodgkin lymphoma,Overall,0,23,0,0,0,0.003,NRAS_12R,12R,NA
+multi, ,NRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0,0,0,0.003,NRAS_12R,12R,NA
+multi, ,NRAS,retinoblastoma,Overall,0,51,0,0,0,0.003,NRAS_12R,12R,NA
+multi, ,NRAS,hodgkin lymphoma,Overall,0,40,0,0,0,0.003,NRAS_12R,12R,NA
+multi, ,NRAS,lung cancer,Overall,0,25,0,0,0,0.003,NRAS_12R,12R,NA
+multi, ,NRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0,0,0,0.003,NRAS_12R,12R,NA
+multi, ,NRAS,peritoneal cancer,Overall,0,19,0,0,0,0.003,NRAS_12R,12R,NA
+multi, ,NRAS,parathyroid cancer,Overall,0,16,0,0,0,0.003,NRAS_12R,12R,NA
+multi, ,NRAS,appendiceal cancer,Overall,0,341,0,0,0,0.003,NRAS_12S,12S,NA
+multi, ,NRAS,colorectal cancer,Overall,1,6720,0,0,0,0.001,NRAS_12S,12S,NA
+multi, ,NRAS,cancer of unknown primary,Overall,1,1988,0,0,0,0.002,NRAS_12S,12S,NA
+multi, ,NRAS,non-small cell lung cancer,Overall,2,10131,0,0,0,0.001,NRAS_12S,12S,NA
+multi, ,NRAS,breast cancer,Overall,1,9332,0,0,0,0,NRAS_12S,12S,NA
+multi, ,NRAS,soft tissue sarcoma,Overall,0,2773,0,0,0,0.001,NRAS_12S,12S,NA
+multi, ,NRAS,pancreatic cancer,Overall,0,2493,0,0,0,0.001,NRAS_12S,12S,NA
+multi, ,NRAS,leukemia,Overall,6,1567,0.003,0.003,0.001,0.007,NRAS_12S,12S,NA
+multi, ,NRAS,melanoma,Overall,6,2846,0.002,0.002,0.001,0.004,NRAS_12S,12S,NA
+multi, ,NRAS,head and neck cancer,Overall,0,1743,0,0,0,0.001,NRAS_12S,12S,NA
+multi, ,NRAS,uterine cancer,Overall,2,2253,0.001,0.001,0,0.002,NRAS_12S,12S,NA
+multi, ,NRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0.002,NRAS_12S,12S,NA
+multi, ,NRAS,myelodysplastic/myeloproliferative syndromes,Overall,8,1207,0.006,0.005,0.002,0.011,NRAS_12S,12S,NA
+multi, ,NRAS,adrenocortical carcinoma,Overall,0,134,0.001,0,0,0.004,NRAS_12S,12S,NA
+multi, ,NRAS,ovarian cancer,Overall,0,2337,0,0,0,0.001,NRAS_12S,12S,NA
+multi, ,NRAS,esophagogastric cancer,Overall,1,1802,0.001,0,0,0.002,NRAS_12S,12S,NA
+multi, ,NRAS,thyroid cancer,Overall,0,1017,0,0,0,0.001,NRAS_12S,12S,NA
+multi, ,NRAS,cervical cancer,Overall,0,367,0,0,0,0.002,NRAS_12S,12S,NA
+multi, ,NRAS,hepatobiliary cancer,Overall,2,1374,0.001,0.001,0,0.003,NRAS_12S,12S,NA
+multi, ,NRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,NRAS_12S,12S,NA
+multi, ,NRAS,mature t and nk neoplasms,Overall,0,231,0.001,0,0,0.003,NRAS_12S,12S,NA
+multi, ,NRAS,cns cancer,Overall,1,4565,0,0,0,0.001,NRAS_12S,12S,NA
+multi, ,NRAS,prostate cancer,Overall,0,2440,0,0,0,0.001,NRAS_12S,12S,NA
+multi, ,NRAS,anal cancer,Overall,0,149,0.001,0,0,0.004,NRAS_12S,12S,NA
+multi, ,NRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0.002,NRAS_12S,12S,NA
+multi, ,NRAS,bladder cancer,Overall,0,1580,0,0,0,0.001,NRAS_12S,12S,NA
+multi, ,NRAS,b-lymphoblastic leukemia/lymphoma,Overall,4,248,0.011,0.01,0.002,0.027,NRAS_12S,12S,NA
+multi, ,NRAS,small bowel cancer,Overall,0,210,0.001,0,0,0.003,NRAS_12S,12S,NA
+multi, ,NRAS,sex cord stromal tumor,Overall,0,107,0.001,0,0,0.004,NRAS_12S,12S,NA
+multi, ,NRAS,bone cancer,Overall,0,570,0,0,0,0.002,NRAS_12S,12S,NA
+multi, ,NRAS,vaginal cancer,Overall,0,78,0.001,0,0,0.005,NRAS_12S,12S,NA
+multi, ,NRAS,thymic tumor,Overall,0,156,0.001,0,0,0.004,NRAS_12S,12S,NA
+multi, ,NRAS,ampullary cancer,Overall,0,106,0.001,0,0,0.004,NRAS_12S,12S,NA
+multi, ,NRAS,small cell lung cancer,Overall,0,398,0,0,0,0.002,NRAS_12S,12S,NA
+multi, ,NRAS,mesothelioma,Overall,0,497,0,0,0,0.002,NRAS_12S,12S,NA
+multi, ,NRAS,germ cell tumor,Overall,1,886,0.001,0.001,0,0.003,NRAS_12S,12S,NA
+multi, ,NRAS,nerve sheath tumor,Overall,0,154,0.001,0,0,0.004,NRAS_12S,12S,NA
+multi, ,NRAS,penile cancer,Overall,0,25,0.001,0,0,0.007,NRAS_12S,12S,NA
+multi, ,NRAS,pheochromocytoma,Overall,0,25,0.001,0,0,0.007,NRAS_12S,12S,NA
+multi, ,NRAS,pineal tumor,Overall,0,21,0.001,0,0,0.007,NRAS_12S,12S,NA
+multi, ,NRAS,b cell lymphoma,Overall,2,962,0.002,0.001,0,0.005,NRAS_12S,12S,NA
+multi, ,NRAS,non-hodgkin lymphoma,Overall,0,23,0.001,0,0,0.007,NRAS_12S,12S,NA
+multi, ,NRAS,t-lymphoblastic leukemia/lymphoma,Overall,1,40,0.006,0.003,0,0.034,NRAS_12S,12S,NA
+multi, ,NRAS,retinoblastoma,Overall,0,51,0.001,0,0,0.006,NRAS_12S,12S,NA
+multi, ,NRAS,hodgkin lymphoma,Overall,0,40,0.001,0,0,0.006,NRAS_12S,12S,NA
+multi, ,NRAS,lung cancer,Overall,0,25,0.001,0,0,0.007,NRAS_12S,12S,NA
+multi, ,NRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.001,0,0,0.008,NRAS_12S,12S,NA
+multi, ,NRAS,peritoneal cancer,Overall,0,19,0.001,0,0,0.008,NRAS_12S,12S,NA
+multi, ,NRAS,parathyroid cancer,Overall,0,16,0.001,0,0,0.007,NRAS_12S,12S,NA
+multi, ,NRAS,appendiceal cancer,Overall,0,341,0,0,0,0.002,NRAS_12V,12V,NA
+multi, ,NRAS,colorectal cancer,Overall,7,6720,0.001,0.001,0,0.002,NRAS_12V,12V,NA
+multi, ,NRAS,cancer of unknown primary,Overall,3,1988,0.001,0.001,0,0.003,NRAS_12V,12V,NA
+multi, ,NRAS,non-small cell lung cancer,Overall,3,10131,0,0,0,0.001,NRAS_12V,12V,NA
+multi, ,NRAS,breast cancer,Overall,0,9332,0,0,0,0,NRAS_12V,12V,NA
+multi, ,NRAS,soft tissue sarcoma,Overall,1,2773,0,0,0,0.001,NRAS_12V,12V,NA
+multi, ,NRAS,pancreatic cancer,Overall,0,2493,0,0,0,0.001,NRAS_12V,12V,NA
+multi, ,NRAS,leukemia,Overall,8,1567,0.004,0.004,0.002,0.008,NRAS_12V,12V,NA
+multi, ,NRAS,melanoma,Overall,3,2846,0.001,0.001,0,0.002,NRAS_12V,12V,NA
+multi, ,NRAS,head and neck cancer,Overall,0,1743,0,0,0,0.001,NRAS_12V,12V,NA
+multi, ,NRAS,uterine cancer,Overall,1,2253,0,0,0,0.001,NRAS_12V,12V,NA
+multi, ,NRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0.002,NRAS_12V,12V,NA
+multi, ,NRAS,myelodysplastic/myeloproliferative syndromes,Overall,3,1207,0.002,0.002,0,0.005,NRAS_12V,12V,NA
+multi, ,NRAS,adrenocortical carcinoma,Overall,0,134,0.001,0,0,0.003,NRAS_12V,12V,NA
+multi, ,NRAS,ovarian cancer,Overall,0,2337,0,0,0,0.001,NRAS_12V,12V,NA
+multi, ,NRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0.001,NRAS_12V,12V,NA
+multi, ,NRAS,thyroid cancer,Overall,0,1017,0,0,0,0.001,NRAS_12V,12V,NA
+multi, ,NRAS,cervical cancer,Overall,0,367,0,0,0,0.002,NRAS_12V,12V,NA
+multi, ,NRAS,hepatobiliary cancer,Overall,1,1374,0.001,0,0,0.002,NRAS_12V,12V,NA
+multi, ,NRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,NRAS_12V,12V,NA
+multi, ,NRAS,mature t and nk neoplasms,Overall,0,231,0,0,0,0.003,NRAS_12V,12V,NA
+multi, ,NRAS,cns cancer,Overall,0,4565,0,0,0,0,NRAS_12V,12V,NA
+multi, ,NRAS,prostate cancer,Overall,0,2440,0,0,0,0.001,NRAS_12V,12V,NA
+multi, ,NRAS,anal cancer,Overall,0,149,0.001,0,0,0.003,NRAS_12V,12V,NA
+multi, ,NRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0.002,NRAS_12V,12V,NA
+multi, ,NRAS,bladder cancer,Overall,0,1580,0,0,0,0.001,NRAS_12V,12V,NA
+multi, ,NRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0,0,0,0.003,NRAS_12V,12V,NA
+multi, ,NRAS,small bowel cancer,Overall,0,210,0,0,0,0.003,NRAS_12V,12V,NA
+multi, ,NRAS,sex cord stromal tumor,Overall,0,107,0.001,0,0,0.004,NRAS_12V,12V,NA
+multi, ,NRAS,bone cancer,Overall,0,570,0,0,0,0.002,NRAS_12V,12V,NA
+multi, ,NRAS,vaginal cancer,Overall,0,78,0.001,0,0,0.004,NRAS_12V,12V,NA
+multi, ,NRAS,thymic tumor,Overall,0,156,0.001,0,0,0.003,NRAS_12V,12V,NA
+multi, ,NRAS,ampullary cancer,Overall,0,106,0.001,0,0,0.004,NRAS_12V,12V,NA
+multi, ,NRAS,small cell lung cancer,Overall,0,398,0,0,0,0.002,NRAS_12V,12V,NA
+multi, ,NRAS,mesothelioma,Overall,0,497,0,0,0,0.002,NRAS_12V,12V,NA
+multi, ,NRAS,germ cell tumor,Overall,2,886,0.002,0.001,0,0.005,NRAS_12V,12V,NA
+multi, ,NRAS,nerve sheath tumor,Overall,0,154,0.001,0,0,0.003,NRAS_12V,12V,NA
+multi, ,NRAS,penile cancer,Overall,0,25,0.001,0,0,0.005,NRAS_12V,12V,NA
+multi, ,NRAS,pheochromocytoma,Overall,0,25,0.001,0,0,0.006,NRAS_12V,12V,NA
+multi, ,NRAS,pineal tumor,Overall,0,21,0.001,0,0,0.005,NRAS_12V,12V,NA
+multi, ,NRAS,b cell lymphoma,Overall,1,962,0.001,0.001,0,0.003,NRAS_12V,12V,NA
+multi, ,NRAS,non-hodgkin lymphoma,Overall,1,23,0.007,0.002,0,0.045,NRAS_12V,12V,NA
+multi, ,NRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.001,0,0,0.005,NRAS_12V,12V,NA
+multi, ,NRAS,retinoblastoma,Overall,0,51,0.001,0,0,0.004,NRAS_12V,12V,NA
+multi, ,NRAS,hodgkin lymphoma,Overall,0,40,0.001,0,0,0.005,NRAS_12V,12V,NA
+multi, ,NRAS,lung cancer,Overall,0,25,0.001,0,0,0.005,NRAS_12V,12V,NA
+multi, ,NRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,1,13,0.01,0.003,0,0.072,NRAS_12V,12V,NA
+multi, ,NRAS,peritoneal cancer,Overall,0,19,0.001,0,0,0.006,NRAS_12V,12V,NA
+multi, ,NRAS,parathyroid cancer,Overall,0,16,0.001,0,0,0.006,NRAS_12V,12V,NA
+multi, ,NRAS,appendiceal cancer,Overall,0,341,0,0,0,0.001,NRAS_13C,13C,NA
+multi, ,NRAS,colorectal cancer,Overall,3,6720,0,0,0,0.001,NRAS_13C,13C,NA
+multi, ,NRAS,cancer of unknown primary,Overall,0,1988,0,0,0,0,NRAS_13C,13C,NA
+multi, ,NRAS,non-small cell lung cancer,Overall,0,10131,0,0,0,0,NRAS_13C,13C,NA
+multi, ,NRAS,breast cancer,Overall,0,9332,0,0,0,0,NRAS_13C,13C,NA
+multi, ,NRAS,soft tissue sarcoma,Overall,0,2773,0,0,0,0,NRAS_13C,13C,NA
+multi, ,NRAS,pancreatic cancer,Overall,0,2493,0,0,0,0,NRAS_13C,13C,NA
+multi, ,NRAS,leukemia,Overall,1,1567,0,0,0,0.002,NRAS_13C,13C,NA
+multi, ,NRAS,melanoma,Overall,4,2846,0.001,0.001,0,0.003,NRAS_13C,13C,NA
+multi, ,NRAS,head and neck cancer,Overall,0,1743,0,0,0,0,NRAS_13C,13C,NA
+multi, ,NRAS,uterine cancer,Overall,0,2253,0,0,0,0,NRAS_13C,13C,NA
+multi, ,NRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0.001,NRAS_13C,13C,NA
+multi, ,NRAS,myelodysplastic/myeloproliferative syndromes,Overall,5,1207,0.003,0.003,0.001,0.007,NRAS_13C,13C,NA
+multi, ,NRAS,adrenocortical carcinoma,Overall,0,134,0,0,0,0.002,NRAS_13C,13C,NA
+multi, ,NRAS,ovarian cancer,Overall,0,2337,0,0,0,0,NRAS_13C,13C,NA
+multi, ,NRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0,NRAS_13C,13C,NA
+multi, ,NRAS,thyroid cancer,Overall,0,1017,0,0,0,0.001,NRAS_13C,13C,NA
+multi, ,NRAS,cervical cancer,Overall,0,367,0,0,0,0.001,NRAS_13C,13C,NA
+multi, ,NRAS,hepatobiliary cancer,Overall,0,1374,0,0,0,0.001,NRAS_13C,13C,NA
+multi, ,NRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,NRAS_13C,13C,NA
+multi, ,NRAS,mature t and nk neoplasms,Overall,0,231,0,0,0,0.001,NRAS_13C,13C,NA
+multi, ,NRAS,cns cancer,Overall,0,4565,0,0,0,0,NRAS_13C,13C,NA
+multi, ,NRAS,prostate cancer,Overall,0,2440,0,0,0,0,NRAS_13C,13C,NA
+multi, ,NRAS,anal cancer,Overall,0,149,0,0,0,0.002,NRAS_13C,13C,NA
+multi, ,NRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0.001,NRAS_13C,13C,NA
+multi, ,NRAS,bladder cancer,Overall,0,1580,0,0,0,0,NRAS_13C,13C,NA
+multi, ,NRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0,0,0,0.001,NRAS_13C,13C,NA
+multi, ,NRAS,small bowel cancer,Overall,0,210,0,0,0,0.001,NRAS_13C,13C,NA
+multi, ,NRAS,sex cord stromal tumor,Overall,0,107,0,0,0,0.002,NRAS_13C,13C,NA
+multi, ,NRAS,bone cancer,Overall,0,570,0,0,0,0.001,NRAS_13C,13C,NA
+multi, ,NRAS,vaginal cancer,Overall,0,78,0,0,0,0.002,NRAS_13C,13C,NA
+multi, ,NRAS,thymic tumor,Overall,0,156,0,0,0,0.001,NRAS_13C,13C,NA
+multi, ,NRAS,ampullary cancer,Overall,0,106,0,0,0,0.002,NRAS_13C,13C,NA
+multi, ,NRAS,small cell lung cancer,Overall,0,398,0,0,0,0.001,NRAS_13C,13C,NA
+multi, ,NRAS,mesothelioma,Overall,0,497,0,0,0,0.001,NRAS_13C,13C,NA
+multi, ,NRAS,germ cell tumor,Overall,0,886,0,0,0,0.001,NRAS_13C,13C,NA
+multi, ,NRAS,nerve sheath tumor,Overall,0,154,0,0,0,0.001,NRAS_13C,13C,NA
+multi, ,NRAS,penile cancer,Overall,0,25,0,0,0,0.002,NRAS_13C,13C,NA
+multi, ,NRAS,pheochromocytoma,Overall,0,25,0,0,0,0.003,NRAS_13C,13C,NA
+multi, ,NRAS,pineal tumor,Overall,0,21,0,0,0,0.002,NRAS_13C,13C,NA
+multi, ,NRAS,b cell lymphoma,Overall,1,962,0.001,0,0,0.003,NRAS_13C,13C,NA
+multi, ,NRAS,non-hodgkin lymphoma,Overall,0,23,0,0,0,0.003,NRAS_13C,13C,NA
+multi, ,NRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0,0,0,0.002,NRAS_13C,13C,NA
+multi, ,NRAS,retinoblastoma,Overall,0,51,0,0,0,0.002,NRAS_13C,13C,NA
+multi, ,NRAS,hodgkin lymphoma,Overall,0,40,0,0,0,0.002,NRAS_13C,13C,NA
+multi, ,NRAS,lung cancer,Overall,0,25,0,0,0,0.003,NRAS_13C,13C,NA
+multi, ,NRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0,0,0,0.003,NRAS_13C,13C,NA
+multi, ,NRAS,peritoneal cancer,Overall,0,19,0,0,0,0.003,NRAS_13C,13C,NA
+multi, ,NRAS,parathyroid cancer,Overall,0,16,0,0,0,0.003,NRAS_13C,13C,NA
+multi, ,NRAS,appendiceal cancer,Overall,0,341,0,0,0,0.003,NRAS_13D,13D,NA
+multi, ,NRAS,colorectal cancer,Overall,12,6720,0.002,0.002,0.001,0.003,NRAS_13D,13D,NA
+multi, ,NRAS,cancer of unknown primary,Overall,0,1988,0,0,0,0.001,NRAS_13D,13D,NA
+multi, ,NRAS,non-small cell lung cancer,Overall,0,10131,0,0,0,0,NRAS_13D,13D,NA
+multi, ,NRAS,breast cancer,Overall,1,9332,0,0,0,0,NRAS_13D,13D,NA
+multi, ,NRAS,soft tissue sarcoma,Overall,3,2773,0.001,0.001,0,0.002,NRAS_13D,13D,NA
+multi, ,NRAS,pancreatic cancer,Overall,0,2493,0,0,0,0.001,NRAS_13D,13D,NA
+multi, ,NRAS,leukemia,Overall,32,1567,0.02,0.02,0.014,0.027,NRAS_13D,13D,NA
+multi, ,NRAS,melanoma,Overall,8,2846,0.003,0.003,0.001,0.005,NRAS_13D,13D,NA
+multi, ,NRAS,head and neck cancer,Overall,0,1743,0,0,0,0.001,NRAS_13D,13D,NA
+multi, ,NRAS,uterine cancer,Overall,1,2253,0,0,0,0.002,NRAS_13D,13D,NA
+multi, ,NRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0.002,NRAS_13D,13D,NA
+multi, ,NRAS,myelodysplastic/myeloproliferative syndromes,Overall,9,1207,0.007,0.007,0.003,0.012,NRAS_13D,13D,NA
+multi, ,NRAS,adrenocortical carcinoma,Overall,0,134,0.001,0,0,0.005,NRAS_13D,13D,NA
+multi, ,NRAS,ovarian cancer,Overall,0,2337,0,0,0,0.001,NRAS_13D,13D,NA
+multi, ,NRAS,esophagogastric cancer,Overall,1,1802,0.001,0,0,0.002,NRAS_13D,13D,NA
+multi, ,NRAS,thyroid cancer,Overall,0,1017,0,0,0,0.001,NRAS_13D,13D,NA
+multi, ,NRAS,cervical cancer,Overall,0,367,0,0,0,0.003,NRAS_13D,13D,NA
+multi, ,NRAS,hepatobiliary cancer,Overall,0,1374,0,0,0,0.001,NRAS_13D,13D,NA
+multi, ,NRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,NRAS_13D,13D,NA
+multi, ,NRAS,mature t and nk neoplasms,Overall,0,231,0.001,0,0,0.004,NRAS_13D,13D,NA
+multi, ,NRAS,cns cancer,Overall,1,4565,0,0,0,0.001,NRAS_13D,13D,NA
+multi, ,NRAS,prostate cancer,Overall,0,2440,0,0,0,0.001,NRAS_13D,13D,NA
+multi, ,NRAS,anal cancer,Overall,0,149,0.001,0,0,0.005,NRAS_13D,13D,NA
+multi, ,NRAS,neuroendocrine tumors,Overall,1,359,0.002,0.001,0,0.008,NRAS_13D,13D,NA
+multi, ,NRAS,bladder cancer,Overall,0,1580,0,0,0,0.001,NRAS_13D,13D,NA
+multi, ,NRAS,b-lymphoblastic leukemia/lymphoma,Overall,6,248,0.021,0.02,0.007,0.042,NRAS_13D,13D,NA
+multi, ,NRAS,small bowel cancer,Overall,0,210,0.001,0,0,0.004,NRAS_13D,13D,NA
+multi, ,NRAS,sex cord stromal tumor,Overall,0,107,0.001,0,0,0.006,NRAS_13D,13D,NA
+multi, ,NRAS,bone cancer,Overall,0,570,0,0,0,0.002,NRAS_13D,13D,NA
+multi, ,NRAS,vaginal cancer,Overall,0,78,0.001,0,0,0.007,NRAS_13D,13D,NA
+multi, ,NRAS,thymic tumor,Overall,0,156,0.001,0,0,0.005,NRAS_13D,13D,NA
+multi, ,NRAS,ampullary cancer,Overall,0,106,0.001,0,0,0.006,NRAS_13D,13D,NA
+multi, ,NRAS,small cell lung cancer,Overall,0,398,0,0,0,0.002,NRAS_13D,13D,NA
+multi, ,NRAS,mesothelioma,Overall,0,497,0,0,0,0.002,NRAS_13D,13D,NA
+multi, ,NRAS,germ cell tumor,Overall,1,886,0.001,0.001,0,0.004,NRAS_13D,13D,NA
+multi, ,NRAS,nerve sheath tumor,Overall,0,154,0.001,0,0,0.005,NRAS_13D,13D,NA
+multi, ,NRAS,penile cancer,Overall,0,25,0.001,0,0,0.013,NRAS_13D,13D,NA
+multi, ,NRAS,pheochromocytoma,Overall,0,25,0.001,0,0,0.012,NRAS_13D,13D,NA
+multi, ,NRAS,pineal tumor,Overall,0,21,0.002,0,0,0.013,NRAS_13D,13D,NA
+multi, ,NRAS,b cell lymphoma,Overall,2,962,0.002,0.001,0,0.005,NRAS_13D,13D,NA
+multi, ,NRAS,non-hodgkin lymphoma,Overall,0,23,0.002,0,0,0.013,NRAS_13D,13D,NA
+multi, ,NRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.001,0,0,0.01,NRAS_13D,13D,NA
+multi, ,NRAS,retinoblastoma,Overall,0,51,0.001,0,0,0.009,NRAS_13D,13D,NA
+multi, ,NRAS,hodgkin lymphoma,Overall,0,40,0.001,0,0,0.01,NRAS_13D,13D,NA
+multi, ,NRAS,lung cancer,Overall,0,25,0.001,0,0,0.013,NRAS_13D,13D,NA
+multi, ,NRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,2,13,0.084,0.064,0.005,0.274,NRAS_13D,13D,NA
+multi, ,NRAS,peritoneal cancer,Overall,0,19,0.002,0,0,0.015,NRAS_13D,13D,NA
+multi, ,NRAS,parathyroid cancer,Overall,0,16,0.002,0,0,0.014,NRAS_13D,13D,NA
+multi, ,NRAS,appendiceal cancer,Overall,1,341,0.002,0.001,0,0.008,NRAS_13R,13R,NA
+multi, ,NRAS,colorectal cancer,Overall,19,6720,0.003,0.003,0.002,0.004,NRAS_13R,13R,NA
+multi, ,NRAS,cancer of unknown primary,Overall,5,1988,0.002,0.002,0.001,0.005,NRAS_13R,13R,NA
+multi, ,NRAS,non-small cell lung cancer,Overall,2,10131,0,0,0,0.001,NRAS_13R,13R,NA
+multi, ,NRAS,breast cancer,Overall,0,9332,0,0,0,0,NRAS_13R,13R,NA
+multi, ,NRAS,soft tissue sarcoma,Overall,0,2773,0,0,0,0.001,NRAS_13R,13R,NA
+multi, ,NRAS,pancreatic cancer,Overall,0,2493,0,0,0,0.001,NRAS_13R,13R,NA
+multi, ,NRAS,leukemia,Overall,7,1567,0.004,0.004,0.002,0.008,NRAS_13R,13R,NA
+multi, ,NRAS,melanoma,Overall,20,2846,0.007,0.007,0.004,0.01,NRAS_13R,13R,NA
+multi, ,NRAS,head and neck cancer,Overall,2,1743,0.001,0.001,0,0.003,NRAS_13R,13R,NA
+multi, ,NRAS,uterine cancer,Overall,0,2253,0,0,0,0.001,NRAS_13R,13R,NA
+multi, ,NRAS,non-melanoma skin cancers,Overall,0,513,0.001,0,0,0.003,NRAS_13R,13R,NA
+multi, ,NRAS,myelodysplastic/myeloproliferative syndromes,Overall,1,1207,0.001,0.001,0,0.003,NRAS_13R,13R,NA
+multi, ,NRAS,adrenocortical carcinoma,Overall,1,134,0.004,0.002,0,0.016,NRAS_13R,13R,NA
+multi, ,NRAS,ovarian cancer,Overall,0,2337,0,0,0,0.001,NRAS_13R,13R,NA
+multi, ,NRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0.001,NRAS_13R,13R,NA
+multi, ,NRAS,thyroid cancer,Overall,2,1017,0.002,0.001,0,0.005,NRAS_13R,13R,NA
+multi, ,NRAS,cervical cancer,Overall,0,367,0.001,0,0,0.003,NRAS_13R,13R,NA
+multi, ,NRAS,hepatobiliary cancer,Overall,3,1374,0.002,0.002,0,0.005,NRAS_13R,13R,NA
+multi, ,NRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,NRAS_13R,13R,NA
+multi, ,NRAS,mature t and nk neoplasms,Overall,0,231,0.001,0,0,0.004,NRAS_13R,13R,NA
+multi, ,NRAS,cns cancer,Overall,0,4565,0,0,0,0.001,NRAS_13R,13R,NA
+multi, ,NRAS,prostate cancer,Overall,0,2440,0,0,0,0.001,NRAS_13R,13R,NA
+multi, ,NRAS,anal cancer,Overall,0,149,0.001,0,0,0.005,NRAS_13R,13R,NA
+multi, ,NRAS,neuroendocrine tumors,Overall,0,359,0.001,0,0,0.003,NRAS_13R,13R,NA
+multi, ,NRAS,bladder cancer,Overall,2,1580,0.001,0.001,0,0.003,NRAS_13R,13R,NA
+multi, ,NRAS,b-lymphoblastic leukemia/lymphoma,Overall,1,248,0.002,0.002,0,0.01,NRAS_13R,13R,NA
+multi, ,NRAS,small bowel cancer,Overall,0,210,0.001,0,0,0.004,NRAS_13R,13R,NA
+multi, ,NRAS,sex cord stromal tumor,Overall,1,107,0.004,0.003,0,0.019,NRAS_13R,13R,NA
+multi, ,NRAS,bone cancer,Overall,0,570,0,0,0,0.002,NRAS_13R,13R,NA
+multi, ,NRAS,vaginal cancer,Overall,0,78,0.001,0,0,0.007,NRAS_13R,13R,NA
+multi, ,NRAS,thymic tumor,Overall,0,156,0.001,0,0,0.005,NRAS_13R,13R,NA
+multi, ,NRAS,ampullary cancer,Overall,0,106,0.001,0,0,0.006,NRAS_13R,13R,NA
+multi, ,NRAS,small cell lung cancer,Overall,0,398,0.001,0,0,0.003,NRAS_13R,13R,NA
+multi, ,NRAS,mesothelioma,Overall,0,497,0.001,0,0,0.003,NRAS_13R,13R,NA
+multi, ,NRAS,germ cell tumor,Overall,2,886,0.002,0.002,0,0.005,NRAS_13R,13R,NA
+multi, ,NRAS,nerve sheath tumor,Overall,0,154,0.001,0,0,0.005,NRAS_13R,13R,NA
+multi, ,NRAS,penile cancer,Overall,0,25,0.002,0,0,0.01,NRAS_13R,13R,NA
+multi, ,NRAS,pheochromocytoma,Overall,0,25,0.002,0,0,0.01,NRAS_13R,13R,NA
+multi, ,NRAS,pineal tumor,Overall,0,21,0.002,0,0,0.011,NRAS_13R,13R,NA
+multi, ,NRAS,b cell lymphoma,Overall,1,962,0.001,0.001,0,0.003,NRAS_13R,13R,NA
+multi, ,NRAS,non-hodgkin lymphoma,Overall,1,23,0.011,0.005,0,0.059,NRAS_13R,13R,NA
+multi, ,NRAS,t-lymphoblastic leukemia/lymphoma,Overall,1,40,0.008,0.004,0,0.039,NRAS_13R,13R,NA
+multi, ,NRAS,retinoblastoma,Overall,0,51,0.001,0,0,0.008,NRAS_13R,13R,NA
+multi, ,NRAS,hodgkin lymphoma,Overall,0,40,0.001,0,0,0.009,NRAS_13R,13R,NA
+multi, ,NRAS,lung cancer,Overall,0,25,0.002,0,0,0.01,NRAS_13R,13R,NA
+multi, ,NRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.002,0,0,0.012,NRAS_13R,13R,NA
+multi, ,NRAS,peritoneal cancer,Overall,0,19,0.002,0,0,0.011,NRAS_13R,13R,NA
+multi, ,NRAS,parathyroid cancer,Overall,0,16,0.002,0,0,0.012,NRAS_13R,13R,NA
+multi, ,NRAS,appendiceal cancer,Overall,0,341,0,0,0,0.001,NRAS_13V,13V,NA
+multi, ,NRAS,colorectal cancer,Overall,0,6720,0,0,0,0,NRAS_13V,13V,NA
+multi, ,NRAS,cancer of unknown primary,Overall,0,1988,0,0,0,0,NRAS_13V,13V,NA
+multi, ,NRAS,non-small cell lung cancer,Overall,1,10131,0,0,0,0,NRAS_13V,13V,NA
+multi, ,NRAS,breast cancer,Overall,0,9332,0,0,0,0,NRAS_13V,13V,NA
+multi, ,NRAS,soft tissue sarcoma,Overall,0,2773,0,0,0,0,NRAS_13V,13V,NA
+multi, ,NRAS,pancreatic cancer,Overall,1,2493,0,0,0,0.001,NRAS_13V,13V,NA
+multi, ,NRAS,leukemia,Overall,5,1567,0.003,0.003,0.001,0.006,NRAS_13V,13V,NA
+multi, ,NRAS,melanoma,Overall,4,2846,0.001,0.001,0,0.003,NRAS_13V,13V,NA
+multi, ,NRAS,head and neck cancer,Overall,0,1743,0,0,0,0,NRAS_13V,13V,NA
+multi, ,NRAS,uterine cancer,Overall,0,2253,0,0,0,0,NRAS_13V,13V,NA
+multi, ,NRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0.001,NRAS_13V,13V,NA
+multi, ,NRAS,myelodysplastic/myeloproliferative syndromes,Overall,5,1207,0.004,0.003,0.001,0.008,NRAS_13V,13V,NA
+multi, ,NRAS,adrenocortical carcinoma,Overall,0,134,0,0,0,0.002,NRAS_13V,13V,NA
+multi, ,NRAS,ovarian cancer,Overall,0,2337,0,0,0,0,NRAS_13V,13V,NA
+multi, ,NRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0,NRAS_13V,13V,NA
+multi, ,NRAS,thyroid cancer,Overall,0,1017,0,0,0,0.001,NRAS_13V,13V,NA
+multi, ,NRAS,cervical cancer,Overall,0,367,0,0,0,0.001,NRAS_13V,13V,NA
+multi, ,NRAS,hepatobiliary cancer,Overall,0,1374,0,0,0,0.001,NRAS_13V,13V,NA
+multi, ,NRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,NRAS_13V,13V,NA
+multi, ,NRAS,mature t and nk neoplasms,Overall,0,231,0,0,0,0.002,NRAS_13V,13V,NA
+multi, ,NRAS,cns cancer,Overall,0,4565,0,0,0,0,NRAS_13V,13V,NA
+multi, ,NRAS,prostate cancer,Overall,0,2440,0,0,0,0,NRAS_13V,13V,NA
+multi, ,NRAS,anal cancer,Overall,0,149,0,0,0,0.002,NRAS_13V,13V,NA
+multi, ,NRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0.001,NRAS_13V,13V,NA
+multi, ,NRAS,bladder cancer,Overall,0,1580,0,0,0,0.001,NRAS_13V,13V,NA
+multi, ,NRAS,b-lymphoblastic leukemia/lymphoma,Overall,1,248,0.002,0.001,0,0.01,NRAS_13V,13V,NA
+multi, ,NRAS,small bowel cancer,Overall,0,210,0,0,0,0.002,NRAS_13V,13V,NA
+multi, ,NRAS,sex cord stromal tumor,Overall,0,107,0,0,0,0.002,NRAS_13V,13V,NA
+multi, ,NRAS,bone cancer,Overall,0,570,0,0,0,0.001,NRAS_13V,13V,NA
+multi, ,NRAS,vaginal cancer,Overall,0,78,0,0,0,0.002,NRAS_13V,13V,NA
+multi, ,NRAS,thymic tumor,Overall,0,156,0,0,0,0.002,NRAS_13V,13V,NA
+multi, ,NRAS,ampullary cancer,Overall,0,106,0,0,0,0.002,NRAS_13V,13V,NA
+multi, ,NRAS,small cell lung cancer,Overall,0,398,0,0,0,0.001,NRAS_13V,13V,NA
+multi, ,NRAS,mesothelioma,Overall,0,497,0,0,0,0.001,NRAS_13V,13V,NA
+multi, ,NRAS,germ cell tumor,Overall,0,886,0,0,0,0.001,NRAS_13V,13V,NA
+multi, ,NRAS,nerve sheath tumor,Overall,0,154,0,0,0,0.002,NRAS_13V,13V,NA
+multi, ,NRAS,penile cancer,Overall,0,25,0,0,0,0.004,NRAS_13V,13V,NA
+multi, ,NRAS,pheochromocytoma,Overall,0,25,0,0,0,0.004,NRAS_13V,13V,NA
+multi, ,NRAS,pineal tumor,Overall,0,21,0,0,0,0.004,NRAS_13V,13V,NA
+multi, ,NRAS,b cell lymphoma,Overall,0,962,0,0,0,0.001,NRAS_13V,13V,NA
+multi, ,NRAS,non-hodgkin lymphoma,Overall,0,23,0,0,0,0.003,NRAS_13V,13V,NA
+multi, ,NRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0,0,0,0.003,NRAS_13V,13V,NA
+multi, ,NRAS,retinoblastoma,Overall,0,51,0,0,0,0.003,NRAS_13V,13V,NA
+multi, ,NRAS,hodgkin lymphoma,Overall,0,40,0,0,0,0.003,NRAS_13V,13V,NA
+multi, ,NRAS,lung cancer,Overall,0,25,0,0,0,0.003,NRAS_13V,13V,NA
+multi, ,NRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0,0,0,0.004,NRAS_13V,13V,NA
+multi, ,NRAS,peritoneal cancer,Overall,0,19,0,0,0,0.004,NRAS_13V,13V,NA
+multi, ,NRAS,parathyroid cancer,Overall,0,16,0.001,0,0,0.004,NRAS_13V,13V,NA
+multi, ,NRAS,appendiceal cancer,Overall,0,341,0.001,0,0,0.003,NRAS_61H,61H,NA
+multi, ,NRAS,colorectal cancer,Overall,17,6720,0.002,0.002,0.001,0.004,NRAS_61H,61H,NA
+multi, ,NRAS,cancer of unknown primary,Overall,3,1988,0.001,0.001,0,0.003,NRAS_61H,61H,NA
+multi, ,NRAS,non-small cell lung cancer,Overall,4,10131,0,0,0,0.001,NRAS_61H,61H,NA
+multi, ,NRAS,breast cancer,Overall,0,9332,0,0,0,0,NRAS_61H,61H,NA
+multi, ,NRAS,soft tissue sarcoma,Overall,3,2773,0.001,0.001,0,0.002,NRAS_61H,61H,NA
+multi, ,NRAS,pancreatic cancer,Overall,0,2493,0,0,0,0.001,NRAS_61H,61H,NA
+multi, ,NRAS,leukemia,Overall,7,1567,0.004,0.004,0.002,0.008,NRAS_61H,61H,NA
+multi, ,NRAS,melanoma,Overall,27,2846,0.009,0.009,0.006,0.013,NRAS_61H,61H,NA
+multi, ,NRAS,head and neck cancer,Overall,1,1743,0.001,0,0,0.002,NRAS_61H,61H,NA
+multi, ,NRAS,uterine cancer,Overall,4,2253,0.002,0.001,0,0.004,NRAS_61H,61H,NA
+multi, ,NRAS,non-melanoma skin cancers,Overall,0,513,0.001,0,0,0.002,NRAS_61H,61H,NA
+multi, ,NRAS,myelodysplastic/myeloproliferative syndromes,Overall,1,1207,0.001,0.001,0,0.003,NRAS_61H,61H,NA
+multi, ,NRAS,adrenocortical carcinoma,Overall,0,134,0.001,0,0,0.005,NRAS_61H,61H,NA
+multi, ,NRAS,ovarian cancer,Overall,0,2337,0,0,0,0.001,NRAS_61H,61H,NA
+multi, ,NRAS,esophagogastric cancer,Overall,0,1802,0,0,0,0.001,NRAS_61H,61H,NA
+multi, ,NRAS,thyroid cancer,Overall,0,1017,0,0,0,0.002,NRAS_61H,61H,NA
+multi, ,NRAS,cervical cancer,Overall,1,367,0.002,0.001,0,0.007,NRAS_61H,61H,NA
+multi, ,NRAS,hepatobiliary cancer,Overall,0,1374,0,0,0,0.001,NRAS_61H,61H,NA
+multi, ,NRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,NRAS_61H,61H,NA
+multi, ,NRAS,mature t and nk neoplasms,Overall,1,231,0.003,0.002,0,0.01,NRAS_61H,61H,NA
+multi, ,NRAS,cns cancer,Overall,0,4565,0,0,0,0.001,NRAS_61H,61H,NA
+multi, ,NRAS,prostate cancer,Overall,2,2440,0.001,0.001,0,0.002,NRAS_61H,61H,NA
+multi, ,NRAS,anal cancer,Overall,0,149,0.001,0,0,0.005,NRAS_61H,61H,NA
+multi, ,NRAS,neuroendocrine tumors,Overall,0,359,0.001,0,0,0.003,NRAS_61H,61H,NA
+multi, ,NRAS,bladder cancer,Overall,0,1580,0,0,0,0.001,NRAS_61H,61H,NA
+multi, ,NRAS,b-lymphoblastic leukemia/lymphoma,Overall,2,248,0.005,0.004,0.001,0.016,NRAS_61H,61H,NA
+multi, ,NRAS,small bowel cancer,Overall,0,210,0.001,0,0,0.004,NRAS_61H,61H,NA
+multi, ,NRAS,sex cord stromal tumor,Overall,0,107,0.001,0,0,0.006,NRAS_61H,61H,NA
+multi, ,NRAS,bone cancer,Overall,0,570,0,0,0,0.002,NRAS_61H,61H,NA
+multi, ,NRAS,vaginal cancer,Overall,0,78,0.001,0,0,0.006,NRAS_61H,61H,NA
+multi, ,NRAS,thymic tumor,Overall,0,156,0.001,0,0,0.005,NRAS_61H,61H,NA
+multi, ,NRAS,ampullary cancer,Overall,0,106,0.001,0,0,0.006,NRAS_61H,61H,NA
+multi, ,NRAS,small cell lung cancer,Overall,0,398,0.001,0,0,0.003,NRAS_61H,61H,NA
+multi, ,NRAS,mesothelioma,Overall,0,497,0.001,0,0,0.003,NRAS_61H,61H,NA
+multi, ,NRAS,germ cell tumor,Overall,3,886,0.003,0.002,0.001,0.007,NRAS_61H,61H,NA
+multi, ,NRAS,nerve sheath tumor,Overall,0,154,0.001,0,0,0.005,NRAS_61H,61H,NA
+multi, ,NRAS,penile cancer,Overall,0,25,0.001,0,0,0.01,NRAS_61H,61H,NA
+multi, ,NRAS,pheochromocytoma,Overall,0,25,0.002,0,0,0.01,NRAS_61H,61H,NA
+multi, ,NRAS,pineal tumor,Overall,0,21,0.001,0,0,0.01,NRAS_61H,61H,NA
+multi, ,NRAS,b cell lymphoma,Overall,2,962,0.002,0.001,0,0.005,NRAS_61H,61H,NA
+multi, ,NRAS,non-hodgkin lymphoma,Overall,1,23,0.01,0.004,0,0.057,NRAS_61H,61H,NA
+multi, ,NRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.001,0,0,0.008,NRAS_61H,61H,NA
+multi, ,NRAS,retinoblastoma,Overall,0,51,0.001,0,0,0.008,NRAS_61H,61H,NA
+multi, ,NRAS,hodgkin lymphoma,Overall,0,40,0.001,0,0,0.008,NRAS_61H,61H,NA
+multi, ,NRAS,lung cancer,Overall,1,25,0.01,0.004,0,0.05,NRAS_61H,61H,NA
+multi, ,NRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.002,0,0,0.011,NRAS_61H,61H,NA
+multi, ,NRAS,peritoneal cancer,Overall,0,19,0.002,0,0,0.01,NRAS_61H,61H,NA
+multi, ,NRAS,parathyroid cancer,Overall,0,16,0.002,0,0,0.011,NRAS_61H,61H,NA
+multi, ,NRAS,appendiceal cancer,Overall,0,341,0.001,0.001,0,0.004,NRAS_61K,61K,NA
+multi, ,NRAS,colorectal cancer,Overall,65,6720,0.01,0.01,0.007,0.012,NRAS_61K,61K,NA
+multi, ,NRAS,cancer of unknown primary,Overall,7,1988,0.003,0.003,0.001,0.006,NRAS_61K,61K,NA
+multi, ,NRAS,non-small cell lung cancer,Overall,8,10131,0.001,0.001,0,0.001,NRAS_61K,61K,NA
+multi, ,NRAS,breast cancer,Overall,0,9332,0,0,0,0,NRAS_61K,61K,NA
+multi, ,NRAS,soft tissue sarcoma,Overall,15,2773,0.005,0.005,0.003,0.008,NRAS_61K,61K,NA
+multi, ,NRAS,pancreatic cancer,Overall,2,2493,0.001,0.001,0,0.002,NRAS_61K,61K,NA
+multi, ,NRAS,leukemia,Overall,14,1567,0.008,0.008,0.005,0.013,NRAS_61K,61K,NA
+multi, ,NRAS,melanoma,Overall,199,2846,0.069,0.069,0.06,0.079,NRAS_61K,61K,NA
+multi, ,NRAS,head and neck cancer,Overall,3,1743,0.002,0.002,0,0.004,NRAS_61K,61K,NA
+multi, ,NRAS,uterine cancer,Overall,6,2253,0.003,0.002,0.001,0.005,NRAS_61K,61K,NA
+multi, ,NRAS,non-melanoma skin cancers,Overall,0,513,0.001,0,0,0.004,NRAS_61K,61K,NA
+multi, ,NRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1207,0,0,0,0.002,NRAS_61K,61K,NA
+multi, ,NRAS,adrenocortical carcinoma,Overall,0,134,0.002,0.001,0,0.008,NRAS_61K,61K,NA
+multi, ,NRAS,ovarian cancer,Overall,5,2337,0.002,0.002,0.001,0.004,NRAS_61K,61K,NA
+multi, ,NRAS,esophagogastric cancer,Overall,2,1802,0.001,0.001,0,0.003,NRAS_61K,61K,NA
+multi, ,NRAS,thyroid cancer,Overall,29,1017,0.027,0.027,0.018,0.038,NRAS_61K,61K,NA
+multi, ,NRAS,cervical cancer,Overall,0,367,0.001,0.001,0,0.004,NRAS_61K,61K,NA
+multi, ,NRAS,hepatobiliary cancer,Overall,7,1374,0.005,0.005,0.002,0.009,NRAS_61K,61K,NA
+multi, ,NRAS,kidney cancer,Overall,0,1422,0,0,0,0.002,NRAS_61K,61K,NA
+multi, ,NRAS,mature t and nk neoplasms,Overall,0,231,0.001,0.001,0,0.006,NRAS_61K,61K,NA
+multi, ,NRAS,cns cancer,Overall,8,4565,0.002,0.002,0.001,0.003,NRAS_61K,61K,NA
+multi, ,NRAS,prostate cancer,Overall,1,2440,0.001,0,0,0.002,NRAS_61K,61K,NA
+multi, ,NRAS,anal cancer,Overall,0,149,0.002,0.001,0,0.007,NRAS_61K,61K,NA
+multi, ,NRAS,neuroendocrine tumors,Overall,0,359,0.001,0.001,0,0.004,NRAS_61K,61K,NA
+multi, ,NRAS,bladder cancer,Overall,3,1580,0.002,0.002,0,0.004,NRAS_61K,61K,NA
+multi, ,NRAS,b-lymphoblastic leukemia/lymphoma,Overall,3,248,0.009,0.008,0.002,0.023,NRAS_61K,61K,NA
+multi, ,NRAS,small bowel cancer,Overall,0,210,0.001,0.001,0,0.006,NRAS_61K,61K,NA
+multi, ,NRAS,sex cord stromal tumor,Overall,0,107,0.002,0.001,0,0.009,NRAS_61K,61K,NA
+multi, ,NRAS,bone cancer,Overall,0,570,0.001,0,0,0.003,NRAS_61K,61K,NA
+multi, ,NRAS,vaginal cancer,Overall,0,78,0.002,0.001,0,0.01,NRAS_61K,61K,NA
+multi, ,NRAS,thymic tumor,Overall,1,156,0.004,0.003,0,0.016,NRAS_61K,61K,NA
+multi, ,NRAS,ampullary cancer,Overall,0,106,0.002,0.001,0,0.009,NRAS_61K,61K,NA
+multi, ,NRAS,small cell lung cancer,Overall,1,398,0.002,0.002,0,0.008,NRAS_61K,61K,NA
+multi, ,NRAS,mesothelioma,Overall,0,497,0.001,0.001,0,0.004,NRAS_61K,61K,NA
+multi, ,NRAS,germ cell tumor,Overall,3,886,0.003,0.003,0.001,0.007,NRAS_61K,61K,NA
+multi, ,NRAS,nerve sheath tumor,Overall,0,154,0.002,0.001,0,0.007,NRAS_61K,61K,NA
+multi, ,NRAS,penile cancer,Overall,0,25,0.003,0.001,0,0.016,NRAS_61K,61K,NA
+multi, ,NRAS,pheochromocytoma,Overall,0,25,0.003,0.001,0,0.018,NRAS_61K,61K,NA
+multi, ,NRAS,pineal tumor,Overall,0,21,0.003,0.001,0,0.019,NRAS_61K,61K,NA
+multi, ,NRAS,b cell lymphoma,Overall,3,962,0.003,0.003,0.001,0.007,NRAS_61K,61K,NA
+multi, ,NRAS,non-hodgkin lymphoma,Overall,0,23,0.003,0.001,0,0.017,NRAS_61K,61K,NA
+multi, ,NRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.003,0.001,0,0.015,NRAS_61K,61K,NA
+multi, ,NRAS,retinoblastoma,Overall,0,51,0.002,0.001,0,0.014,NRAS_61K,61K,NA
+multi, ,NRAS,hodgkin lymphoma,Overall,0,40,0.003,0.001,0,0.015,NRAS_61K,61K,NA
+multi, ,NRAS,lung cancer,Overall,0,25,0.003,0.001,0,0.018,NRAS_61K,61K,NA
+multi, ,NRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.004,0.001,0,0.022,NRAS_61K,61K,NA
+multi, ,NRAS,peritoneal cancer,Overall,0,19,0.003,0.001,0,0.02,NRAS_61K,61K,NA
+multi, ,NRAS,parathyroid cancer,Overall,0,16,0.003,0.001,0,0.021,NRAS_61K,61K,NA
+multi, ,NRAS,appendiceal cancer,Overall,0,341,0,0,0,0.003,NRAS_61L,61L,NA
+multi, ,NRAS,colorectal cancer,Overall,22,6720,0.003,0.003,0.002,0.005,NRAS_61L,61L,NA
+multi, ,NRAS,cancer of unknown primary,Overall,1,1988,0,0,0,0.002,NRAS_61L,61L,NA
+multi, ,NRAS,non-small cell lung cancer,Overall,32,10131,0.003,0.003,0.002,0.004,NRAS_61L,61L,NA
+multi, ,NRAS,breast cancer,Overall,0,9332,0,0,0,0,NRAS_61L,61L,NA
+multi, ,NRAS,soft tissue sarcoma,Overall,4,2773,0.001,0.001,0,0.003,NRAS_61L,61L,NA
+multi, ,NRAS,pancreatic cancer,Overall,0,2493,0,0,0,0.001,NRAS_61L,61L,NA
+multi, ,NRAS,leukemia,Overall,6,1567,0.003,0.003,0.001,0.007,NRAS_61L,61L,NA
+multi, ,NRAS,melanoma,Overall,88,2846,0.03,0.03,0.024,0.037,NRAS_61L,61L,NA
+multi, ,NRAS,head and neck cancer,Overall,0,1743,0,0,0,0.001,NRAS_61L,61L,NA
+multi, ,NRAS,uterine cancer,Overall,6,2253,0.002,0.002,0.001,0.005,NRAS_61L,61L,NA
+multi, ,NRAS,non-melanoma skin cancers,Overall,0,513,0,0,0,0.002,NRAS_61L,61L,NA
+multi, ,NRAS,myelodysplastic/myeloproliferative syndromes,Overall,0,1207,0,0,0,0.001,NRAS_61L,61L,NA
+multi, ,NRAS,adrenocortical carcinoma,Overall,0,134,0.001,0,0,0.004,NRAS_61L,61L,NA
+multi, ,NRAS,ovarian cancer,Overall,1,2337,0,0,0,0.001,NRAS_61L,61L,NA
+multi, ,NRAS,esophagogastric cancer,Overall,1,1802,0.001,0,0,0.002,NRAS_61L,61L,NA
+multi, ,NRAS,thyroid cancer,Overall,0,1017,0,0,0,0.001,NRAS_61L,61L,NA
+multi, ,NRAS,cervical cancer,Overall,0,367,0,0,0,0.003,NRAS_61L,61L,NA
+multi, ,NRAS,hepatobiliary cancer,Overall,0,1374,0,0,0,0.001,NRAS_61L,61L,NA
+multi, ,NRAS,kidney cancer,Overall,0,1422,0,0,0,0.001,NRAS_61L,61L,NA
+multi, ,NRAS,mature t and nk neoplasms,Overall,0,231,0.001,0,0,0.003,NRAS_61L,61L,NA
+multi, ,NRAS,cns cancer,Overall,5,4565,0.001,0.001,0,0.002,NRAS_61L,61L,NA
+multi, ,NRAS,prostate cancer,Overall,0,2440,0,0,0,0.001,NRAS_61L,61L,NA
+multi, ,NRAS,anal cancer,Overall,0,149,0.001,0,0,0.004,NRAS_61L,61L,NA
+multi, ,NRAS,neuroendocrine tumors,Overall,0,359,0,0,0,0.003,NRAS_61L,61L,NA
+multi, ,NRAS,bladder cancer,Overall,0,1580,0,0,0,0.001,NRAS_61L,61L,NA
+multi, ,NRAS,b-lymphoblastic leukemia/lymphoma,Overall,0,248,0.001,0,0,0.003,NRAS_61L,61L,NA
+multi, ,NRAS,small bowel cancer,Overall,0,210,0.001,0,0,0.003,NRAS_61L,61L,NA
+multi, ,NRAS,sex cord stromal tumor,Overall,0,107,0.001,0,0,0.005,NRAS_61L,61L,NA
+multi, ,NRAS,bone cancer,Overall,0,570,0,0,0,0.002,NRAS_61L,61L,NA
+multi, ,NRAS,vaginal cancer,Overall,0,78,0.001,0,0,0.005,NRAS_61L,61L,NA
+multi, ,NRAS,thymic tumor,Overall,0,156,0.001,0,0,0.004,NRAS_61L,61L,NA
+multi, ,NRAS,ampullary cancer,Overall,0,106,0.001,0,0,0.005,NRAS_61L,61L,NA
+multi, ,NRAS,small cell lung cancer,Overall,1,398,0.002,0.001,0,0.007,NRAS_61L,61L,NA
+multi, ,NRAS,mesothelioma,Overall,0,497,0,0,0,0.002,NRAS_61L,61L,NA
+multi, ,NRAS,germ cell tumor,Overall,1,886,0.001,0.001,0,0.003,NRAS_61L,61L,NA
+multi, ,NRAS,nerve sheath tumor,Overall,0,154,0.001,0,0,0.004,NRAS_61L,61L,NA
+multi, ,NRAS,penile cancer,Overall,0,25,0.001,0,0,0.009,NRAS_61L,61L,NA
+multi, ,NRAS,pheochromocytoma,Overall,0,25,0.001,0,0,0.009,NRAS_61L,61L,NA
+multi, ,NRAS,pineal tumor,Overall,0,21,0.001,0,0,0.008,NRAS_61L,61L,NA
+multi, ,NRAS,b cell lymphoma,Overall,1,962,0.001,0.001,0,0.003,NRAS_61L,61L,NA
+multi, ,NRAS,non-hodgkin lymphoma,Overall,0,23,0.001,0,0,0.009,NRAS_61L,61L,NA
+multi, ,NRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.001,0,0,0.008,NRAS_61L,61L,NA
+multi, ,NRAS,retinoblastoma,Overall,0,51,0.001,0,0,0.006,NRAS_61L,61L,NA
+multi, ,NRAS,hodgkin lymphoma,Overall,0,40,0.001,0,0,0.007,NRAS_61L,61L,NA
+multi, ,NRAS,lung cancer,Overall,0,25,0.001,0,0,0.008,NRAS_61L,61L,NA
+multi, ,NRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.001,0,0,0.01,NRAS_61L,61L,NA
+multi, ,NRAS,peritoneal cancer,Overall,0,19,0.001,0,0,0.009,NRAS_61L,61L,NA
+multi, ,NRAS,parathyroid cancer,Overall,0,16,0.001,0,0,0.01,NRAS_61L,61L,NA
+multi, ,NRAS,appendiceal cancer,Overall,5,341,0.013,0.012,0.004,0.027,NRAS_61R,61R,NA
+multi, ,NRAS,colorectal cancer,Overall,46,6720,0.007,0.007,0.005,0.009,NRAS_61R,61R,NA
+multi, ,NRAS,cancer of unknown primary,Overall,8,1988,0.004,0.004,0.002,0.007,NRAS_61R,61R,NA
+multi, ,NRAS,non-small cell lung cancer,Overall,15,10131,0.002,0.001,0.001,0.002,NRAS_61R,61R,NA
+multi, ,NRAS,breast cancer,Overall,0,9332,0,0,0,0,NRAS_61R,61R,NA
+multi, ,NRAS,soft tissue sarcoma,Overall,6,2773,0.002,0.002,0.001,0.004,NRAS_61R,61R,NA
+multi, ,NRAS,pancreatic cancer,Overall,7,2493,0.003,0.003,0.001,0.005,NRAS_61R,61R,NA
+multi, ,NRAS,leukemia,Overall,17,1567,0.011,0.01,0.006,0.016,NRAS_61R,61R,NA
+multi, ,NRAS,melanoma,Overall,246,2846,0.086,0.086,0.076,0.097,NRAS_61R,61R,NA
+multi, ,NRAS,head and neck cancer,Overall,0,1743,0,0,0,0.002,NRAS_61R,61R,NA
+multi, ,NRAS,uterine cancer,Overall,9,2253,0.004,0.004,0.002,0.007,NRAS_61R,61R,NA
+multi, ,NRAS,non-melanoma skin cancers,Overall,0,513,0.001,0.001,0,0.004,NRAS_61R,61R,NA
+multi, ,NRAS,myelodysplastic/myeloproliferative syndromes,Overall,2,1207,0.002,0.002,0,0.005,NRAS_61R,61R,NA
+multi, ,NRAS,adrenocortical carcinoma,Overall,0,134,0.002,0.001,0,0.01,NRAS_61R,61R,NA
+multi, ,NRAS,ovarian cancer,Overall,25,2337,0.01,0.01,0.007,0.015,NRAS_61R,61R,NA
+multi, ,NRAS,esophagogastric cancer,Overall,3,1802,0.002,0.002,0,0.004,NRAS_61R,61R,NA
+multi, ,NRAS,thyroid cancer,Overall,95,1017,0.092,0.092,0.075,0.11,NRAS_61R,61R,NA
+multi, ,NRAS,cervical cancer,Overall,1,367,0.003,0.002,0,0.009,NRAS_61R,61R,NA
+multi, ,NRAS,hepatobiliary cancer,Overall,9,1374,0.006,0.006,0.003,0.011,NRAS_61R,61R,NA
+multi, ,NRAS,kidney cancer,Overall,0,1422,0.001,0,0,0.002,NRAS_61R,61R,NA
+multi, ,NRAS,mature t and nk neoplasms,Overall,1,231,0.004,0.003,0,0.013,NRAS_61R,61R,NA
+multi, ,NRAS,cns cancer,Overall,7,4565,0.002,0.002,0.001,0.003,NRAS_61R,61R,NA
+multi, ,NRAS,prostate cancer,Overall,1,2440,0.001,0.001,0,0.002,NRAS_61R,61R,NA
+multi, ,NRAS,anal cancer,Overall,0,149,0.002,0.001,0,0.009,NRAS_61R,61R,NA
+multi, ,NRAS,neuroendocrine tumors,Overall,1,359,0.003,0.002,0,0.009,NRAS_61R,61R,NA
+multi, ,NRAS,bladder cancer,Overall,3,1580,0.002,0.002,0,0.005,NRAS_61R,61R,NA
+multi, ,NRAS,b-lymphoblastic leukemia/lymphoma,Overall,2,248,0.007,0.006,0.001,0.019,NRAS_61R,61R,NA
+multi, ,NRAS,small bowel cancer,Overall,2,210,0.008,0.006,0.001,0.022,NRAS_61R,61R,NA
+multi, ,NRAS,sex cord stromal tumor,Overall,0,107,0.002,0.001,0,0.012,NRAS_61R,61R,NA
+multi, ,NRAS,bone cancer,Overall,0,570,0.001,0.001,0,0.004,NRAS_61R,61R,NA
+multi, ,NRAS,vaginal cancer,Overall,0,78,0.003,0.001,0,0.015,NRAS_61R,61R,NA
+multi, ,NRAS,thymic tumor,Overall,0,156,0.002,0.001,0,0.009,NRAS_61R,61R,NA
+multi, ,NRAS,ampullary cancer,Overall,0,106,0.002,0.001,0,0.012,NRAS_61R,61R,NA
+multi, ,NRAS,small cell lung cancer,Overall,0,398,0.001,0.001,0,0.005,NRAS_61R,61R,NA
+multi, ,NRAS,mesothelioma,Overall,1,497,0.002,0.002,0,0.007,NRAS_61R,61R,NA
+multi, ,NRAS,germ cell tumor,Overall,3,886,0.003,0.003,0.001,0.008,NRAS_61R,61R,NA
+multi, ,NRAS,nerve sheath tumor,Overall,2,154,0.01,0.008,0.001,0.029,NRAS_61R,61R,NA
+multi, ,NRAS,penile cancer,Overall,0,25,0.004,0.002,0,0.026,NRAS_61R,61R,NA
+multi, ,NRAS,pheochromocytoma,Overall,0,25,0.004,0.002,0,0.026,NRAS_61R,61R,NA
+multi, ,NRAS,pineal tumor,Overall,0,21,0.005,0.002,0,0.027,NRAS_61R,61R,NA
+multi, ,NRAS,b cell lymphoma,Overall,6,962,0.006,0.006,0.002,0.011,NRAS_61R,61R,NA
+multi, ,NRAS,non-hodgkin lymphoma,Overall,0,23,0.005,0.002,0,0.027,NRAS_61R,61R,NA
+multi, ,NRAS,t-lymphoblastic leukemia/lymphoma,Overall,0,40,0.004,0.002,0,0.02,NRAS_61R,61R,NA
+multi, ,NRAS,retinoblastoma,Overall,0,51,0.003,0.002,0,0.018,NRAS_61R,61R,NA
+multi, ,NRAS,hodgkin lymphoma,Overall,0,40,0.004,0.002,0,0.02,NRAS_61R,61R,NA
+multi, ,NRAS,lung cancer,Overall,0,25,0.004,0.002,0,0.026,NRAS_61R,61R,NA
+multi, ,NRAS,blastic plasmacytoid dendritic cell neoplasm,Overall,0,13,0.006,0.002,0,0.036,NRAS_61R,61R,NA
+multi, ,NRAS,peritoneal cancer,Overall,0,19,0.005,0.002,0,0.029,NRAS_61R,61R,NA
+multi, ,NRAS,parathyroid cancer,Overall,2,16,0.059,0.044,0.005,0.191,NRAS_61R,61R,NA

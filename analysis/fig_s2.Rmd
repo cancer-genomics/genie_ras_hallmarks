@@ -1,0 +1,86 @@
+---
+title: "Figure S2"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+```{r packages, message=FALSE, warning=FALSE}
+library(grid)
+library(magrittr)
+library(tidyverse)
+library(purrr)
+library(ggplot2)
+library(here)
+```
+
+```{r files, results="hide"}
+cancerlabs <- read_csv(here("data", "cancer_labels.csv"))
+dat <- here("public", "table", "ras.Rmd", "multicancer.csv") %>%
+    read_csv(show_col_types=FALSE) %>%
+    mutate(Y=prettyNum(y, big.mark=","),
+           N=prettyNum(n, big.mark=",")) %>%
+    unite(nlabel, c(Y, N), sep="/", remove=FALSE) %>%
+    mutate(hugo_symbol=factor(hugo_symbol, c("RAS", "KRAS", "HRAS", "NRAS"))) %>%
+    left_join(cancerlabs, by="cancer") %>%
+    mutate(cancer=cancer_label)
+multicancer <- dat %>%
+    filter(grepl("12-61", ras), n > 50)
+```
+
+```{r fig_s2, fig.width=12, fig.height=15, dev=c("png", "pdf")}
+cancer_order <- filter(multicancer, ras=="RAS_12-61") %>%
+    select(cancer, median) %>%
+    arrange(median) %>%
+    mutate(cancerf=factor(cancer, cancer),
+           index=as.integer(cancerf),
+           label=levels(cancerf)) %>%
+    select(-median)
+ylabel.size <- 4
+ytext.size <- 14
+point.size <- c(1.5, 2)
+raslabels <- c("Ras", "KRAS", "HRAS", "NRAS") %>%
+    setNames(c("RAS", "KRAS", "HRAS", "NRAS"))
+multicancer %>%
+    left_join(cancer_order, by="cancer") %>%
+    rename("2.5%"=q1,
+           "97.5%"=q2) %>%
+    ggplot(aes(median, cancerf)) +
+    geom_errorbarh(height=0.2,
+                   aes(xmin=`2.5%`, xmax=`97.5%`)) +
+    geom_point(aes(x=y/n), color="gray50",
+               fill="gray70",
+               size=point.size[1], shape=21) +
+    geom_point(color="steelblue", shape=21,
+               fill="white", size=point.size[2]) +
+    theme_bw(base_size=15) +
+    scale_x_continuous(expand=expansion(add=c(0, 0.05))) +
+                       ##limits=c(-0.05, 1.05),
+                       ##breaks=c(0, 0.25, 0.5, 0.75, 1),
+                       ##labels=c("0", "0.25", "0.50",
+                       ##"0.75", "1")) +
+    theme(axis.text.y=element_text(size=ytext.size,
+                                   lineheight=0.6),
+          axis.text.x=element_text(size=17),
+          panel.grid.minor.y=element_blank(),
+          strip.background=element_blank(),
+          strip.text=element_text(size=19),
+          panel.grid=element_blank(),
+          panel.spacing.x=unit(10, "mm")) +
+##    geom_text(aes(x=1, label=prettyNum(n, big.mark=",")),
+##              hjust=1, size=ylabel.size) +
+    ylab("") +
+    xlab("") +
+    facet_wrap(~hugo_symbol, scales="free_x")
+grid.text("A", x=unit(0.015, "npc"), y=unit(0.985, "npc"),
+          gp=gpar(cex=2.5))
+grid.text("B", x=unit(0.6, "npc"), y=unit(0.985, "npc"),
+          gp=gpar(cex=2.5))
+grid.text("C", x=unit(0.015, "npc"), y=unit(0.5, "npc"),
+          gp=gpar(cex=2.5))
+grid.text("D", x=unit(0.6, "npc"), y=unit(0.5, "npc"),
+          gp=gpar(cex=2.5))
+```

@@ -1,0 +1,228 @@
+---
+title: "RAS prevalence for specific amino acid substitutions"
+site: workflowr::wflow_site
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  workflowr::wflow_html:
+    code_folding: hide
+    toc: true
+    toc_depth: 3
+    toc_float: true
+editor_options:
+  chunk_output_type: console
+---
+
+
+```{r caching, echo=FALSE}
+knitr::opts_chunk$set(autodep = TRUE)
+```
+
+```{r packages, message=FALSE, warning=FALSE}
+library(IRanges)
+library(here)
+library(magrittr)
+library(tidyverse)
+library(ggplot2)
+library(genie.6.1)
+library(gridExtra)
+library(kableExtra)
+tabledir <- here("public", "table", "ras_amino_acid_prev.Rmd")
+fs::dir_create(tabledir)
+library(purrr)
+library(viridis)
+library(hrbrthemes)
+##ipsum_pdf()
+```
+
+# Figures
+
+
+```{r commandargs}
+models <- here("output", "prevalence", "summarize_models.R",
+               "models_aa.rds") %>%
+    readRDS()
+multicancer <- models %>%
+    filter(cancer_group=="multi") %>%
+    unnest("data") %>%
+    mutate(Y=prettyNum(y, big.mark=","),
+           N=prettyNum(n, big.mark=",")) %>%
+    unite(nlabel, c(Y, N), sep="/", remove=FALSE) %>%
+    group_by(hugo_symbol) %>%
+    nest()
+```
+
+
+In the figures below, the grey point indicates the empirically estimated proportion and the white circle is the posterior median.
+
+```{r prevalence, fig.align='center', fig.width = 20, fig.height = 25}
+gg_ras <- function(hugo_symbol, data){
+    x <- data %>%
+        mutate(codon=codon_range)
+    ## this is just to decide the order of the cancers
+    xx <- filter(x, codon=="12C") %>%
+        arrange(median)
+    cancer_ <- xx$cancer
+    x %>%
+        mutate(cancer=factor(cancer, cancer_)) %>%
+        filter(n > 150) %>%
+        ggplot(aes(median, cancer)) +
+        geom_errorbarh(height=0.2,
+                       aes(xmin=q1, xmax=q2)) +
+        geom_point(aes(x=y/n), color="gray50",
+                   fill="gray70",
+                   size=1, shape=21) +
+        geom_point(color="steelblue", shape=21,
+                   fill="white", size=1) +
+        theme_bw(base_size=15) +
+        theme(panel.grid=element_blank(),
+              strip.background=element_blank()) +
+        geom_text(aes(x=0.45, label=nlabel),
+                  hjust=1, size=3) +
+        ylab("") + xlab("") +
+        facet_wrap(~codon) +
+        ggtitle(hugo_symbol)
+}
+fig.list <- multicancer %>%
+    pmap(gg_ras)
+fig.list
+```
+
+# Stratified analyses
+
+## KRAS 12C
+
+For cancers with at least 100 individuals and an empirical RAS codon prevalence of at 10%, plot the stratified prevalence estimates.
+
+```{r gg_strata}
+gg_strata <- function(cancer, data){
+    x <- data
+    overall <- filter(x, variable=="Overall") %>%
+        pull(median)
+    x %>%
+        mutate(variable=fct_rev(variable)) %>%
+        filter(variable!="NA") %>%
+        ggplot(aes(median, variable)) +
+        geom_errorbarh(aes(xmin=q1, xmax=q2), height=0.2) +
+        geom_point(pch=21, fill="white") +
+        theme_bw(base_size=15) +
+        facet_grid(confounder~., space="free_y",
+                   scales="free_y") +
+        geom_text(x=1, aes(label=paste0(y, "/", n)), hjust=1) +
+        theme(panel.grid=element_blank(),
+              strip.text.y=element_text(hjust=0, angle=0),
+              strip.background=element_blank()) +
+        geom_vline(xintercept=overall, color="gray",
+                   linetype="dashed") +
+        ylab("") +
+        xlab("Prevalence") +
+        xlim(c(0,1)) +
+        ggtitle(cancer)
+}
+caps <- Hmisc::capitalize
+## only makes sense to assess confounding for cancers with appreciable RAS variants
+focus <- unnest(multicancer, data) %>%
+    filter(y/n > 0.1, n > 100) %>%
+    pull(cancer) %>%
+    unique()
+```
+
+## KRAS 12C
+
+```{r kras_12c,  fig.width=8, fig.height=7}
+rasv <- "KRAS_12C"
+models2 <- models %>%
+    unnest(data) %>%
+    filter(ras==rasv) %>%
+    group_by(cancer) %>%
+    nest()
+fig.list <- models2 %>%
+    filter(cancer %in% focus) %>%
+    pmap(gg_strata)
+fig.list
+```
+
+## KRAS 12D
+
+```{r kras_12d,  fig.width=8, fig.height=7}
+rasv <- "KRAS_12D"
+models2 <- models %>%
+    unnest(data) %>%
+    filter(ras==rasv) %>%
+    group_by(cancer) %>%
+    nest()
+fig.list <- models2 %>%
+    filter(cancer %in% focus) %>%
+    pmap(gg_strata)
+fig.list
+```
+
+## KRAS 12V
+```{r kras_12v,  fig.width=8, fig.height=7}
+rasv <- "KRAS_12V"
+models2 <- models %>%
+    unnest(data) %>%
+    filter(ras==rasv) %>%
+    group_by(cancer) %>%
+    nest()
+fig.list <- models2 %>%
+    filter(cancer %in% focus) %>%
+    pmap(gg_strata)
+fig.list
+```
+
+## NRAS 61R
+
+```{r nras_61r,  fig.width=8, fig.height=7}
+rasv <- "NRAS_61R"
+models2 <- models %>%
+    unnest(data) %>%
+    filter(ras==rasv) %>%
+    group_by(cancer) %>%
+    nest()
+fig.list <- models2 %>%
+    filter(cancer %in% focus) %>%
+    pmap(gg_strata)
+fig.list
+```
+
+
+# Combined table
+
+```{r combined_table, results="hide"}
+dat <- models %>%
+    ungroup() %>%
+    unnest("data") %>%
+    group_by(cancer_group, confounder)
+dat.list <- dat %>%
+    group_split()
+unix_name <- function(x){
+    x <- as.character(x) %>%
+        tolower() %>%
+        str_replace_all(" ", "_")
+    x
+}
+grps <- dat %>%
+    group_keys() %>%
+    mutate(confounder=unix_name(confounder),
+           confounder=ifelse(confounder=="_", "multicancer",
+                             confounder),
+           fname=paste0(confounder, ".csv"))
+fnames <- here("public", "table", "ras_amino_acid_prev.Rmd", grps$fname)
+dat.list %>%
+    map2(fnames, write_csv)
+##all_models <- model.list[[1]] %>%
+##multicancer <- unnest(multicancer2, "data") %>%
+##    select(-c(Y, N, nlabel)) %>%
+##    rename(`2.5%`=q1,
+##           `97.5%`=q2)
+##write_csv(multicancer, here("public", "table", "ras.Rmd", "multicancer.csv"))
+##dat4 <- unnest(dat3, "data") %>%
+##    select(-overall) %>%
+##    rename(`2.5%`=q1,
+##           `97.5%`=q2)
+##write_csv(dat4, here("public", "table", "ras.Rmd", "confounding.csv"))
+```
+
+# csv files
+
+See [downloads](downloads.html) for results as plain-text csv files.

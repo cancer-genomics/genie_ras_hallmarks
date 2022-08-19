@@ -1,0 +1,199 @@
+---
+title: "RAS prevalence"
+site: workflowr::wflow_site
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  workflowr::wflow_html:
+    code_folding: hide
+    toc: true
+    toc_depth: 3
+    toc_float: true
+editor_options:
+  chunk_output_type: console
+---
+
+
+```{r caching, echo=FALSE}
+knitr::opts_chunk$set(autodep = TRUE)
+```
+
+```{r packages, message=FALSE, warning=FALSE}
+library(IRanges)
+library(here)
+library(magrittr)
+library(tidyverse)
+library(ggplot2)
+library(genie.6.1)
+library(gridExtra)
+library(kableExtra)
+tabledir <- here("public", "table", "ras.Rmd")
+fs::dir_create(tabledir)
+library(purrr)
+library(viridis)
+library(hrbrthemes)
+##ipsum_pdf()
+```
+
+# Model
+
+A Bayesian hierarchical model for the number of patients, $y$, with a RAS mutation in cancer type $i$ is given by: 
+
+
+\begin{align*}
+y_i &\sim \text{binomial}(n_i, \theta_i)\\
+\text{logit}(\theta_i) &= a + b_i\\
+a &\sim \text{normal}(\mu_a, \sigma^2_a)\\
+b_i &\sim \text{normal}(\mu_b, \sigma^2_b)\\
+\mu_a &\sim \text{normal}(0, 100)\\
+\mu_b &\sim \text{normal}(0, 16)\\
+\frac{1}{\sigma^2_a}, \frac{1}{\sigma^2_b} &\sim \text{Gamma}(0.001, 0.001)
+\end{align*}
+
+
+This model was fit independently for each of the 20 different RAS hotspot mutations.
+
+
+```{r commandargs}
+models <- here("output", "prevalence", "summarize_models.R",
+               "models.rds") %>%
+    readRDS()
+multicancer <- models %>%
+    filter(cancer_group=="multi") %>%
+    unnest("data") %>%
+    mutate(Y=prettyNum(y, big.mark=","),
+           N=prettyNum(n, big.mark=",")) %>%
+    unite(nlabel, c(Y, N), sep="/", remove=FALSE) %>%
+    group_by(hugo_symbol) %>%
+    nest()
+```
+
+# Figures
+
+In the figures below, the grey point indicates the empirically estimated proportion and the white circle is the posterior median.
+
+```{r prevalence, fig.align='center', fig.width = 10, fig.height = 8}
+gg_ras <- function(hugo_symbol, data){
+    x <- data
+    xx <- filter(x, codon=="Codon 12, 13, or 61") %>%
+        arrange(median)
+    cancer_ <- xx$cancer
+    x %>%
+        mutate(cancer=factor(cancer, cancer_)) %>%
+        filter(n > 150) %>%
+        ggplot(aes(median, cancer)) + 
+        geom_errorbarh(height=0.2,
+                       aes(xmin=q1, xmax=q2)) +        
+        geom_point(aes(x=y/n), color="gray50",
+                   fill="gray70",
+                   size=1, shape=21) +
+        geom_point(color="steelblue", shape=21,
+                   fill="white", size=1) +
+        theme_bw(base_size=15) +
+        theme(panel.grid=element_blank(),
+              strip.background=element_blank()) +
+        geom_text(aes(x=1, label=nlabel),
+                  hjust=1, size=3) +
+        ylab("") + xlab("") +
+        facet_wrap(~codon) +
+        ggtitle(hugo_symbol)
+}
+fig.list <- multicancer %>%
+    pmap(gg_ras)
+fig.list
+```
+
+
+# Confounding
+
+For cancers and RAS variants with at least `x` variants, assess possible confounders.
+
+For RAS variants in any codon, combine the tibbles for each confounder by cancer type.
+
+```{r confounding}
+caps <- Hmisc::capitalize
+models2 <- models %>%
+    unnest(data) %>%
+    filter(ras=="RAS_12-61") %>%
+    group_by(cancer) %>%
+    nest()
+```
+
+```{r plot_credible_intervals, fig.width=8, fig.height=7}
+gg_strata <- function(cancer, data){
+    x <- data
+    overall <- filter(x, variable=="Overall") %>%
+        pull(median)
+    x %>%
+        mutate(variable=fct_rev(variable)) %>%
+        filter(variable!="NA") %>%
+        ggplot(aes(median, variable)) +
+        geom_errorbarh(aes(xmin=q1, xmax=q2), height=0.2) +
+        geom_point(pch=21, fill="white") +
+        theme_bw(base_size=15) +
+        facet_grid(confounder~., space="free_y",
+                   scales="free_y") +
+        geom_text(x=1, aes(label=paste0(y, "/", n)), hjust=1) +
+        theme(panel.grid=element_blank(),
+              strip.text.y=element_text(hjust=0, angle=0),
+              strip.background=element_blank()) +
+        geom_vline(xintercept=overall, color="gray",
+                   linetype="dashed") +
+        ylab("") +
+        xlab("Prevalence") +
+        xlim(c(0,1)) +
+        ggtitle(cancer)
+}
+## only makes sense to assess confounding for cancers with appreciable RAS variants
+focus <- unnest(multicancer, data) %>%
+    filter(y/n > 0.1, n > 100) %>%
+    pull(cancer) %>%
+    unique()
+fig.list <- models2 %>%
+    filter(cancer %in% focus) %>%
+    pmap(gg_strata)
+fig.list
+```
+
+# Combined table
+
+```{r combined_table, results="hide"}
+dat <- models %>%
+    ungroup() %>%
+    unnest("data") %>%
+    group_by(cancer_group, confounder)
+dat.list <- dat %>%
+    group_split()
+unix_name <- function(x){
+    x <- as.character(x) %>%
+        tolower() %>%
+        str_replace_all(" ", "_")
+    x
+}
+grps <- dat %>%
+    group_keys() %>%
+    mutate(confounder=unix_name(confounder),
+           confounder=ifelse(confounder=="_", "multicancer",
+                             confounder),
+           fname=paste0(confounder, ".csv"))
+fnames <- here("public", "table", "ras.Rmd", grps$fname)
+dat.list %>%
+    map2(fnames, write_csv)
+##all_models <- model.list[[1]] %>%
+##multicancer <- unnest(multicancer2, "data") %>%
+##    select(-c(Y, N, nlabel)) %>%
+##    rename(`2.5%`=q1,
+##           `97.5%`=q2)
+##write_csv(multicancer, here("public", "table", "ras.Rmd", "multicancer.csv"))
+##dat4 <- unnest(dat3, "data") %>%
+##    select(-overall) %>%
+##    rename(`2.5%`=q1,
+##           `97.5%`=q2)    
+##write_csv(dat4, here("public", "table", "ras.Rmd", "confounding.csv"))
+```
+
+# csv files
+
+See [downloads](downloads.html) for results as plain-text csv files.
+
+
+

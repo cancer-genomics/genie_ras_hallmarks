@@ -1,0 +1,85 @@
+---
+title: "Figure S4"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+```{r packages, message=FALSE, warning=FALSE}
+library(grid)
+library(gridExtra)
+library(magrittr)
+library(tidyverse)
+library(purrr)
+library(ggplot2)
+library(here)
+```
+
+
+```{r}
+aa_freq <- here("output", "prevalence",
+                "amino_acids.R", "aa_freq.csv") %>%
+    read_csv(show_col_types=FALSE) %>%
+    filter(n > 50, !grepl("146", hgvsp), !grepl("Q22", hgvsp))
+
+aa_freq2 <- aa_freq %>%
+    distinct() %>%
+    pivot_wider(c(cancer, hugo_symbol),
+                names_from=hgvsp, values_from=y)
+aa_freq2[is.na(aa_freq2)] <- 0
+cancerLabels <- rasfuns:::cancerLabels
+aa_freq3  <- aa_freq2 %>%
+    pivot_longer(!c(cancer, hugo_symbol),
+                 names_to="hgvsp", values_to="y") %>%
+    left_join(select(aa_freq, cancer, hugo_symbol, n),
+              by=c("cancer",
+                   "hugo_symbol")) %>%
+    mutate(cancer=cancerLabels(cancer)) %>%
+    filter(cancer != "lung") %>%
+    distinct() %>%
+    mutate(median=qbeta(0.5, 0.5 + y, 0.5 + n-y),
+           lower=qbeta(0.025, 0.5 + y, 0.5 + n-y),
+           upper=qbeta(0.975, 0.5 + y, 0.5 + n-y))
+
+cancer_labels <- aa_freq3 %>%
+    group_by(cancer) %>%
+    summarize(n=unique(n),
+              .groups="drop") %>%
+    mutate(n=prettyNum(n, big.mark=",")) %>%
+    unite(label, c(cancer, n), sep=" (n=", remove=FALSE) %>%
+    mutate(label=paste0(label, ")"))
+cancer_labs <- setNames(cancer_labels$label, cancer_labels$cancer)
+aa_levels <- sort(unique(aa_freq3$hgvsp))
+```
+
+```{r fig_s4, fig.width=15, fig.height=12, dev=c("png", "pdf")}
+alleles <- c("61R", "12D", "12S",
+             "13D", "61K", "61L")
+dat <- aa_freq3 %>%
+    filter(hugo_symbol=="NRAS") %>%
+    filter(!is.na(n)) %>%
+    mutate(p=y/n) %>%
+    filter(cancer!="lung cancer") %>%
+    mutate(odds=p/(1-p)) %>%
+    mutate(hgvsp=str_replace_all(hgvsp, "^[QG]", "")) %>%
+    filter(hgvsp %in% alleles) %>%
+    mutate(allele=paste("NRAS", hgvsp)) %>%
+    mutate(allele=factor(allele, paste("NRAS", alleles)))
+dat %>%
+    ggplot(aes(p, cancer)) +
+    geom_errorbarh(aes(xmin=lower, xmax=upper), height=0.2) +
+    geom_point(color="gray") +
+    geom_point(pch=21, aes(x=median)) +
+    theme_bw(base_size=15) +
+    facet_wrap(~allele, scales="free_x") +
+    theme(strip.background=element_blank(),
+          panel.grid=element_blank(),
+          strip.text=element_text(size=18),
+          strip.text.y=element_text(angle=0, hjust=0),
+          axis.title=element_text(size=18)) +
+    ylab("") +
+    xlab("Prevalence")
+```

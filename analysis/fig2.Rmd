@@ -1,0 +1,282 @@
+---
+title: "Figure 2: KRAS prevalence by amino acid / patient covariates"
+site: workflowr::wflow_site
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  workflowr::wflow_html:
+    code_folding: hide
+    toc: true
+    toc_depth: 3
+    toc_float: true
+editor_options:
+  chunk_output_type: console
+---
+
+```{r caching, echo=FALSE}
+knitr::opts_chunk$set(autodep = TRUE)
+```
+
+```{r packages, message=FALSE, warning=FALSE}
+library(grid)
+library(gridExtra)
+library(magrittr)
+library(here)
+library(tidyverse)
+library(RColorBrewer)
+library(cowplot)
+```
+
+```{r data, message=FALSE, warning=FALSE}
+prev.dir <- here("public", "table", "ras_amino_acid_prev.Rmd")
+age <- read_csv(file.path(prev.dir, "age.csv"))
+race <- read_csv(file.path(prev.dir, "race.csv"))
+sex <- read_csv(file.path(prev.dir, "sex.csv"))
+multi <- read_csv(file.path(prev.dir, "multicancer.csv"))
+age <- age %>%
+      subset(.,!is.na( variable)) %>%
+      mutate(variable = paste0("Age ", variable))
+race <- race %>%
+  subset(.,variable %in% c("Asian", "White","Black"))
+sex = sex %>%
+  mutate(variable = recode( variable, "Male" = "male", "Female" = "female"))
+multi <- multi %>%
+  mutate(variable = "Multi-Cancer\nmodel")
+plot.prev <- rbind(age, sex, race, multi)
+```
+
+# Panel A: KRAS amino acid prevalence stratified by age and ethnic groups
+
+```{r prev_heatmap_kras, fig.height=750, fig.width=16, dev=c("png", "pdf"), fig.dpi=300}
+cancers <- c("cancer of unknown primary",
+             "non-small cell lung cancer",
+             "pancreatic cancer",
+             "colorectal cancer",
+             "melanoma", "ovarian cancer")
+plot.df <- plot.prev %>%
+    filter(hugo_symbol == "KRAS",
+           cancer %in% cancers) %>%
+    filter(cancer != "melanoma")
+variable.levels = c("Multi-Cancer\nmodel", "Asian", "White",
+                    "Black", "Age <40" ,  "Age 40-50" ,
+                    "Age 50-65" , "Age >65"  , "female", "male")
+## For melanoma, we want the NRAS prevalence
+melanoma <- plot.prev %>%
+    filter(hugo_symbol == "NRAS",
+           cancer == "melanoma")
+dat <- bind_rows(plot.df, melanoma)
+ras.levels <- rev(unique(dat$ras))
+dat$ras <- factor(dat$ras, levels = ras.levels)
+dat$variable <- factor(dat$variable, levels = variable.levels)
+```
+
+```{r fig2a, fig.width=12, fig.height=10, dev=c("png", "pdf")}
+clabs <- c("Cancer of Unknown Primary",
+           "Non-small Cell Lung Cancer",
+           "Pancreatic Cancer",
+           "Colorectal Cancer",
+           "Melanoma",
+           "Ovarian Cancer") %>%
+    setNames(cancers)
+vlabs <- setNames(str_to_title(variable.levels),
+                  variable.levels)
+fig2a <- dat %>%
+    filter(cancer %in% cancers) %>%
+    ##!(cancer == "ovarian cancer" & variable == "male")) %>%
+    mutate(variable=factor(vlabs[variable], vlabs),
+           cancer=factor(cancer, level=cancers),
+           median=ifelse(median > 0.06, 0.06, median)) %>%
+    ggplot(aes(variable, ras)) +
+    geom_tile(fill = '#ffffff', color = '#ffffff',
+              width = 0.98,
+              height = 0.98,
+              size = 0.98) +
+    theme_minimal() +
+    geom_tile(aes(fill = median),
+              size = 0.98,
+              width = 0.98,
+              height= 0.98) +
+    scale_fill_distiller(palette = 'OrRd',
+                         name = 'Prevalence',
+                         guide = guide_colorbar(direction = "vertical"),
+                         trans = "reverse") +
+    theme(axis.ticks.x = element_blank(),
+          axis.text.x = element_text(size = 16,
+                                     angle = 60,
+                                     vjust = 1,
+                                     hjust=1),
+          axis.text.y = element_text(size = 16, angle = 0),
+          panel.grid = element_blank(),
+          title = element_text(size = 10),
+          strip.background = element_blank(),
+          strip.text=element_text(size=25),
+          legend.title=element_text(size=19),
+          legend.text=element_text(size=16),
+          panel.spacing=unit(2, "lines")) +
+    ylab("") + xlab("") +
+    facet_wrap(~cancer, ncol=2,
+               labeller=labeller(cancer=clabs),
+               scales="free_y")
+fig2a
+```
+
+# Panel B:  Age, Race, and Sex models
+
+```{r fig2g-i_data}
+here <- here::here
+models <- here("output",
+               "prevalence",
+               "summarize_models.R",
+               "models.rds") %>%
+    readRDS()
+##codons_ <- c("Codon 12", "Codon 13", "Codon G12C")
+codons_ <- "Codon 12"
+overall <- models %>%
+    filter(cancer_group=="multi",
+           hugo_symbol=="KRAS") %>%
+    unnest("data") %>%
+    ungroup() %>%
+    filter(codon %in% codons_) %>%
+    select(-c(variable, mean,
+              cancer_group, confounder,
+              hugo_symbol, codon_range,
+              ras)) %>%
+    rename(overall_y=y,
+           overall_n=n,
+           overall_median=median,
+           overall_q1=q1,
+           overall_q2=q2)
+stratified <- models %>%
+    filter(confounder %in% c("Center", "Race", "Sex", "Age"),
+           hugo_symbol=="KRAS") %>%
+    unnest("data") %>%
+    ungroup() %>%
+    filter(codon %in% codons_) %>%
+    select(-c(cancer_group, codon_range, ras))
+merged <- stratified %>%
+    left_join(overall, by=c("cancer", "codon"))
+```
+
+# Compare overall to stratified analyses
+
+```{r prev}
+## conservatively, highlight differences with non-overlapping credible intervals
+diff_posterior <- function(y, n, overall_y, overall_n){
+    y1 <- y
+    n1 <- n
+    y2 <- overall_y
+    n2 <- overall_n
+    p1 <- rbeta(50e3, y1+0.5, n1-y1+0.5)
+    p2 <- rbeta(50e3, y2+0.5, n2-y2+0.5)
+    d <- p2-p1
+    quantile(d, c(0.025, 0.5, 0.975))
+}
+diffoverall <- merged %>%
+    select(y, n, overall_y, overall_n) %>%
+    pmap_dfr(diff_posterior) %>%
+    bind_cols(merged) %>%
+    filter(`97.5%` < 0 | `2.5%` > 0)
+colors <- readRDS(here("output", "co-mutation",
+                       "summarize_models.R",
+                       "colors.rds"))
+cols2 <- cols <- setNames(colors$color, colors$cancer)
+diffoverall <- filter(diffoverall,
+                      cancer %in% names(cols))
+```
+
+For each row in `diffoverall`, find the posterior distribution for the difference in probabilties between the subgroup and the overall.
+
+```{r highlight}
+cancerlabs <- read_csv(here("data", "cancer_labels.csv"))
+d <- diffoverall
+d2 <- filter(d,
+             confounder %in% c("Race", "Sex", "Age"),
+             variable != "NA") %>%
+    mutate(variable=droplevels(variable))
+vlevels <- c("<40", "40-50", ">65",
+             "Asian", "Black",
+             "Native American", "White", "Other",
+             "Female", "Male")
+vlabels <- str_replace(vlevels, "Native American", "Native\nAmerican") %>%
+    setNames(vlevels)
+cols3 <- tibble(color=cols2, cancer=names(cols2)) %>%
+    left_join(cancerlabs, by="cancer") %>%
+    mutate(cancer=cancer_label) %>%
+    arrange(cancer)
+cols4 <- setNames(cols3$color, cols3$cancer)
+all <- d2 %>%
+    left_join(cancerlabs, by="cancer") %>%
+    mutate(cancer=cancer_label,
+           cancer=factor(cancer, sort(unique(cancer)))) %>%
+    mutate(variable=as.character(variable),
+           var2=vlabels[variable],
+           var2=factor(var2, vlabels),
+           var2=fct_rev(var2)) %>%
+    ggplot(aes(x=`50%`, var2, group=cancer)) +
+    geom_errorbarh(aes(xmin=`2.5%`, xmax=`97.5%`, color=cancer),
+                   position=position_dodge(width=0.5),
+                   height=0.15) +
+    geom_point(shape=21,
+               position=position_dodge(width=0.5),
+               aes(color=cancer)) +
+    theme_bw(base_size=25) +
+    scale_color_manual(values=cols4) +
+    scale_x_continuous(expand=expansion(add=0.01, mult=0.1)) +
+    theme(strip.background=element_blank(),
+          panel.grid=element_blank()) +
+    ylab("") +
+    xlab("Difference from overall prevalence") +
+    geom_vline(xintercept=0, color="gray", linetype="dashed") +
+    facet_wrap(~confounder, scales="free") +
+    guides(color=guide_legend(title="",
+                              override.aes=list(size=2)))
+##leg <- cowplot::get_legend(all)
+##all2 <- all + guides(color="none")
+center <- d %>%
+    filter(confounder=="Center") %>%
+    mutate(variable=fct_rev(variable)) %>%
+    ggplot(aes(x=`50%`, variable, group=cancer)) +
+    geom_errorbarh(aes(xmin=`2.5%`, xmax=`97.5%`, color=cancer),
+                   position=position_dodge(width=0.5),
+                   height=0.15) +
+    geom_point(shape=21, position=position_dodge(width=0.5),
+               aes(color=cancer)) +
+    theme_bw(base_size=15) +
+    scale_color_manual(values=cols2) +
+    theme(strip.background=element_blank(),
+          panel.grid=element_blank()) +
+    ylab("") +
+    xlab("Difference from overall prevalence") +
+    geom_vline(xintercept=0, color="gray", linetype="dashed") +
+    guides(color="none")
+```
+
+
+
+```{r fig2, fig.width=18, fig.height=20, dev=c("png", "pdf")}
+A <- ggplotGrob(fig2a)
+gl <- list(A,
+           ggplotGrob(all))
+vp <- viewport(width=unit(0.98, "npc"),
+               height=unit(0.98, "npc"))
+pushViewport(vp)
+grid.arrange(grobs=gl,
+             ##width=c(1, 1, 1, 0.2),
+             heights=c(3, 1),
+             newpage=FALSE)
+upViewport()
+cex <- 2.8
+x1 <- unit(rep(0.015, 4), "npc")
+y1 <- unit(seq(0.98, 0.33, length.out=4), "npc")
+y1[4] <- unit(0.25, "npc")
+x2 <- unit(rep(0.49, 3), "npc")
+grid.text(LETTERS[seq(1, 9, 2)],
+          x=x1, y=y1,
+          gp=gpar(cex=cex))
+grid.text(LETTERS[seq(2, 6, 2)],
+          x=x2, y=y1[1:3],
+          gp=gpar(cex=cex))
+grid.text("H", x=unit(0.33, "npc"), y=y1[4],
+          gp=gpar(cex=cex))
+grid.text("I", x=unit(0.63, "npc"), y=y1[4],
+          gp=gpar(cex=cex))
+```

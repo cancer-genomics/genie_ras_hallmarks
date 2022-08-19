@@ -1,0 +1,69 @@
+---
+title: "Genomic Landscapes and Hallmarks of Mutant RAS in Human Cancers"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+
+# Figures
+
+- Figure 1: [[code](../analysis/fig1.Rmd) | [pdf](figure/fig1.Rmd/fig1-1.pdf) ]
+
+- Figure 2: [[code](../analysis/fig2.Rmd) | [pdf](figure/fig2.Rmd/fig2-1.pdf) ]
+
+- Figure 3: [[code](../analysis/fig3.Rmd) | [pdf](figure/fig3.Rmd/fig3-1.pdf) ]
+
+- Figure 4: [[code](../analysis/fig4.Rmd) | [pdf](figure/fig4.Rmd/fig4-1.pdf) ]
+
+- Figure 5: [[code](../analysis/fig5.Rmd) | [pdf](figure/fig5.Rmd/fig5-1.pdf) ]
+
+- Figure 6: [[code](../analysis/fig6_cd.Rmd) | [pdf](figure/fig6_cd.Rmd/fig6-1.pdf) ]
+
+- Figure 7: [[code](../analysis/fig7.Rmd) | [pdf](figure/fig7.Rmd/fig7-1.pdf) ]
+
+
+# Supplemental Figures
+
+- Supplementary Fig S1: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+
+- Supplementary Fig S2: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+
+- Supplementary Fig S3: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+
+- Supplementary Fig S4: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+
+- Supplementary Fig S5: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+
+- Supplementary Fig S6: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+
+- Supplementary Fig S7: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+
+- Supplementary Fig S8: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+
+- Supplementary Fig S9: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+
+- Supplementary Fig S10: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+
+- Supplementary Fig S11: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+
+- Supplementary Fig S12: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+
+- Supplementary Fig S13: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+
+- Supplementary Fig S14: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+
+- Supplementary Fig S15: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+
+- Supplementary Fig S16: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+
+- Supplementary Fig S17: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+
+- Supplementary Fig S18: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+
+- Supplementary Fig S19: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+
+- Supplementary Fig S20: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]

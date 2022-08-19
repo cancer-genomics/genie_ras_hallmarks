@@ -1,0 +1,50 @@
+---
+title: "Figure S1"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+```{r packages, message=FALSE, echo=FALSE}
+library(here)
+library(tidyverse)
+library(ggplot2)
+```
+
+```{r data}
+combined <-  here("public", "table",
+                  "cohort.Rmd",
+                  "cohort.csv") %>%
+    read_csv(show_col_types=FALSE)
+```
+
+
+```{r fig_s1, fig.height=15, fig.width=16, dev=c("png", "pdf")}
+capitalize <- Hmisc::capitalize
+combined %>%
+    mutate(cancer=capitalize(cancer),
+           cancer=factor(cancer),
+           cancer=fct_rev(cancer)) %>%
+    mutate(cancer = recode(cancer, 
+                           "T-lymphoblastic leukemia/lymphoma" = "T-LL/Lymphoma", 
+                           "B-lymphoblastic leukemia/lymphoma" =  "B-LL leukemia/lymphoma",
+                           "Myelodysplastic/myeloproliferative syndromes" = "MDS/MPN"))%>%
+    mutate(study_design=case_when(study_design=="Matched\nnormal"~"Matched N",
+                                  TRUE~study_design)) %>%
+    ggplot(aes(center, cancer)) +
+    geom_point(aes(size=n)) +
+    theme_bw(base_size=15) +
+    theme(panel.grid=element_blank(),
+          axis.text.x=element_text(angle=45, hjust=1, size=17),
+          strip.background=element_blank(),
+          strip.text=element_text(size=25),
+          legend.position="bottom") +
+    ylab("") +
+    xlab("Center") +
+    guides(size=guide_legend(title="Number of patients")) +
+    facet_grid(~study_design, scales="free_x", space="free_x") +
+    xlab("")
+```

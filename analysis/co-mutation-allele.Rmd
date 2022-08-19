@@ -1,0 +1,88 @@
+---
+title: "Co-mutation analysis for RAS mutant alleles"
+site: workflowr::wflow_site
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  workflowr::wflow_html:
+    code_folding: hide
+    toc: true
+    toc_depth: 3
+    toc_float: true
+editor_options:
+  chunk_output_type: console
+---
+
+```{r caching, echo=FALSE}
+knitr::opts_chunk$set(autodep = TRUE)
+```
+
+```{r packages, message=FALSE, warning=FALSE}
+library(devtools)
+library(magrittr)
+library(tidyverse)
+library(genie.6.1)
+library(kableExtra)
+library(scales)
+# library(ggthemes)
+library(RColorBrewer)
+library(here)
+library(contingency.table)
+data(mutation_ct, package="contingency.table")
+results <- here("output", "co-mutation", "summarize_allele_models.R",
+                "combined.rds") %>%
+    readRDS()
+```
+
+
+# csv files
+
+```{r tables, results="hide", echo=FALSE}
+cols <- c(10:21, 23, 30:32, 34:35)
+multicancer2 <- results %>%
+    filter(cancer_group=="multi") %>%
+    unnest(data) %>%
+    ungroup() %>%
+    mutate(across(all_of(cols), round, 3)) %>%
+    group_by(alteration_group)
+mc.list <- group_split(multicancer2)
+
+singlecancer <- results %>%
+    filter(cancer_group=="single") %>%
+    unnest(data) %>%
+    ungroup() %>%
+    mutate(across(all_of(cols), round, 3)) %>%
+    group_by(alteration_group, confounder)
+tab.list <- singlecancer %>%
+    group_split()
+clean_name <- function(x){
+    x <- tolower(x) %>%
+        str_replace_all(" ", "_")
+    x
+}
+grps.mc <- multicancer2 %>%
+    group_keys() %>%
+    mutate(altgroup=clean_name(alteration_group),
+           fname=paste0(altgroup, ".csv"))
+
+
+
+
+publicdir <- here("public", "table", "co_mutation_allele.Rmd")
+
+
+
+fs::dir_create(publicdir)
+fnames.mc <- here(publicdir, grps.mc$fname)
+mc.list %>%
+    map2(fnames.mc, write_csv)
+
+grps.sc <- singlecancer %>%
+    group_keys() %>%
+    mutate(altgroup=clean_name(alteration_group),
+           confound=clean_name(confounder)) %>%
+    unite(fname, c(altgroup, confound), sep="_") %>%
+    mutate(fname=paste0(fname, ".csv"))
+fnames <- here(publicdir, grps.sc$fname)
+tab.list %>%
+    map2(fnames, write_csv)
+```

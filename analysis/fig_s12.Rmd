@@ -1,0 +1,225 @@
+---
+title: "Figure S12: "
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+
+```{r caching, echo=FALSE}
+knitr::opts_chunk$set(autodep = TRUE)
+```
+
+
+
+```{r packages, message=FALSE, warning=FALSE}
+library(magrittr)
+library(grid)
+library(gridExtra)
+library(here)
+library(tidyverse)
+library(RColorBrewer)
+library(ggnewscale)
+library(rasfuns)
+```
+
+Curated by hand from the draft of the supplemental figure.
+
+```{r panels}
+## RAS allele factor levels
+panels <- tibble(panel=LETTERS[1:9],
+                 cancer.abbr=c(rep("NSCLC", 6), rep("CRC", 3)),
+                 cancer=c(rep("non-small cell lung cancer", 6),
+                          rep("colorectal cancer", 3)),
+                 gene=c("AMER1", "EPHA5", "MGA",
+                        "MAX", "TP53", "NKX2-1",
+                        "APC", "KMT2D", "BRCA1")) %>%
+    mutate(inactivating = ifelse(gene %in% c("MGA", "APC"), TRUE, FALSE)) %>%
+    mutate(gene=ifelse(inactivating, paste("inactivating", gene), gene)) %>%
+    unite(uid, c(cancer.abbr, gene), sep="~", remove=FALSE)
+ras_alleles <- expand.grid(ras=c("KRAS_G12A",
+                                 "KRAS_G12C",
+                                 "KRAS_G12D",
+                                 "KRAS_G12V",
+                                 "KRAS_G13D"),
+                           cancer.abbr=c("NSCLC", "CRC"),
+                           gene=panels$gene) %>%
+    as_tibble() %>%
+    ## G13D is only plotted for CRC
+    filter(!(ras=="KRAS_G13D" & cancer.abbr=="NSCLC" )) %>%
+    left_join(panels, by=c("gene", "cancer.abbr")) %>%
+    filter(!is.na(panel))
+ras_levels <- levels(ras_alleles$ras) %>%
+    str_replace_all("_", " ") %>%
+    rev()
+```
+
+
+# Co-occurrence with KRAS G12 alleles
+
+Caption says NSCLC and CRC, but not sure if that is the case
+
+```{r data, message=FALSE, warning=FALSE}
+comut.dir <- here("public", "table", "co_mutation_allele.Rmd")
+age <- read_csv(file.path(comut.dir, "any_mutation_agecat.csv"))
+race <- read_csv(file.path(comut.dir, "any_mutation_race.csv"))
+sex <- read_csv(file.path(comut.dir, "any_mutation_sex.csv"))
+multi <- read_csv(file.path(comut.dir, "any_mutation.csv"))
+sample_type <- read_csv(file.path(comut.dir,
+                                  "any_mutation_sample_type.csv"))
+age.inact <- read_csv(file.path(comut.dir,
+                                "inactivating_mutation_agecat.csv"))
+race.inact <- read_csv(file.path(comut.dir,
+                                 "inactivating_mutation_race.csv"))
+sex.inact <- read_csv(file.path(comut.dir,
+                                "inactivating_mutation_sex.csv"))
+multi.inact <- read_csv(file.path(comut.dir,
+                                  "inactivating_mutation.csv"))
+sample_type.inact <-
+    read_csv(file.path(comut.dir,
+                       "inactivating_mutation_sample_type.csv"))
+genes <- c("AMER1", "EPHA5", "MAX",
+           "TP53", "NKX2-1", "KMT2D",
+           "BRCA1")
+comut.df <- rbind(subset(age, ! variable == "overall") %>%
+                  mutate(variable = paste0(variable, "yrs")),
+                  subset(race, ! variable == "overall"),
+                  subset(sex, ! variable == "overall") ,
+                  subset(sample_type, ! variable == "overall") ,
+                  multi %>% mutate(variable = 'multi-cancer')) %>%
+    subset(., !variable %in% c( "Unknown", "Other"))  %>%
+    mutate(ras = gsub("_1", "_G1", ras))%>%
+    mutate(ras = gsub("_6", "_Q6", ras))%>%
+    mutate(comut_type =
+               ifelse(`50%`> 0,
+                      "co-occurence" ,
+                      "mutual-exclusivity"))%>%
+    mutate(comut_type =factor(comut_type,
+                              levels = unique(comut_type)))
+## Dropping KRAS G12S as it does shows NA after threshold
+comut.df <- comut.df %>%
+    filter(!ras == "KRAS_G12S")
+##inactivating
+inact.df <- rbind(subset(age.inact, ! variable == "overall") %>%
+                  mutate(variable = paste0(variable, "yrs")),
+                  subset(race.inact, ! variable == "overall"),
+                  subset(sex.inact, ! variable == "overall") ,
+                  subset(sample_type.inact, ! variable == "overall") ,
+                  multi %>% mutate(variable = 'multi-cancer')) %>%
+    filter(!variable %in% c( "Unknown","Other"   ))  %>%
+    mutate(nonras = paste0("inactivating ", nonras))%>%
+    mutate(ras = gsub("_1", "_G1", ras))%>%
+    mutate(ras = gsub("_6", "_Q6", ras))%>%
+    mutate(comut_type = ifelse(`50%`> 0,
+                               "co-occurence" ,
+                               "mutual-exclusivity"))%>%
+    mutate(comut_type =factor(comut_type,
+                              levels = unique(comut_type)) )%>%
+    filter(!ras == "KRAS_G12S")
+```
+
+```{r any_mutation}
+nonras.df <- multi %>%
+    ##filter(p > cutoff_ntest | abs(`50%`) > 6) %>%
+    filter(nonras %in% genes) %>%
+    mutate(ras=str_replace_all(ras, "_1", "_G1"),
+           ras=str_replace_all(ras, "_6", "_Q6")) %>%
+    filter(cancer %in% c("non-small cell lung cancer",
+                         "colorectal cancer"))
+cancerlabs <- here("data", "cancer_labels.csv") %>%
+    read_csv(show_col_types=FALSE) %>%
+    mutate(cancer_label=str_replace_all(cancer_label,
+                                        "Pancreatic", "PAC"))
+comut.df2 <- comut.df %>%
+    left_join(cancerlabs, by="cancer") %>%
+    mutate(cancer=cancer_label) %>%
+    filter(cancer %in% c("NSCLC",
+                         "CRC",
+                         "PAC",
+                         "Melanoma",
+                         "Uterine",
+                         "Thyroid"),
+           ras %in% nonras.df$ras,
+           nonras %in% nonras.df$nonras)
+clevels <- c("agecat", "race", "sex",
+             "sample_type",
+             "none")
+vlevels <- c("<40yrs", "40-50yrs",
+             "50-65yrs", ">65yrs",
+             "Asian", "Black", "White",
+             "Female", "Male",
+             "Primary", "Metastasis", "multi-cancer")
+df.list <- comut.df2 %>%
+    mutate(confounder=factor(confounder, clevels)) %>%
+    mutate(variable=factor(variable, vlevels)) %>%
+    filter(nonras %in% genes) %>%
+    filter(cancer %in% c("NSCLC", "CRC")) %>%
+    filter(ras %in% ras_alleles$ras) %>%
+    mutate(ras=str_replace_all(ras, "_", " "),
+           ras=factor(ras, ras_levels)) %>%
+    group_by(nonras, cancer) %>%
+    nest() %>%
+    ungroup() %>%
+    unite(uid, c(cancer, nonras), sep="~", remove=FALSE)
+```
+
+```{r inactivating}
+inact.genes <- panels %>%
+    filter(inactivating) %>%
+    pull(gene)
+inact.cancers <- panels %>%
+    filter(inactivating) %>%
+    pull(cancer)
+nonras.df.inact <- multi.inact %>%
+    mutate(nonras=paste("inactivating", nonras)) %>%
+    filter(nonras %in% inact.genes,
+           cancer %in% inact.cancers) %>%
+    mutate(ras=str_replace_all(ras, "_1", "_G1"),
+           ras=str_replace_all(ras, "_6", "_Q6")) %>%
+    filter(cancer %in% c("non-small cell lung cancer",
+                         "colorectal cancer"))
+inact.df2 <- inact.df %>%
+    left_join(cancerlabs, by="cancer") %>%
+    mutate(cancer=cancer_label) %>%
+    filter(cancer %in% c("NSCLC",
+                         "CRC"),
+           ras %in% nonras.df.inact$ras,
+           nonras %in% nonras.df.inact$nonras)
+inact.list <- inact.df2 %>%
+    mutate(confounder=factor(confounder, clevels)) %>%
+    mutate(variable=factor(variable, vlevels)) %>%
+    filter(ras %in% ras_alleles$ras) %>%
+    mutate(ras=str_replace_all(ras, "_", " "),
+           ras=factor(ras, ras_levels)) %>%
+    group_by(nonras, cancer) %>%
+    nest() %>%
+    ungroup() %>%
+    unite(uid, c(cancer, nonras), sep="~", remove=FALSE)
+fig.data <- bind_rows(df.list, inact.list) %>%
+    filter(uid %in% panels$uid) %>%
+    mutate(uid=factor(uid, panels$uid)) %>%
+    arrange(uid)
+identical(as.character(fig.data$uid), panels$uid)
+```
+
+```{r grobs}
+## colors for co-occurrence
+co_occur.colors <- c("#ffcccc", "#990000")
+mut_excl.colors <- c( "#cce5ff", "#004c99")
+ggplots <- fig.data %>%
+    select(-uid) %>%
+    pmap(gheatmap, co_occur.colors, mut_excl.colors)
+gl <- map(ggplots, ggplotGrob)
+```
+
+
+```{r fig_s12, fig.width=20, fig.height=12, dev=c("png", "pdf")}
+grid.arrange(grobs=gl,
+             widths=rep(1, 3),
+             heights=rep(1, 3),
+             layout_matrix=matrix(1:9, 3, 3,
+                                  byrow=TRUE))
+```

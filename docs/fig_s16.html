@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Figure S16: Gene set enrichment comparing KRAS/TP53 co-occurrence with KRAS alone</title>
+
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/main/img/reproducible.png">
+<!-- Add a small amount of space between sections. -->
+<style type="text/css">
+div.section {
+  padding-top: 12px;
+}
+</style>
+
+
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">genie_ras_hallmarks</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="license.html">License</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Figure S16: Gene set enrichment comparing
+KRAS/TP53 co-occurrence with KRAS alone</h1>
+
+</div>
+
+
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span>
+</button>
+</p>
+<div id="workflowr-report" class="collapse">
+<ul class="nav nav-tabs">
+<li class="active">
+<a data-toggle="tab" href="#summary">Summary</a>
+</li>
+<li>
+<a data-toggle="tab" href="#checks"> Checks <span
+class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> </a>
+</li>
+<li>
+<a data-toggle="tab" href="#versions">Past versions</a>
+</li>
+</ul>
+<div class="tab-content">
+<div id="summary" class="tab-pane fade in active">
+<p>
+<strong>Last updated:</strong> 2022-08-18
+</p>
+<p>
+<strong>Checks:</strong> <span
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> 1
+</p>
+<p>
+<strong>Knit directory:</strong> <code>genie/</code> <span
+class="glyphicon glyphicon-question-sign" aria-hidden="true"
+title="This is the local directory in which the code in this file was executed.">
+</span>
+</p>
+<p>
+This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a>
+analysis was created with <a
+  href="https://github.com/workflowr/workflowr">workflowr</a> (version
+1.7.0). The <em>Checks</em> tab describes the reproducibility checks
+that were applied when the results were created. The <em>Past
+versions</em> tab lists the development history.
+</p>
+<hr>
+</div>
+<div id="checks" class="tab-pane fade">
+<div id="workflowr-checks" class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
+changes </a>
+</p>
+</div>
+<div id="strongRMarkdownfilestronguncommittedchanges"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>The R Markdown is untracked by Git. To know which version of the R
+Markdown file created these results, you’ll want to first commit it to
+the Git repo. If you’re still working on the analysis, you can ignore
+this warning. When you’re finished, you can run
+<code>wflow_publish</code> to commit the R Markdown file and build the
+HTML.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+</p>
+</div>
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the
+global environment can affect the analysis in your R Markdown file in
+unknown ways. For reproduciblity it’s best to always run the code in an
+empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20220803code">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Seed:</strong>
+<code>set.seed(20220803)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20220803code"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20220803)</code> was run prior to running
+the code in the R Markdown file. Setting a seed ensures that any results
+that rely on randomness, e.g. subsampling or permutations, are
+reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Session information:</strong>
+recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package
+versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be
+confident that you successfully produced the results during this
+run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr
+project makes it easier to run your code on other machines.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrong74b2b93">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Repository version:</strong> 74b2b93
+</a>
+</p>
+</div>
+<div id="strongRepositoryversionstrong74b2b93"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+Great! You are using Git for version control. Tracking code development
+and connecting the code version to the results is critical for
+reproducibility.
+</p>
+<p>
+The results in this page were generated with repository version 74b2b93.
+See the <em>Past versions</em> tab to see a history of the changes made
+to the R Markdown and HTML files.
+</p>
+<p>
+Note that you need to be careful to ensure that all relevant files for
+the analysis have been committed to Git prior to generating the results
+(you can use <code>wflow_publish</code> or
+<code>wflow_git_commit</code>). workflowr only checks the R Markdown
+file, but you know if there are other scripts or data files that it
+depends on. Below is the status of the Git repository when the results
+were generated:
+</p>
+<pre><code>
+Ignored files:
+    Ignored:    .Rhistory
+
+Untracked files:
+    Untracked:  analysis/co-mutation.Rmd
+    Untracked:  analysis/fig_s1.Rmd
+    Untracked:  analysis/fig_s10.Rmd
+    Untracked:  analysis/fig_s11.Rmd
+    Untracked:  analysis/fig_s12.Rmd
+    Untracked:  analysis/fig_s13.Rmd
+    Untracked:  analysis/fig_s14.Rmd
+    Untracked:  analysis/fig_s15.Rmd
+    Untracked:  analysis/fig_s16.Rmd
+    Untracked:  analysis/fig_s17.Rmd
+    Untracked:  analysis/fig_s18.Rmd
+    Untracked:  analysis/fig_s19.Rmd
+    Untracked:  analysis/fig_s2.Rmd
+    Untracked:  analysis/fig_s20.Rmd
+    Untracked:  analysis/fig_s3.Rmd
+    Untracked:  analysis/fig_s4.Rmd
+    Untracked:  analysis/fig_s5.Rmd
+    Untracked:  analysis/fig_s6.Rmd
+    Untracked:  analysis/fig_s7.Rmd
+    Untracked:  analysis/fig_s8.Rmd
+    Untracked:  analysis/fig_s9.Rmd
+    Untracked:  analysis/methods_comparison.Rmd
+    Untracked:  analysis/potential_confounding.Rmd
+    Untracked:  code/TCGA-COAD/
+    Untracked:  code/TCGA-LUAD-trips/
+    Untracked:  code/TCGA-LUAD/
+    Untracked:  code/TCGA-PAAD/
+    Untracked:  code/co-mutation/
+    Untracked:  code/misc/
+    Untracked:  code/sets/
+    Untracked:  code/stan/
+    Untracked:  output/co-mutation/
+    Untracked:  output/gsea_data_wrangling.Rmd/
+    Untracked:  output/methods-comparison/
+    Untracked:  output/mutsig_s13/
+    Untracked:  output/prevalence/
+    Untracked:  public/
+
+Unstaged changes:
+    Modified:   .Rprofile
+    Modified:   .gitattributes
+    Modified:   .gitignore
+    Modified:   README.md
+    Modified:   _workflowr.yml
+    Modified:   analysis/_site.yml
+    Modified:   analysis/about.Rmd
+    Modified:   analysis/fig7.Rmd
+    Modified:   analysis/index.Rmd
+    Modified:   analysis/license.Rmd
+    Modified:   code/README.md
+    Modified:   data/README.md
+    Modified:   genie_ras_hallmarks.Rproj
+    Modified:   output/README.md
+
+</code></pre>
+<p>
+Note that any generated files, e.g. HTML, png, CSS, etc., are not
+included in this status report because it is ok for generated content to
+have uncommitted changes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div id="versions" class="tab-pane fade">
+<p>
+There are no past versions. Publish this analysis with
+<code>wflow_publish()</code> to start tracking its development.
+</p>
+<hr>
+</div>
+</div>
+</div>
+<pre class="r"><code>library(fgsea)
+library(tidyverse)
+library(dplyr)
+library(here)
+library(grid)
+library(gridExtra)
+library(rasfuns)</code></pre>
+<pre><code>Warning: replacing previous import &#39;Biostrings::collapse&#39; by &#39;dplyr::collapse&#39;
+when loading &#39;rasfuns&#39;</code></pre>
+<pre><code>Warning: replacing previous import &#39;Biostrings::union&#39; by &#39;dplyr::union&#39; when
+loading &#39;rasfuns&#39;</code></pre>
+<pre><code>Warning: replacing previous import &#39;Biostrings::intersect&#39; by &#39;dplyr::intersect&#39;
+when loading &#39;rasfuns&#39;</code></pre>
+<pre><code>Warning: replacing previous import &#39;Biostrings::setdiff&#39; by &#39;dplyr::setdiff&#39;
+when loading &#39;rasfuns&#39;</code></pre>
+<pre><code>Warning: replacing previous import &#39;Biostrings::setequal&#39; by &#39;dplyr::setequal&#39;
+when loading &#39;rasfuns&#39;</code></pre>
+<pre class="r"><code>FIG &lt;- 16
+dat.list &lt;- here(&quot;output&quot;, &quot;gsea_data_wrangling.Rmd&quot;,
+                 &quot;gsea_results.rds&quot;) %&gt;%
+    readRDS()
+dat &lt;- dat.list %&gt;%
+    filter(figure==FIG)
+kras &lt;- dat$kras[[1]]
+comutant &lt;- dat$comutant[[1]]
+stats &lt;- dat$stats[[1]]
+signif &lt;- dat$signif[[1]]
+cancer &lt;- dat$cancer[[1]]
+de &lt;- dat$de[[1]]
+plot_titles &lt;- paste0(kras, &quot; / &quot;, comutant, &quot; co-mutant&quot;) %&gt;%
+    paste0(&quot; vs &quot;, kras, &quot; mutant &quot;, cancer)</code></pre>
+<pre class="r"><code>stats2 &lt;- map(stats, relevel_gsea_pathway)
+rank.gg &lt;- map(stats2, gg_qq)
+##leg &lt;- cowplot::get_legend(rank.gg[[2]])
+##rank.gg[[6]]  &lt;- rank.gg[[6]] + xlab(&quot;&quot;)
+##fig &lt;- rank.gg[[5]] +
+##    guides(color=guide_legend(title=&quot;&quot;,
+##                              override.aes=list(size=5)))
+##leg &lt;- cowplot::get_legend(fig)
+rank.gg2 &lt;- plot_titles %&gt;%
+    str_wrap(width=75) %&gt;%
+    map2(rank.gg, add_qq_title)</code></pre>
+<pre class="r"><code>grobs &lt;- map(rank.gg2, ggplotGrob)
+h &lt;- grobs[[1]]$heights
+w &lt;- grobs[[1]]$widths
+for(i in seq_along(grobs)){
+    grobs[[i]]$heights &lt;- h
+    grobs[[i]]$widths &lt;- w
+}
+grobs[[6]] &lt;- nullGrob()
+grid.newpage()
+vp &lt;- viewport(x=unit(0.5, &quot;npc&quot;),
+               y=unit(0.99, &quot;npc&quot;),
+               width=unit(0.98, &quot;npc&quot;),
+               height=unit(0.95, &quot;npc&quot;),
+               just=c(&quot;center&quot;, &quot;top&quot;))
+pushViewport(vp)
+grid.arrange(grobs=grobs,
+             widths=c(1, 1),
+             heights=c(1, 0.1, 1, 0.1, 1),
+             layout_matrix=rbind(c(1, 2),
+                                 6,
+                                 c(3, 4),
+                                 6,
+                                 c(5, 6)),
+             newpage=FALSE)
+upViewport()
+vp.leg &lt;- viewport(x=unit(0.6, &quot;npc&quot;),
+                   y=unit(0.3, &quot;npc&quot;),
+                   width=unit(0.7, &quot;npc&quot;),
+                   height=unit(0.5, &quot;npc&quot;),
+                   just=&quot;center&quot;)
+pushViewport(vp.leg)
+##grid.draw(leg)
+upViewport()
+x1 &lt;- unit(rep(0.015, 3), &quot;npc&quot;)
+x2 &lt;- unit(rep(0.51, 3), &quot;npc&quot;)
+y &lt;- unit(c(0.99, 0.67, 0.34), &quot;npc&quot;)
+grid.text(LETTERS[seq(1, 5, 2)],
+          x=x1, y=y,
+          gp=gpar(cex=3.5))
+grid.text(LETTERS[seq(2, 5, 2)],
+          x=x2, y=y[1:2],
+          gp=gpar(cex=3.5))</code></pre>
+<p><img src="figure/fig_s16.Rmd/fig_s16-1.png" width="4320" style="display: block; margin: auto;" /></p>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>R version 4.2.1 (2022-06-23)
+Platform: x86_64-apple-darwin21.5.0 (64-bit)
+Running under: macOS Monterey 12.5.1
+
+Matrix products: default
+BLAS:   /usr/local/Cellar/openblas/0.3.20/lib/libopenblasp-r0.3.20.dylib
+LAPACK: /usr/local/Cellar/r/4.2.1/lib/R/lib/libRlapack.dylib
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] grid      stats     graphics  grDevices utils     datasets  methods  
+[8] base     
+
+other attached packages:
+ [1] rasfuns_1.1.5   gridExtra_2.3   here_1.0.1      forcats_0.5.1  
+ [5] stringr_1.4.0   dplyr_1.0.9     purrr_0.3.4     readr_2.1.2    
+ [9] tidyr_1.2.0     tibble_3.1.8    ggplot2_3.3.6   tidyverse_1.3.2
+[13] fgsea_1.22.0    workflowr_1.7.0
+
+loaded via a namespace (and not attached):
+ [1] matrixStats_0.62.0     bitops_1.0-7           fs_1.5.2              
+ [4] lubridate_1.8.0        httr_1.4.3             rprojroot_2.0.3       
+ [7] GenomeInfoDb_1.32.3    tools_4.2.1            backports_1.4.1       
+[10] bslib_0.4.0            utf8_1.2.2             R6_2.5.1              
+[13] BiocGenerics_0.42.0    DBI_1.1.3              colorspace_2.0-3      
+[16] withr_2.5.0            tidyselect_1.1.2       processx_3.7.0        
+[19] compiler_4.2.1         git2r_0.30.1           cli_3.3.0             
+[22] rvest_1.0.2            xml2_1.3.3             labeling_0.4.2        
+[25] sass_0.4.2             scales_1.2.0           callr_3.7.1           
+[28] digest_0.6.29          rmarkdown_2.14         XVector_0.36.0        
+[31] pkgconfig_2.0.3        htmltools_0.5.3        highr_0.9             
+[34] dbplyr_2.2.1           fastmap_1.1.0          rlang_1.0.4           
+[37] readxl_1.4.0           rstudioapi_0.13        farver_2.1.1          
+[40] jquerylib_0.1.4        generics_0.1.3         jsonlite_1.8.0        
+[43] BiocParallel_1.30.3    googlesheets4_1.0.1    RCurl_1.98-1.8        
+[46] magrittr_2.0.3         GenomeInfoDbData_1.2.8 Matrix_1.4-1          
+[49] S4Vectors_0.34.0       Rcpp_1.0.9             munsell_0.5.0         
+[52] fansi_1.0.3            lifecycle_1.0.1        stringi_1.7.8         
+[55] whisker_0.4            yaml_2.3.5             zlibbioc_1.42.0       
+[58] ggrepel_0.9.1          parallel_4.2.1         promises_1.2.0.1      
+[61] crayon_1.5.1           lattice_0.20-45        Biostrings_2.64.0     
+[64] haven_2.5.0            hms_1.1.1              knitr_1.39            
+[67] ps_1.7.1               pillar_1.8.0           codetools_0.2-18      
+[70] stats4_4.2.1           fastmatch_1.1-3        reprex_2.0.1          
+[73] glue_1.6.2             evaluate_0.16          getPass_0.2-2         
+[76] data.table_1.14.2      modelr_0.1.8           EnhancedVolcano_1.14.0
+[79] vctrs_0.4.1            tzdb_0.3.0             httpuv_1.6.5          
+[82] cellranger_1.1.0       gtable_0.3.0           assertthat_0.2.1      
+[85] cachem_1.0.6           xfun_0.32              broom_1.0.0           
+[88] later_1.3.0            googledrive_2.0.0      gargle_1.2.0          
+[91] IRanges_2.30.0         ellipsis_0.3.2        </code></pre>
+</div>
+
+
+<!-- Adjust MathJax settings so that all math formulae are shown using
+TeX fonts only; see
+https://docs.mathjax.org/en/latest/web/configuration.html. This will make
+the presentation more consistent at the cost of the webpage sometimes
+taking slightly longer to load. Note that this only works because the
+footer is added to webpages before the MathJax javascript. -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

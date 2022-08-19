@@ -1,0 +1,136 @@
+---
+title: "Figure S3"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+```{r packages, message=FALSE, warning=FALSE}
+library(grid)
+library(gridExtra)
+library(magrittr)
+library(tidyverse)
+library(purrr)
+library(ggplot2)
+library(here)
+```
+
+```{r nras}
+rename <- dplyr::rename
+ras_ <- "NRAS"
+dat <- here("public", "table",
+            "ras.Rmd", "multicancer.csv") %>%
+    read_csv(show_col_types=FALSE) %>%
+    mutate(Y=prettyNum(y, big.mark=","),
+           N=prettyNum(n, big.mark=",")) %>%
+    unite(nlabel, c(Y, N), sep="/", remove=FALSE)
+Xlimits <- c(-0.01, 0.24, 0.05)
+```
+
+```{r data, results="hide"}
+dat2 <- dat %>%
+    filter(hugo_symbol %in% ras_) %>%
+    filter(n > 50) %>%
+    mutate(cancer=ifelse(cancer=="myelodysplastic/myeloproliferative syndromes",
+                         "myelodys. syndromes", cancer)) %>%
+    filter(codon %in% c("Codon 12", "Codon 13", "Codon 61"))
+cancer_order <- filter(dat2, ras==paste0(ras_, "_12")) %>%
+    select(cancer, median) %>%
+    arrange(median) %>%
+    mutate(cancerf=factor(cancer, cancer),
+           index=as.integer(cancerf),
+           label=levels(cancerf)) %>%
+    select(-median)
+dat2  <- dat2 %>%
+    left_join(cancer_order, by="cancer") %>%
+    rename("2.5%"=q1,
+           "97.5%"=q2)
+ylabel.size <- 3
+ytext.size <- 12
+point.size <- c(1.5, 1.5)
+```
+
+```{r grobs}
+S2 <- dat2 %>%
+    mutate(codon=paste(ras_, codon)) %>%
+    filter(n > 100) %>%
+    ggplot(aes(median, cancerf)) +
+    geom_errorbarh(height=0.2,
+                   aes(xmin=`2.5%`, xmax=`97.5%`)) +
+    geom_point(aes(x=y/n), color="gray50",
+               fill="gray70",
+               size=point.size[1], shape=21) +
+    geom_point(color="steelblue", shape=21,
+               fill="white", size=point.size[2]) +
+    theme_bw(base_size=24) +
+    scale_x_continuous(expand=c(0, 0),
+                       limits=c(Xlimits[1], Xlimits[2]),
+                       breaks=seq(0, Xlimits[2], Xlimits[3])) +
+    theme(axis.text.y=element_text(size=16,
+                                   lineheight=0.6),
+          axis.text.x=element_text(size=14),
+          panel.grid.minor.y=element_blank(),
+          strip.background=element_blank(),
+          strip.text=element_text(size=23),
+          strip.text.y=element_blank()) +
+    ylab("") +
+    xlab("Prevalence") +
+    facet_wrap(~codon, ncol=3)
+N <- dat2 %>%
+    mutate(codon="all") %>%
+    filter(n > 100) %>%
+    ggplot(aes(cancerf, n)) +
+    geom_segment(aes(y=0, yend=n, xend=cancerf),
+                 color="gray") +
+    geom_point(pch=21, size=1, fill="white") +
+    coord_flip() +
+    theme_bw(base_size=24) +
+    scale_y_continuous(expand=expansion(add=0, mult=c(0, 0.1))) +
+    theme(panel.grid=element_blank(),
+          axis.text.x=element_text(size=14),
+          axis.ticks.y=element_blank(),
+          axis.text.y=element_blank(),
+          strip.background=element_blank(),
+          strip.text.x=element_blank(),
+          strip.text=element_text(size=19),
+          strip.text.y=element_text(angle=0, size=19, hjust=0)) +
+    xlab("") +
+    ylab("Number patients") +
+    facet_wrap(~codon)
+S2g <- ggplotGrob(S2)
+Ng <- ggplotGrob(N)
+Ng$heights <- S2g$heights
+```
+
+```{r hras}
+nras.grob <- S2g
+nras.n.grob <- Ng
+ras_ <- "HRAS"
+Xlimits <- c(-0.01, 0.09, 0.02)
+<<data>>
+<<grobs>>
+hras.grob <- S2g
+hras.n.grob <- Ng
+```
+
+```{r fig_s3, fig.width=20, fig.height=20, dev=c("png", "pdf")}
+gl <- list(nras.grob, nras.n.grob,
+           hras.grob, hras.n.grob,
+           nullGrob())
+vp <- viewport(width=unit(0.96, "npc"),
+               height=unit(0.96, "npc"))
+pushViewport(vp)
+grid.arrange(grobs=gl,
+             widths=c(0.7, 0.3),
+             heights=c(1, 0.05, 1),
+             layout_matrix=rbind(1:2, 5, 3:4),
+             newpage=FALSE)
+upViewport()
+grid.text("A", x=unit(0.015, "npc"), y=unit(0.975, "npc"),
+          gp=gpar(cex=3.5))
+grid.text("B", x=unit(0.015, "npc"), y=unit(0.48, "npc"),
+          gp=gpar(cex=3.5))
+```

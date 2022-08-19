@@ -1,0 +1,218 @@
+---
+title: "Fig S11: KRAS-STK11 VAFs"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+```{r packages, message=FALSE, echo=FALSE}
+library(here)
+library(tidyverse)
+library(magrittr)
+library(genie.6.1)
+library(kableExtra)
+#project_version <- read_tsv("VERSION", col_names=FALSE)[[1]]
+data(patient_universe, package="genie.6.1")
+data(mutation_data, package="genie.6.1")
+```
+
+Patient-level data for *KRAS* and *STK11* VAFs.
+
+```{r patient_level}
+universe <- patient_universe %>%
+    filter(is_matched)
+mut <- mutation_data %>%
+    filter(is_matched) ##%>%
+##    filter(isInactivating(.))
+stopifnot(all(mut$sample_id %in% universe$sample_id))
+```
+
+KRAS variants
+
+```{r kras}
+kras <- ras_all %>%
+    as_tibble() %>%
+    mutate(hugo_symbol="KRAS") %>%
+    pivot_longer(cols=!hugo_symbol,
+                 names_to="sample_id",
+                 values_to="mutation") %>%
+    filter(sample_id %in% universe$sample_id) %>%
+    filter(mutation==1) %>%
+    mutate(x=ifelse(is.na(mutation), 0, mutation),
+           x=as.character(x)) %>%
+    left_join(universe, by="sample_id") %>%
+    select(hugo_symbol, sample_id, cancer, x)
+
+codonStart <- rasfuns:::codonStart
+kras <- filter(mut, hugo_symbol=="KRAS") %>%
+    codonStart() %>%
+    filter(codon_start %in% c(12, 13, 61)) %>%
+    select(hugo_symbol, patient_id, sample_id, cancer,
+           codon_start, ends_with("count")) %>%
+    mutate(read_depth=t_alt_count+t_ref_count,
+           vaf=t_alt_count/read_depth)
+```
+
+```{r stk11}
+stk11 <- filter(mut, hugo_symbol=="STK11") %>%
+    select(hugo_symbol, patient_id, sample_id, cancer,
+           ends_with("count")) %>%
+    mutate(read_depth=t_alt_count+t_ref_count,
+           vaf=t_alt_count/read_depth) %>%
+    filter(sample_id %in% kras$sample_id)
+
+
+vafs  <- stk11 %>%
+    select(patient_id, sample_id, cancer, vaf, read_depth) %>%
+    rename(stk11_vaf=vaf,
+           stk11_depth=read_depth) %>%
+    left_join(select(kras, sample_id, vaf, read_depth), by="sample_id") %>%
+    rename(kras_vaf=vaf,
+           kras_depth=read_depth) %>%
+    mutate(read_depth=(stk11_depth + kras_depth)/2)
+
+colors <- here("output", "co-mutation", "summarize_models.R",
+               "colors.rds") %>%
+    readRDS()
+cols <- setNames(colors$color, colors$cancer)
+```
+
+```{r vafs, fig.width=10, fig.height=6, dev=c("png", "pdf")}
+dat <- vafs %>%
+    filter(cancer %in% colors$cancer)
+##lmfit <- lm(stk11_vaf ~ kras_vaf, data=dat)
+##r2 <- summary(lmfit)$r.squared %>%
+##                   round(2)
+##pval <- coef(summary(lmfit))[2, 4]
+##rtext <- expression(r^2)
+dat %>%
+    ggplot(aes(kras_vaf, stk11_vaf)) +
+    geom_abline(intercept=0, slope=1,
+                color="gray",
+                linetype="dashed") +
+    geom_point(aes(fill=cancer,
+                   size=read_depth), pch=21) + ##, alpha=0.75) +
+    theme_bw(base_size=15) +
+    geom_smooth(method="lm", color="black") +
+    xlab("KRAS mutant allele fraction") +
+    ylab("STK11 mutant allele fraction") +
+    theme(panel.grid=element_blank()) +
+    scale_y_log10(limits=c(0.02, 1.00)) +
+    scale_x_log10(limits=c(0.02, 1.00)) +
+    scale_color_manual(values=cols)  +
+    guides(color=guide_legend(title=""),
+           fill=guide_legend(title="", override.aes=list(size=6)))
+```
+
+
+## KRAS and PIK3CA
+
+
+```{r pik3ca}
+pik3ca <- filter(mut, hugo_symbol=="PIK3CA") %>%
+    select(hugo_symbol, patient_id, sample_id, cancer,
+           ends_with("count")) %>%
+    mutate(read_depth=t_alt_count+t_ref_count,
+           vaf=t_alt_count/read_depth) %>%
+    filter(sample_id %in% kras$sample_id)
+
+pik3ca.vafs  <- pik3ca %>%
+    select(patient_id, sample_id, cancer, vaf, read_depth) %>%
+    rename(pik3ca_vaf=vaf,
+           pik3ca_depth=read_depth) %>%
+    left_join(select(kras, sample_id, vaf, read_depth), by="sample_id") %>%
+    rename(kras_vaf=vaf,
+           kras_depth=read_depth) %>%
+    mutate(read_depth=(pik3ca_depth + kras_depth)/2)
+```
+
+```{r pik3ca_comparison, fig.width=14, fig.height=6, dev=c("png", "pdf")}
+tmp <- pik3ca.vafs %>%
+    filter(cancer %in% colors$cancer) %>%
+    mutate(panel="PIK3CA") %>%
+    rename(alt_vaf=pik3ca_vaf)
+dat <- dat %>%
+    mutate(panel="STK11") %>%
+    rename(alt_vaf=stk11_vaf)
+dat2 <- bind_rows(tmp, dat)
+p <- dat2 %>%
+    filter(cancer %in% colors$cancer) %>%
+    ggplot(aes(kras_vaf, alt_vaf)) +
+    geom_abline(intercept=0, slope=1,
+                color="gray",
+                linetype="dashed") +
+    geom_point(aes(fill=cancer,
+                   size=read_depth), pch=21) + ##, alpha=0.75) +
+    theme_bw(base_size=15) +
+    geom_smooth(method="lm", color="black") +
+    xlab("KRAS mutant allele fraction") +
+    ylab("Mutant allele fraction") +
+    theme(panel.grid=element_blank()) +
+    scale_y_log10(limits=c(0.02, 1.00)) +
+    scale_x_log10(limits=c(0.02, 1.00)) +
+    scale_color_manual(values=cols)  +
+    guides(color=guide_legend(title=""),
+           fill=guide_legend(title="",
+                             override.aes=list(size=6))) +
+    facet_wrap(~panel, ncol=2)
+p
+```
+
+Add `r2` using stack overflow suggestion.
+(https://stackoverflow.com/questions/7549694/add-regression-line-equation-and-r2-on-graph)
+
+```{r  addr2, fig.width=14, fig.height=6, dev=c("png", "pdf")}
+lm_eqn <- function(df){
+    df  <- df %>%
+        rename(y=alt_vaf,
+               x=kras_vaf)
+    m <- lm(y ~ x, df)
+    ##r2 <- round(summary(m)$r.squared, 2)
+    ##r2
+    eq <- substitute(italic(KRAS) == a + b %.% italic(STK11)*", "~~italic(r)^2~"="~r2,
+                     list(a = format(unname(coef(m)[1]), digits = 2),
+                          b = format(unname(coef(m)[2]), digits = 2),
+                          r2 = format(summary(m)$r.squared, digits = 3)))
+    as.character(as.expression(eq));
+}
+dat.list <- dat2 %>%
+    group_by(panel) %>%
+    nest()
+r2 <- dat.list$data %>%
+    map_chr(lm_eqn)
+r2.dat <- tibble(r2=r2, panel=dat.list$panel,
+                 x=0.02, y=0.8) %>%
+    mutate(r2=ifelse(panel=="PIK3CA",
+                     str_replace_all(r2, "STK11", "PIK3CA"), r2))
+p + geom_text(data=r2.dat, aes(x=x, y=y, label=r2),
+              parse=TRUE,
+              inherit.aes=FALSE, hjust=0)
+```
+
+```{r  fig_s11, fig.width=14, fig.height=6, dev=c("png", "pdf")}
+lm_eqn <- function(df){
+    df  <- df %>%
+        rename(y=alt_vaf,
+               x=kras_vaf)
+    m <- lm(y ~ x, df)
+    r <- format(round(sqrt(summary(m)$r.squared), 3),
+                digits=2, nsmall=2)
+    label <- paste("R =", r)
+    label
+}
+r <- dat.list$data %>%
+    map_chr(lm_eqn)
+r2.dat <- tibble(rlabel=r,
+                 panel=dat.list$panel,
+                 x=0.02, y=0.8)
+p + geom_text(data=r2.dat,
+              aes(x=x, y=y,
+                  label=rlabel),
+              inherit.aes=FALSE, hjust=0,
+              size=5) +
+    theme(strip.background=element_blank(),
+          strip.text=element_text(size=18))
+```

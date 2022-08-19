@@ -1,0 +1,19 @@
+multicancer_uid,cancer,confounder,hugo_symbol,codon,ras,cancer_group,variable,y,n,mean,median,q1,q2,codon_range
+"colorectal cancer~KRAS~Codon 12, 13, or 61",colorectal cancer,Sex,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,Female,1295,3028,0.426,0.426,0.409,0.444,12-61
+"colorectal cancer~KRAS~Codon 12, 13, or 61",colorectal cancer,Sex,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,Male,1370,3696,0.372,0.372,0.356,0.388,12-61
+"colorectal cancer~KRAS~Codon 12, 13, or 61",colorectal cancer, ,KRAS,"Codon 12, 13, or 61",KRAS_12-61,multi,Multi-cancer,2665,6724,0.396,0.396,0.384,0.408,12-61
+"colorectal cancer~RAS~Codon 12, 13, or 61",colorectal cancer,Sex,RAS,"Codon 12, 13, or 61",RAS_12-61,single,Female,1425,3028,0.469,0.469,0.451,0.487,12-61
+"colorectal cancer~RAS~Codon 12, 13, or 61",colorectal cancer,Sex,RAS,"Codon 12, 13, or 61",RAS_12-61,single,Male,1499,3696,0.407,0.407,0.391,0.423,12-61
+"colorectal cancer~RAS~Codon 12, 13, or 61",colorectal cancer, ,RAS,"Codon 12, 13, or 61",RAS_12-61,multi,Multi-cancer,2924,6724,0.435,0.435,0.423,0.447,12-61
+non-small cell lung cancer~KRAS~Codon 12,non-small cell lung cancer,Sex,KRAS,Codon 12,KRAS_12,single,Female,1562,5722,0.272,0.272,0.261,0.284,12
+non-small cell lung cancer~KRAS~Codon 12,non-small cell lung cancer,Sex,KRAS,Codon 12,KRAS_12,single,Male,973,4406,0.222,0.222,0.21,0.234,12
+non-small cell lung cancer~KRAS~Codon 12,non-small cell lung cancer, ,KRAS,Codon 12,KRAS_12,multi,Multi-cancer,2535,10131,0.25,0.25,0.242,0.259,12
+"non-small cell lung cancer~KRAS~Codon 12, 13, or 61",non-small cell lung cancer,Sex,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,Female,1800,5722,0.314,0.314,0.302,0.326,12-61
+"non-small cell lung cancer~KRAS~Codon 12, 13, or 61",non-small cell lung cancer,Sex,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,Male,1117,4406,0.254,0.254,0.242,0.268,12-61
+"non-small cell lung cancer~KRAS~Codon 12, 13, or 61",non-small cell lung cancer, ,KRAS,"Codon 12, 13, or 61",KRAS_12-61,multi,Multi-cancer,2917,10131,0.288,0.288,0.279,0.297,12-61
+non-small cell lung cancer~RAS~Codon 12,non-small cell lung cancer,Sex,RAS,Codon 12,RAS_12,single,Female,1572,5722,0.274,0.274,0.262,0.286,12
+non-small cell lung cancer~RAS~Codon 12,non-small cell lung cancer,Sex,RAS,Codon 12,RAS_12,single,Male,981,4406,0.224,0.224,0.211,0.236,12
+non-small cell lung cancer~RAS~Codon 12,non-small cell lung cancer, ,RAS,Codon 12,RAS_12,multi,Multi-cancer,2553,10131,0.252,0.252,0.243,0.26,12
+"non-small cell lung cancer~RAS~Codon 12, 13, or 61",non-small cell lung cancer,Sex,RAS,"Codon 12, 13, or 61",RAS_12-61,single,Female,1850,5722,0.323,0.323,0.311,0.335,12-61
+"non-small cell lung cancer~RAS~Codon 12, 13, or 61",non-small cell lung cancer,Sex,RAS,"Codon 12, 13, or 61",RAS_12-61,single,Male,1159,4406,0.264,0.264,0.251,0.277,12-61
+"non-small cell lung cancer~RAS~Codon 12, 13, or 61",non-small cell lung cancer, ,RAS,"Codon 12, 13, or 61",RAS_12-61,multi,Multi-cancer,3009,10131,0.297,0.297,0.288,0.306,12-61

@@ -1,0 +1,401 @@
+---
+title: "Co-mutation analysis for RAS hotspot variants"
+site: workflowr::wflow_site
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  workflowr::wflow_html:
+    code_folding: hide
+    toc: true
+    toc_depth: 3
+    toc_float: true
+editor_options:
+  chunk_output_type: console
+---
+
+```{r caching, echo=FALSE}
+knitr::opts_chunk$set(autodep = TRUE)
+```
+
+```{r packages, message=FALSE, warning=FALSE}
+library(devtools)
+library(magrittr)
+library(tidyverse)
+library(genie.6.1)
+library(kableExtra)
+library(scales)
+library(ggthemes)
+library(RColorBrewer)
+library(here)
+results <- here("output", "co-mutation", "summarize_models.R",
+                "combined.rds") %>%
+    readRDS()
+```
+
+# Model
+
+We assessed the co-occurence of RAS hotspot variants and somatic variant in non-RAS genes at the sample-level.  For patients with multiple samples of a single cancer type, we evaluated whether there was more than one distinct co-mutation pattern.  If a single pattern was identified, we randomly selected one of the samples.  If multiple patterns were found, we selected the sample with the most mutations in the gene pair under evaluation.  For example, for co-mutation analysis of *KRAS* 12C variants and *STK11*, if a patient had two sequenced tumors and one of the tumors had no mutations (no RAS variant or variant or *STK11* variant) while one sample had a mutation in RAS, we selected the sample with the RAS variant.  In the event of a tie (the patterns were distinct and the number of mutations were the same), we randomly selected one sample.  For patients with multiple samples of different cancer types, we randomly selected one of the samples without regard to the number of mutations.  Below, we show the resulting frequencies of co-occurrence for *KRAS* 12C and *STK11*.   The columns correspond to the number of patients without a variant in either gene ('00'), a variant in RAS but not gene *STK11* ('10'), a variant in *STK11* but not *KRAS* ('01'), and a variant in both genes ('11').  The total number of patients for a given cancer type will be less than the total number of patients in GENIE if (1) some patients were sequenced on platforms that do not contain the RAS gene and/or the non-RAS gene and (2) due to the random sampling implemented for patients with multiple cancer types sequenced. 
+
+```{r contingency_example}
+data(mutation_ct, package="contingency.table")
+filter(mutation_ct, category=="overall") %>%
+    unnest(data) %>%
+    filter(nonras=="STK11", ras=="KRAS_12C") %>%
+    kable("html", format.args=list(big.mark=",")) %>%
+    kable_styling(full_width=FALSE)    
+```
+
+
+If variants at KRAS 12C and *STK11* were independent, we could estimate the frequency of their co-occurence as the product of the marginal prevalence:
+
+\begin{align*}
+Pr(KRAS\text{12C}, STK11) = Pr(KRAS \text{12C}) \times Pr(STK11).
+\end{align*}
+
+To allow for departures from independence, we fit a log linear model to this data using an interaction term that measures the association between *KRAS* 12C and *STK11*.  To estimate the association for each cancer type but allow sharing of information between the available cancers in GENIE, we fit a hierarchical log-linear model.  We restrict our analysis to cancers with at least 20 patients sequenced on platforms that included both genes.  Representing the data as a *K*-dimensional array of  2 $\times$ 2 tables (*K* denotes the number of cancers with at least 20 patients), our model for the observed frequency $y$ in row $i$ and column $j$ of cancer $k$ is given by 
+
+\begin{align*}
+y_{ijk} &\sim \text{Poisson}(\theta_{ijk})\\
+\log(\theta_{ijk}) &= \eta_k + \lambda_{ik}^\text{RAS} + \lambda_{jk}^{\text{X}} + \lambda_{ijk}^{\text{RAS, X}}\\
+\eta_k &\sim \text{Normal}(0, 5)\\
+\lambda_{ik}^{\text{RAS}}, \lambda_{jk}^{\text{X}}, \lambda_{ijk}^{\text{RAS, X}} &\sim \text{Normal}(\mu_\beta, \sigma)\\
+\mu_\beta &\sim \text{Normal}(0, 5)\\
+\sigma &\sim \text{Cauchy}(0, 2.5), ~\text{where}
+\end{align*} 
+$\lambda_{ijk}^{\text{RAS}, X}$ is the log odds ratio for an association between RAS and gene $X$  -- non-zero values indicate a departure from independence.  
+
+For volcano plots, we highlight genes with Bonferonni-adjusted p-value less than 0.01 and color code the different cancers.
+
+```{r volcanofig}
+colors <- here("output", "co-mutation", "summarize_models.R",
+               "colors.rds") %>%
+    readRDS()
+colors <- setNames(colors$color, colors$cancer)
+volcanofig <- function(x, colors){
+    dat0 <- x %>%
+        filter(p < cutoff_ntest) 
+    signif <- filter(x, p >= cutoff_ntest | abs(`50%`) > 6)
+    title <- x[1, ] %>%
+        separate(ras, c("hugo_symbol", "codon_range"), sep="_") %>%
+        pull(hugo_symbol)
+    A <- dat0 %>%
+        ggplot(aes(`50%`, p)) +
+        ##geom_vline(xintercept=0, color="gray") +
+        geom_point(color="gray", size=0.7) +
+        theme_bw(base_size=15) +
+        xlab("Log odds ratio") +
+        ylab(expression(-log[10](p))) +
+        geom_point(data=signif,
+                   size=2,
+                   aes(color=cancer)) +
+        geom_text(data=signif,
+                  aes(label=nonras),
+                  nudge_x=0.3,
+                  size=3,
+                  hjust=0,
+                  check_overlap=TRUE) +
+        geom_vline(xintercept=0, color="gray", linetype="dashed") +
+        scale_x_continuous(expand=expansion(mult=0.2)) +
+        scale_color_manual(values=colors) +
+        guides(color=guide_legend(title="", reverse=TRUE,
+                                  override.aes=list(size=3))) +
+        theme(legend.position="bottom",
+              strip.background=element_blank(),
+              panel.grid=element_blank()) +
+        facet_wrap(~codons, ncol=4) +
+        ggtitle(title)
+    A
+}
+```
+
+```{r significance}
+rasg <- c("RAS_12-61", "RAS_12", "RAS_13", "RAS_61")
+krasg <- c("KRAS_12-61", "KRAS_12", "KRAS_13", "KRAS_61")
+hrasg <- c("HRAS_12-61", "HRAS_12", "HRAS_13", "HRAS_61")
+nrasg <- c("NRAS_12-61", "NRAS_12", "NRAS_13", "NRAS_61")
+rlabels <- c("Codons 12, 13, or 61",
+             "Codon 12", "Codon 13", "Codon 61") %>%
+    setNames(rasg)
+nms <- tibble(ras=c(rasg, krasg, hrasg, nrasg),
+              codons=rep(rlabels, 4)) %>%
+    mutate(codons=factor(codons, rlabels))
+```
+
+# Any mutation
+
+Contingency table: matched normal sequencing, >100 Ras, > 100 gene *X* mutations
+
+```{r ras, fig.align='center', fig.width = 12, fig.height = 6, message=FALSE}
+multicancer <- filter(results, cancer_group == "multi") %>%
+    unnest(data) %>%
+    left_join(nms, by="ras") %>%
+    group_by(alteration_group, ras) %>%
+    nest()
+multicancer %>%
+    filter(alteration_group=="Any mutation") %>%
+    filter(ras %in% rasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    volcanofig(colors)
+multicancer %>%
+    filter(alteration_group=="Any mutation") %>%
+    filter(ras %in% krasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    volcanofig(colors)
+multicancer %>%
+    filter(alteration_group=="Any mutation") %>%
+    filter(ras %in% nrasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    volcanofig(colors)
+```
+
+# Inactivating mutations
+
+Contingency table: matched normal sequencing, >50 Ras, >50 gene *X* mutations
+
+```{r inactivating, fig.align='center', fig.width = 12, fig.height = 6, message=FALSE}
+multicancer %>%
+    filter(alteration_group=="Inactivating mutation") %>%
+    filter(ras %in% rasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    volcanofig(colors)
+multicancer %>%
+    filter(alteration_group=="Inactivating mutation") %>%
+    filter(ras %in% krasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    volcanofig(colors)
+multicancer %>%
+    filter(alteration_group=="Inactivating mutation") %>%
+    filter(ras %in% nrasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    volcanofig(colors)
+```
+
+# Deletions
+
+Contingency table: > 50 RAS variants, 50 amplifications
+
+## Deep deletions
+
+```{r deletions, fig.align='center', fig.width = 12, fig.height = 6, message=FALSE}
+multicancer %>%
+    filter(alteration_group=="Deletion") %>%
+    filter(ras %in% rasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    volcanofig(colors)
+multicancer %>%
+    filter(alteration_group=="Deletion") %>%
+    filter(ras %in% krasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    volcanofig(colors)
+multicancer %>%
+    filter(alteration_group=="Deletion") %>%
+    filter(ras %in% nrasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    volcanofig(colors)
+```
+
+## Any deletion
+
+```{r any_deletion, fig.align='center', fig.width = 12, fig.height = 6, message=FALSE}
+multicancer %>%
+    filter(alteration_group=="Any deletion") %>%
+    filter(ras %in% rasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    volcanofig(colors)
+multicancer %>%
+    filter(alteration_group=="Any deletion") %>%
+    filter(ras %in% krasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    volcanofig(colors)
+multicancer %>%
+    filter(alteration_group=="Any deletion") %>%
+    filter(ras %in% nrasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    volcanofig(colors)
+```
+
+
+# Amplifcations
+
+Contingency table: > 50 RAS variants, 50 amplifications
+
+## High copy amplifications
+
+```{r amplifications, fig.align='center', fig.width = 12, fig.height = 6, message=FALSE}
+multicancer %>%
+    filter(alteration_group=="Amplification") %>%
+    filter(ras %in% rasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    volcanofig(colors)
+multicancer %>%
+    filter(alteration_group=="Amplification") %>%
+    filter(ras %in% rasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    filter(abs(`50%`) > 6) %>%
+    as.data.frame()
+multicancer %>%
+    filter(alteration_group=="Amplification") %>%
+    filter(ras %in% krasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    volcanofig(colors)
+multicancer %>%
+    filter(alteration_group=="Amplification") %>%
+    filter(ras %in% nrasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    volcanofig(colors)
+```
+
+## Any copy number gain
+
+```{r any_amplification, fig.align='center', fig.width = 12, fig.height = 6, message=FALSE}
+multicancer %>%
+    filter(alteration_group=="Any amplification") %>%
+    filter(ras %in% rasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    volcanofig(colors)
+multicancer %>%
+    filter(alteration_group=="Any amplification") %>%
+    filter(ras %in% rasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    filter(abs(`50%`) > 6) %>%
+    as.data.frame()
+multicancer %>%
+    filter(alteration_group=="Any amplification") %>%
+    filter(ras %in% krasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    volcanofig(colors)
+multicancer %>%
+    filter(alteration_group=="Any amplification") %>%
+    filter(ras %in% nrasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    volcanofig(colors)
+```
+
+
+
+# Rearrangements
+
+Contingency tables: > 100 Ras, 50 occurrences of a gene involved in a fusion
+
+```{r rearrangement, fig.align='center', fig.width = 12, fig.height = 6, message=FALSE}
+multicancer %>%
+    filter(alteration_group=="Rearrangement") %>%
+    filter(ras %in% rasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    volcanofig(colors)
+multicancer %>%
+    filter(alteration_group=="Rearrangement") %>%
+    filter(ras %in% krasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    volcanofig(colors)
+multicancer %>%
+    filter(alteration_group=="Rearrangement") %>%
+    filter(ras %in% nrasg) %>%
+    ungroup() %>%
+    unnest(data) %>%
+    volcanofig(colors)
+```
+
+```{r reartab}
+multicancer %>%
+    filter(alteration_group=="Rearrangement") %>%
+    unnest(data) %>%
+    ungroup() %>%
+    filter(abs(`50%`) > 6) %>%
+    select(-c(Parameter, sd, mean, se_mean, `5%`, `95%`,
+              n_eff, Rhat, variable, 
+              `25%`, `75%`, is_driver,
+              cutoff_nmodel, cutoff_ntest, z)) %>%
+    mutate(across(c(9:12, 18:20), round, 3)) %>%
+    slice_head() %>%
+    kbl() %>%
+    kable_styling()
+```
+
+# csv files
+
+```{r tables, results="hide", echo=FALSE}
+cols <- c(10:21, 23, 30:32, 34:35)
+multicancer2 <- results %>%
+    filter(cancer_group=="multi") %>%
+    unnest(data) %>%
+    ungroup() %>%
+    mutate(across(all_of(cols), round, 3)) %>%
+    group_by(alteration_group)
+mc.list <- group_split(multicancer2)
+
+singlecancer <- results %>%
+    filter(cancer_group=="single") %>%
+    unnest(data) %>%
+    ungroup() %>%
+    mutate(across(all_of(cols), round, 3)) %>%
+    group_by(alteration_group, confounder) 
+tab.list <- singlecancer %>%
+    group_split()
+clean_name <- function(x){
+    x <- tolower(x) %>%
+        str_replace_all(" ", "_")
+    x
+}
+grps.mc <- multicancer2 %>%
+    group_keys() %>%
+    mutate(altgroup=clean_name(alteration_group),
+           fname=paste0(altgroup, ".csv"))
+publicdir <- here("public", "table", "co-mutation.Rmd")
+fs::dir_create(publicdir)
+fnames.mc <- here(publicdir, grps.mc$fname)
+mc.list %>%
+    map2(fnames.mc, write_csv)
+
+grps.sc <- singlecancer %>%
+    group_keys() %>%
+    mutate(altgroup=clean_name(alteration_group),
+           confound=clean_name(confounder)) %>%
+    unite(fname, c(altgroup, confound), sep="_") %>%
+    mutate(fname=paste0(fname, ".csv"))
+fnames <- here(publicdir, grps.sc$fname)
+tab.list %>%
+    map2(fnames, write_csv)
+```
+
+## Multi-cancer model
+
+Dependency between Ras and alteration *X* is modeled hierarchically across all cancer types.
+
+- Any mutation: [csv](table/co-mutation.Rmd/any_mutation.csv)
+
+- Inactivating mutation: [csv](table/co-mutation.Rmd/inactivating_mutation.csv)
+
+- Deep deletion: [csv](table/co-mutation.Rmd/deletion.csv)
+
+- Any deletion: [csv](table/co-mutation.Rmd/any_deletion.csv)
+
+- High copy amplification: [csv](table/co-mutation.Rmd/amplification.csv)
+
+- Any gain: [csv](table/co-mutation.Rmd/any_amplification.csv)
+
+- Rearrangement: [csv](table/co-mutation.Rmd/rearrangement.csv)
+
+
+

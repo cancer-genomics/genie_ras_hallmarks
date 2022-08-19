@@ -1,0 +1,243 @@
+---
+title: "Patient characteristics associated with RAS prevalence"
+site: workflowr::wflow_site
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  workflowr::wflow_html:
+    code_folding: hide
+    toc: true
+    toc_depth: 3
+    toc_float: true
+editor_options:
+  chunk_output_type: console
+---
+
+
+```{r caching, echo=FALSE}
+knitr::opts_chunk$set(autodep = TRUE)
+```
+
+```{r packages, message=FALSE, warning=FALSE}
+library(IRanges)
+library(here)
+library(magrittr)
+library(tidyverse)
+library(ggplot2)
+library(genie.6.1)
+library(grid)
+library(gridExtra)
+library(kableExtra)
+tabdir <- here("public", "table", "potential_confounding.Rmd")
+fs::dir_create(tabdir)
+library(purrr)
+library(viridis)
+library(hrbrthemes)
+rename <- dplyr::rename
+```
+
+
+# Potential confounding
+
+```{r potential_confounding}
+models <- here("output", "prevalence",
+               "summarize_models.R",
+               "models.rds") %>%
+    readRDS()
+multicancer <- models %>%
+    filter(cancer_group=="multi") %>%
+    unnest("data") %>%
+    mutate(Y=prettyNum(y, big.mark=","),
+           N=prettyNum(n, big.mark=",")) %>%
+    unite(nlabel, c(Y, N), sep="/", remove=FALSE) %>%
+    group_by(hugo_symbol) %>%
+    nest()
+models2 <- models %>%
+    unnest(data) %>%
+    ##filter(ras=="RAS_12-61") %>%
+    group_by(cancer) %>%
+    nest()
+
+focus <- unnest(multicancer, data) %>%
+    filter(y/n > 0.1, n > 100) %>%
+    pull(cancer) %>%
+    unique()
+dat <- models2 %>%
+    filter(cancer %in% focus)
+dat2 <- unnest(dat, data) %>%
+    group_by(cancer, ras) %>%
+    nest()
+```
+
+Since we do not have the full posteriors saved for evaluating differences from the overall, I've extracted specific strata where the 95% credible interval for RAS prevalence does not overlap the 95% interval from the multi-cancer model.
+
+```{r no_overlap}
+no_overlap <- function(cancer, ras, data){
+    overall <- filter(data, cancer_group=="multi")
+    stratified <- filter(data, cancer_group=="single") %>%
+        mutate(ras=ras,
+               cancer=cancer)
+    r.overall <- IRanges(start=round(overall$q1*1000, 0),
+                         end=round(overall$q2*1000, 0))
+    r.stratified <- IRanges(start=round(stratified$q1*1000, 0),
+                            end=round(stratified$q2*1000, 0))
+    is_overlap <- overlapsAny(r.stratified, r.overall)
+    keep <- stratified[ !is_overlap , ]
+}
+results <- dat2 %>%
+    pmap(no_overlap) %>%
+    map_dfr(bind_rows) %>%
+    filter(confounder %in% c("Race", "Sex", "Age")) %>%
+    filter(variable != "NA") %>%
+    select(-cancer_group) %>%
+    select(cancer, ras, hugo_symbol, confounder, variable, y, n, mean,
+           median, q1, q2, codon_range, codon)
+```
+
+For each row in the above table, pull in all available strata for the potential confounding variable.
+
+```{r}
+associations <- results %>%
+    group_by(cancer, hugo_symbol, codon, confounder) %>%
+    nest() %>%
+    unite(uid, c(cancer, hugo_symbol, codon, confounder),
+          sep="~", remove=FALSE)
+strata_with_association <- dat2 %>%
+    unnest(data) %>%
+    group_by(cancer, hugo_symbol, codon, confounder) %>%
+    nest() %>%
+    unite(uid, c(cancer, hugo_symbol, codon, confounder),
+          sep="~", remove=FALSE) %>%
+    filter(uid %in% associations$uid) %>%
+    unite(multicancer_uid, c(cancer, hugo_symbol, codon), sep="~",
+          remove=FALSE)
+associations2  <- strata_with_association %>%
+    unnest("data")
+multicancer  <- dat %>%
+    unnest(data) %>%
+    filter(cancer_group=="multi") %>%
+    group_by(cancer, hugo_symbol, codon) %>%
+    nest() %>%
+    unite(uid, c(cancer, hugo_symbol, codon), remove=FALSE, sep="~") %>%
+    filter(uid %in% strata_with_association$multicancer_uid) %>%
+    unnest(data) %>%
+    ungroup() %>%
+    rename(multicancer_uid=uid)
+
+assoc_x_confounder <- group_by(associations2, confounder) %>%
+    group_split()
+keys <- group_by(associations2, confounder) %>%
+    group_keys()
+age <- assoc_x_confounder[[which(keys=="Age")]] %>%
+    mutate(variable=droplevels(variable)) %>%
+    filter(!is.na(variable))
+race <- assoc_x_confounder[[which(keys=="Race")]] %>%
+    filter(variable != "NA") %>%
+    mutate(variable=droplevels(variable)) %>%
+    filter(!is.na(variable))
+sex <- assoc_x_confounder[[which(keys=="Sex")]] %>%
+    mutate(variable=droplevels(variable)) %>%
+    filter(!is.na(variable))
+```
+
+## Age
+
+```{r age_data}
+age_x_hugo <- group_by(age, hugo_symbol) %>%
+    group_split()
+age_key <- group_by(age, hugo_symbol) %>%
+    group_keys()
+varlevels <- c("Multi-cancer", levels(age$variable))
+mc <- multicancer %>%
+    mutate(variable="Multi-cancer",
+           variable=factor(variable, varlevels))
+ras <- age_x_hugo[[which(age_key=="RAS")]] %>%
+    select(-uid) %>%
+    mutate(variable=factor(variable, varlevels)) %>%
+    bind_rows(filter(mc, multicancer_uid %in% .$multicancer_uid)) %>%
+    arrange(multicancer_uid)
+
+kras <- age_x_hugo[[which(age_key=="KRAS")]] %>%
+    select(-uid) %>%
+    mutate(variable=factor(variable, varlevels)) %>%
+    bind_rows(filter(mc, multicancer_uid %in% .$multicancer_uid)) %>%
+    arrange(multicancer_uid)
+
+nras <- age_x_hugo[[which(age_key=="NRAS")]] %>%
+    select(-uid) %>%
+    mutate(variable=factor(variable, varlevels)) %>%
+    bind_rows(filter(mc, multicancer_uid %in% .$multicancer_uid)) %>%
+    arrange(multicancer_uid)
+age2 <- bind_rows(ras, kras, nras)
+write_csv(age2, file.path(tabdir, "age.csv"))
+```
+
+
+## Race
+
+```{r race_data, fig.width=12, fig.height=7}
+facet_labels <- function(uid){
+    uid2 <- strsplit(uid, "~")
+    caps <- Hmisc::capitalize
+    cancer <- sapply(uid2, "[", 1) %>%
+        str_replace_all("cancer of unknown primary", "CUP") %>%
+        str_replace_all("non-small cell lung cancer", "NSCLC") %>%
+        str_replace_all("pancreatic cancer", "PAC") %>%
+        str_replace_all("ovarian cancer", "OVCA") %>%
+        str_replace_all("colorectal cancer", "CRC") %>%
+        str_replace_all("b-lymphoblastic leukemia/lymphoma",
+                        "B ALL") %>%
+        caps()
+    gene <- sapply(uid2, "[", 2)
+    codons <- sapply(uid2, "[", 3)
+    flabels <- paste0(cancer, ", ", gene, " (", codons, ")") %>%
+        setNames(uid)
+    flabels
+}
+
+varlevels <- c("Multi-cancer", levels(race$variable))
+mc <- multicancer %>%
+    mutate(variable="Multi-cancer",
+           variable=factor(variable, varlevels))
+race2 <- race %>%
+    select(-uid) %>%
+    mutate(variable=factor(variable, varlevels)) %>%
+    bind_rows(filter(mc, multicancer_uid %in% .$multicancer_uid)) %>%
+    arrange(multicancer_uid)
+write_csv(race2, file.path(tabdir, "race.csv"))
+racelabels <- facet_labels(unique(race2$multicancer_uid))
+race2 %>%
+    mutate(variable=droplevels(variable),
+           variable=fct_rev(variable)) %>%
+    ggplot(aes(median, variable)) +
+    geom_errorbarh(aes(xmin=q1, xmax=q2), height=0.1) +
+    geom_point(pch=21, fill="white") +
+    ylab("") +
+    geom_text(x=Inf, aes(label=paste0(y, "/", n)),
+              hjust=1, size=3) +
+    theme_bw(base_size=15) +
+    scale_x_continuous(expand=expansion(mult=0.5)) +
+    theme(panel.grid=element_blank()) +
+    xlab("Prevalence") +
+    facet_wrap(~multicancer_uid, scales="free_x",
+               labeller=labeller(multicancer_uid=racelabels)) +
+    theme(strip.background=element_blank()) +
+    geom_vline(data=filter(race2, variable=="Multi-cancer"),
+               aes(xintercept=median), linetype="dashed",
+               color="gray")
+```
+
+
+## Sex
+
+```{r sex}
+varlevels <- c("Multi-cancer", levels(sex$variable))
+mc <- multicancer %>%
+    mutate(variable="Multi-cancer",
+           variable=factor(variable, varlevels))
+sex2 <- sex %>%
+    select(-uid) %>%
+    mutate(variable=factor(variable, varlevels)) %>%
+    bind_rows(filter(mc, multicancer_uid %in% .$multicancer_uid)) %>%
+    arrange(multicancer_uid)
+write_csv(sex2, file.path(tabdir, "sex.csv"))
+```

@@ -1,0 +1,55 @@
+multicancer_uid,cancer,confounder,hugo_symbol,codon,ras,cancer_group,variable,y,n,mean,median,q1,q2,codon_range
+"colorectal cancer~KRAS~Codon 12, 13, or 61",colorectal cancer,Race,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,Asian,124,313,0.404,0.404,0.356,0.451,12-61
+"colorectal cancer~KRAS~Codon 12, 13, or 61",colorectal cancer,Race,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,Black,256,515,0.482,0.481,0.438,0.526,12-61
+"colorectal cancer~KRAS~Codon 12, 13, or 61",colorectal cancer,Race,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,Native American,9,17,0.442,0.436,0.346,0.566,12-61
+"colorectal cancer~KRAS~Codon 12, 13, or 61",colorectal cancer,Race,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,Other,56,139,0.412,0.412,0.348,0.476,12-61
+"colorectal cancer~KRAS~Codon 12, 13, or 61",colorectal cancer,Race,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,White,1868,4925,0.381,0.381,0.367,0.394,12-61
+"colorectal cancer~KRAS~Codon 12, 13, or 61",colorectal cancer, ,KRAS,"Codon 12, 13, or 61",KRAS_12-61,multi,Multi-cancer,2665,6724,0.396,0.396,0.384,0.408,12-61
+"colorectal cancer~RAS~Codon 12, 13, or 61",colorectal cancer,Race,RAS,"Codon 12, 13, or 61",RAS_12-61,single,Asian,133,313,0.434,0.435,0.384,0.483,12-61
+"colorectal cancer~RAS~Codon 12, 13, or 61",colorectal cancer,Race,RAS,"Codon 12, 13, or 61",RAS_12-61,single,Black,281,515,0.531,0.531,0.486,0.575,12-61
+"colorectal cancer~RAS~Codon 12, 13, or 61",colorectal cancer,Race,RAS,"Codon 12, 13, or 61",RAS_12-61,single,Native American,10,17,0.488,0.482,0.38,0.626,12-61
+"colorectal cancer~RAS~Codon 12, 13, or 61",colorectal cancer,Race,RAS,"Codon 12, 13, or 61",RAS_12-61,single,Other,62,139,0.453,0.453,0.385,0.52,12-61
+"colorectal cancer~RAS~Codon 12, 13, or 61",colorectal cancer,Race,RAS,"Codon 12, 13, or 61",RAS_12-61,single,White,2057,4925,0.419,0.419,0.405,0.433,12-61
+"colorectal cancer~RAS~Codon 12, 13, or 61",colorectal cancer, ,RAS,"Codon 12, 13, or 61",RAS_12-61,multi,Multi-cancer,2924,6724,0.435,0.435,0.423,0.447,12-61
+non-small cell lung cancer~KRAS~Codon 12,non-small cell lung cancer,Race,KRAS,Codon 12,KRAS_12,single,Asian,54,624,0.092,0.092,0.07,0.117,12
+non-small cell lung cancer~KRAS~Codon 12,non-small cell lung cancer,Race,KRAS,Codon 12,KRAS_12,single,Black,172,717,0.238,0.238,0.208,0.269,12
+non-small cell lung cancer~KRAS~Codon 12,non-small cell lung cancer,Race,KRAS,Codon 12,KRAS_12,single,Native American,4,17,0.213,0.205,0.1,0.367,12
+non-small cell lung cancer~KRAS~Codon 12,non-small cell lung cancer,Race,KRAS,Codon 12,KRAS_12,single,Other,29,165,0.178,0.177,0.127,0.236,12
+non-small cell lung cancer~KRAS~Codon 12,non-small cell lung cancer,Race,KRAS,Codon 12,KRAS_12,single,Undefined,1,10,0.168,0.162,0.055,0.321,12
+non-small cell lung cancer~KRAS~Codon 12,non-small cell lung cancer,Race,KRAS,Codon 12,KRAS_12,single,White,2092,7745,0.27,0.27,0.26,0.28,12
+non-small cell lung cancer~KRAS~Codon 12,non-small cell lung cancer, ,KRAS,Codon 12,KRAS_12,multi,Multi-cancer,2535,10131,0.25,0.25,0.242,0.259,12
+"non-small cell lung cancer~KRAS~Codon 12, 13, or 61",non-small cell lung cancer,Race,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,Asian,64,624,0.109,0.108,0.085,0.134,12-61
+"non-small cell lung cancer~KRAS~Codon 12, 13, or 61",non-small cell lung cancer,Race,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,Black,196,717,0.272,0.271,0.24,0.305,12-61
+"non-small cell lung cancer~KRAS~Codon 12, 13, or 61",non-small cell lung cancer,Race,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,Native American,4,17,0.233,0.226,0.114,0.391,12-61
+"non-small cell lung cancer~KRAS~Codon 12, 13, or 61",non-small cell lung cancer,Race,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,Other,34,165,0.208,0.207,0.153,0.27,12-61
+"non-small cell lung cancer~KRAS~Codon 12, 13, or 61",non-small cell lung cancer,Race,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,Undefined,3,10,0.256,0.245,0.116,0.455,12-61
+"non-small cell lung cancer~KRAS~Codon 12, 13, or 61",non-small cell lung cancer,Race,KRAS,"Codon 12, 13, or 61",KRAS_12-61,single,White,2410,7745,0.311,0.311,0.301,0.321,12-61
+"non-small cell lung cancer~KRAS~Codon 12, 13, or 61",non-small cell lung cancer, ,KRAS,"Codon 12, 13, or 61",KRAS_12-61,multi,Multi-cancer,2917,10131,0.288,0.288,0.279,0.297,12-61
+non-small cell lung cancer~KRAS~Codon G12C,non-small cell lung cancer,Race,KRAS,Codon G12C,KRAS_12C,single,Asian,21,624,0.038,0.037,0.024,0.055,12C
+non-small cell lung cancer~KRAS~Codon G12C,non-small cell lung cancer,Race,KRAS,Codon G12C,KRAS_12C,single,Black,78,717,0.107,0.107,0.086,0.13,12C
+non-small cell lung cancer~KRAS~Codon G12C,non-small cell lung cancer,Race,KRAS,Codon G12C,KRAS_12C,single,Native American,1,17,0.074,0.069,0.018,0.163,12C
+non-small cell lung cancer~KRAS~Codon G12C,non-small cell lung cancer,Race,KRAS,Codon G12C,KRAS_12C,single,Other,10,165,0.064,0.063,0.035,0.102,12C
+non-small cell lung cancer~KRAS~Codon G12C,non-small cell lung cancer,Race,KRAS,Codon G12C,KRAS_12C,single,Undefined,0,10,0.065,0.06,0.01,0.156,12C
+non-small cell lung cancer~KRAS~Codon G12C,non-small cell lung cancer,Race,KRAS,Codon G12C,KRAS_12C,single,White,1026,7745,0.132,0.132,0.125,0.14,12C
+non-small cell lung cancer~KRAS~Codon G12C,non-small cell lung cancer, ,KRAS,Codon G12C,KRAS_12C,multi,Multi-cancer,1213,10131,0.12,0.12,0.113,0.126,12C
+non-small cell lung cancer~RAS~Codon 12,non-small cell lung cancer,Race,RAS,Codon 12,RAS_12,single,Asian,56,624,0.096,0.095,0.074,0.12,12
+non-small cell lung cancer~RAS~Codon 12,non-small cell lung cancer,Race,RAS,Codon 12,RAS_12,single,Black,173,717,0.239,0.239,0.209,0.271,12
+non-small cell lung cancer~RAS~Codon 12,non-small cell lung cancer,Race,RAS,Codon 12,RAS_12,single,Native American,4,17,0.213,0.207,0.101,0.367,12
+non-small cell lung cancer~RAS~Codon 12,non-small cell lung cancer,Race,RAS,Codon 12,RAS_12,single,Other,29,165,0.178,0.177,0.128,0.235,12
+non-small cell lung cancer~RAS~Codon 12,non-small cell lung cancer,Race,RAS,Codon 12,RAS_12,single,Undefined,1,10,0.171,0.164,0.058,0.319,12
+non-small cell lung cancer~RAS~Codon 12,non-small cell lung cancer,Race,RAS,Codon 12,RAS_12,single,White,2104,7745,0.271,0.271,0.261,0.281,12
+non-small cell lung cancer~RAS~Codon 12,non-small cell lung cancer, ,RAS,Codon 12,RAS_12,multi,Multi-cancer,2553,10131,0.252,0.252,0.243,0.26,12
+"non-small cell lung cancer~RAS~Codon 12, 13, or 61",non-small cell lung cancer,Race,RAS,"Codon 12, 13, or 61",RAS_12-61,single,Asian,69,624,0.117,0.117,0.092,0.144,12-61
+"non-small cell lung cancer~RAS~Codon 12, 13, or 61",non-small cell lung cancer,Race,RAS,"Codon 12, 13, or 61",RAS_12-61,single,Black,201,717,0.279,0.278,0.247,0.312,12-61
+"non-small cell lung cancer~RAS~Codon 12, 13, or 61",non-small cell lung cancer,Race,RAS,"Codon 12, 13, or 61",RAS_12-61,single,Native American,4,17,0.237,0.231,0.115,0.39,12-61
+"non-small cell lung cancer~RAS~Codon 12, 13, or 61",non-small cell lung cancer,Race,RAS,"Codon 12, 13, or 61",RAS_12-61,single,Other,34,165,0.21,0.209,0.155,0.269,12-61
+"non-small cell lung cancer~RAS~Codon 12, 13, or 61",non-small cell lung cancer,Race,RAS,"Codon 12, 13, or 61",RAS_12-61,single,Undefined,3,10,0.26,0.251,0.122,0.451,12-61
+"non-small cell lung cancer~RAS~Codon 12, 13, or 61",non-small cell lung cancer,Race,RAS,"Codon 12, 13, or 61",RAS_12-61,single,White,2480,7745,0.32,0.32,0.309,0.33,12-61
+"non-small cell lung cancer~RAS~Codon 12, 13, or 61",non-small cell lung cancer, ,RAS,"Codon 12, 13, or 61",RAS_12-61,multi,Multi-cancer,3009,10131,0.297,0.297,0.288,0.306,12-61
+non-small cell lung cancer~RAS~Codon G12C,non-small cell lung cancer,Race,RAS,Codon G12C,RAS_12C,single,Asian,7,624,0.014,0.014,0.006,0.025,12C
+non-small cell lung cancer~RAS~Codon G12C,non-small cell lung cancer,Race,RAS,Codon G12C,RAS_12C,single,Black,34,717,0.045,0.045,0.032,0.061,12C
+non-small cell lung cancer~RAS~Codon G12C,non-small cell lung cancer,Race,RAS,Codon G12C,RAS_12C,single,Native American,0,17,0.026,0.022,0.003,0.069,12C
+non-small cell lung cancer~RAS~Codon G12C,non-small cell lung cancer,Race,RAS,Codon G12C,RAS_12C,single,Other,3,165,0.022,0.021,0.007,0.043,12C
+non-small cell lung cancer~RAS~Codon G12C,non-small cell lung cancer,Race,RAS,Codon G12C,RAS_12C,single,Undefined,0,10,0.028,0.024,0.003,0.081,12C
+non-small cell lung cancer~RAS~Codon G12C,non-small cell lung cancer,Race,RAS,Codon G12C,RAS_12C,single,White,377,7745,0.048,0.048,0.044,0.053,12C
+non-small cell lung cancer~RAS~Codon G12C,non-small cell lung cancer, ,RAS,Codon G12C,RAS_12C,multi,Multi-cancer,441,10131,0.043,0.043,0.039,0.047,12C

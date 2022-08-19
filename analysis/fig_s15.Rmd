@@ -1,0 +1,116 @@
+---
+title: "Figure S15: Gene set enrichment comparing KRAS co-occurrence with KRAS alone"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+
+```{r packages, message=FALSE}
+library(fgsea)
+library(tidyverse)
+library(dplyr)
+library(here)
+library(grid)
+library(gridExtra)
+library(rasfuns)
+```
+
+
+```{r files}
+FIG <- 15
+dat.list <- here("output", "gsea_data_wrangling.Rmd",
+                 "gsea_results.rds") %>%
+    readRDS()
+dat <- dat.list %>%
+    filter(figure==FIG)
+kras <- dat$kras[[1]]
+comutant <- dat$comutant[[1]]
+stats <- dat$stats[[1]]
+signif <- dat$signif[[1]]
+cancer <- dat$cancer[[1]]
+de <- dat$de[[1]]
+plot_titles <- paste0(kras, " / ", comutant, " co-mutant") %>%
+    paste0(" vs ", kras, " mutant ", cancer)
+
+```
+
+```{r check}
+stats[[3]] %>%
+    mutate(pathway=as.character(pathway)) %>%
+    filter(pathway == "HM Interferon Gamma Response")
+```
+
+For first element, G12D/APC I have 10 "Down" that are all statistically significant.  I don't have any that are "Up".
+
+```{r plot_qq}
+stats2 <- map(stats, relevel_gsea_pathway)
+rank.gg <- map(stats2, gg_qq)
+leg <- cowplot::get_legend(rank.gg[[2]])
+rank.gg[[6]]  <- rank.gg[[6]] + xlab("")
+fig <- rank.gg[[6]] +
+    guides(color=guide_legend(title="",
+                              override.aes=list(size=5)))
+leg <- cowplot::get_legend(fig)
+rank.gg2 <- plot_titles %>%
+    str_wrap(width=75) %>%
+    map2(rank.gg, add_qq_title)
+```
+
+
+```{r fig_s15, fig.width=45, fig.height=50, dev=c("png", "pdf")}
+grobs <- map(rank.gg2, ggplotGrob)
+h <- grobs[[1]]$heights
+w <- grobs[[1]]$widths
+for(i in seq_along(grobs)){
+    h1 <- grobs[[i]]$heights
+    w1 <- grobs[[i]]$widths
+    if(length(h1) == length(h))
+        grobs[[i]]$heights <- h
+    if(length(w1) == length(w))
+        grobs[[i]]$widths <- w
+}
+grobs[[10]] <- nullGrob()
+grid.newpage()
+vp <- viewport(x=unit(0.5, "npc"),
+               y=unit(0.99, "npc"),
+               width=unit(0.98, "npc"),
+               height=unit(0.95, "npc"),
+               just=c("center", "top"))
+pushViewport(vp)
+M <- rbind(c(1, 2, 3),
+           10,
+           c(4, 5, 6),
+           10,
+           c(7, 8, 9))
+grid.arrange(grobs=grobs,
+             widths=c(1, 1, 1),
+             heights=c(1, 0.1, 1, 0.1, 1),
+             layout_matrix=M,
+             newpage=FALSE)
+upViewport()
+vp.leg <- viewport(x=unit(0.85, "npc"),
+                   y=unit(0.4, "npc"),
+                   width=unit(0.7, "npc"),
+                   height=unit(0.5, "npc"),
+                   just="center")
+pushViewport(vp.leg)
+##grid.draw(leg)
+upViewport()
+x1 <- unit(rep(0.015, 3), "npc")
+x2 <- unit(rep(0.34, 3), "npc")
+x3 <- unit(rep(0.67, 3), "npc")
+y <- unit(c(0.99, 0.67, 0.34), "npc")
+grid.text(LETTERS[seq(1, 9, 3)],
+          x=x1, y=y,
+          gp=gpar(cex=3.5))
+grid.text(LETTERS[seq(2, 9, 3)],
+          x=x2, y=y,
+          gp=gpar(cex=3.5))
+grid.text(LETTERS[seq(3, 9, 3)],
+          x=x3, y=y,
+          gp=gpar(cex=3.5))
+```

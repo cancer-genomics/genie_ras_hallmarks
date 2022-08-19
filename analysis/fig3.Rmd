@@ -1,0 +1,312 @@
+---
+title: "Figure 3: volcano plots / co-occurrence"
+site: workflowr::wflow_site
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  workflowr::wflow_html:
+    code_folding: hide
+    toc: true
+    toc_depth: 3
+    toc_float: true
+editor_options:
+  chunk_output_type: console
+---
+
+```{r caching, echo=FALSE}
+knitr::opts_chunk$set(autodep = TRUE)
+```
+
+```{r packages, message=FALSE, warning=FALSE}
+library(grid)
+library(gridExtra)
+library(ggrepel)
+library(magrittr)
+library(tidyverse)
+library(scales)
+library(ggthemes)
+library(RColorBrewer)
+library(ggpubr)
+library(here)
+results <- here("output", "co-mutation", "summarize_models.R",
+                "combined.rds")  %>%
+    readRDS()
+cancerlabs <- read_csv(here("data", "cancer_labels.csv"))
+colors <- readRDS(here("output", "co-mutation",
+                       "summarize_models.R",
+                       "colors.rds")) %>%
+    left_join(cancerlabs, by="cancer") %>%
+    mutate(cancer=cancer_label)
+```
+
+# Panels A and B:  Co-occurrence with any mutation
+
+For volcano plots, highlight genes with adjusted p-value less than 0.01 and color code the different cancers.
+
+```{r selections}
+ras_ <- "RAS_12-61"
+alt_groups <- c("Any mutation", "Inactivating mutation")
+```
+
+```{r alt_group}
+dat <- results %>%
+    filter(cancer_group=="multi") %>%
+    unnest("data") %>%
+    left_join(cancerlabs, by="cancer") %>%
+    mutate(cancer=cancer_label)
+mut <- dat %>%
+    filter(ras==ras_,
+           alteration_group %in% alt_groups)
+cols <- setNames(colors$color, colors$cancer)
+```
+
+```{r significance}
+dat0 <- mut %>%
+    filter(p < cutoff_ntest)
+signif <- filter(mut, p >= cutoff_ntest)
+extralabels <- signif %>%
+    filter(p > 40,
+           !nonras %in% c("EGFR", "ATM", "TP53"))
+```
+
+```{r volcano}
+point_size <- 2
+text_size <- 4
+base_size <- 17
+axis.text.y <- 11
+strip.text <- 19
+axis.title.y <- 19
+axis.text.numeric <- 14
+axis.text.genes <- 11
+A <- dat0 %>%
+    ggplot(aes(`50%`, p)) +
+    geom_vline(xintercept=0, color="gray", linetype="dashed") +
+    geom_point(color="gray", size=0.7) +
+    theme_classic(base_size=base_size) +
+    ##xlab("Log odds ratio") +
+    xlab("") +
+    ylab(expression(-log[10](p))) +
+    geom_point(data=signif,
+               size=point_size,
+               aes(color=cancer)) +
+    geom_text(data=signif,
+              aes(label=nonras),
+              nudge_x=0.15,
+              size=text_size,
+              hjust=0,
+              check_overlap=TRUE) +
+    geom_text(data=extralabels,
+              aes(label=nonras),
+              nudge_y=-2,
+              size=text_size,
+              hjust=0) +
+    scale_x_continuous(expand=expansion(mult=0.02),
+                       limits=c(-6, 4)) +
+    scale_color_manual(values=cols) +
+    guides(color=guide_legend(title="",## reverse=TRUE,
+                              override.aes=list(size=3))) +
+    theme(legend.position="bottom",
+          strip.background=element_blank(),
+          strip.text=element_text(size=strip.text),
+          panel.grid=element_blank(),
+          axis.text=element_text(size=axis.text.numeric),
+          axis.title=element_text(size=axis.title.y),
+          panel.spacing=unit(2, "lines")) +
+    facet_wrap(~alteration_group, ncol=1, scales="free")
+A
+A_leg <- cowplot::get_legend(A)
+A <- A +
+    guides(color=FALSE)
+ABg <- ggplotGrob(A)
+```
+
+# Panels C and D:  Co-occurrence with inactivating mutations
+
+```{r volcano_credible, fig.width=12, fig.height=8, dev=c("png", "pdf")}
+genelevels <- rev(sort(unique(signif$nonras)))
+B <- signif %>%
+    mutate(nonras=factor(nonras, genelevels)) %>%
+    mutate(`2.5%` = ifelse(`2.5%` < -8, -8, `2.5%`)) %>%
+    ggplot(aes(nonras, `50%`, group=cancer)) +
+    geom_errorbar(aes(ymin=`2.5%`, ymax=`97.5%`, color=cancer),
+                  position=position_dodge(width=0.9),
+                  width=0.2) +
+    geom_point(aes(color=cancer), position=position_dodge(width=0.9)) +
+    facet_wrap(~alteration_group, ncol=1, scale="free") +
+    theme_classic(base_size=base_size) +
+    scale_y_continuous(expand=expansion(mult=0.02), name="",
+                       limits=c(-8, 4)) +
+    ##coord_cartesian(ylim=c(-10, 4)) +
+    ##scale_x_continuous(limits=c(-6, 4), expand=expansion(mult=0.02)) +
+    theme(panel.grid=element_blank(),
+          legend.position="bottom",
+          strip.background=element_blank(),
+          strip.text=element_text(size=strip.text),
+          strip.text.y=element_text(angle=0),
+          axis.text.y=element_text(size=axis.text.genes),
+          axis.text.x=element_text(size=axis.text.numeric),
+          axis.title=element_text(size=axis.title.y),
+          panel.spacing=unit(2, "lines")) +
+    coord_flip() +
+    xlab("") + ylab("Log odds ratio") +
+    geom_hline(yintercept=0, color="gray", linetype="dashed") +
+    scale_color_manual(values=cols) +
+    guides(color=FALSE)
+CDg <- ggplotGrob(B)
+B
+CDg$heights <- ABg$heights
+```
+
+# Panels E and F: Co-occurrence with copy number / rearrangements
+
+```{r significance_sv}
+alt_group <- c("Deletion", "Amplification", "Rearrangement")
+svdat <- here("output",
+            "co-mutation",
+            "summarize_models.R",
+            "combined.rds") %>%
+    readRDS()
+mut <- svdat %>%
+    unnest("data") %>%
+    filter(ras=="RAS_12-61",
+           alteration_group %in% alt_group) %>%
+    filter(cancer_group=="multi", cancer != "overall") %>%
+    ungroup() %>%
+    mutate(cancer=ifelse(cancer=="non-small cell lung cancer",
+                         "non-small cell\nlung cancer", cancer))
+colors <- readRDS(here("output", "co-mutation",
+                       "summarize_models.R",
+                       "colors.rds"))
+colors$cancer[[1]] <- "non-small cell\nlung cancer"
+```
+
+```{r signif}
+dat0 <- mut %>%
+    filter(p < cutoff_ntest, abs(`50%`) <= 6)
+signif <- filter(mut, p >= cutoff_ntest | abs(`50%`) > 6)
+cols <- setNames(colors$color, colors$cancer)
+```
+
+```{r volcano_credible_sv}
+genelevels <- rev(sort(unique(signif$nonras)))
+```
+
+## Single volcano for copy number
+
+```{r cndat}
+cancerlabs <- read_csv(here("data", "cancer_labels.csv"),
+                       show_col_types=FALSE)
+cols2 <- tibble(color=cols, cancer=names(cols)) %>%
+    mutate(cancer=str_replace(cancer, "\n", " ")) %>%
+    left_join(cancerlabs, by="cancer") %>%
+    mutate(cancer=cancer_label) %>%
+    arrange(cancer)
+shape <- setNames(c(24, 25, 21), sort(alt_group))
+cols3 <- setNames(cols2$color, cols2$cancer)
+E <- dat0 %>%
+    mutate(category="Copy number and rearrangements") %>%
+    mutate(cancer=str_replace_all(cancer, "\n", " ")) %>%
+    left_join(cancerlabs, by="cancer") %>%
+    mutate(cancer=cancer_label) %>%
+    ggplot(aes(`50%`, p)) +
+    geom_vline(xintercept=0, color="gray", linetype="dashed") +
+    geom_point(color="gray", size=0.8,
+               aes(shape=alteration_group)) +
+    theme_classic(base_size=base_size) +
+    xlab("Log odds ratio") +
+    ylab(expression(-log[10](p))) +
+    geom_point(data=signif,
+               size=point_size,
+               aes(fill=cancer,
+                   color=cancer,
+                   shape=alteration_group)) +
+    geom_text_repel(data=signif,
+                    aes(label=nonras),
+                    fill="white", segment.color="gray",
+                    size=text_size,
+                    max.overlaps=Inf,
+                    box.padding=0.5) + ##color="transparent") +
+    scale_color_manual(values=cols3) +
+    scale_shape_manual(values=shape) +
+    guides(color=guide_legend(title="Cancer type"),
+           shape=guide_legend(title="Copy number"),
+           fill=FALSE) +
+    theme(strip.background=element_blank(),
+          strip.text=element_text(size=strip.text),
+          panel.grid=element_blank(),
+          axis.text=element_text(size=axis.text.numeric),
+          axis.title=element_text(size=axis.title.y)) +
+    facet_wrap(~category)
+E
+E_leg <- cowplot::get_legend(E)
+E2 <- E + guides(shape=FALSE, color=FALSE)
+Eg <- ggplotGrob(E2)
+F <- signif %>%
+    mutate(category="Copy number and rearrangements") %>%
+    mutate(cancer=str_replace_all(cancer, "\n", " ")) %>%
+    left_join(cancerlabs, by="cancer") %>%
+    mutate(cancer=cancer_label) %>%
+    mutate(nonras=factor(nonras, genelevels)) %>%
+    ggplot(aes(nonras, `50%`, group=cancer)) +
+    geom_hline(yintercept=0, color="gray", linetype="dashed") +
+    geom_errorbar(aes(ymin=`2.5%`, ymax=`97.5%`,
+                      color=cancer),
+                  position=position_dodge(width=0.9),
+                  width=0.2) +
+    geom_point(aes(color=cancer,
+                   shape=alteration_group,
+                   fill=cancer),
+               position=position_dodge(width=0.9)) +
+    theme_classic(base_size=base_size) +
+    theme(strip.background=element_blank(),
+          ##strip.text.y=element_text(angle=0),
+          strip.text=element_text(size=strip.text),
+          axis.text.x=element_text(size=axis.text.numeric),
+          axis.text.y=element_text(size=axis.text.genes),
+          axis.title=element_text(size=axis.title.y),
+          panel.grid=element_blank()) +
+    coord_flip(ylim=c(-7, 1)) +
+    xlab("") + ylab("Log odds ratio") +
+    scale_color_manual(values=cols3) +
+    scale_shape_manual(values=shape) +
+    guides(color="none", shape="none", fill="none") +
+    facet_wrap(~category)
+Fg <- ggplotGrob(F)
+F
+Fg$heights <- Eg$heights
+```
+
+```{r fig3, fig.width=15, fig.height=16, dev=c("png", "pdf")}
+ABg$widths <- Eg$widths
+gl <- list(ABg,
+           CDg,
+           Eg,
+           Fg,
+           E_leg,
+           grob())
+vp <- viewport(x=unit(1, "npc"),
+               width=unit(0.96, "npc"),
+               height=unit(0.98, "npc"),
+               just=c("right", "center"))
+pushViewport(vp)
+grid.arrange(grobs=gl,
+             widths=c(1, 1, 0.275),
+             heights=c(1, 1, 1),
+             layout_matrix=rbind(c(1, 2, 6),
+                                 c(1, 2, 6),
+                                 c(3, 4, 5)),
+             newpage=FALSE)
+upViewport()
+grid.text("A", x=unit(0.015, "npc"), y=unit(0.98, "npc"),
+          gp=gpar(cex=2.75))
+grid.text("B", x=unit(0.5, "npc"), y=unit(0.98, "npc"),
+          gp=gpar(cex=2.75))
+grid.text("C", x=unit(0.015, "npc"), y=unit(0.67, "npc"),
+          gp=gpar(cex=2.75))
+grid.text("D", x=unit(0.5, "npc"), y=unit(0.67, "npc"),
+          gp=gpar(cex=2.75))
+grid.text("E", x=unit(0.015, "npc"), y=unit(0.34, "npc"),
+          gp=gpar(cex=2.75))
+grid.text("F", x=unit(0.5, "npc"), y=unit(0.34, "npc"),
+          gp=gpar(cex=2.75))
+gc()
+```

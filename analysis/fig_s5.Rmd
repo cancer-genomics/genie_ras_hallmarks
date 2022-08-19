@@ -1,0 +1,130 @@
+---
+title: "Figure S5"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+```{r packages, message=FALSE, warning=FALSE}
+library(grid)
+library(gridExtra)
+library(magrittr)
+library(tidyverse)
+library(purrr)
+library(ggplot2)
+library(here)
+```
+
+
+```{r}
+aa_freq <- here("output", "prevalence",
+                "amino_acids.R", "aa_freq.csv") %>%
+    read_csv(show_col_types=FALSE) %>%
+    filter(n > 50, !grepl("146", hgvsp), !grepl("Q22", hgvsp))
+
+aa_freq2 <- aa_freq %>%
+    distinct() %>%
+    pivot_wider(c(cancer, hugo_symbol),
+                names_from=hgvsp, values_from=y,
+                values_fill=0L)
+##aa_freq2[is.na(aa_freq2)] <- 0
+cancerLabels <- rasfuns:::cancerLabels
+aa_freq3  <- aa_freq2 %>%
+    pivot_longer(!c(cancer, hugo_symbol),
+                 names_to="hgvsp", values_to="y") %>%
+    left_join(select(aa_freq, cancer, hugo_symbol, n),
+              by=c("cancer",
+                   "hugo_symbol")) %>%
+    mutate(cancer=cancerLabels(cancer)) %>%
+    filter(cancer != "lung") %>%
+    distinct() %>%
+    mutate(median=qbeta(0.5, 0.5 + y, 0.5 + n-y),
+           lower=qbeta(0.025, 0.5 + y, 0.5 + n-y),
+           upper=qbeta(0.975, 0.5 + y, 0.5 + n-y))
+cancer_labels <- aa_freq3 %>%
+    group_by(cancer) %>%
+    summarize(n=unique(n),
+              .groups="drop") %>%
+    mutate(n=prettyNum(n, big.mark=",")) %>%
+    unite(label, c(cancer, n), sep=" (n=", remove=FALSE) %>%
+    mutate(label=paste0(label, ")"))
+cancer_labs <- setNames(cancer_labels$label, cancer_labels$cancer)
+aa_levels <- sort(unique(aa_freq3$hgvsp))
+```
+
+```{r bubble}
+prev.df <- here("public",
+                "table",
+                "ras_amino_acid_prev.Rmd",
+                "multicancer.csv") %>%
+    read_csv(show_col_types=FALSE)
+plot.df  <-  prev.df %>%
+    mutate(codon_range = gsub("12","G12", codon_range)) %>%
+    mutate(codon_range = gsub("13","G13", codon_range)) %>%
+    mutate(codon_range = gsub("61","Q61", codon_range)) %>%
+    mutate(mut_allele =  paste0(hugo_symbol, ":", codon_range)) %>%
+    mutate(cancer = factor(cancer, levels  = unique(cancer))) %>%
+    mutate(codon_range = factor(codon_range, levels  = unique(codon_range))) %>%
+    mutate(cancer = fct_rev(cancer)) %>%
+    mutate(median = ifelse(median == 0, NA, median)) %>%
+    filter(n>50)
+ras.gene <- "HRAS"
+
+alleles <- c("G12A", "G12F","G12R",'G13C','Q61H', 'Q61L')
+prev.plot <- plot.df %>%
+    filter(hugo_symbol == ras.gene)  %>%
+    filter(!codon_range %in% alleles) %>%
+    ggplot(aes(codon_range, cancer)) +
+    geom_point(aes(size=median,  color = median) ) +
+    theme_classic(base_size=15) +
+    theme(panel.grid=element_blank(),
+          axis.text.x=element_text( size=14),
+          axis.text.y=element_text( size=14),
+          strip.background=element_blank(),
+          strip.text=element_text(size=12),
+          legend.position="bottom",
+          legend.text = element_text(size=8)) +
+    ylab("") +
+    xlab("Cancer") +
+    scale_colour_gradient(low = "#F2CA96", high  =  "#E68403")+
+    scale_size(range = c(2,12))
+A <- ggplotGrob(prev.plot)
+```
+
+```{r panel_B_C}
+alleles <- c("61R", "61K")
+dat <- aa_freq3 %>%
+    filter(hugo_symbol=="HRAS") %>%
+    filter(!is.na(n)) %>%
+    mutate(p=y/n) %>%
+    filter(cancer!="lung cancer") %>%
+    mutate(odds=p/(1-p)) %>%
+    mutate(hgvsp=str_replace_all(hgvsp, "^[QG]", "")) %>%
+    filter(hgvsp %in% alleles) %>%
+    mutate(allele=paste("HRAS", hgvsp)) %>%
+    mutate(allele=factor(allele, paste("HRAS", alleles)))
+BC <- dat %>%
+    ggplot(aes(p, cancer)) +
+    geom_errorbarh(aes(xmin=lower, xmax=upper), height=0.2) +
+    geom_point(color="gray") +
+    geom_point(pch=21, aes(x=median)) +
+    theme_bw(base_size=15) +
+    facet_wrap(~allele, scales="free_x", ncol=1) +
+    theme(strip.background=element_blank(),
+          panel.grid=element_blank(),
+          strip.text=element_text(size=18),
+          strip.text.y=element_text(angle=0, hjust=0),
+          axis.title=element_text(size=18)) +
+    ylab("") +
+    xlab("Prevalence")
+B <- ggplotGrob(BC)
+```
+
+```{r fig_s5, fig.width=18, fig.height=12, dev=c("png", "pdf")}
+gl <- list(A, B)
+grid.arrange(grobs=gl,
+             widths=c(0.55, 0.45),
+             layout_matrix=matrix(1:2, nrow=1))
+```

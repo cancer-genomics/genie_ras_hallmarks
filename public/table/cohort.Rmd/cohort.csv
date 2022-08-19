@@ -1,0 +1,798 @@
+cancer,center,n,study_design
+adrenal gland cancer,PHS,1,All patients
+adrenocortical carcinoma,DFCI,26,All patients
+adrenocortical carcinoma,GRCC,12,All patients
+adrenocortical carcinoma,MDA,15,All patients
+adrenocortical carcinoma,MSK,59,All patients
+adrenocortical carcinoma,NKI,1,All patients
+adrenocortical carcinoma,UCSF,7,All patients
+adrenocortical carcinoma,UHN,5,All patients
+adrenocortical carcinoma,VICC,9,All patients
+ampullary cancer,DFCI,22,All patients
+ampullary cancer,MDA,2,All patients
+ampullary cancer,MSK,67,All patients
+ampullary cancer,NKI,2,All patients
+ampullary cancer,UCSF,1,All patients
+ampullary cancer,UHN,5,All patients
+ampullary cancer,VICC,7,All patients
+anal cancer,DFCI,44,All patients
+anal cancer,GRCC,5,All patients
+anal cancer,JHU,3,All patients
+anal cancer,MDA,16,All patients
+anal cancer,MSK,65,All patients
+anal cancer,NKI,2,All patients
+anal cancer,PHS,1,All patients
+anal cancer,SCI,1,All patients
+anal cancer,UCSF,3,All patients
+anal cancer,UHN,2,All patients
+anal cancer,VICC,6,All patients
+anal cancer,WAKE,1,All patients
+appendiceal cancer,COLU,1,All patients
+appendiceal cancer,DFCI,66,All patients
+appendiceal cancer,JHU,5,All patients
+appendiceal cancer,MDA,30,All patients
+appendiceal cancer,MSK,170,All patients
+appendiceal cancer,NKI,14,All patients
+appendiceal cancer,PHS,1,All patients
+appendiceal cancer,SCI,1,All patients
+appendiceal cancer,UCHI,2,All patients
+appendiceal cancer,UCSF,2,All patients
+appendiceal cancer,UHN,8,All patients
+appendiceal cancer,VICC,24,All patients
+appendiceal cancer,WAKE,17,All patients
+b cell lymphoma,CHOP,3,All patients
+b cell lymphoma,COLU,2,All patients
+b cell lymphoma,DFCI,572,All patients
+b cell lymphoma,GRCC,1,All patients
+b cell lymphoma,JHU,3,All patients
+b cell lymphoma,MSK,345,All patients
+b cell lymphoma,SCI,20,All patients
+b cell lymphoma,UCHI,1,All patients
+b cell lymphoma,UCSF,11,All patients
+b cell lymphoma,VICC,3,All patients
+b cell lymphoma,WAKE,1,All patients
+b-lymphoblastic leukemia/lymphoma,CHOP,25,All patients
+b-lymphoblastic leukemia/lymphoma,COLU,2,All patients
+b-lymphoblastic leukemia/lymphoma,DFCI,78,All patients
+b-lymphoblastic leukemia/lymphoma,MSK,60,All patients
+b-lymphoblastic leukemia/lymphoma,UCSF,13,All patients
+b-lymphoblastic leukemia/lymphoma,UHN,68,All patients
+b-lymphoblastic leukemia/lymphoma,VICC,2,All patients
+bladder cancer,DFCI,536,All patients
+bladder cancer,DUKE,14,All patients
+bladder cancer,GRCC,86,All patients
+bladder cancer,JHU,3,All patients
+bladder cancer,MDA,46,All patients
+bladder cancer,MSK,742,All patients
+bladder cancer,NKI,8,All patients
+bladder cancer,PHS,7,All patients
+bladder cancer,SCI,6,All patients
+bladder cancer,UCSF,16,All patients
+bladder cancer,UHN,24,All patients
+bladder cancer,VICC,69,All patients
+bladder cancer,WAKE,21,All patients
+bladder cancer,YALE,3,All patients
+blastic plasmacytoid dendritic cell neoplasm,DFCI,7,All patients
+blastic plasmacytoid dendritic cell neoplasm,MSK,1,All patients
+blastic plasmacytoid dendritic cell neoplasm,UHN,3,All patients
+blastic plasmacytoid dendritic cell neoplasm,VICC,2,All patients
+bone cancer,CHOP,15,All patients
+bone cancer,COLU,3,All patients
+bone cancer,DFCI,90,All patients
+bone cancer,GRCC,18,All patients
+bone cancer,JHU,8,All patients
+bone cancer,MDA,88,All patients
+bone cancer,MSK,296,All patients
+bone cancer,NKI,1,All patients
+bone cancer,UCSF,19,All patients
+bone cancer,UHN,5,All patients
+bone cancer,VICC,17,All patients
+bone cancer,WAKE,9,All patients
+bone cancer,YALE,1,All patients
+breast cancer,COLU,3,All patients
+breast cancer,CRUK,2420,All patients
+breast cancer,DFCI,1606,All patients
+breast cancer,DUKE,43,All patients
+breast cancer,GRCC,161,All patients
+breast cancer,JHU,6,All patients
+breast cancer,MDA,714,All patients
+breast cancer,MSK,3631,All patients
+breast cancer,NKI,21,All patients
+breast cancer,PHS,29,All patients
+breast cancer,SCI,90,All patients
+breast cancer,UCHI,1,All patients
+breast cancer,UCSF,41,All patients
+breast cancer,UHN,201,All patients
+breast cancer,VHIO,16,All patients
+breast cancer,VICC,315,All patients
+breast cancer,WAKE,24,All patients
+breast cancer,YALE,11,All patients
+cancer of unknown primary,CHOP,3,All patients
+cancer of unknown primary,COLU,3,All patients
+cancer of unknown primary,DFCI,587,All patients
+cancer of unknown primary,DUKE,9,All patients
+cancer of unknown primary,GRCC,53,All patients
+cancer of unknown primary,JHU,124,All patients
+cancer of unknown primary,MDA,176,All patients
+cancer of unknown primary,MSK,768,All patients
+cancer of unknown primary,NKI,56,All patients
+cancer of unknown primary,PHS,5,All patients
+cancer of unknown primary,SCI,11,All patients
+cancer of unknown primary,UCHI,7,All patients
+cancer of unknown primary,UCSF,49,All patients
+cancer of unknown primary,UHN,24,All patients
+cancer of unknown primary,VHIO,4,All patients
+cancer of unknown primary,VICC,64,All patients
+cancer of unknown primary,WAKE,43,All patients
+cancer of unknown primary,YALE,3,All patients
+cervical cancer,DFCI,89,All patients
+cervical cancer,GRCC,35,All patients
+cervical cancer,MDA,39,All patients
+cervical cancer,MSK,128,All patients
+cervical cancer,NKI,6,All patients
+cervical cancer,PHS,1,All patients
+cervical cancer,UCSF,7,All patients
+cervical cancer,UHN,42,All patients
+cervical cancer,VICC,8,All patients
+cervical cancer,WAKE,12,All patients
+cns cancer,CHOP,175,All patients
+cns cancer,COLU,5,All patients
+cns cancer,DFCI,1633,All patients
+cns cancer,DUKE,42,All patients
+cns cancer,GRCC,73,All patients
+cns cancer,JHU,270,All patients
+cns cancer,MDA,326,All patients
+cns cancer,MSK,1304,All patients
+cns cancer,NKI,11,All patients
+cns cancer,PHS,62,All patients
+cns cancer,SCI,89,All patients
+cns cancer,UCHI,3,All patients
+cns cancer,UCSF,452,All patients
+cns cancer,VHIO,3,All patients
+cns cancer,VICC,87,All patients
+cns cancer,WAKE,27,All patients
+cns cancer,YALE,3,All patients
+colorectal cancer,COLU,3,All patients
+colorectal cancer,DFCI,1498,All patients
+colorectal cancer,DUKE,111,All patients
+colorectal cancer,GRCC,85,All patients
+colorectal cancer,JHU,940,All patients
+colorectal cancer,MDA,640,All patients
+colorectal cancer,MSK,2237,All patients
+colorectal cancer,NKI,242,All patients
+colorectal cancer,PHS,126,All patients
+colorectal cancer,SCI,40,All patients
+colorectal cancer,UCHI,77,All patients
+colorectal cancer,UCSF,66,All patients
+colorectal cancer,UHN,259,All patients
+colorectal cancer,VHIO,9,All patients
+colorectal cancer,VICC,310,All patients
+colorectal cancer,WAKE,62,All patients
+colorectal cancer,YALE,19,All patients
+esophagogastric cancer,COLU,14,All patients
+esophagogastric cancer,DFCI,658,All patients
+esophagogastric cancer,DUKE,23,All patients
+esophagogastric cancer,GRCC,47,All patients
+esophagogastric cancer,JHU,14,All patients
+esophagogastric cancer,MDA,129,All patients
+esophagogastric cancer,MSK,694,All patients
+esophagogastric cancer,NKI,24,All patients
+esophagogastric cancer,PHS,9,All patients
+esophagogastric cancer,SCI,10,All patients
+esophagogastric cancer,UCHI,1,All patients
+esophagogastric cancer,UCSF,30,All patients
+esophagogastric cancer,UHN,49,All patients
+esophagogastric cancer,VHIO,7,All patients
+esophagogastric cancer,VICC,72,All patients
+esophagogastric cancer,WAKE,19,All patients
+esophagogastric cancer,YALE,2,All patients
+germ cell tumor,CHOP,27,All patients
+germ cell tumor,DFCI,176,All patients
+germ cell tumor,DUKE,8,All patients
+germ cell tumor,GRCC,18,All patients
+germ cell tumor,JHU,5,All patients
+germ cell tumor,MDA,68,All patients
+germ cell tumor,MSK,488,All patients
+germ cell tumor,NKI,1,All patients
+germ cell tumor,SCI,4,All patients
+germ cell tumor,UCHI,2,All patients
+germ cell tumor,UCSF,74,All patients
+germ cell tumor,UHN,3,All patients
+germ cell tumor,VICC,3,All patients
+germ cell tumor,WAKE,7,All patients
+germ cell tumor,YALE,2,All patients
+head and neck cancer,COLU,1,All patients
+head and neck cancer,DFCI,572,All patients
+head and neck cancer,DUKE,1,All patients
+head and neck cancer,GRCC,156,All patients
+head and neck cancer,JHU,2,All patients
+head and neck cancer,MDA,156,All patients
+head and neck cancer,MSK,610,All patients
+head and neck cancer,NKI,15,All patients
+head and neck cancer,PHS,14,All patients
+head and neck cancer,SCI,4,All patients
+head and neck cancer,UCSF,39,All patients
+head and neck cancer,UHN,50,All patients
+head and neck cancer,VHIO,4,All patients
+head and neck cancer,VICC,87,All patients
+head and neck cancer,WAKE,27,All patients
+head and neck cancer,YALE,5,All patients
+hepatobiliary cancer,CHOP,2,All patients
+hepatobiliary cancer,COLU,5,All patients
+hepatobiliary cancer,DFCI,244,All patients
+hepatobiliary cancer,DUKE,12,All patients
+hepatobiliary cancer,GRCC,113,All patients
+hepatobiliary cancer,JHU,12,All patients
+hepatobiliary cancer,MDA,56,All patients
+hepatobiliary cancer,MSK,743,All patients
+hepatobiliary cancer,NKI,7,All patients
+hepatobiliary cancer,PHS,19,All patients
+hepatobiliary cancer,SCI,3,All patients
+hepatobiliary cancer,UCHI,1,All patients
+hepatobiliary cancer,UCSF,21,All patients
+hepatobiliary cancer,UHN,43,All patients
+hepatobiliary cancer,VHIO,1,All patients
+hepatobiliary cancer,VICC,85,All patients
+hepatobiliary cancer,WAKE,7,All patients
+hepatobiliary cancer,YALE,1,All patients
+hodgkin lymphoma,DFCI,9,All patients
+hodgkin lymphoma,MDA,5,All patients
+hodgkin lymphoma,MSK,22,All patients
+hodgkin lymphoma,UCHI,1,All patients
+hodgkin lymphoma,WAKE,3,All patients
+kidney cancer,CHOP,1,All patients
+kidney cancer,COLU,1,All patients
+kidney cancer,DFCI,503,All patients
+kidney cancer,DUKE,17,All patients
+kidney cancer,GRCC,32,All patients
+kidney cancer,MDA,116,All patients
+kidney cancer,MSK,620,All patients
+kidney cancer,NKI,8,All patients
+kidney cancer,PHS,7,All patients
+kidney cancer,SCI,11,All patients
+kidney cancer,UCHI,5,All patients
+kidney cancer,UCSF,18,All patients
+kidney cancer,UHN,17,All patients
+kidney cancer,VICC,48,All patients
+kidney cancer,WAKE,16,All patients
+kidney cancer,YALE,2,All patients
+leukemia,CHOP,10,All patients
+leukemia,COLU,9,All patients
+leukemia,DFCI,269,All patients
+leukemia,JHU,219,All patients
+leukemia,MSK,39,All patients
+leukemia,SCI,1,All patients
+leukemia,UCHI,109,All patients
+leukemia,UCSF,13,All patients
+leukemia,UHN,608,All patients
+leukemia,VICC,283,All patients
+leukemia,WAKE,7,All patients
+lung cancer,GRCC,3,All patients
+lung cancer,PHS,12,All patients
+lung cancer,UHN,4,All patients
+lung cancer,WAKE,6,All patients
+mature t and nk neoplasms,CHOP,1,All patients
+mature t and nk neoplasms,COLU,1,All patients
+mature t and nk neoplasms,DFCI,120,All patients
+mature t and nk neoplasms,MSK,99,All patients
+mature t and nk neoplasms,UCSF,1,All patients
+mature t and nk neoplasms,UHN,6,All patients
+mature t and nk neoplasms,VICC,3,All patients
+melanoma,COLU,9,All patients
+melanoma,DFCI,432,All patients
+melanoma,DUKE,3,All patients
+melanoma,GRCC,11,All patients
+melanoma,JHU,443,All patients
+melanoma,MDA,387,All patients
+melanoma,MSK,922,All patients
+melanoma,NKI,108,All patients
+melanoma,PHS,59,All patients
+melanoma,SCI,8,All patients
+melanoma,UCHI,32,All patients
+melanoma,UCSF,99,All patients
+melanoma,UHN,24,All patients
+melanoma,VICC,294,All patients
+melanoma,WAKE,7,All patients
+melanoma,YALE,8,All patients
+mesothelioma,DFCI,217,All patients
+mesothelioma,DUKE,2,All patients
+mesothelioma,GRCC,7,All patients
+mesothelioma,JHU,1,All patients
+mesothelioma,MDA,11,All patients
+mesothelioma,MSK,233,All patients
+mesothelioma,NKI,2,All patients
+mesothelioma,PHS,3,All patients
+mesothelioma,SCI,3,All patients
+mesothelioma,UHN,5,All patients
+mesothelioma,VHIO,1,All patients
+mesothelioma,VICC,7,All patients
+mesothelioma,WAKE,5,All patients
+myelodysplastic/myeloproliferative syndromes,CHOP,2,All patients
+myelodysplastic/myeloproliferative syndromes,COLU,2,All patients
+myelodysplastic/myeloproliferative syndromes,DFCI,190,All patients
+myelodysplastic/myeloproliferative syndromes,JHU,28,All patients
+myelodysplastic/myeloproliferative syndromes,MSK,28,All patients
+myelodysplastic/myeloproliferative syndromes,SCI,1,All patients
+myelodysplastic/myeloproliferative syndromes,UCHI,91,All patients
+myelodysplastic/myeloproliferative syndromes,UCSF,8,All patients
+myelodysplastic/myeloproliferative syndromes,UHN,429,All patients
+myelodysplastic/myeloproliferative syndromes,VICC,428,All patients
+nerve sheath tumor,CHOP,2,All patients
+nerve sheath tumor,DFCI,72,All patients
+nerve sheath tumor,GRCC,1,All patients
+nerve sheath tumor,JHU,1,All patients
+nerve sheath tumor,MDA,10,All patients
+nerve sheath tumor,MSK,51,All patients
+nerve sheath tumor,NKI,1,All patients
+nerve sheath tumor,UCSF,11,All patients
+nerve sheath tumor,UHN,1,All patients
+nerve sheath tumor,VICC,2,All patients
+nerve sheath tumor,WAKE,2,All patients
+neuroendocrine tumors,COLU,2,All patients
+neuroendocrine tumors,DFCI,178,All patients
+neuroendocrine tumors,GRCC,5,All patients
+neuroendocrine tumors,JHU,2,All patients
+neuroendocrine tumors,MDA,16,All patients
+neuroendocrine tumors,MSK,110,All patients
+neuroendocrine tumors,NKI,11,All patients
+neuroendocrine tumors,SCI,1,All patients
+neuroendocrine tumors,UCSF,11,All patients
+neuroendocrine tumors,UHN,3,All patients
+neuroendocrine tumors,VICC,18,All patients
+neuroendocrine tumors,WAKE,1,All patients
+neuroendocrine tumors,YALE,1,All patients
+non-hodgkin lymphoma,COLU,1,All patients
+non-hodgkin lymphoma,DFCI,20,All patients
+non-hodgkin lymphoma,MSK,1,All patients
+non-hodgkin lymphoma,UCHI,1,All patients
+non-melanoma skin cancers,CHOP,1,All patients
+non-melanoma skin cancers,DFCI,184,All patients
+non-melanoma skin cancers,DUKE,2,All patients
+non-melanoma skin cancers,GRCC,13,All patients
+non-melanoma skin cancers,JHU,3,All patients
+non-melanoma skin cancers,MDA,13,All patients
+non-melanoma skin cancers,MSK,244,All patients
+non-melanoma skin cancers,NKI,9,All patients
+non-melanoma skin cancers,PHS,2,All patients
+non-melanoma skin cancers,SCI,1,All patients
+non-melanoma skin cancers,UCSF,14,All patients
+non-melanoma skin cancers,UHN,7,All patients
+non-melanoma skin cancers,VICC,19,All patients
+non-melanoma skin cancers,WAKE,1,All patients
+non-small cell lung cancer,CHOP,1,All patients
+non-small cell lung cancer,DFCI,2495,All patients
+non-small cell lung cancer,DUKE,81,All patients
+non-small cell lung cancer,GRCC,228,All patients
+non-small cell lung cancer,JHU,1687,All patients
+non-small cell lung cancer,MDA,93,All patients
+non-small cell lung cancer,MSK,3734,All patients
+non-small cell lung cancer,NKI,178,All patients
+non-small cell lung cancer,PHS,479,All patients
+non-small cell lung cancer,SCI,66,All patients
+non-small cell lung cancer,UCHI,37,All patients
+non-small cell lung cancer,UCSF,18,All patients
+non-small cell lung cancer,UHN,154,All patients
+non-small cell lung cancer,VHIO,4,All patients
+non-small cell lung cancer,VICC,422,All patients
+non-small cell lung cancer,WAKE,379,All patients
+non-small cell lung cancer,YALE,75,All patients
+ovarian cancer,DFCI,822,All patients
+ovarian cancer,DUKE,8,All patients
+ovarian cancer,GRCC,29,All patients
+ovarian cancer,JHU,4,All patients
+ovarian cancer,MDA,140,All patients
+ovarian cancer,MSK,706,All patients
+ovarian cancer,NKI,36,All patients
+ovarian cancer,PHS,2,All patients
+ovarian cancer,SCI,25,All patients
+ovarian cancer,UCSF,55,All patients
+ovarian cancer,UHN,339,All patients
+ovarian cancer,VHIO,5,All patients
+ovarian cancer,VICC,88,All patients
+ovarian cancer,WAKE,78,All patients
+pancreatic cancer,CHOP,1,All patients
+pancreatic cancer,COLU,29,All patients
+pancreatic cancer,DFCI,532,All patients
+pancreatic cancer,DUKE,14,All patients
+pancreatic cancer,GRCC,33,All patients
+pancreatic cancer,JHU,17,All patients
+pancreatic cancer,MDA,62,All patients
+pancreatic cancer,MSK,1477,All patients
+pancreatic cancer,NKI,13,All patients
+pancreatic cancer,PHS,30,All patients
+pancreatic cancer,SCI,32,All patients
+pancreatic cancer,UCSF,65,All patients
+pancreatic cancer,UHN,74,All patients
+pancreatic cancer,VHIO,10,All patients
+pancreatic cancer,VICC,83,All patients
+pancreatic cancer,WAKE,16,All patients
+pancreatic cancer,YALE,6,All patients
+parathyroid cancer,MSK,1,All patients
+parathyroid cancer,PHS,15,All patients
+penile cancer,DFCI,6,All patients
+penile cancer,DUKE,1,All patients
+penile cancer,GRCC,4,All patients
+penile cancer,MSK,9,All patients
+penile cancer,VICC,4,All patients
+penile cancer,WAKE,1,All patients
+peritoneal cancer,GRCC,1,All patients
+peritoneal cancer,MSK,6,All patients
+peritoneal cancer,UCSF,2,All patients
+peritoneal cancer,VICC,2,All patients
+peritoneal cancer,WAKE,8,All patients
+pheochromocytoma,DFCI,13,All patients
+pheochromocytoma,GRCC,2,All patients
+pheochromocytoma,MSK,7,All patients
+pheochromocytoma,UCSF,1,All patients
+pheochromocytoma,UHN,1,All patients
+pheochromocytoma,WAKE,1,All patients
+pineal tumor,CHOP,2,All patients
+pineal tumor,DFCI,9,All patients
+pineal tumor,JHU,1,All patients
+pineal tumor,MSK,5,All patients
+pineal tumor,UCSF,4,All patients
+prostate cancer,COLU,1,All patients
+prostate cancer,DFCI,514,All patients
+prostate cancer,DUKE,82,All patients
+prostate cancer,GRCC,110,All patients
+prostate cancer,JHU,3,All patients
+prostate cancer,MDA,55,All patients
+prostate cancer,MSK,1535,All patients
+prostate cancer,NKI,2,All patients
+prostate cancer,PHS,2,All patients
+prostate cancer,SCI,7,All patients
+prostate cancer,UCHI,1,All patients
+prostate cancer,UCSF,51,All patients
+prostate cancer,UHN,34,All patients
+prostate cancer,VICC,30,All patients
+prostate cancer,WAKE,9,All patients
+prostate cancer,YALE,4,All patients
+retinoblastoma,DFCI,2,All patients
+retinoblastoma,MSK,39,All patients
+retinoblastoma,UCSF,10,All patients
+sex cord stromal tumor,DFCI,32,All patients
+sex cord stromal tumor,GRCC,10,All patients
+sex cord stromal tumor,MDA,1,All patients
+sex cord stromal tumor,MSK,38,All patients
+sex cord stromal tumor,NKI,4,All patients
+sex cord stromal tumor,UCSF,3,All patients
+sex cord stromal tumor,UHN,13,All patients
+sex cord stromal tumor,VICC,5,All patients
+sex cord stromal tumor,WAKE,2,All patients
+small bowel cancer,COLU,2,All patients
+small bowel cancer,DFCI,42,All patients
+small bowel cancer,DUKE,1,All patients
+small bowel cancer,GRCC,7,All patients
+small bowel cancer,JHU,28,All patients
+small bowel cancer,MDA,6,All patients
+small bowel cancer,MSK,90,All patients
+small bowel cancer,NKI,4,All patients
+small bowel cancer,PHS,1,All patients
+small bowel cancer,SCI,1,All patients
+small bowel cancer,UHN,9,All patients
+small bowel cancer,VICC,16,All patients
+small bowel cancer,WAKE,3,All patients
+small cell lung cancer,DFCI,97,All patients
+small cell lung cancer,DUKE,2,All patients
+small cell lung cancer,GRCC,8,All patients
+small cell lung cancer,JHU,11,All patients
+small cell lung cancer,MDA,28,All patients
+small cell lung cancer,MSK,204,All patients
+small cell lung cancer,NKI,4,All patients
+small cell lung cancer,SCI,9,All patients
+small cell lung cancer,UCHI,1,All patients
+small cell lung cancer,UCSF,1,All patients
+small cell lung cancer,UHN,4,All patients
+small cell lung cancer,VHIO,2,All patients
+small cell lung cancer,VICC,8,All patients
+small cell lung cancer,WAKE,16,All patients
+small cell lung cancer,YALE,3,All patients
+soft tissue sarcoma,CHOP,6,All patients
+soft tissue sarcoma,COLU,14,All patients
+soft tissue sarcoma,DFCI,793,All patients
+soft tissue sarcoma,DUKE,1,All patients
+soft tissue sarcoma,GRCC,63,All patients
+soft tissue sarcoma,JHU,75,All patients
+soft tissue sarcoma,MDA,166,All patients
+soft tissue sarcoma,MSK,1387,All patients
+soft tissue sarcoma,NKI,55,All patients
+soft tissue sarcoma,PHS,17,All patients
+soft tissue sarcoma,SCI,5,All patients
+soft tissue sarcoma,UCHI,9,All patients
+soft tissue sarcoma,UCSF,54,All patients
+soft tissue sarcoma,UHN,19,All patients
+soft tissue sarcoma,VHIO,1,All patients
+soft tissue sarcoma,VICC,73,All patients
+soft tissue sarcoma,WAKE,35,All patients
+t-lymphoblastic leukemia/lymphoma,CHOP,2,All patients
+t-lymphoblastic leukemia/lymphoma,DFCI,16,All patients
+t-lymphoblastic leukemia/lymphoma,MSK,7,All patients
+t-lymphoblastic leukemia/lymphoma,UCSF,2,All patients
+t-lymphoblastic leukemia/lymphoma,UHN,8,All patients
+t-lymphoblastic leukemia/lymphoma,VICC,5,All patients
+testicular cancer,GRCC,5,All patients
+testicular cancer,PHS,1,All patients
+thymic tumor,DFCI,49,All patients
+thymic tumor,DUKE,5,All patients
+thymic tumor,GRCC,10,All patients
+thymic tumor,JHU,2,All patients
+thymic tumor,MDA,10,All patients
+thymic tumor,MSK,52,All patients
+thymic tumor,NKI,5,All patients
+thymic tumor,SCI,2,All patients
+thymic tumor,UCSF,1,All patients
+thymic tumor,UHN,3,All patients
+thymic tumor,VICC,8,All patients
+thymic tumor,WAKE,9,All patients
+thyroid cancer,DFCI,372,All patients
+thyroid cancer,DUKE,6,All patients
+thyroid cancer,GRCC,18,All patients
+thyroid cancer,JHU,23,All patients
+thyroid cancer,MDA,43,All patients
+thyroid cancer,MSK,449,All patients
+thyroid cancer,NKI,2,All patients
+thyroid cancer,SCI,1,All patients
+thyroid cancer,UCHI,10,All patients
+thyroid cancer,UCSF,17,All patients
+thyroid cancer,UHN,41,All patients
+thyroid cancer,VICC,26,All patients
+thyroid cancer,WAKE,7,All patients
+thyroid cancer,YALE,2,All patients
+uterine cancer,COLU,4,All patients
+uterine cancer,DFCI,740,All patients
+uterine cancer,DUKE,3,All patients
+uterine cancer,GRCC,18,All patients
+uterine cancer,JHU,7,All patients
+uterine cancer,MDA,46,All patients
+uterine cancer,MSK,1057,All patients
+uterine cancer,NKI,8,All patients
+uterine cancer,PHS,10,All patients
+uterine cancer,SCI,10,All patients
+uterine cancer,UCSF,65,All patients
+uterine cancer,UHN,139,All patients
+uterine cancer,VHIO,4,All patients
+uterine cancer,VICC,46,All patients
+uterine cancer,WAKE,96,All patients
+uterine cancer,YALE,1,All patients
+vaginal cancer,DFCI,37,All patients
+vaginal cancer,GRCC,2,All patients
+vaginal cancer,JHU,1,All patients
+vaginal cancer,MDA,2,All patients
+vaginal cancer,MSK,16,All patients
+vaginal cancer,NKI,1,All patients
+vaginal cancer,SCI,1,All patients
+vaginal cancer,UHN,10,All patients
+vaginal cancer,VICC,5,All patients
+vaginal cancer,WAKE,3,All patients
+adrenocortical carcinoma,MSK,59,"Matched
+normal"
+adrenocortical carcinoma,UCSF,7,"Matched
+normal"
+adrenocortical carcinoma,UHN,2,"Matched
+normal"
+ampullary cancer,MSK,67,"Matched
+normal"
+ampullary cancer,UCSF,1,"Matched
+normal"
+ampullary cancer,UHN,4,"Matched
+normal"
+anal cancer,MSK,65,"Matched
+normal"
+anal cancer,UCSF,3,"Matched
+normal"
+anal cancer,UHN,1,"Matched
+normal"
+appendiceal cancer,MSK,170,"Matched
+normal"
+appendiceal cancer,UCSF,2,"Matched
+normal"
+appendiceal cancer,UHN,4,"Matched
+normal"
+b cell lymphoma,MSK,220,"Matched
+normal"
+b cell lymphoma,UCSF,10,"Matched
+normal"
+b-lymphoblastic leukemia/lymphoma,MSK,47,"Matched
+normal"
+b-lymphoblastic leukemia/lymphoma,UCSF,12,"Matched
+normal"
+bladder cancer,MSK,730,"Matched
+normal"
+bladder cancer,UCSF,16,"Matched
+normal"
+bladder cancer,UHN,16,"Matched
+normal"
+blastic plasmacytoid dendritic cell neoplasm,MSK,1,"Matched
+normal"
+bone cancer,MSK,286,"Matched
+normal"
+bone cancer,UCSF,15,"Matched
+normal"
+bone cancer,UHN,1,"Matched
+normal"
+breast cancer,MSK,3586,"Matched
+normal"
+breast cancer,UCSF,37,"Matched
+normal"
+breast cancer,UHN,135,"Matched
+normal"
+cancer of unknown primary,MSK,764,"Matched
+normal"
+cancer of unknown primary,UCSF,47,"Matched
+normal"
+cancer of unknown primary,UHN,10,"Matched
+normal"
+cervical cancer,MSK,127,"Matched
+normal"
+cervical cancer,UCSF,7,"Matched
+normal"
+cervical cancer,UHN,20,"Matched
+normal"
+cns cancer,MSK,1290,"Matched
+normal"
+cns cancer,UCSF,212,"Matched
+normal"
+colorectal cancer,MSK,2218,"Matched
+normal"
+colorectal cancer,UCSF,65,"Matched
+normal"
+colorectal cancer,UHN,232,"Matched
+normal"
+esophagogastric cancer,MSK,689,"Matched
+normal"
+esophagogastric cancer,UCSF,28,"Matched
+normal"
+esophagogastric cancer,UHN,27,"Matched
+normal"
+germ cell tumor,MSK,483,"Matched
+normal"
+germ cell tumor,UCSF,53,"Matched
+normal"
+germ cell tumor,UHN,2,"Matched
+normal"
+head and neck cancer,MSK,605,"Matched
+normal"
+head and neck cancer,UCSF,34,"Matched
+normal"
+head and neck cancer,UHN,27,"Matched
+normal"
+hepatobiliary cancer,MSK,739,"Matched
+normal"
+hepatobiliary cancer,UCSF,16,"Matched
+normal"
+hepatobiliary cancer,UHN,25,"Matched
+normal"
+hodgkin lymphoma,MSK,15,"Matched
+normal"
+kidney cancer,MSK,618,"Matched
+normal"
+kidney cancer,UCSF,16,"Matched
+normal"
+kidney cancer,UHN,8,"Matched
+normal"
+leukemia,MSK,38,"Matched
+normal"
+leukemia,UCSF,11,"Matched
+normal"
+lung cancer,UHN,4,"Matched
+normal"
+mature t and nk neoplasms,MSK,69,"Matched
+normal"
+mature t and nk neoplasms,UCSF,1,"Matched
+normal"
+melanoma,MSK,906,"Matched
+normal"
+melanoma,UCSF,46,"Matched
+normal"
+melanoma,UHN,17,"Matched
+normal"
+mesothelioma,MSK,232,"Matched
+normal"
+mesothelioma,UHN,1,"Matched
+normal"
+myelodysplastic/myeloproliferative syndromes,MSK,24,"Matched
+normal"
+myelodysplastic/myeloproliferative syndromes,UCSF,7,"Matched
+normal"
+nerve sheath tumor,MSK,49,"Matched
+normal"
+nerve sheath tumor,UCSF,9,"Matched
+normal"
+neuroendocrine tumors,MSK,110,"Matched
+normal"
+neuroendocrine tumors,UCSF,11,"Matched
+normal"
+neuroendocrine tumors,UHN,1,"Matched
+normal"
+non-hodgkin lymphoma,MSK,1,"Matched
+normal"
+non-melanoma skin cancers,MSK,239,"Matched
+normal"
+non-melanoma skin cancers,UCSF,12,"Matched
+normal"
+non-melanoma skin cancers,UHN,6,"Matched
+normal"
+non-small cell lung cancer,MSK,3680,"Matched
+normal"
+non-small cell lung cancer,UCSF,17,"Matched
+normal"
+non-small cell lung cancer,UHN,124,"Matched
+normal"
+ovarian cancer,MSK,699,"Matched
+normal"
+ovarian cancer,UCSF,53,"Matched
+normal"
+ovarian cancer,UHN,261,"Matched
+normal"
+pancreatic cancer,MSK,1474,"Matched
+normal"
+pancreatic cancer,UCSF,64,"Matched
+normal"
+pancreatic cancer,UHN,54,"Matched
+normal"
+parathyroid cancer,MSK,1,"Matched
+normal"
+penile cancer,MSK,9,"Matched
+normal"
+peritoneal cancer,MSK,6,"Matched
+normal"
+peritoneal cancer,UCSF,2,"Matched
+normal"
+pheochromocytoma,MSK,7,"Matched
+normal"
+pineal tumor,MSK,5,"Matched
+normal"
+pineal tumor,UCSF,4,"Matched
+normal"
+prostate cancer,MSK,1530,"Matched
+normal"
+prostate cancer,UCSF,45,"Matched
+normal"
+prostate cancer,UHN,19,"Matched
+normal"
+retinoblastoma,MSK,39,"Matched
+normal"
+retinoblastoma,UCSF,10,"Matched
+normal"
+sex cord stromal tumor,MSK,38,"Matched
+normal"
+sex cord stromal tumor,UCSF,3,"Matched
+normal"
+sex cord stromal tumor,UHN,7,"Matched
+normal"
+small bowel cancer,MSK,89,"Matched
+normal"
+small bowel cancer,UHN,6,"Matched
+normal"
+small cell lung cancer,MSK,202,"Matched
+normal"
+small cell lung cancer,UCSF,1,"Matched
+normal"
+soft tissue sarcoma,MSK,1306,"Matched
+normal"
+soft tissue sarcoma,UCSF,34,"Matched
+normal"
+soft tissue sarcoma,UHN,8,"Matched
+normal"
+t-lymphoblastic leukemia/lymphoma,MSK,7,"Matched
+normal"
+t-lymphoblastic leukemia/lymphoma,UCSF,2,"Matched
+normal"
+thymic tumor,MSK,51,"Matched
+normal"
+thyroid cancer,MSK,441,"Matched
+normal"
+thyroid cancer,UCSF,15,"Matched
+normal"
+thyroid cancer,UHN,31,"Matched
+normal"
+uterine cancer,MSK,1049,"Matched
+normal"
+uterine cancer,UCSF,58,"Matched
+normal"
+uterine cancer,UHN,115,"Matched
+normal"
+vaginal cancer,MSK,16,"Matched
+normal"
+vaginal cancer,UHN,7,"Matched
+normal"

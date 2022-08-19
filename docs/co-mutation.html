@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Co-mutation analysis for RAS hotspot variants</title>
+
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/main/img/reproducible.png">
+<!-- Add a small amount of space between sections. -->
+<style type="text/css">
+div.section {
+  padding-top: 12px;
+}
+</style>
+
+
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">genie_ras_hallmarks</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="license.html">License</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Co-mutation analysis for RAS hotspot
+variants</h1>
+<h4 class="date">18 August, 2022</h4>
+
+</div>
+
+
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span>
+</button>
+</p>
+<div id="workflowr-report" class="collapse">
+<ul class="nav nav-tabs">
+<li class="active">
+<a data-toggle="tab" href="#summary">Summary</a>
+</li>
+<li>
+<a data-toggle="tab" href="#checks"> Checks <span
+class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> </a>
+</li>
+<li>
+<a data-toggle="tab" href="#versions">Past versions</a>
+</li>
+</ul>
+<div class="tab-content">
+<div id="summary" class="tab-pane fade in active">
+<p>
+<strong>Last updated:</strong> 2022-08-18
+</p>
+<p>
+<strong>Checks:</strong> <span
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> 1
+</p>
+<p>
+<strong>Knit directory:</strong> <code>genie/</code> <span
+class="glyphicon glyphicon-question-sign" aria-hidden="true"
+title="This is the local directory in which the code in this file was executed.">
+</span>
+</p>
+<p>
+This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a>
+analysis was created with <a
+  href="https://github.com/workflowr/workflowr">workflowr</a> (version
+1.7.0). The <em>Checks</em> tab describes the reproducibility checks
+that were applied when the results were created. The <em>Past
+versions</em> tab lists the development history.
+</p>
+<hr>
+</div>
+<div id="checks" class="tab-pane fade">
+<div id="workflowr-checks" class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
+changes </a>
+</p>
+</div>
+<div id="strongRMarkdownfilestronguncommittedchanges"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>The R Markdown is untracked by Git. To know which version of the R
+Markdown file created these results, you’ll want to first commit it to
+the Git repo. If you’re still working on the analysis, you can ignore
+this warning. When you’re finished, you can run
+<code>wflow_publish</code> to commit the R Markdown file and build the
+HTML.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+</p>
+</div>
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the
+global environment can affect the analysis in your R Markdown file in
+unknown ways. For reproduciblity it’s best to always run the code in an
+empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20220803code">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Seed:</strong>
+<code>set.seed(20220803)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20220803code"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20220803)</code> was run prior to running
+the code in the R Markdown file. Setting a seed ensures that any results
+that rely on randomness, e.g. subsampling or permutations, are
+reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Session information:</strong>
+recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package
+versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be
+confident that you successfully produced the results during this
+run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr
+project makes it easier to run your code on other machines.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrong74b2b93">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Repository version:</strong> 74b2b93
+</a>
+</p>
+</div>
+<div id="strongRepositoryversionstrong74b2b93"
+class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+Great! You are using Git for version control. Tracking code development
+and connecting the code version to the results is critical for
+reproducibility.
+</p>
+<p>
+The results in this page were generated with repository version 74b2b93.
+See the <em>Past versions</em> tab to see a history of the changes made
+to the R Markdown and HTML files.
+</p>
+<p>
+Note that you need to be careful to ensure that all relevant files for
+the analysis have been committed to Git prior to generating the results
+(you can use <code>wflow_publish</code> or
+<code>wflow_git_commit</code>). workflowr only checks the R Markdown
+file, but you know if there are other scripts or data files that it
+depends on. Below is the status of the Git repository when the results
+were generated:
+</p>
+<pre><code>
+Ignored files:
+    Ignored:    .Rhistory
+
+Untracked files:
+    Untracked:  analysis/co-mutation.Rmd
+    Untracked:  analysis/fig_s1.Rmd
+    Untracked:  analysis/fig_s10.Rmd
+    Untracked:  analysis/fig_s11.Rmd
+    Untracked:  analysis/fig_s12.Rmd
+    Untracked:  analysis/fig_s13.Rmd
+    Untracked:  analysis/fig_s14.Rmd
+    Untracked:  analysis/fig_s15.Rmd
+    Untracked:  analysis/fig_s16.Rmd
+    Untracked:  analysis/fig_s17.Rmd
+    Untracked:  analysis/fig_s18.Rmd
+    Untracked:  analysis/fig_s19.Rmd
+    Untracked:  analysis/fig_s2.Rmd
+    Untracked:  analysis/fig_s20.Rmd
+    Untracked:  analysis/fig_s3.Rmd
+    Untracked:  analysis/fig_s4.Rmd
+    Untracked:  analysis/fig_s5.Rmd
+    Untracked:  analysis/fig_s6.Rmd
+    Untracked:  analysis/fig_s7.Rmd
+    Untracked:  analysis/fig_s8.Rmd
+    Untracked:  analysis/fig_s9.Rmd
+    Untracked:  analysis/methods_comparison.Rmd
+    Untracked:  analysis/potential_confounding.Rmd
+    Untracked:  code/TCGA-COAD/
+    Untracked:  code/TCGA-LUAD-trips/
+    Untracked:  code/TCGA-LUAD/
+    Untracked:  code/TCGA-PAAD/
+    Untracked:  code/co-mutation/
+    Untracked:  code/misc/
+    Untracked:  code/sets/
+    Untracked:  code/stan/
+    Untracked:  output/co-mutation/
+    Untracked:  output/gsea_data_wrangling.Rmd/
+    Untracked:  output/methods-comparison/
+    Untracked:  output/mutsig_s13/
+    Untracked:  output/prevalence/
+    Untracked:  public/
+
+Unstaged changes:
+    Modified:   .Rprofile
+    Modified:   .gitattributes
+    Modified:   .gitignore
+    Modified:   README.md
+    Modified:   _workflowr.yml
+    Modified:   analysis/_site.yml
+    Modified:   analysis/about.Rmd
+    Modified:   analysis/fig7.Rmd
+    Modified:   analysis/index.Rmd
+    Modified:   analysis/license.Rmd
+    Modified:   code/README.md
+    Modified:   data/README.md
+    Modified:   genie_ras_hallmarks.Rproj
+    Modified:   output/README.md
+
+</code></pre>
+<p>
+Note that any generated files, e.g. HTML, png, CSS, etc., are not
+included in this status report because it is ok for generated content to
+have uncommitted changes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div id="versions" class="tab-pane fade">
+<p>
+There are no past versions. Publish this analysis with
+<code>wflow_publish()</code> to start tracking its development.
+</p>
+<hr>
+</div>
+</div>
+</div>
+<pre class="r"><code>library(devtools)
+library(magrittr)
+library(tidyverse)
+library(genie.6.1)
+library(kableExtra)
+library(scales)
+library(ggthemes)
+library(RColorBrewer)
+library(here)
+results &lt;- here(&quot;output&quot;, &quot;co-mutation&quot;, &quot;summarize_models.R&quot;,
+                &quot;combined.rds&quot;) %&gt;%
+    readRDS()</code></pre>
+<div id="model" class="section level1">
+<h1>Model</h1>
+<p>We assessed the co-occurence of RAS hotspot variants and somatic
+variant in non-RAS genes at the sample-level. For patients with multiple
+samples of a single cancer type, we evaluated whether there was more
+than one distinct co-mutation pattern. If a single pattern was
+identified, we randomly selected one of the samples. If multiple
+patterns were found, we selected the sample with the most mutations in
+the gene pair under evaluation. For example, for co-mutation analysis of
+<em>KRAS</em> 12C variants and <em>STK11</em>, if a patient had two
+sequenced tumors and one of the tumors had no mutations (no RAS variant
+or variant or <em>STK11</em> variant) while one sample had a mutation in
+RAS, we selected the sample with the RAS variant. In the event of a tie
+(the patterns were distinct and the number of mutations were the same),
+we randomly selected one sample. For patients with multiple samples of
+different cancer types, we randomly selected one of the samples without
+regard to the number of mutations. Below, we show the resulting
+frequencies of co-occurrence for <em>KRAS</em> 12C and <em>STK11</em>.
+The columns correspond to the number of patients without a variant in
+either gene (‘00’), a variant in RAS but not gene <em>STK11</em> (‘10’),
+a variant in <em>STK11</em> but not <em>KRAS</em> (‘01’), and a variant
+in both genes (‘11’). The total number of patients for a given cancer
+type will be less than the total number of patients in GENIE if (1) some
+patients were sequenced on platforms that do not contain the RAS gene
+and/or the non-RAS gene and (2) due to the random sampling implemented
+for patients with multiple cancer types sequenced.</p>
+<pre class="r"><code>data(mutation_ct, package=&quot;contingency.table&quot;)
+filter(mutation_ct, category==&quot;overall&quot;) %&gt;%
+    unnest(data) %&gt;%
+    filter(nonras==&quot;STK11&quot;, ras==&quot;KRAS_12C&quot;) %&gt;%
+    kable(&quot;html&quot;, format.args=list(big.mark=&quot;,&quot;)) %&gt;%
+    kable_styling(full_width=FALSE)    </code></pre>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+category
+</th>
+<th style="text-align:left;">
+cancer
+</th>
+<th style="text-align:left;">
+ras
+</th>
+<th style="text-align:left;">
+nonras
+</th>
+<th style="text-align:right;">
+00
+</th>
+<th style="text-align:right;">
+10
+</th>
+<th style="text-align:right;">
+01
+</th>
+<th style="text-align:right;">
+11
+</th>
+<th style="text-align:left;">
+variable
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+number_ras
+</th>
+<th style="text-align:right;">
+number_nonras
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+overall
+</td>
+<td style="text-align:left;">
+non-small cell lung cancer
+</td>
+<td style="text-align:left;">
+KRAS_12C
+</td>
+<td style="text-align:left;">
+STK11
+</td>
+<td style="text-align:right;">
+2,951
+</td>
+<td style="text-align:right;">
+346
+</td>
+<td style="text-align:right;">
+413
+</td>
+<td style="text-align:right;">
+130
+</td>
+<td style="text-align:left;">
+overall
+</td>
+<td style="text-align:right;">
+3,840
+</td>
+<td style="text-align:right;">
+476
+</td>
+<td style="text-align:right;">
+543
+</td>
+</tr>
+</tbody>
+</table>
+<p>If variants at KRAS 12C and <em>STK11</em> were independent, we could
+estimate the frequency of their co-occurence as the product of the
+marginal prevalence:</p>
+<p><span class="math display">\[\begin{align*}
+Pr(KRAS\text{12C}, STK11) = Pr(KRAS \text{12C}) \times Pr(STK11).
+\end{align*}\]</span></p>
+<p>To allow for departures from independence, we fit a log linear model
+to this data using an interaction term that measures the association
+between <em>KRAS</em> 12C and <em>STK11</em>. To estimate the
+association for each cancer type but allow sharing of information
+between the available cancers in GENIE, we fit a hierarchical log-linear
+model. We restrict our analysis to cancers with at least 20 patients
+sequenced on platforms that included both genes. Representing the data
+as a <em>K</em>-dimensional array of 2 <span
+class="math inline">\(\times\)</span> 2 tables (<em>K</em> denotes the
+number of cancers with at least 20 patients), our model for the observed
+frequency <span class="math inline">\(y\)</span> in row <span
+class="math inline">\(i\)</span> and column <span
+class="math inline">\(j\)</span> of cancer <span
+class="math inline">\(k\)</span> is given by</p>
+<p><span class="math display">\[\begin{align*}
+y_{ijk} &amp;\sim \text{Poisson}(\theta_{ijk})\\
+\log(\theta_{ijk}) &amp;= \eta_k + \lambda_{ik}^\text{RAS} +
+\lambda_{jk}^{\text{X}} + \lambda_{ijk}^{\text{RAS, X}}\\
+\eta_k &amp;\sim \text{Normal}(0, 5)\\
+\lambda_{ik}^{\text{RAS}}, \lambda_{jk}^{\text{X}},
+\lambda_{ijk}^{\text{RAS, X}} &amp;\sim \text{Normal}(\mu_\beta,
+\sigma)\\
+\mu_\beta &amp;\sim \text{Normal}(0, 5)\\
+\sigma &amp;\sim \text{Cauchy}(0, 2.5), ~\text{where}
+\end{align*}\]</span> <span
+class="math inline">\(\lambda_{ijk}^{\text{RAS}, X}\)</span> is the log
+odds ratio for an association between RAS and gene <span
+class="math inline">\(X\)</span> – non-zero values indicate a departure
+from independence.</p>
+<p>For volcano plots, we highlight genes with Bonferonni-adjusted
+p-value less than 0.01 and color code the different cancers.</p>
+<pre class="r"><code>colors &lt;- here(&quot;output&quot;, &quot;co-mutation&quot;, &quot;summarize_models.R&quot;,
+               &quot;colors.rds&quot;) %&gt;%
+    readRDS()
+colors &lt;- setNames(colors$color, colors$cancer)
+volcanofig &lt;- function(x, colors){
+    dat0 &lt;- x %&gt;%
+        filter(p &lt; cutoff_ntest) 
+    signif &lt;- filter(x, p &gt;= cutoff_ntest | abs(`50%`) &gt; 6)
+    title &lt;- x[1, ] %&gt;%
+        separate(ras, c(&quot;hugo_symbol&quot;, &quot;codon_range&quot;), sep=&quot;_&quot;) %&gt;%
+        pull(hugo_symbol)
+    A &lt;- dat0 %&gt;%
+        ggplot(aes(`50%`, p)) +
+        ##geom_vline(xintercept=0, color=&quot;gray&quot;) +
+        geom_point(color=&quot;gray&quot;, size=0.7) +
+        theme_bw(base_size=15) +
+        xlab(&quot;Log odds ratio&quot;) +
+        ylab(expression(-log[10](p))) +
+        geom_point(data=signif,
+                   size=2,
+                   aes(color=cancer)) +
+        geom_text(data=signif,
+                  aes(label=nonras),
+                  nudge_x=0.3,
+                  size=3,
+                  hjust=0,
+                  check_overlap=TRUE) +
+        geom_vline(xintercept=0, color=&quot;gray&quot;, linetype=&quot;dashed&quot;) +
+        scale_x_continuous(expand=expansion(mult=0.2)) +
+        scale_color_manual(values=colors) +
+        guides(color=guide_legend(title=&quot;&quot;, reverse=TRUE,
+                                  override.aes=list(size=3))) +
+        theme(legend.position=&quot;bottom&quot;,
+              strip.background=element_blank(),
+              panel.grid=element_blank()) +
+        facet_wrap(~codons, ncol=4) +
+        ggtitle(title)
+    A
+}</code></pre>
+<pre class="r"><code>rasg &lt;- c(&quot;RAS_12-61&quot;, &quot;RAS_12&quot;, &quot;RAS_13&quot;, &quot;RAS_61&quot;)
+krasg &lt;- c(&quot;KRAS_12-61&quot;, &quot;KRAS_12&quot;, &quot;KRAS_13&quot;, &quot;KRAS_61&quot;)
+hrasg &lt;- c(&quot;HRAS_12-61&quot;, &quot;HRAS_12&quot;, &quot;HRAS_13&quot;, &quot;HRAS_61&quot;)
+nrasg &lt;- c(&quot;NRAS_12-61&quot;, &quot;NRAS_12&quot;, &quot;NRAS_13&quot;, &quot;NRAS_61&quot;)
+rlabels &lt;- c(&quot;Codons 12, 13, or 61&quot;,
+             &quot;Codon 12&quot;, &quot;Codon 13&quot;, &quot;Codon 61&quot;) %&gt;%
+    setNames(rasg)
+nms &lt;- tibble(ras=c(rasg, krasg, hrasg, nrasg),
+              codons=rep(rlabels, 4)) %&gt;%
+    mutate(codons=factor(codons, rlabels))</code></pre>
+</div>
+<div id="any-mutation" class="section level1">
+<h1>Any mutation</h1>
+<p>Contingency table: matched normal sequencing, &gt;100 Ras, &gt; 100
+gene <em>X</em> mutations</p>
+<pre class="r"><code>multicancer &lt;- filter(results, cancer_group == &quot;multi&quot;) %&gt;%
+    unnest(data) %&gt;%
+    left_join(nms, by=&quot;ras&quot;) %&gt;%
+    group_by(alteration_group, ras) %&gt;%
+    nest()
+multicancer %&gt;%
+    filter(alteration_group==&quot;Any mutation&quot;) %&gt;%
+    filter(ras %in% rasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    volcanofig(colors)</code></pre>
+<p><img src="figure/co-mutation.Rmd/ras-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Any mutation&quot;) %&gt;%
+    filter(ras %in% krasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    volcanofig(colors)</code></pre>
+<p><img src="figure/co-mutation.Rmd/ras-2.png" width="1152" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Any mutation&quot;) %&gt;%
+    filter(ras %in% nrasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    volcanofig(colors)</code></pre>
+<p><img src="figure/co-mutation.Rmd/ras-3.png" width="1152" style="display: block; margin: auto;" /></p>
+</div>
+<div id="inactivating-mutations" class="section level1">
+<h1>Inactivating mutations</h1>
+<p>Contingency table: matched normal sequencing, &gt;50 Ras, &gt;50 gene
+<em>X</em> mutations</p>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Inactivating mutation&quot;) %&gt;%
+    filter(ras %in% rasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    volcanofig(colors)</code></pre>
+<p><img src="figure/co-mutation.Rmd/inactivating-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Inactivating mutation&quot;) %&gt;%
+    filter(ras %in% krasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    volcanofig(colors)</code></pre>
+<p><img src="figure/co-mutation.Rmd/inactivating-2.png" width="1152" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Inactivating mutation&quot;) %&gt;%
+    filter(ras %in% nrasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    volcanofig(colors)</code></pre>
+<p><img src="figure/co-mutation.Rmd/inactivating-3.png" width="1152" style="display: block; margin: auto;" /></p>
+</div>
+<div id="deletions" class="section level1">
+<h1>Deletions</h1>
+<p>Contingency table: &gt; 50 RAS variants, 50 amplifications</p>
+<div id="deep-deletions" class="section level2">
+<h2>Deep deletions</h2>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Deletion&quot;) %&gt;%
+    filter(ras %in% rasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    volcanofig(colors)</code></pre>
+<p><img src="figure/co-mutation.Rmd/deletions-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Deletion&quot;) %&gt;%
+    filter(ras %in% krasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    volcanofig(colors)</code></pre>
+<p><img src="figure/co-mutation.Rmd/deletions-2.png" width="1152" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Deletion&quot;) %&gt;%
+    filter(ras %in% nrasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    volcanofig(colors)</code></pre>
+<p><img src="figure/co-mutation.Rmd/deletions-3.png" width="1152" style="display: block; margin: auto;" /></p>
+</div>
+<div id="any-deletion" class="section level2">
+<h2>Any deletion</h2>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Any deletion&quot;) %&gt;%
+    filter(ras %in% rasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    volcanofig(colors)</code></pre>
+<p><img src="figure/co-mutation.Rmd/any_deletion-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Any deletion&quot;) %&gt;%
+    filter(ras %in% krasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    volcanofig(colors)</code></pre>
+<p><img src="figure/co-mutation.Rmd/any_deletion-2.png" width="1152" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Any deletion&quot;) %&gt;%
+    filter(ras %in% nrasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    volcanofig(colors)</code></pre>
+<p><img src="figure/co-mutation.Rmd/any_deletion-3.png" width="1152" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="amplifcations" class="section level1">
+<h1>Amplifcations</h1>
+<p>Contingency table: &gt; 50 RAS variants, 50 amplifications</p>
+<div id="high-copy-amplifications" class="section level2">
+<h2>High copy amplifications</h2>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Amplification&quot;) %&gt;%
+    filter(ras %in% rasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    volcanofig(colors)</code></pre>
+<p><img src="figure/co-mutation.Rmd/amplifications-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Amplification&quot;) %&gt;%
+    filter(ras %in% rasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    filter(abs(`50%`) &gt; 6) %&gt;%
+    as.data.frame()</code></pre>
+<pre><code> [1] alteration_group ras              cancer_group     confounder      
+ [5] nonras           cancer           number_ras       number_nonras   
+ [9] Parameter        mean             se_mean          sd              
+[13] 2.5%             5%               25%              50%             
+[17] 75%              95%              97.5%            n_eff           
+[21] Rhat             variable         z                p               
+[25] 00               10               01               11              
+[29] n                chisq_stat       chisq_p          chisq_padj      
+[33] is_driver        cutoff_nmodel    cutoff_ntest     codons          
+&lt;0 rows&gt; (or 0-length row.names)</code></pre>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Amplification&quot;) %&gt;%
+    filter(ras %in% krasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    volcanofig(colors)</code></pre>
+<p><img src="figure/co-mutation.Rmd/amplifications-2.png" width="1152" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Amplification&quot;) %&gt;%
+    filter(ras %in% nrasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    volcanofig(colors)</code></pre>
+<p><img src="figure/co-mutation.Rmd/amplifications-3.png" width="1152" style="display: block; margin: auto;" /></p>
+</div>
+<div id="any-copy-number-gain" class="section level2">
+<h2>Any copy number gain</h2>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Any amplification&quot;) %&gt;%
+    filter(ras %in% rasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    volcanofig(colors)</code></pre>
+<p><img src="figure/co-mutation.Rmd/any_amplification-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Any amplification&quot;) %&gt;%
+    filter(ras %in% rasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    filter(abs(`50%`) &gt; 6) %&gt;%
+    as.data.frame()</code></pre>
+<pre><code>   alteration_group       ras cancer_group confounder  nonras
+1 Any amplification RAS_12-61        multi       none DCUN1D1
+2 Any amplification    RAS_12        multi       none DCUN1D1
+                      cancer number_ras number_nonras Parameter      mean
+1 non-small cell lung cancer       1079            64 beta[1,4] -7.553015
+2 non-small cell lung cancer        917            64 beta[1,4] -7.217140
+    se_mean       sd      2.5%        5%       25%       50%       75%
+1 0.1570446 5.070841 -16.82059 -14.27767 -9.083407 -6.646131 -4.831339
+2 0.1609949 5.117943 -16.89974 -13.66918 -8.460379 -6.263984 -4.584033
+        95%     97.5%    n_eff      Rhat variable         z    p   00   10 01
+1 -3.148673 -2.807672 1042.591 0.9991265     &lt;NA&gt; -1.489499 0.87 2591 1079 64
+2 -3.074139 -2.739668 1010.571 1.0003423     &lt;NA&gt; -1.410164 0.80 2753  917 64
+  11    n chisq_stat chisq_p chisq_padj is_driver cutoff_nmodel cutoff_ntest
+1  0 3734     25.052    6.25       5.03     FALSE          5.93         6.88
+2  0 3734     19.870    5.08       3.92     FALSE          5.92         6.70
+                codons
+1 Codons 12, 13, or 61
+2             Codon 12</code></pre>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Any amplification&quot;) %&gt;%
+    filter(ras %in% krasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    volcanofig(colors)</code></pre>
+<p><img src="figure/co-mutation.Rmd/any_amplification-2.png" width="1152" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Any amplification&quot;) %&gt;%
+    filter(ras %in% nrasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    volcanofig(colors)</code></pre>
+<p><img src="figure/co-mutation.Rmd/any_amplification-3.png" width="1152" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="rearrangements" class="section level1">
+<h1>Rearrangements</h1>
+<p>Contingency tables: &gt; 100 Ras, 50 occurrences of a gene involved
+in a fusion</p>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Rearrangement&quot;) %&gt;%
+    filter(ras %in% rasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    volcanofig(colors)</code></pre>
+<p><img src="figure/co-mutation.Rmd/rearrangement-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Rearrangement&quot;) %&gt;%
+    filter(ras %in% krasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    volcanofig(colors)</code></pre>
+<p><img src="figure/co-mutation.Rmd/rearrangement-2.png" width="1152" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Rearrangement&quot;) %&gt;%
+    filter(ras %in% nrasg) %&gt;%
+    ungroup() %&gt;%
+    unnest(data) %&gt;%
+    volcanofig(colors)</code></pre>
+<p><img src="figure/co-mutation.Rmd/rearrangement-3.png" width="1152" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>multicancer %&gt;%
+    filter(alteration_group==&quot;Rearrangement&quot;) %&gt;%
+    unnest(data) %&gt;%
+    ungroup() %&gt;%
+    filter(abs(`50%`) &gt; 6) %&gt;%
+    select(-c(Parameter, sd, mean, se_mean, `5%`, `95%`,
+              n_eff, Rhat, variable, 
+              `25%`, `75%`, is_driver,
+              cutoff_nmodel, cutoff_ntest, z)) %&gt;%
+    mutate(across(c(9:12, 18:20), round, 3)) %&gt;%
+    slice_head() %&gt;%
+    kbl() %&gt;%
+    kable_styling()</code></pre>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+alteration_group
+</th>
+<th style="text-align:left;">
+ras
+</th>
+<th style="text-align:left;">
+cancer_group
+</th>
+<th style="text-align:left;">
+confounder
+</th>
+<th style="text-align:left;">
+nonras
+</th>
+<th style="text-align:left;">
+cancer
+</th>
+<th style="text-align:right;">
+number_ras
+</th>
+<th style="text-align:right;">
+number_nonras
+</th>
+<th style="text-align:right;">
+2.5%
+</th>
+<th style="text-align:right;">
+50%
+</th>
+<th style="text-align:right;">
+97.5%
+</th>
+<th style="text-align:right;">
+p
+</th>
+<th style="text-align:right;">
+00
+</th>
+<th style="text-align:right;">
+10
+</th>
+<th style="text-align:right;">
+01
+</th>
+<th style="text-align:right;">
+11
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+chisq_stat
+</th>
+<th style="text-align:right;">
+chisq_p
+</th>
+<th style="text-align:right;">
+chisq_padj
+</th>
+<th style="text-align:left;">
+codons
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Rearrangement
+</td>
+<td style="text-align:left;">
+RAS_12-61
+</td>
+<td style="text-align:left;">
+multi
+</td>
+<td style="text-align:left;">
+none
+</td>
+<td style="text-align:left;">
+RET
+</td>
+<td style="text-align:left;">
+non-small cell lung cancer
+</td>
+<td style="text-align:right;">
+3008
+</td>
+<td style="text-align:right;">
+60
+</td>
+<td style="text-align:right;">
+-13.263
+</td>
+<td style="text-align:right;">
+-6.303
+</td>
+<td style="text-align:right;">
+-2.973
+</td>
+<td style="text-align:right;">
+1.91
+</td>
+<td style="text-align:right;">
+7063
+</td>
+<td style="text-align:right;">
+3008
+</td>
+<td style="text-align:right;">
+60
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+10131
+</td>
+<td style="text-align:right;">
+24.078
+</td>
+<td style="text-align:right;">
+6.03
+</td>
+<td style="text-align:right;">
+4.86
+</td>
+<td style="text-align:left;">
+Codons 12, 13, or 61
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="csv-files" class="section level1">
+<h1>csv files</h1>
+<div id="multi-cancer-model" class="section level2">
+<h2>Multi-cancer model</h2>
+<p>Dependency between Ras and alteration <em>X</em> is modeled
+hierarchically across all cancer types.</p>
+<ul>
+<li><p>Any mutation: <a
+href="table/co-mutation.Rmd/any_mutation.csv">csv</a></p></li>
+<li><p>Inactivating mutation: <a
+href="table/co-mutation.Rmd/inactivating_mutation.csv">csv</a></p></li>
+<li><p>Deep deletion: <a
+href="table/co-mutation.Rmd/deletion.csv">csv</a></p></li>
+<li><p>Any deletion: <a
+href="table/co-mutation.Rmd/any_deletion.csv">csv</a></p></li>
+<li><p>High copy amplification: <a
+href="table/co-mutation.Rmd/amplification.csv">csv</a></p></li>
+<li><p>Any gain: <a
+href="table/co-mutation.Rmd/any_amplification.csv">csv</a></p></li>
+<li><p>Rearrangement: <a
+href="table/co-mutation.Rmd/rearrangement.csv">csv</a></p></li>
+</ul>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>R version 4.2.1 (2022-06-23)
+Platform: x86_64-apple-darwin21.5.0 (64-bit)
+Running under: macOS Monterey 12.5.1
+
+Matrix products: default
+BLAS:   /usr/local/Cellar/openblas/0.3.20/lib/libopenblasp-r0.3.20.dylib
+LAPACK: /usr/local/Cellar/r/4.2.1/lib/R/lib/libRlapack.dylib
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] here_1.0.1         RColorBrewer_1.1-3 ggthemes_4.2.4     scales_1.2.0      
+ [5] kableExtra_1.3.4   genie.6.1_1.1.1    forcats_0.5.1      stringr_1.4.0     
+ [9] dplyr_1.0.9        purrr_0.3.4        readr_2.1.2        tidyr_1.2.0       
+[13] tibble_3.1.8       ggplot2_3.3.6      tidyverse_1.3.2    magrittr_2.0.3    
+[17] devtools_2.4.4     usethis_2.1.6      workflowr_1.7.0   
+
+loaded via a namespace (and not attached):
+ [1] fs_1.5.2            bit64_4.0.5         lubridate_1.8.0    
+ [4] webshot_0.5.3       httr_1.4.3          rprojroot_2.0.3    
+ [7] tools_4.2.1         profvis_0.3.7       backports_1.4.1    
+[10] bslib_0.4.0         utf8_1.2.2          R6_2.5.1           
+[13] DBI_1.1.3           colorspace_2.0-3    urlchecker_1.0.1   
+[16] withr_2.5.0         tidyselect_1.1.2    prettyunits_1.1.1  
+[19] processx_3.7.0      bit_4.0.4           compiler_4.2.1     
+[22] git2r_0.30.1        cli_3.3.0           rvest_1.0.2        
+[25] xml2_1.3.3          labeling_0.4.2      sass_0.4.2         
+[28] callr_3.7.1         systemfonts_1.0.4   digest_0.6.29      
+[31] svglite_2.1.0       rmarkdown_2.14      pkgconfig_2.0.3    
+[34] htmltools_0.5.3     sessioninfo_1.2.2   highr_0.9          
+[37] dbplyr_2.2.1        fastmap_1.1.0       htmlwidgets_1.5.4  
+[40] rlang_1.0.4         readxl_1.4.0        rstudioapi_0.13    
+[43] shiny_1.7.2         farver_2.1.1        jquerylib_0.1.4    
+[46] generics_0.1.3      jsonlite_1.8.0      vroom_1.5.7        
+[49] googlesheets4_1.0.1 Rcpp_1.0.9          munsell_0.5.0      
+[52] fansi_1.0.3         lifecycle_1.0.1     stringi_1.7.8      
+[55] whisker_0.4         yaml_2.3.5          pkgbuild_1.3.1     
+[58] grid_4.2.1          parallel_4.2.1      promises_1.2.0.1   
+[61] crayon_1.5.1        miniUI_0.1.1.1      haven_2.5.0        
+[64] hms_1.1.1           knitr_1.39          ps_1.7.1           
+[67] pillar_1.8.0        pkgload_1.3.0       reprex_2.0.1       
+[70] glue_1.6.2          evaluate_0.16       getPass_0.2-2      
+[73] remotes_2.4.2       modelr_0.1.8        vctrs_0.4.1        
+[76] tzdb_0.3.0          httpuv_1.6.5        cellranger_1.1.0   
+[79] gtable_0.3.0        assertthat_0.2.1    cachem_1.0.6       
+[82] xfun_0.32           mime_0.12           xtable_1.8-4       
+[85] broom_1.0.0         later_1.3.0         viridisLite_0.4.0  
+[88] googledrive_2.0.0   gargle_1.2.0        memoise_2.0.1      
+[91] ellipsis_0.3.2     </code></pre>
+</div>
+</div>
+</div>
+
+
+<!-- Adjust MathJax settings so that all math formulae are shown using
+TeX fonts only; see
+https://docs.mathjax.org/en/latest/web/configuration.html. This will make
+the presentation more consistent at the cost of the webpage sometimes
+taking slightly longer to load. Note that this only works because the
+footer is added to webpages before the MathJax javascript. -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

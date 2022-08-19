@@ -1,0 +1,672 @@
+cancer,hugo_symbol,hgvsp,y,n
+adrenocortical carcinoma,NRAS,G13R,1,134
+ampullary cancer,KRAS,G12A,1,106
+ampullary cancer,KRAS,G12C,4,106
+ampullary cancer,KRAS,G12D,28,106
+ampullary cancer,KRAS,G12R,3,106
+ampullary cancer,KRAS,G12S,1,106
+ampullary cancer,KRAS,G12V,12,106
+ampullary cancer,KRAS,G13D,5,106
+ampullary cancer,KRAS,Q61H,2,106
+ampullary cancer,KRAS,Q61L,1,106
+ampullary cancer,KRAS,Q61R,2,106
+anal cancer,KRAS,G12A,1,149
+anal cancer,KRAS,G12D,1,149
+anal cancer,KRAS,G13C,1,149
+anal cancer,KRAS,G13D,1,149
+anal cancer,KRAS,Q61K,1,149
+appendiceal cancer,KRAS,A146T,4,341
+appendiceal cancer,KRAS,A146V,2,341
+appendiceal cancer,KRAS,G12A,1,341
+appendiceal cancer,KRAS,G12C,9,341
+appendiceal cancer,KRAS,G12D,92,341
+appendiceal cancer,KRAS,G12R,3,341
+appendiceal cancer,KRAS,G12S,1,341
+appendiceal cancer,KRAS,G12V,41,341
+appendiceal cancer,KRAS,G13D,14,341
+appendiceal cancer,KRAS,K117N,1,341
+appendiceal cancer,KRAS,L19F,1,341
+appendiceal cancer,KRAS,Q61H,3,341
+appendiceal cancer,KRAS,Q61K,1,341
+appendiceal cancer,KRAS,Q61L,1,341
+appendiceal cancer,KRAS,Q61R,1,341
+appendiceal cancer,NRAS,G12C,1,341
+appendiceal cancer,NRAS,G13R,1,341
+appendiceal cancer,NRAS,Q61R,5,341
+b cell lymphoma,KRAS,A146V,3,962
+b cell lymphoma,KRAS,G12A,2,962
+b cell lymphoma,KRAS,G12D,3,962
+b cell lymphoma,KRAS,G12R,2,962
+b cell lymphoma,KRAS,G12S,3,962
+b cell lymphoma,KRAS,G12V,4,962
+b cell lymphoma,KRAS,G13C,1,962
+b cell lymphoma,KRAS,G13D,7,962
+b cell lymphoma,KRAS,K117N,1,962
+b cell lymphoma,KRAS,Q61H,10,962
+b cell lymphoma,KRAS,Q61L,1,962
+b cell lymphoma,KRAS,Q61R,3,962
+b cell lymphoma,NRAS,G12D,1,962
+b cell lymphoma,NRAS,G12R,1,962
+b cell lymphoma,NRAS,G12S,2,962
+b cell lymphoma,NRAS,G12V,1,962
+b cell lymphoma,NRAS,G13C,1,962
+b cell lymphoma,NRAS,G13D,2,962
+b cell lymphoma,NRAS,G13R,1,962
+b cell lymphoma,NRAS,Q61H,2,962
+b cell lymphoma,NRAS,Q61K,4,962
+b cell lymphoma,NRAS,Q61L,1,962
+b cell lymphoma,NRAS,Q61R,6,962
+b-lymphoblastic leukemia/lymphoma,KRAS,A146T,4,248
+b-lymphoblastic leukemia/lymphoma,KRAS,A146V,1,248
+b-lymphoblastic leukemia/lymphoma,KRAS,G12A,1,248
+b-lymphoblastic leukemia/lymphoma,KRAS,G12D,8,248
+b-lymphoblastic leukemia/lymphoma,KRAS,G12V,1,248
+b-lymphoblastic leukemia/lymphoma,KRAS,G13D,8,248
+b-lymphoblastic leukemia/lymphoma,KRAS,K117N,1,248
+b-lymphoblastic leukemia/lymphoma,KRAS,L19F,3,248
+b-lymphoblastic leukemia/lymphoma,KRAS,Q61H,3,248
+b-lymphoblastic leukemia/lymphoma,NRAS,A146T,1,248
+b-lymphoblastic leukemia/lymphoma,NRAS,G12A,2,248
+b-lymphoblastic leukemia/lymphoma,NRAS,G12C,1,248
+b-lymphoblastic leukemia/lymphoma,NRAS,G12D,10,248
+b-lymphoblastic leukemia/lymphoma,NRAS,G12S,4,248
+b-lymphoblastic leukemia/lymphoma,NRAS,G13D,6,248
+b-lymphoblastic leukemia/lymphoma,NRAS,G13R,1,248
+b-lymphoblastic leukemia/lymphoma,NRAS,G13V,1,248
+b-lymphoblastic leukemia/lymphoma,NRAS,Q61H,2,248
+b-lymphoblastic leukemia/lymphoma,NRAS,Q61K,3,248
+b-lymphoblastic leukemia/lymphoma,NRAS,Q61R,2,248
+bladder cancer,HRAS,G12C,3,1581
+bladder cancer,HRAS,G12D,9,1581
+bladder cancer,HRAS,G12F,1,1581
+bladder cancer,HRAS,G12S,3,1581
+bladder cancer,HRAS,G13D,2,1581
+bladder cancer,HRAS,G13R,8,1581
+bladder cancer,HRAS,G13V,3,1581
+bladder cancer,HRAS,K117N,2,1581
+bladder cancer,HRAS,Q61K,5,1581
+bladder cancer,HRAS,Q61L,8,1581
+bladder cancer,HRAS,Q61R,16,1581
+bladder cancer,KRAS,A146T,2,1581
+bladder cancer,KRAS,G12A,3,1581
+bladder cancer,KRAS,G12C,8,1581
+bladder cancer,KRAS,G12D,32,1581
+bladder cancer,KRAS,G12R,3,1581
+bladder cancer,KRAS,G12S,2,1581
+bladder cancer,KRAS,G12V,19,1581
+bladder cancer,KRAS,G13D,4,1581
+bladder cancer,KRAS,L19F,1,1581
+bladder cancer,KRAS,Q61H,3,1581
+bladder cancer,KRAS,Q61L,1,1581
+bladder cancer,KRAS,Q61R,1,1581
+bladder cancer,NRAS,G12C,1,1581
+bladder cancer,NRAS,G12D,1,1581
+bladder cancer,NRAS,G13R,2,1581
+bladder cancer,NRAS,Q61K,3,1581
+bladder cancer,NRAS,Q61R,3,1581
+blastic plasmacytoid dendritic cell neoplasm,HRAS,Q22Pfs*26,1,NA
+blastic plasmacytoid dendritic cell neoplasm,KRAS,G12D,1,NA
+blastic plasmacytoid dendritic cell neoplasm,NRAS,G12D,2,NA
+blastic plasmacytoid dendritic cell neoplasm,NRAS,G12V,1,NA
+blastic plasmacytoid dendritic cell neoplasm,NRAS,G13D,2,NA
+bone cancer,KRAS,G12A,2,570
+bone cancer,KRAS,G12D,2,570
+bone cancer,KRAS,G13R,1,570
+bone cancer,KRAS,Q61H,1,570
+breast cancer,HRAS,G12C,2,9333
+breast cancer,HRAS,G12D,3,9333
+breast cancer,HRAS,G12S,3,9333
+breast cancer,HRAS,G12V,1,9333
+breast cancer,HRAS,G13R,5,9333
+breast cancer,HRAS,G13V,1,9333
+breast cancer,HRAS,K117N,2,9333
+breast cancer,HRAS,Q61K,2,9333
+breast cancer,HRAS,Q61L,2,9333
+breast cancer,HRAS,Q61R,4,9333
+breast cancer,KRAS,A59T,1,9333
+breast cancer,KRAS,G12A,6,9333
+breast cancer,KRAS,G12C,8,9333
+breast cancer,KRAS,G12D,11,9333
+breast cancer,KRAS,G12R,4,9333
+breast cancer,KRAS,G12S,6,9333
+breast cancer,KRAS,G12V,30,9333
+breast cancer,KRAS,G13D,5,9333
+breast cancer,KRAS,Q61L,1,9333
+breast cancer,KRAS,Q61R,1,9333
+breast cancer,NRAS,G12S,1,9333
+breast cancer,NRAS,G13D,1,9333
+cancer of unknown primary,HRAS,A146T,1,1989
+cancer of unknown primary,HRAS,G12S,1,1989
+cancer of unknown primary,HRAS,G12V,1,1989
+cancer of unknown primary,HRAS,G13R,3,1989
+cancer of unknown primary,HRAS,G13V,1,1989
+cancer of unknown primary,HRAS,Q61K,3,1989
+cancer of unknown primary,HRAS,Q61L,1,1989
+cancer of unknown primary,KRAS,A146T,3,1989
+cancer of unknown primary,KRAS,A146V,3,1989
+cancer of unknown primary,KRAS,G12A,14,1989
+cancer of unknown primary,KRAS,G12C,61,1989
+cancer of unknown primary,KRAS,G12D,107,1989
+cancer of unknown primary,KRAS,G12F,3,1989
+cancer of unknown primary,KRAS,G12R,17,1989
+cancer of unknown primary,KRAS,G12S,6,1989
+cancer of unknown primary,KRAS,G12V,107,1989
+cancer of unknown primary,KRAS,G13C,8,1989
+cancer of unknown primary,KRAS,G13D,26,1989
+cancer of unknown primary,KRAS,G13R,1,1989
+cancer of unknown primary,KRAS,Q61H,15,1989
+cancer of unknown primary,KRAS,Q61K,2,1989
+cancer of unknown primary,KRAS,Q61L,3,1989
+cancer of unknown primary,KRAS,Q61R,3,1989
+cancer of unknown primary,NRAS,G12C,2,1989
+cancer of unknown primary,NRAS,G12D,3,1989
+cancer of unknown primary,NRAS,G12S,1,1989
+cancer of unknown primary,NRAS,G12V,3,1989
+cancer of unknown primary,NRAS,G13R,5,1989
+cancer of unknown primary,NRAS,Q61H,3,1989
+cancer of unknown primary,NRAS,Q61K,7,1989
+cancer of unknown primary,NRAS,Q61L,1,1989
+cancer of unknown primary,NRAS,Q61R,8,1989
+cervical cancer,HRAS,G12V,1,367
+cervical cancer,KRAS,A146T,2,367
+cervical cancer,KRAS,G12A,1,367
+cervical cancer,KRAS,G12C,1,367
+cervical cancer,KRAS,G12D,10,367
+cervical cancer,KRAS,G12R,1,367
+cervical cancer,KRAS,G12S,3,367
+cervical cancer,KRAS,G12V,11,367
+cervical cancer,KRAS,G13D,4,367
+cervical cancer,NRAS,Q61H,1,367
+cervical cancer,NRAS,Q61R,1,367
+cns cancer,HRAS,A59T,1,4565
+cns cancer,HRAS,G13C,1,4565
+cns cancer,HRAS,G13R,1,4565
+cns cancer,HRAS,Q61L,1,4565
+cns cancer,KRAS,A146V,1,4565
+cns cancer,KRAS,A59T,1,4565
+cns cancer,KRAS,G12A,6,4565
+cns cancer,KRAS,G12D,8,4565
+cns cancer,KRAS,G12R,2,4565
+cns cancer,KRAS,G12V,8,4565
+cns cancer,KRAS,G13R,1,4565
+cns cancer,KRAS,L19F,1,4565
+cns cancer,KRAS,Q61H,3,4565
+cns cancer,KRAS,Q61K,4,4565
+cns cancer,KRAS,Q61L,2,4565
+cns cancer,KRAS,Q61R,4,4565
+cns cancer,NRAS,G12C,2,4565
+cns cancer,NRAS,G12D,2,4565
+cns cancer,NRAS,G12S,1,4565
+cns cancer,NRAS,G13D,1,4565
+cns cancer,NRAS,Q61K,8,4565
+cns cancer,NRAS,Q61L,5,4565
+cns cancer,NRAS,Q61R,7,4565
+colorectal cancer,HRAS,A59T,4,6724
+colorectal cancer,HRAS,G12D,3,6724
+colorectal cancer,HRAS,G12S,1,6724
+colorectal cancer,KRAS,A146T,157,6724
+colorectal cancer,KRAS,A146V,39,6724
+colorectal cancer,KRAS,A59T,13,6724
+colorectal cancer,KRAS,G12A,145,6724
+colorectal cancer,KRAS,G12C,212,6724
+colorectal cancer,KRAS,G12D,885,6724
+colorectal cancer,KRAS,G12F,1,6724
+colorectal cancer,KRAS,G12R,34,6724
+colorectal cancer,KRAS,G12S,126,6724
+colorectal cancer,KRAS,G12V,620,6724
+colorectal cancer,KRAS,G13C,24,6724
+colorectal cancer,KRAS,G13D,501,6724
+colorectal cancer,KRAS,G13R,3,6724
+colorectal cancer,KRAS,G13V,2,6724
+colorectal cancer,KRAS,K117N,29,6724
+colorectal cancer,KRAS,L19F,5,6724
+colorectal cancer,KRAS,Q61H,64,6724
+colorectal cancer,KRAS,Q61K,24,6724
+colorectal cancer,KRAS,Q61L,26,6724
+colorectal cancer,KRAS,Q61R,20,6724
+colorectal cancer,NRAS,A59T,1,6724
+colorectal cancer,NRAS,G12A,5,6724
+colorectal cancer,NRAS,G12C,16,6724
+colorectal cancer,NRAS,G12D,53,6724
+colorectal cancer,NRAS,G12S,1,6724
+colorectal cancer,NRAS,G12V,7,6724
+colorectal cancer,NRAS,G13C,3,6724
+colorectal cancer,NRAS,G13D,12,6724
+colorectal cancer,NRAS,G13R,19,6724
+colorectal cancer,NRAS,Q61H,17,6724
+colorectal cancer,NRAS,Q61K,66,6724
+colorectal cancer,NRAS,Q61L,22,6724
+colorectal cancer,NRAS,Q61R,46,6724
+esophagogastric cancer,HRAS,G12S,1,1802
+esophagogastric cancer,HRAS,G13D,1,1802
+esophagogastric cancer,HRAS,Q61R,1,1802
+esophagogastric cancer,KRAS,A146T,6,1802
+esophagogastric cancer,KRAS,A146V,1,1802
+esophagogastric cancer,KRAS,A59T,1,1802
+esophagogastric cancer,KRAS,G12A,6,1802
+esophagogastric cancer,KRAS,G12C,5,1802
+esophagogastric cancer,KRAS,G12D,33,1802
+esophagogastric cancer,KRAS,G12R,2,1802
+esophagogastric cancer,KRAS,G12S,4,1802
+esophagogastric cancer,KRAS,G12V,15,1802
+esophagogastric cancer,KRAS,G13D,22,1802
+esophagogastric cancer,KRAS,L19F,1,1802
+esophagogastric cancer,KRAS,Q61H,2,1802
+esophagogastric cancer,KRAS,Q61K,1,1802
+esophagogastric cancer,KRAS,Q61R,1,1802
+esophagogastric cancer,NRAS,A146T,1,1802
+esophagogastric cancer,NRAS,G12A,1,1802
+esophagogastric cancer,NRAS,G12S,1,1802
+esophagogastric cancer,NRAS,G13D,1,1802
+esophagogastric cancer,NRAS,Q61K,2,1802
+esophagogastric cancer,NRAS,Q61L,1,1802
+esophagogastric cancer,NRAS,Q61R,3,1802
+germ cell tumor,HRAS,G13R,1,886
+germ cell tumor,HRAS,K117N,1,886
+germ cell tumor,KRAS,A146T,1,886
+germ cell tumor,KRAS,A146V,3,886
+germ cell tumor,KRAS,G12A,7,886
+germ cell tumor,KRAS,G12C,4,886
+germ cell tumor,KRAS,G12D,9,886
+germ cell tumor,KRAS,G12R,8,886
+germ cell tumor,KRAS,G12S,4,886
+germ cell tumor,KRAS,G12V,18,886
+germ cell tumor,KRAS,G13D,1,886
+germ cell tumor,KRAS,G13V,1,886
+germ cell tumor,KRAS,L19F,1,886
+germ cell tumor,NRAS,G12A,1,886
+germ cell tumor,NRAS,G12C,1,886
+germ cell tumor,NRAS,G12D,2,886
+germ cell tumor,NRAS,G12S,1,886
+germ cell tumor,NRAS,G12V,2,886
+germ cell tumor,NRAS,G13D,1,886
+germ cell tumor,NRAS,G13R,2,886
+germ cell tumor,NRAS,Q61H,3,886
+germ cell tumor,NRAS,Q61K,3,886
+germ cell tumor,NRAS,Q61L,1,886
+germ cell tumor,NRAS,Q61R,3,886
+head and neck cancer,HRAS,A59T,1,1743
+head and neck cancer,HRAS,G12A,1,1743
+head and neck cancer,HRAS,G12D,2,1743
+head and neck cancer,HRAS,G12S,11,1743
+head and neck cancer,HRAS,G13C,1,1743
+head and neck cancer,HRAS,G13R,10,1743
+head and neck cancer,HRAS,G13V,3,1743
+head and neck cancer,HRAS,Q61K,5,1743
+head and neck cancer,HRAS,Q61L,6,1743
+head and neck cancer,HRAS,Q61R,9,1743
+head and neck cancer,KRAS,A146T,2,1743
+head and neck cancer,KRAS,G12A,1,1743
+head and neck cancer,KRAS,G12C,2,1743
+head and neck cancer,KRAS,G12D,4,1743
+head and neck cancer,KRAS,G12V,1,1743
+head and neck cancer,KRAS,G13D,3,1743
+head and neck cancer,NRAS,G12C,1,1743
+head and neck cancer,NRAS,G12D,3,1743
+head and neck cancer,NRAS,G12R,1,1743
+head and neck cancer,NRAS,G13R,2,1743
+head and neck cancer,NRAS,Q61H,1,1743
+head and neck cancer,NRAS,Q61K,3,1743
+hepatobiliary cancer,HRAS,Q61K,1,1375
+hepatobiliary cancer,KRAS,A146T,1,1375
+hepatobiliary cancer,KRAS,G12A,7,1375
+hepatobiliary cancer,KRAS,G12C,10,1375
+hepatobiliary cancer,KRAS,G12D,55,1375
+hepatobiliary cancer,KRAS,G12R,3,1375
+hepatobiliary cancer,KRAS,G12S,2,1375
+hepatobiliary cancer,KRAS,G12V,38,1375
+hepatobiliary cancer,KRAS,G13D,9,1375
+hepatobiliary cancer,KRAS,L19F,2,1375
+hepatobiliary cancer,KRAS,Q61H,14,1375
+hepatobiliary cancer,KRAS,Q61L,2,1375
+hepatobiliary cancer,KRAS,Q61R,2,1375
+hepatobiliary cancer,NRAS,G12C,2,1375
+hepatobiliary cancer,NRAS,G12D,4,1375
+hepatobiliary cancer,NRAS,G12S,2,1375
+hepatobiliary cancer,NRAS,G12V,1,1375
+hepatobiliary cancer,NRAS,G13R,3,1375
+hepatobiliary cancer,NRAS,Q61K,7,1375
+hepatobiliary cancer,NRAS,Q61R,9,1375
+kidney cancer,KRAS,G12C,1,1422
+kidney cancer,KRAS,G12D,5,1422
+kidney cancer,KRAS,G12S,1,1422
+kidney cancer,KRAS,G12V,4,1422
+kidney cancer,KRAS,Q61H,1,1422
+kidney cancer,KRAS,Q61L,1,1422
+leukemia,HRAS,Q22Pfs*26,20,1567
+leukemia,KRAS,G12A,5,1567
+leukemia,KRAS,G12D,21,1567
+leukemia,KRAS,G12R,2,1567
+leukemia,KRAS,G12S,1,1567
+leukemia,KRAS,G12V,16,1567
+leukemia,KRAS,G13C,1,1567
+leukemia,KRAS,G13D,25,1567
+leukemia,KRAS,Q61H,4,1567
+leukemia,KRAS,Q61L,1,1567
+leukemia,KRAS,Q61R,1,1567
+leukemia,NRAS,G12A,14,1567
+leukemia,NRAS,G12C,8,1567
+leukemia,NRAS,G12D,71,1567
+leukemia,NRAS,G12R,3,1567
+leukemia,NRAS,G12S,6,1567
+leukemia,NRAS,G12V,8,1567
+leukemia,NRAS,G13C,1,1567
+leukemia,NRAS,G13D,32,1567
+leukemia,NRAS,G13R,7,1567
+leukemia,NRAS,G13V,5,1567
+leukemia,NRAS,Q61H,7,1567
+leukemia,NRAS,Q61K,14,1567
+leukemia,NRAS,Q61L,6,1567
+leukemia,NRAS,Q61R,17,1567
+lung cancer,KRAS,G12C,2,25
+lung cancer,KRAS,G12V,2,25
+lung cancer,NRAS,Q61H,1,25
+mature t and nk neoplasms,KRAS,A146T,1,231
+mature t and nk neoplasms,KRAS,G12V,1,231
+mature t and nk neoplasms,KRAS,Q61H,2,231
+mature t and nk neoplasms,NRAS,A146V,1,231
+mature t and nk neoplasms,NRAS,Q61H,1,231
+mature t and nk neoplasms,NRAS,Q61R,1,231
+melanoma,HRAS,A146T,2,2846
+melanoma,HRAS,G12D,7,2846
+melanoma,HRAS,G13C,1,2846
+melanoma,HRAS,G13D,6,2846
+melanoma,HRAS,G13R,2,2846
+melanoma,HRAS,G13V,3,2846
+melanoma,HRAS,Q61K,9,2846
+melanoma,HRAS,Q61R,5,2846
+melanoma,KRAS,A146T,1,2846
+melanoma,KRAS,A146V,1,2846
+melanoma,KRAS,G12A,1,2846
+melanoma,KRAS,G12C,2,2846
+melanoma,KRAS,G12D,14,2846
+melanoma,KRAS,G12R,3,2846
+melanoma,KRAS,G12S,1,2846
+melanoma,KRAS,G12V,2,2846
+melanoma,KRAS,G13D,7,2846
+melanoma,KRAS,K117N,5,2846
+melanoma,KRAS,Q61H,2,2846
+melanoma,KRAS,Q61L,2,2846
+melanoma,KRAS,Q61R,3,2846
+melanoma,NRAS,A146V,2,2846
+melanoma,NRAS,A59T,1,2846
+melanoma,NRAS,G12A,5,2846
+melanoma,NRAS,G12C,12,2846
+melanoma,NRAS,G12D,17,2846
+melanoma,NRAS,G12R,3,2846
+melanoma,NRAS,G12S,6,2846
+melanoma,NRAS,G12V,3,2846
+melanoma,NRAS,G13C,4,2846
+melanoma,NRAS,G13D,8,2846
+melanoma,NRAS,G13R,21,2846
+melanoma,NRAS,G13V,4,2846
+melanoma,NRAS,Q61H,27,2846
+melanoma,NRAS,Q61K,200,2846
+melanoma,NRAS,Q61L,89,2846
+melanoma,NRAS,Q61R,246,2846
+mesothelioma,NRAS,A146V,1,497
+mesothelioma,NRAS,A59T,1,497
+mesothelioma,NRAS,Q61R,1,497
+myelodysplastic/myeloproliferative syndromes,HRAS,Q22Pfs*26,32,1207
+myelodysplastic/myeloproliferative syndromes,KRAS,A146T,1,1207
+myelodysplastic/myeloproliferative syndromes,KRAS,G12A,1,1207
+myelodysplastic/myeloproliferative syndromes,KRAS,G12D,4,1207
+myelodysplastic/myeloproliferative syndromes,KRAS,G12R,2,1207
+myelodysplastic/myeloproliferative syndromes,KRAS,G12S,2,1207
+myelodysplastic/myeloproliferative syndromes,KRAS,G12V,2,1207
+myelodysplastic/myeloproliferative syndromes,KRAS,G13D,7,1207
+myelodysplastic/myeloproliferative syndromes,KRAS,K117N,1,1207
+myelodysplastic/myeloproliferative syndromes,NRAS,A59T,1,1207
+myelodysplastic/myeloproliferative syndromes,NRAS,G12A,4,1207
+myelodysplastic/myeloproliferative syndromes,NRAS,G12C,1,1207
+myelodysplastic/myeloproliferative syndromes,NRAS,G12D,20,1207
+myelodysplastic/myeloproliferative syndromes,NRAS,G12R,5,1207
+myelodysplastic/myeloproliferative syndromes,NRAS,G12S,8,1207
+myelodysplastic/myeloproliferative syndromes,NRAS,G12V,3,1207
+myelodysplastic/myeloproliferative syndromes,NRAS,G13C,5,1207
+myelodysplastic/myeloproliferative syndromes,NRAS,G13D,9,1207
+myelodysplastic/myeloproliferative syndromes,NRAS,G13R,1,1207
+myelodysplastic/myeloproliferative syndromes,NRAS,G13V,5,1207
+myelodysplastic/myeloproliferative syndromes,NRAS,Q61H,1,1207
+myelodysplastic/myeloproliferative syndromes,NRAS,Q61R,2,1207
+nerve sheath tumor,KRAS,A146T,2,154
+nerve sheath tumor,KRAS,G12A,1,154
+nerve sheath tumor,NRAS,Q61R,2,154
+neuroendocrine tumors,HRAS,Q61R,1,359
+neuroendocrine tumors,KRAS,A146T,1,359
+neuroendocrine tumors,KRAS,A146V,2,359
+neuroendocrine tumors,KRAS,G12A,1,359
+neuroendocrine tumors,KRAS,G12C,2,359
+neuroendocrine tumors,KRAS,G12D,14,359
+neuroendocrine tumors,KRAS,G12R,2,359
+neuroendocrine tumors,KRAS,G12V,6,359
+neuroendocrine tumors,KRAS,G13D,6,359
+neuroendocrine tumors,KRAS,Q61H,1,359
+neuroendocrine tumors,KRAS,Q61K,1,359
+neuroendocrine tumors,NRAS,G12D,1,359
+neuroendocrine tumors,NRAS,G13D,1,359
+neuroendocrine tumors,NRAS,Q61R,1,359
+non-hodgkin lymphoma,NRAS,G12V,1,23
+non-hodgkin lymphoma,NRAS,G13R,1,23
+non-hodgkin lymphoma,NRAS,Q61H,1,23
+non-melanoma skin cancers,HRAS,G12C,1,513
+non-melanoma skin cancers,HRAS,G12D,1,513
+non-melanoma skin cancers,HRAS,G12S,2,513
+non-melanoma skin cancers,HRAS,G13R,1,513
+non-melanoma skin cancers,HRAS,G13V,2,513
+non-melanoma skin cancers,HRAS,K117N,2,513
+non-melanoma skin cancers,HRAS,Q61K,2,513
+non-melanoma skin cancers,HRAS,Q61L,3,513
+non-melanoma skin cancers,HRAS,Q61R,1,513
+non-melanoma skin cancers,KRAS,G12D,1,513
+non-melanoma skin cancers,KRAS,G12V,1,513
+non-melanoma skin cancers,NRAS,G12D,1,513
+non-small cell lung cancer,HRAS,G12D,1,10131
+non-small cell lung cancer,HRAS,G13R,4,10131
+non-small cell lung cancer,HRAS,G13V,6,10131
+non-small cell lung cancer,HRAS,Q61H,2,10131
+non-small cell lung cancer,HRAS,Q61L,2,10131
+non-small cell lung cancer,HRAS,Q61R,3,10131
+non-small cell lung cancer,KRAS,A146T,8,10131
+non-small cell lung cancer,KRAS,A146V,6,10131
+non-small cell lung cancer,KRAS,A59T,2,10131
+non-small cell lung cancer,KRAS,G12A,226,10131
+non-small cell lung cancer,KRAS,G12C,1218,10131
+non-small cell lung cancer,KRAS,G12D,432,10131
+non-small cell lung cancer,KRAS,G12F,32,10131
+non-small cell lung cancer,KRAS,G12R,36,10131
+non-small cell lung cancer,KRAS,G12S,52,10131
+non-small cell lung cancer,KRAS,G12V,548,10131
+non-small cell lung cancer,KRAS,G13C,109,10131
+non-small cell lung cancer,KRAS,G13D,87,10131
+non-small cell lung cancer,KRAS,G13R,6,10131
+non-small cell lung cancer,KRAS,G13V,4,10131
+non-small cell lung cancer,KRAS,K117N,2,10131
+non-small cell lung cancer,KRAS,L19F,3,10131
+non-small cell lung cancer,KRAS,Q61H,131,10131
+non-small cell lung cancer,KRAS,Q61K,3,10131
+non-small cell lung cancer,KRAS,Q61L,38,10131
+non-small cell lung cancer,KRAS,Q61R,7,10131
+non-small cell lung cancer,NRAS,G12A,2,10131
+non-small cell lung cancer,NRAS,G12C,3,10131
+non-small cell lung cancer,NRAS,G12D,8,10131
+non-small cell lung cancer,NRAS,G12S,2,10131
+non-small cell lung cancer,NRAS,G12V,3,10131
+non-small cell lung cancer,NRAS,G13R,2,10131
+non-small cell lung cancer,NRAS,G13V,1,10131
+non-small cell lung cancer,NRAS,Q61H,4,10131
+non-small cell lung cancer,NRAS,Q61K,9,10131
+non-small cell lung cancer,NRAS,Q61L,32,10131
+non-small cell lung cancer,NRAS,Q61R,15,10131
+ovarian cancer,HRAS,G12S,1,2337
+ovarian cancer,HRAS,G13D,1,2337
+ovarian cancer,KRAS,G12A,14,2337
+ovarian cancer,KRAS,G12C,10,2337
+ovarian cancer,KRAS,G12D,82,2337
+ovarian cancer,KRAS,G12F,1,2337
+ovarian cancer,KRAS,G12R,10,2337
+ovarian cancer,KRAS,G12S,1,2337
+ovarian cancer,KRAS,G12V,83,2337
+ovarian cancer,KRAS,G13C,1,2337
+ovarian cancer,KRAS,G13D,10,2337
+ovarian cancer,KRAS,Q61H,9,2337
+ovarian cancer,KRAS,Q61K,1,2337
+ovarian cancer,KRAS,Q61L,1,2337
+ovarian cancer,KRAS,Q61R,2,2337
+ovarian cancer,NRAS,G12D,2,2337
+ovarian cancer,NRAS,Q61K,5,2337
+ovarian cancer,NRAS,Q61L,1,2337
+ovarian cancer,NRAS,Q61R,25,2337
+pancreatic cancer,HRAS,G13R,1,2494
+pancreatic cancer,HRAS,Q61K,1,2494
+pancreatic cancer,HRAS,Q61R,1,2494
+pancreatic cancer,KRAS,A146T,1,2494
+pancreatic cancer,KRAS,A146V,1,2494
+pancreatic cancer,KRAS,G12A,13,2494
+pancreatic cancer,KRAS,G12C,23,2494
+pancreatic cancer,KRAS,G12D,782,2494
+pancreatic cancer,KRAS,G12F,1,2494
+pancreatic cancer,KRAS,G12R,276,2494
+pancreatic cancer,KRAS,G12V,583,2494
+pancreatic cancer,KRAS,G13D,14,2494
+pancreatic cancer,KRAS,G13V,2,2494
+pancreatic cancer,KRAS,L19F,1,2494
+pancreatic cancer,KRAS,Q61H,86,2494
+pancreatic cancer,KRAS,Q61K,6,2494
+pancreatic cancer,KRAS,Q61L,11,2494
+pancreatic cancer,KRAS,Q61R,38,2494
+pancreatic cancer,NRAS,G12C,1,2494
+pancreatic cancer,NRAS,G12D,1,2494
+pancreatic cancer,NRAS,G13V,1,2494
+pancreatic cancer,NRAS,Q61K,2,2494
+pancreatic cancer,NRAS,Q61R,7,2494
+parathyroid cancer,HRAS,Q61K,1,NA
+parathyroid cancer,KRAS,G13V,1,NA
+parathyroid cancer,NRAS,Q61R,2,NA
+penile cancer,KRAS,G12R,1,25
+penile cancer,KRAS,Q61L,1,25
+pheochromocytoma,HRAS,Q61R,1,25
+pineal tumor,KRAS,G13D,1,21
+prostate cancer,HRAS,G13D,2,2440
+prostate cancer,HRAS,G13R,1,2440
+prostate cancer,HRAS,K117N,1,2440
+prostate cancer,HRAS,Q61K,6,2440
+prostate cancer,HRAS,Q61L,1,2440
+prostate cancer,HRAS,Q61R,6,2440
+prostate cancer,KRAS,A146T,2,2440
+prostate cancer,KRAS,G12D,2,2440
+prostate cancer,KRAS,G12R,3,2440
+prostate cancer,KRAS,G12V,2,2440
+prostate cancer,KRAS,G13D,1,2440
+prostate cancer,KRAS,Q61H,1,2440
+prostate cancer,KRAS,Q61K,1,2440
+prostate cancer,KRAS,Q61L,1,2440
+prostate cancer,KRAS,Q61R,1,2440
+prostate cancer,NRAS,Q61H,2,2440
+prostate cancer,NRAS,Q61K,1,2440
+prostate cancer,NRAS,Q61R,1,2440
+sex cord stromal tumor,KRAS,G12V,2,108
+sex cord stromal tumor,NRAS,G13R,1,108
+small bowel cancer,KRAS,A146T,5,210
+small bowel cancer,KRAS,A146V,3,210
+small bowel cancer,KRAS,A59T,1,210
+small bowel cancer,KRAS,G12A,4,210
+small bowel cancer,KRAS,G12C,8,210
+small bowel cancer,KRAS,G12D,25,210
+small bowel cancer,KRAS,G12R,3,210
+small bowel cancer,KRAS,G12S,3,210
+small bowel cancer,KRAS,G12V,25,210
+small bowel cancer,KRAS,G13D,13,210
+small bowel cancer,KRAS,L19F,2,210
+small bowel cancer,KRAS,Q61H,6,210
+small bowel cancer,NRAS,Q61R,2,210
+small cell lung cancer,HRAS,G12C,1,398
+small cell lung cancer,HRAS,G13V,1,398
+small cell lung cancer,HRAS,K117N,1,398
+small cell lung cancer,KRAS,G12A,1,398
+small cell lung cancer,KRAS,G12C,3,398
+small cell lung cancer,KRAS,G12D,4,398
+small cell lung cancer,KRAS,G12V,3,398
+small cell lung cancer,NRAS,A59T,1,398
+small cell lung cancer,NRAS,Q61K,1,398
+small cell lung cancer,NRAS,Q61L,1,398
+soft tissue sarcoma,HRAS,A59T,1,2773
+soft tissue sarcoma,HRAS,G12D,1,2773
+soft tissue sarcoma,HRAS,G12V,2,2773
+soft tissue sarcoma,HRAS,G13R,4,2773
+soft tissue sarcoma,HRAS,Q61K,1,2773
+soft tissue sarcoma,HRAS,Q61L,2,2773
+soft tissue sarcoma,HRAS,Q61R,1,2773
+soft tissue sarcoma,KRAS,A146T,1,2773
+soft tissue sarcoma,KRAS,G12C,5,2773
+soft tissue sarcoma,KRAS,G12D,11,2773
+soft tissue sarcoma,KRAS,G12R,3,2773
+soft tissue sarcoma,KRAS,G12V,4,2773
+soft tissue sarcoma,KRAS,G13C,1,2773
+soft tissue sarcoma,KRAS,K117N,1,2773
+soft tissue sarcoma,KRAS,Q61H,1,2773
+soft tissue sarcoma,NRAS,G12D,2,2773
+soft tissue sarcoma,NRAS,G12V,1,2773
+soft tissue sarcoma,NRAS,G13D,3,2773
+soft tissue sarcoma,NRAS,Q61H,3,2773
+soft tissue sarcoma,NRAS,Q61K,15,2773
+soft tissue sarcoma,NRAS,Q61L,4,2773
+soft tissue sarcoma,NRAS,Q61R,6,2773
+t-lymphoblastic leukemia/lymphoma,KRAS,G12S,1,40
+t-lymphoblastic leukemia/lymphoma,NRAS,G12D,1,40
+t-lymphoblastic leukemia/lymphoma,NRAS,G12S,1,40
+t-lymphoblastic leukemia/lymphoma,NRAS,G13R,1,40
+thymic tumor,HRAS,G12S,1,156
+thymic tumor,HRAS,G13D,1,156
+thymic tumor,HRAS,K117N,1,156
+thymic tumor,HRAS,Q61L,2,156
+thymic tumor,HRAS,Q61R,1,156
+thymic tumor,NRAS,Q61K,1,156
+thyroid cancer,HRAS,G12D,1,1017
+thyroid cancer,HRAS,G13R,2,1017
+thyroid cancer,HRAS,Q61K,12,1017
+thyroid cancer,HRAS,Q61R,30,1017
+thyroid cancer,KRAS,G12C,2,1017
+thyroid cancer,KRAS,G12D,3,1017
+thyroid cancer,KRAS,G12R,1,1017
+thyroid cancer,KRAS,G12V,6,1017
+thyroid cancer,KRAS,K117N,1,1017
+thyroid cancer,KRAS,Q61K,2,1017
+thyroid cancer,KRAS,Q61R,15,1017
+thyroid cancer,NRAS,G13R,2,1017
+thyroid cancer,NRAS,Q61K,29,1017
+thyroid cancer,NRAS,Q61R,95,1017
+uterine cancer,HRAS,A59T,1,2254
+uterine cancer,HRAS,G12D,2,2254
+uterine cancer,HRAS,G12S,2,2254
+uterine cancer,HRAS,G13V,1,2254
+uterine cancer,HRAS,Q61H,1,2254
+uterine cancer,KRAS,A146T,4,2254
+uterine cancer,KRAS,A59T,2,2254
+uterine cancer,KRAS,G12A,31,2254
+uterine cancer,KRAS,G12C,26,2254
+uterine cancer,KRAS,G12D,102,2254
+uterine cancer,KRAS,G12R,2,2254
+uterine cancer,KRAS,G12S,6,2254
+uterine cancer,KRAS,G12V,112,2254
+uterine cancer,KRAS,G13C,5,2254
+uterine cancer,KRAS,G13D,46,2254
+uterine cancer,KRAS,Q61H,6,2254
+uterine cancer,KRAS,Q61K,1,2254
+uterine cancer,KRAS,Q61L,2,2254
+uterine cancer,NRAS,G12C,5,2254
+uterine cancer,NRAS,G12D,8,2254
+uterine cancer,NRAS,G12R,1,2254
+uterine cancer,NRAS,G12S,2,2254
+uterine cancer,NRAS,G12V,1,2254
+uterine cancer,NRAS,G13D,1,2254
+uterine cancer,NRAS,Q61H,4,2254
+uterine cancer,NRAS,Q61K,6,2254
+uterine cancer,NRAS,Q61L,6,2254
+uterine cancer,NRAS,Q61R,9,2254
+vaginal cancer,HRAS,G12S,1,78
+vaginal cancer,HRAS,Q61L,1,78
+vaginal cancer,KRAS,G12A,1,78
+vaginal cancer,KRAS,G12C,1,78
+vaginal cancer,KRAS,G12D,1,78
+vaginal cancer,KRAS,G13C,1,78

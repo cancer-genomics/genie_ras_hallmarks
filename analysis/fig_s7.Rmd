@@ -1,0 +1,124 @@
+---
+title: "Figure S7"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+# RAS and KRAS prevalence stratified by sex
+
+
+```{r caching, echo=FALSE}
+knitr::opts_chunk$set(autodep = TRUE)
+```
+
+```{r packsexs, messsex=FALSE, warning=FALSE}
+library(here)
+library(magrittr)
+library(tidyverse)
+library(ggplot2)
+rename <- dplyr::rename
+```
+
+```{r read_data}
+
+multi <-here("public", "table",
+            "ras.Rmd",
+            "multicancer.csv")%>%
+        read_csv(show_col_types=FALSE) %>%
+        mutate(hugo_symbol=factor(hugo_symbol,
+                              c("RAS", "KRAS",
+                                "NRAS"))) %>%
+         mutate(multicancer_uid = paste(cancer, hugo_symbol, codon, sep = "~"))%>%
+         arrange(hugo_symbol)
+
+sex <- here("public", "table",
+            "ras.Rmd",
+            "sex.csv") %>%
+       read_csv(show_col_types=FALSE) %>%
+       mutate(hugo_symbol=factor(hugo_symbol,
+                              c("RAS", "KRAS", "NRAS"))) %>%
+       mutate(multicancer_uid = paste(cancer, hugo_symbol, codon, sep = "~"))%>%
+       arrange(hugo_symbol)
+
+sex <- rbind(multi, sex)
+```
+
+
+RAS mutations highlighted in these panels were selected from an assessment of whether the 95% credible interval from the multi-cancer model overlapped the 95% credible intervals within sex strata.  Combinations with no overlap for either male or female prevalence are plotted here.  See `potential_confounding.Rmd` for additional details.
+
+
+
+```{r}
+uid <- unique(sex$multicancer_uid)
+facet_labels <- function(uid){
+    uid2 <- strsplit(uid, "~")
+    caps <- Hmisc::capitalize
+    cancer <- sapply(uid2, "[", 1) %>%
+        str_replace_all("cancer of unknown primary", "CUP") %>%
+        str_replace_all("non-small cell lung cancer", "NSCLC") %>%
+        str_replace_all("pancreatic cancer", "PAC") %>%
+        str_replace_all("ovarian cancer", "OVCA") %>%
+        str_replace_all("colorectal cancer", "CRC") %>%
+        str_replace_all("b-lymphoblastic leukemia/lymphoma",
+                        "B ALL") %>%
+       str_replace_all("leukemia" ,"Leukemia") %>%
+        caps()
+    gene <- sapply(uid2, "[", 2)
+    codons <- sapply(uid2, "[", 3)
+    flabels <- paste0(cancer, ", ", gene, " (", codons, ")") %>%
+        setNames(uid)
+    flabels
+}
+
+flabels <- facet_labels(uid)
+
+# list of labels to be displayed in fig 
+fig.labels <- c( 
+   "CRC, KRAS (Codon 12)", 
+    "CRC, RAS (Codon 12, 13, or 61)", 
+    "Melanoma, RAS (Codon 12, 13, or 61)", 
+   "NSCLC, KRAS (Codon 12)",
+   "NSCLC, KRAS (Codon G12C)",
+       "NSCLC, RAS (Codon 12, 13, or 61)"
+)
+ flabels <- flabels[which(flabels  %in% fig.labels  )] 
+ flabels = flabels[match( fig.labels,flabels )]
+
+ # Only retain labels that are to be displayed in fig S6
+ sex <- sex %>%
+        filter(multicancer_uid %in% names(flabels)) %>%
+        mutate(multicancer_uid = factor(multicancer_uid, levels = names(flabels))) %>%
+        filter(! is.na(variable)) %>%
+         mutate(variable = recode(variable, "Overall" = "Multi-cancer")) 
+                   
+```
+
+
+```{r fig_s7, fig.width=12, fig.height=6, dev=c("png", "pdf")}
+
+sexlabels <-  c("Female", "Male", "Multi-cancer")
+sex %>%
+    mutate(variable=factor(variable, sexlabels),
+           variable=droplevels(variable)) %>%
+    ggplot(aes(median, variable)) +
+    geom_errorbarh(aes(xmin=q1, xmax=q2), height=0.1) +
+    geom_point(pch=21, fill="white") +
+    ylab("") +
+    geom_text(x=Inf, aes(label=paste0(y, "/", n)),
+              hjust=1, size=3) +
+    theme_bw(base_size=15) +
+    scale_x_continuous(expand=expansion(mult=0.5)) +
+    theme(panel.grid=element_blank()) +
+    xlab("Prevalence") +
+    facet_wrap(~multicancer_uid, scales="free_x",
+               labeller=labeller(multicancer_uid=flabels)) +
+    theme(strip.background=element_blank()) +
+    geom_vline(data=filter(sex, variable=="Multi-cancer") ,
+               aes(xintercept=median), linetype="dashed",
+               color="gray")
+  
+```
