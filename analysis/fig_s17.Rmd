@@ -19,7 +19,6 @@ library(here)
 library(grid)
 library(gridExtra)
 library(rasfuns)
-# devtools::load_all(here('rasfuns'))
 ```
 
 
