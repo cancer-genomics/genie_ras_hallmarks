@@ -13,6 +13,7 @@
 
 <title>Figure S20: Gene set enrichment comparing KRAS/TP53 co-occurrence with KRAS alone</title>
 
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -39,6 +40,8 @@ div.section {
   padding-top: 12px;
 }
 </style>
+
+
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -273,14 +276,17 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Figure S20: Gene set enrichment comparing KRAS/TP53 co-occurrence with KRAS alone</h1>
+<h1 class="title toc-ignore">Figure S20: Gene set enrichment comparing
+KRAS/TP53 co-occurrence with KRAS alone</h1>
 
 </div>
 
 
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
-<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -289,7 +295,9 @@ $(document).ready(function () {
 <a data-toggle="tab" href="#summary">Summary</a>
 </li>
 <li>
-<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> </a>
+<a data-toggle="tab" href="#checks"> Checks <span
+class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -298,17 +306,27 @@ $(document).ready(function () {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-08-20
+<strong>Last updated:</strong> 2022-08-19
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
+<strong>Checks:</strong> <span
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> 1
 </p>
 <p>
-<strong>Knit directory:</strong> <code>genie_ras_hallmarks/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
+<strong>Knit directory:</strong> <code>genie/</code> <span
+class="glyphicon glyphicon-question-sign" aria-hidden="true"
+title="This is the local directory in which the code in this file was executed.">
+</span>
 </p>
 <p>
-This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a> analysis was created with <a
-  href="https://github.com/workflowr/workflowr">workflowr</a> (version 1.7.0). The <em>Checks</em> tab describes the reproducibility checks that were applied when the results were created. The <em>Past versions</em> tab lists the development history.
+This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a>
+analysis was created with <a
+  href="https://github.com/workflowr/workflowr">workflowr</a> (version
+1.7.0). The <em>Checks</em> tab describes the reproducibility checks
+that were applied when the results were created. The <em>Past
+versions</em> tab lists the development history.
 </p>
 <hr>
 </div>
@@ -317,111 +335,543 @@ This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a> analysi
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted changes </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
+</a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguptodate"
+class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown is untracked by Git. To know which version of the R Markdown file created these results, you'll want to first commit it to the Git repo. If you're still working on the analysis, you can ignore this warning. When you're finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
+<p>Great! Since the R Markdown file has been committed to the Git
+repository, you know the exact version of the code that produced these
+results.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongobjectspresent">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>Environment:</strong> objects present
+</a>
 </p>
 </div>
-<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div id="strongEnvironmentstrongobjectspresent"
+class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great job! The global environment was empty. Objects defined in the global environment can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it's best to always run the code in an empty environment.</p>
+<p>
+The global environment had objects present when the code in the R
+Markdown file was run. These objects can affect the analysis in your R
+Markdown file in unknown ways. For reproduciblity it’s best to always
+run the code in an empty environment. Use <code>wflow_publish</code> or
+<code>wflow_build</code> to ensure that the code is always run in an
+empty environment.
+</p>
+<p>
+The following objects were defined in the global environment when these
+results were created:
+</p>
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Class
+</th>
+<th style="text-align:left;">
+Size
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+cancer
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+232 bytes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cols
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+64 bytes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+comutant
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+344 bytes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dat
+</td>
+<td style="text-align:left;">
+grouped_df;tbl_df;tbl;data.frame
+</td>
+<td style="text-align:left;">
+48.2 Mb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dat.list
+</td>
+<td style="text-align:left;">
+grouped_df;tbl_df;tbl;data.frame
+</td>
+<td style="text-align:left;">
+3.7 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+de
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+39.6 Mb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+df
+</td>
+<td style="text-align:left;">
+data.frame
+</td>
+<td style="text-align:left;">
+270.5 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fig
+</td>
+<td style="text-align:left;">
+gg;ggplot
+</td>
+<td style="text-align:left;">
+345.4 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FIG
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+56 bytes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+grobs
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+28.8 Mb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+h
+</td>
+<td style="text-align:left;">
+unit;unit_v2
+</td>
+<td style="text-align:left;">
+78.4 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+h1
+</td>
+<td style="text-align:left;">
+unit;unit_v2
+</td>
+<td style="text-align:left;">
+78.4 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+i
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+56 bytes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+kras
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+368 bytes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+leg
+</td>
+<td style="text-align:left;">
+gtable;gTree;grob;gDesc
+</td>
+<td style="text-align:left;">
+507 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+M
+</td>
+<td style="text-align:left;">
+matrix;array
+</td>
+<td style="text-align:left;">
+344 bytes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+plot_titles
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+1.2 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rank.gg
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+2.8 Mb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rank.gg2
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+2.8 Mb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rv
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+2.9 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+signif
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+457.8 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+stats
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+1.7 Mb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+stats2
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+1.7 Mb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+stripsize
+</td>
+<td style="text-align:left;">
+function
+</td>
+<td style="text-align:left;">
+13.6 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tar_cols
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+480 bytes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vp
+</td>
+<td style="text-align:left;">
+viewport
+</td>
+<td style="text-align:left;">
+6 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vp.leg
+</td>
+<td style="text-align:left;">
+viewport
+</td>
+<td style="text-align:left;">
+6 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+w
+</td>
+<td style="text-align:left;">
+unit;unit_v2
+</td>
+<td style="text-align:left;">
+41.3 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+w1
+</td>
+<td style="text-align:left;">
+unit;unit_v2
+</td>
+<td style="text-align:left;">
+41.3 Kb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+x1
+</td>
+<td style="text-align:left;">
+simpleUnit;unit;unit_v2
+</td>
+<td style="text-align:left;">
+616 bytes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+x2
+</td>
+<td style="text-align:left;">
+simpleUnit;unit;unit_v2
+</td>
+<td style="text-align:left;">
+616 bytes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+x3
+</td>
+<td style="text-align:left;">
+simpleUnit;unit;unit_v2
+</td>
+<td style="text-align:left;">
+616 bytes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+y
+</td>
+<td style="text-align:left;">
+simpleUnit;unit;unit_v2
+</td>
+<td style="text-align:left;">
+616 bytes
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20220803code"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Seed:</strong> <code>set.seed(20220803)</code> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20220803code">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Seed:</strong>
+<code>set.seed(20220803)</code> </a>
 </p>
 </div>
-<div id="strongSeedstrongcodesetseed20220803code" class="panel-collapse collapse">
+<div id="strongSeedstrongcodesetseed20220803code"
+class="panel-collapse collapse">
 <div class="panel-body">
-<p>The command <code>set.seed(20220803)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+<p>The command <code>set.seed(20220803)</code> was run prior to running
+the code in the R Markdown file. Setting a seed ensures that any results
+that rely on randomness, e.g. subsampling or permutations, are
+reproducible.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Session information:</strong> recorded </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Session information:</strong>
+recorded </a>
 </p>
 </div>
-<div id="strongSessioninformationstrongrecorded" class="panel-collapse collapse">
+<div id="strongSessioninformationstrongrecorded"
+class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great job! Recording the operating system, R version, and package versions is critical for reproducibility.</p>
+<p>Great job! Recording the operating system, R version, and package
+versions is critical for reproducibility.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Cache:</strong> none </a>
 </p>
 </div>
 <div id="strongCachestrongnone" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Nice! There were no cached chunks for this analysis, so you can be confident that you successfully produced the results during this run.</p>
+<p>Nice! There were no cached chunks for this analysis, so you can be
+confident that you successfully produced the results during this
+run.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
 </p>
 </div>
 <div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great job! Using relative paths to the files within your workflowr project makes it easier to run your code on other machines.</p>
+<p>Great job! Using relative paths to the files within your workflowr
+project makes it easier to run your code on other machines.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcancergenomicsgenierashallmarkstree1e95f909ce870934c5617b5fd05a36db614f2d35targetblank1e95f90a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/cancer-genomics/genie_ras_hallmarks/tree/1e95f909ce870934c5617b5fd05a36db614f2d35" target="_blank">1e95f90</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcancergenomicsgenierashallmarkstree7908ad8ef812157033b4196ac82abfc9b77419c6targetblank7908ad8a">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>Repository version:</strong>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/tree/7908ad8ef812157033b4196ac82abfc9b77419c6" target="_blank">7908ad8</a>
+</a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomcancergenomicsgenierashallmarkstree1e95f909ce870934c5617b5fd05a36db614f2d35targetblank1e95f90a" class="panel-collapse collapse">
+<div
+id="strongRepositoryversionstrongahrefhttpsgithubcomcancergenomicsgenierashallmarkstree7908ad8ef812157033b4196ac82abfc9b77419c6targetblank7908ad8a"
+class="panel-collapse collapse">
 <div class="panel-body">
 <p>
-Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
+Great! You are using Git for version control. Tracking code development
+and connecting the code version to the results is critical for
+reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/cancer-genomics/genie_ras_hallmarks/tree/1e95f909ce870934c5617b5fd05a36db614f2d35" target="_blank">1e95f90</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/tree/7908ad8ef812157033b4196ac82abfc9b77419c6" target="_blank">7908ad8</a>.
+See the <em>Past versions</em> tab to see a history of the changes made
+to the R Markdown and HTML files.
 </p>
 <p>
-Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
+Note that you need to be careful to ensure that all relevant files for
+the analysis have been committed to Git prior to generating the results
+(you can use <code>wflow_publish</code> or
+<code>wflow_git_commit</code>). workflowr only checks the R Markdown
+file, but you know if there are other scripts or data files that it
+depends on. Below is the status of the Git repository when the results
+were generated:
 </p>
 <pre><code>
 Ignored files:
-    Ignored:    .DS_Store
-    Ignored:    analysis/.DS_Store
-    Ignored:    output/.DS_Store
-    Ignored:    output/co-mutation/.DS_Store
-    Ignored:    public/.DS_Store
-    Ignored:    public/table/.DS_Store
-
-Untracked files:
-    Untracked:  analysis/fig_s20.Rmd
-    Untracked:  analysis/table_s23.Rmd
+    Ignored:    .Rhistory
+    Ignored:    todo.org
 
 Unstaged changes:
-    Modified:   analysis/table_s8.Rmd
+    Modified:   analysis/fig6.Rmd
+    Modified:   analysis/index.Rmd
 
 </code></pre>
 <p>
-Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
+Note that any generated files, e.g. HTML, png, CSS, etc., are not
+included in this status report because it is ok for generated content to
+have uncommitted changes.
 </p>
 </div>
 </div>
@@ -432,7 +882,12 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in th
 <div id="versions" class="tab-pane fade">
 
 <p>
-These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/fig_s20.Rmd</code>) and HTML (<code>docs/fig_s20.html</code>) files. If you've configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+These are the previous versions of the repository in which changes were
+made to the R Markdown (<code>analysis/fig_s20.Rmd</code>) and HTML
+(<code>docs/fig_s20.html</code>) files. If you’ve configured a remote
+Git repository (see <code>?wflow_git_remote</code>), click on the
+hyperlinks in the table below to view the files as they were in that
+past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -461,16 +916,50 @@ Message
 Rmd
 </td>
 <td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/e0f7642eab6fd15cb538527d6759ab95d2cf4c88/analysis/fig_s20.Rmd" target="_blank">e0f7642</a>
+</td>
+<td>
+abalan2
+</td>
+<td>
+2022-08-19
+</td>
+<td>
+rename S16 to S20
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cancer-genomics/genie_ras_hallmarks/e0f7642eab6fd15cb538527d6759ab95d2cf4c88/docs/fig_s20.html" target="_blank">e0f7642</a>
+</td>
+<td>
+abalan2
+</td>
+<td>
+2022-08-19
+</td>
+<td>
+rename S16 to S20
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
 <a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/16757d63708c4c29b89172a455db5eb347e772ac/analysis/fig_s20.Rmd" target="_blank">16757d6</a>
 </td>
 <td>
 abalan2
 </td>
 <td>
-2022-08-20
+2022-08-19
 </td>
 <td>
-wflow_rename(&quot;./analysis/fig_s20.Rmd&quot;, &quot;./fig_s25.Rmd&quot;)
+wflow_rename("./analysis/fig_s20.Rmd", "./fig_s25.Rmd")
 </td>
 </tr>
 <tr>
@@ -484,10 +973,10 @@ html
 abalan2
 </td>
 <td>
-2022-08-20
+2022-08-19
 </td>
 <td>
-wflow_rename(&quot;./analysis/fig_s20.Rmd&quot;, &quot;./fig_s25.Rmd&quot;)
+wflow_rename("./analysis/fig_s20.Rmd", "./fig_s25.Rmd")
 </td>
 </tr>
 <tr>
@@ -501,7 +990,7 @@ Rmd
 rscharpf
 </td>
 <td>
-2022-08-19
+2022-08-18
 </td>
 <td>
 Initialize RAS reproducibility workflowr
@@ -518,7 +1007,7 @@ html
 rscharpf
 </td>
 <td>
-2022-08-19
+2022-08-18
 </td>
 <td>
 Initialize RAS reproducibility workflowr
@@ -532,28 +1021,12 @@ Initialize RAS reproducibility workflowr
 </div>
 </div>
 <pre class="r"><code>library(fgsea)
-library(tidyverse)</code></pre>
-<pre><code>Warning: package &#39;tidyverse&#39; was built under R version 3.6.2</code></pre>
-<pre><code>Warning: package &#39;tidyr&#39; was built under R version 3.6.2</code></pre>
-<pre><code>Warning: package &#39;readr&#39; was built under R version 3.6.2</code></pre>
-<pre><code>Warning: package &#39;purrr&#39; was built under R version 3.6.2</code></pre>
-<pre><code>Warning: package &#39;forcats&#39; was built under R version 3.6.2</code></pre>
-<pre class="r"><code>library(dplyr)
-library(here)</code></pre>
-<pre><code>Warning: package &#39;here&#39; was built under R version 3.6.2</code></pre>
-<pre class="r"><code>library(grid)
+library(tidyverse)
+library(dplyr)
+library(here)
+library(grid)
 library(gridExtra)
 library(rasfuns)</code></pre>
-<pre><code>Warning: replacing previous import &#39;Biostrings::collapse&#39; by &#39;dplyr::collapse&#39;
-when loading &#39;rasfuns&#39;</code></pre>
-<pre><code>Warning: replacing previous import &#39;Biostrings::union&#39; by &#39;dplyr::union&#39; when
-loading &#39;rasfuns&#39;</code></pre>
-<pre><code>Warning: replacing previous import &#39;Biostrings::intersect&#39; by &#39;dplyr::intersect&#39;
-when loading &#39;rasfuns&#39;</code></pre>
-<pre><code>Warning: replacing previous import &#39;Biostrings::setdiff&#39; by &#39;dplyr::setdiff&#39;
-when loading &#39;rasfuns&#39;</code></pre>
-<pre><code>Warning: replacing previous import &#39;Biostrings::setequal&#39; by &#39;dplyr::setequal&#39;
-when loading &#39;rasfuns&#39;</code></pre>
 <pre class="r"><code>FIG &lt;- 16
 dat.list &lt;- here(&quot;output&quot;, &quot;gsea_data_wrangling.Rmd&quot;,
                  &quot;gsea_results.rds&quot;) %&gt;%
@@ -646,13 +1119,24 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/e0f7642eab6fd15cb538527d6759ab95d2cf4c88/docs/figure/fig_s20.Rmd/fig_s20-1.png" target="_blank">e0f7642</a>
+</td>
+<td>
+abalan2
+</td>
+<td>
+2022-08-19
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/16757d63708c4c29b89172a455db5eb347e772ac/docs/figure/fig_s20.Rmd/fig_s20-1.png" target="_blank">16757d6</a>
 </td>
 <td>
 abalan2
 </td>
 <td>
-2022-08-20
+2022-08-19
 </td>
 </tr>
 <tr>
@@ -663,7 +1147,7 @@ abalan2
 rscharpf
 </td>
 <td>
-2022-08-19
+2022-08-18
 </td>
 </tr>
 </tbody>
@@ -673,18 +1157,19 @@ rscharpf
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
-<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Session information
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+Session information
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
 <pre class="r"><code>sessionInfo()</code></pre>
-<pre><code>R version 3.6.1 (2019-07-05)
-Platform: x86_64-apple-darwin15.6.0 (64-bit)
-Running under: macOS High Sierra 10.13.4
+<pre><code>R version 4.2.1 (2022-06-23)
+Platform: x86_64-apple-darwin21.5.0 (64-bit)
+Running under: macOS Monterey 12.5.1
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
-LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
+BLAS:   /usr/local/Cellar/openblas/0.3.20/lib/libopenblasp-r0.3.20.dylib
+LAPACK: /usr/local/Cellar/r/4.2.1/lib/R/lib/libRlapack.dylib
 
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
@@ -694,40 +1179,43 @@ attached base packages:
 [8] base     
 
 other attached packages:
- [1] rasfuns_1.1.5   gridExtra_2.3   here_1.0.1      forcats_0.5.1  
- [5] stringr_1.4.0   dplyr_1.0.9     purrr_0.3.4     readr_2.1.2    
- [9] tidyr_1.2.0     tibble_3.1.7    ggplot2_3.3.6   tidyverse_1.3.1
-[13] fgsea_1.12.0    Rcpp_1.0.8.3    workflowr_1.7.0
+ [1] fgsea_1.22.0    rasfuns_1.1.5   gridExtra_2.3   here_1.0.1     
+ [5] forcats_0.5.1   stringr_1.4.0   dplyr_1.0.9     purrr_0.3.4    
+ [9] readr_2.1.2     tidyr_1.2.0     tibble_3.1.8    ggplot2_3.3.6  
+[13] tidyverse_1.3.2 workflowr_1.7.0
 
 loaded via a namespace (and not attached):
- [1] matrixStats_0.62.0    fs_1.5.2              lubridate_1.8.0      
- [4] httr_1.4.3            rprojroot_2.0.3       tools_3.6.1          
- [7] backports_1.4.1       bslib_0.3.1           utf8_1.2.2           
-[10] R6_2.5.1              DBI_1.1.2             BiocGenerics_0.32.0  
-[13] colorspace_2.0-3      withr_2.5.0           tidyselect_1.1.2     
-[16] processx_3.5.3        compiler_3.6.1        git2r_0.30.1         
-[19] cli_3.3.0             rvest_1.0.2           xml2_1.3.3           
-[22] labeling_0.4.2        sass_0.4.1            scales_1.2.0         
-[25] callr_3.7.0           digest_0.6.29         rmarkdown_2.14       
-[28] XVector_0.26.0        pkgconfig_2.0.3       htmltools_0.5.2      
-[31] highr_0.9             dbplyr_2.2.0          fastmap_1.1.0        
-[34] rlang_1.0.2           readxl_1.4.0          rstudioapi_0.13      
-[37] farver_2.1.0          jquerylib_0.1.4       generics_0.1.2       
-[40] jsonlite_1.8.0        BiocParallel_1.20.1   magrittr_2.0.3       
-[43] Matrix_1.4-1          munsell_0.5.0         S4Vectors_0.24.4     
-[46] fansi_1.0.3           lifecycle_1.0.1       stringi_1.7.6        
-[49] whisker_0.4           yaml_2.3.5            zlibbioc_1.32.0      
-[52] ggrepel_0.9.1         parallel_3.6.1        promises_1.2.0.1     
-[55] crayon_1.5.1          lattice_0.20-45       Biostrings_2.54.0    
-[58] haven_2.5.0           hms_1.1.1             knitr_1.39           
-[61] ps_1.7.0              pillar_1.7.0          stats4_3.6.1         
-[64] fastmatch_1.1-3       reprex_2.0.1          glue_1.6.2           
-[67] evaluate_0.15         getPass_0.2-2         data.table_1.14.2    
-[70] modelr_0.1.8          vctrs_0.4.1           EnhancedVolcano_1.4.0
-[73] tzdb_0.3.0            httpuv_1.6.5          cellranger_1.1.0     
-[76] gtable_0.3.0          assertthat_0.2.1      xfun_0.31            
-[79] broom_0.8.0           later_1.3.0           IRanges_2.20.2       
-[82] ellipsis_0.3.2       </code></pre>
+ [1] matrixStats_0.62.0     bitops_1.0-7           fs_1.5.2              
+ [4] lubridate_1.8.0        httr_1.4.3             rprojroot_2.0.3       
+ [7] GenomeInfoDb_1.32.3    tools_4.2.1            backports_1.4.1       
+[10] bslib_0.4.0            utf8_1.2.2             R6_2.5.1              
+[13] DBI_1.1.3              BiocGenerics_0.42.0    colorspace_2.0-3      
+[16] withr_2.5.0            tidyselect_1.1.2       processx_3.7.0        
+[19] compiler_4.2.1         git2r_0.30.1           cli_3.3.0             
+[22] rvest_1.0.2            xml2_1.3.3             labeling_0.4.2        
+[25] sass_0.4.2             scales_1.2.0           callr_3.7.1           
+[28] digest_0.6.29          rmarkdown_2.14         XVector_0.36.0        
+[31] pkgconfig_2.0.3        htmltools_0.5.3        dbplyr_2.2.1          
+[34] fastmap_1.1.0          highr_0.9              rlang_1.0.4           
+[37] readxl_1.4.0           rstudioapi_0.13        farver_2.1.1          
+[40] jquerylib_0.1.4        generics_0.1.3         jsonlite_1.8.0        
+[43] BiocParallel_1.30.3    googlesheets4_1.0.1    RCurl_1.98-1.8        
+[46] magrittr_2.0.3         GenomeInfoDbData_1.2.8 Matrix_1.4-1          
+[49] Rcpp_1.0.9             munsell_0.5.0          S4Vectors_0.34.0      
+[52] fansi_1.0.3            lifecycle_1.0.1        stringi_1.7.8         
+[55] whisker_0.4            yaml_2.3.5             zlibbioc_1.42.0       
+[58] parallel_4.2.1         ggrepel_0.9.1          promises_1.2.0.1      
+[61] crayon_1.5.1           lattice_0.20-45        cowplot_1.1.1         
+[64] Biostrings_2.64.0      haven_2.5.0            hms_1.1.1             
+[67] knitr_1.39             ps_1.7.1               pillar_1.8.0          
+[70] codetools_0.2-18       stats4_4.2.1           fastmatch_1.1-3       
+[73] reprex_2.0.1           glue_1.6.2             evaluate_0.16         
+[76] getPass_0.2-2          data.table_1.14.2      modelr_0.1.8          
+[79] EnhancedVolcano_1.14.0 vctrs_0.4.1            tzdb_0.3.0            
+[82] httpuv_1.6.5           cellranger_1.1.0       gtable_0.3.0          
+[85] assertthat_0.2.1       cachem_1.0.6           xfun_0.32             
+[88] broom_1.0.0            later_1.3.0            googledrive_2.0.0     
+[91] gargle_1.2.0           IRanges_2.30.0         ellipsis_0.3.2        </code></pre>
 </div>
 
 
@@ -742,6 +1230,8 @@ footer is added to webpages before the MathJax javascript. -->
     "HTML-CSS": { availableFonts: ["TeX"] }
   });
 </script>
+
+
 
 
 

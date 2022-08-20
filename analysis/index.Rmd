@@ -21,7 +21,13 @@ editor_options:
 
 - Figure 5: [[code](../analysis/fig5.Rmd) | [pdf](figure/fig5.Rmd/fig5-1.pdf) ]
 
-- Figure 6: [[code](../analysis/fig6_cd.Rmd) | [pdf](figure/fig6_cd.Rmd/fig6-1.pdf) ]
+- Figure 6:
+    - 6c and 6e [[code](../analysis/fig6.Rmd) | [pdf](figure/fig6.Rmd/fig6ce-1.pdf) ]
+
+    - 6a  [[code](../analysis/fig6.Rmd) | [pdf](figure/fig6.Rmd/fig6abd-1.pdf) ]
+    - 6b  [[code](../analysis/fig6.Rmd) | [pdf](figure/fig6.Rmd/fig6abd-2.pdf) ]
+
+    - 6d  [[code](../analysis/fig6.Rmd) | [pdf](figure/fig6.Rmd/fig6abd-3.pdf) ]
 
 - Figure 7: [[code](../analysis/fig7.Rmd) | [pdf](figure/fig7.Rmd/fig7-1.pdf) ]
 
@@ -30,40 +36,50 @@ editor_options:
 
 - Supplementary Fig S1: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
 
-- Supplementary Fig S2: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+- Supplementary Fig S2: [[code](../analysis/fig_s2.Rmd) | [pdf](figure/fig_s2.Rmd/fig_s2-1.pdf) ]
 
-- Supplementary Fig S3: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+- Supplementary Fig S3: [[code](../analysis/fig_s3.Rmd) | [pdf](figure/fig_s3.Rmd/fig_s3-1.pdf) ]
 
-- Supplementary Fig S4: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+- Supplementary Fig S4: [[code](../analysis/fig_s4.Rmd) | [pdf](figure/fig_s4.Rmd/fig_s4-1.pdf) ]
 
-- Supplementary Fig S5: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+- Supplementary Fig S5: [[code](../analysis/fig_s5.Rmd) | [pdf](figure/fig_s5.Rmd/fig_s5-1.pdf) ]
 
-- Supplementary Fig S6: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+- Supplementary Fig S6: [[code](../analysis/fig_s6.Rmd) | [pdf](figure/fig_s6.Rmd/fig_s6-1.pdf) ]
 
-- Supplementary Fig S7: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+- Supplementary Fig S7: [[code](../analysis/fig_s7.Rmd) | [pdf](figure/fig_s7.Rmd/fig_s7-1.pdf) ]
 
-- Supplementary Fig S8: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+- Supplementary Fig S8: [[code](../analysis/fig_s8.Rmd) | [pdf](figure/fig_s8.Rmd/fig_s8-1.pdf) ]
 
-- Supplementary Fig S9: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+- Supplementary Fig S9: [[code](../analysis/fig_s9.Rmd) | [pdf](figure/fig_s9.Rmd/fig_s9-1.pdf) ]
 
-- Supplementary Fig S10: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+- Supplementary Fig S10: [[code](../analysis/fig_s10.Rmd) | [pdf](figure/fig_s10.Rmd/fig_s10-1.pdf) ]
 
-- Supplementary Fig S11: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+- Supplementary Fig S11: [[code](../analysis/fig_s11.Rmd) | [pdf](figure/fig_s11.Rmd/fig_s11-1.pdf) ]
 
-- Supplementary Fig S12: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+- Supplementary Fig S12: [[code](../analysis/fig_s12.Rmd) | [pdf](figure/fig_s12.Rmd/fig_s12-1.pdf) ]
 
-- Supplementary Fig S13: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+- Supplementary Fig S13: [[code](../analysis/fig_s13.Rmd) | [pdf](figure/fig_s13.Rmd/fig_s13-1.pdf) ]
 
-- Supplementary Fig S14: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+- Supplementary Fig S14: [[code](../analysis/fig_s14.Rmd) | [pdf](figure/fig_s14.Rmd/fig_s14-1.pdf) ]
 
-- Supplementary Fig S15: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+- Supplementary Fig S15: [[code](../analysis/fig_s15.Rmd) | [pdf](figure/fig_s15.Rmd/fig_s15-1.pdf) ]
 
-- Supplementary Fig S16: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+- Supplementary Fig S16: [[code](../analysis/fig_s16.Rmd) | [pdf](figure/fig_s16.Rmd/fig_s16-1.pdf) ]
 
-- Supplementary Fig S17: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+- Supplementary Fig S17: [[code](../analysis/fig_s17.Rmd) | [pdf](figure/fig_s17.Rmd/fig_s17-1.pdf) ]
 
-- Supplementary Fig S18: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+- Supplementary Fig S18: [[code](../analysis/fig_s18.Rmd) | [pdf](figure/fig_s18.Rmd/fig_s18-1.pdf) ]
 
-- Supplementary Fig S19: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+- Supplementary Fig S19: [[code](../analysis/fig_s19.Rmd) | [pdf](figure/fig_s19.Rmd/fig_s19-1.pdf) ]
 
-- Supplementary Fig S20: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+- Supplementary Fig S20: [[code](../analysis/fig_s20.Rmd) | [pdf](figure/fig_s20.Rmd/fig_s20-1.pdf) ]
+
+- Supplementary Fig S21: [[code](../analysis/fig_s21.Rmd) | [pdf](figure/fig_s21.Rmd/fig_s21-1.pdf) ]
+
+- Supplementary Fig S22: [[code](../analysis/fig_s22.Rmd) | [pdf](figure/fig_s22.Rmd/fig_s22-1.pdf) ]
+
+- Supplementary Fig S23: [[code](../analysis/fig_s23.Rmd) | [pdf](figure/fig_s23.Rmd/fig_s23-1.pdf) ]
+
+- Supplementary Fig S24: [[code](../analysis/fig_s24.Rmd) | [pdf](figure/fig_s24.Rmd/fig_s24-1.pdf) ]
+
+- Supplementary Fig S25: [[code](../analysis/fig_s25.Rmd) | [pdf](figure/fig_s25.Rmd/fig_s25-1.pdf) ]
