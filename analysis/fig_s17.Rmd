@@ -58,7 +58,7 @@ rank.gg <- plot_titles %>%
     map2(rank.gg, add_qq_title)
 ```
 
-```{r resp-to-reviewers-1-1, fig.width=25, fig.height=45, dev=c("png", "pdf")}
+```{r fig_s17, fig.width=25, fig.height=45, dev=c("png", "pdf")}
 stripsize <- function(p){
     p <- p + theme(strip.text=element_text(size=15))
     p
