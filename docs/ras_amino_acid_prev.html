@@ -366,7 +366,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">RAS prevalence for specific amino acid
 substitutions</h1>
-<h4 class="date">18 August, 2022</h4>
+<h4 class="date">20 August, 2022</h4>
 
 </div>
 
@@ -374,7 +374,7 @@ substitutions</h1>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-ok text-success"
+workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -385,8 +385,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-</a>
+class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -395,13 +395,13 @@ class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-08-18
+<strong>Last updated:</strong> 2022-08-20
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 0
+aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong> <code>genie/</code> <span
@@ -442,17 +442,55 @@ results.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty">
-<span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongobjectspresent">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>Environment:</strong> objects present
+</a>
 </p>
 </div>
-<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div id="strongEnvironmentstrongobjectspresent"
+class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great job! The global environment was empty. Objects defined in the
-global environment can affect the analysis in your R Markdown file in
-unknown ways. For reproduciblity it’s best to always run the code in an
-empty environment.</p>
+<p>
+The global environment had objects present when the code in the R
+Markdown file was run. These objects can affect the analysis in your R
+Markdown file in unknown ways. For reproduciblity it’s best to always
+run the code in an empty environment. Use <code>wflow_publish</code> or
+<code>wflow_build</code> to ensure that the code is always run in an
+empty environment.
+</p>
+<p>
+The following objects were defined in the global environment when these
+results were created:
+</p>
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Class
+</th>
+<th style="text-align:left;">
+Size
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+rv
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+2.9 Kb
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -526,13 +564,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrong74b2b93">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcancergenomicsgenierashallmarkstree540aa2caa02b1c563ffd09f196f474a3ce8adfbetargetblank540aa2ca">
 <span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>Repository version:</strong> 74b2b93
+aria-hidden="true"></span> <strong>Repository version:</strong>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/tree/540aa2caa02b1c563ffd09f196f474a3ce8adfbe" target="_blank">540aa2c</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrong74b2b93"
+<div
+id="strongRepositoryversionstrongahrefhttpsgithubcomcancergenomicsgenierashallmarkstree540aa2caa02b1c563ffd09f196f474a3ce8adfbetargetblank540aa2ca"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -541,7 +581,8 @@ and connecting the code version to the results is critical for
 reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version 74b2b93.
+The results in this page were generated with repository version
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/tree/540aa2caa02b1c563ffd09f196f474a3ce8adfbe" target="_blank">540aa2c</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -557,61 +598,20 @@ were generated:
 <pre><code>
 Ignored files:
     Ignored:    .Rhistory
-
-Untracked files:
-    Untracked:  analysis/co-mutation.Rmd
-    Untracked:  analysis/fig_s1.Rmd
-    Untracked:  analysis/fig_s10.Rmd
-    Untracked:  analysis/fig_s11.Rmd
-    Untracked:  analysis/fig_s12.Rmd
-    Untracked:  analysis/fig_s13.Rmd
-    Untracked:  analysis/fig_s14.Rmd
-    Untracked:  analysis/fig_s15.Rmd
-    Untracked:  analysis/fig_s16.Rmd
-    Untracked:  analysis/fig_s17.Rmd
-    Untracked:  analysis/fig_s18.Rmd
-    Untracked:  analysis/fig_s19.Rmd
-    Untracked:  analysis/fig_s2.Rmd
-    Untracked:  analysis/fig_s20.Rmd
-    Untracked:  analysis/fig_s3.Rmd
-    Untracked:  analysis/fig_s4.Rmd
-    Untracked:  analysis/fig_s5.Rmd
-    Untracked:  analysis/fig_s6.Rmd
-    Untracked:  analysis/fig_s7.Rmd
-    Untracked:  analysis/fig_s8.Rmd
-    Untracked:  analysis/fig_s9.Rmd
-    Untracked:  analysis/methods_comparison.Rmd
-    Untracked:  analysis/potential_confounding.Rmd
-    Untracked:  code/TCGA-COAD/
-    Untracked:  code/TCGA-LUAD-trips/
-    Untracked:  code/TCGA-LUAD/
-    Untracked:  code/TCGA-PAAD/
-    Untracked:  code/co-mutation/
-    Untracked:  code/misc/
-    Untracked:  code/sets/
-    Untracked:  code/stan/
-    Untracked:  output/co-mutation/
-    Untracked:  output/gsea_data_wrangling.Rmd/
-    Untracked:  output/methods-comparison/
-    Untracked:  output/mutsig_s13/
-    Untracked:  output/prevalence/
-    Untracked:  public/
+    Ignored:    todo.org
 
 Unstaged changes:
-    Modified:   .Rprofile
-    Modified:   .gitattributes
-    Modified:   .gitignore
-    Modified:   README.md
-    Modified:   _workflowr.yml
-    Modified:   analysis/_site.yml
-    Modified:   analysis/about.Rmd
-    Modified:   analysis/fig7.Rmd
-    Modified:   analysis/index.Rmd
-    Modified:   analysis/license.Rmd
-    Modified:   code/README.md
-    Modified:   data/README.md
-    Modified:   genie_ras_hallmarks.Rproj
-    Modified:   output/README.md
+    Modified:   public/table/co_mutation_nscc_allele.Rmd/any_mutation_(gene_pathways)_mutation_signature.csv
+    Modified:   public/table/co_mutation_nscc_allele.Rmd/any_mutation_agecat.csv
+    Modified:   public/table/co_mutation_nscc_allele.Rmd/any_mutation_mutation_signature.csv
+    Modified:   public/table/co_mutation_nscc_allele.Rmd/any_mutation_race.csv
+    Modified:   public/table/co_mutation_nscc_allele.Rmd/any_mutation_sample_type.csv
+    Modified:   public/table/co_mutation_nscc_allele.Rmd/any_mutation_tmb.csv
+    Modified:   public/table/co_mutation_nscc_allele.Rmd/cosmic_driver_mutation_(gene_pathways).csv
+    Modified:   public/table/co_mutation_nscc_allele.Rmd/cosmic_driver_mutation_(gene_pathways)_sample_type.csv
+    Modified:   public/table/co_mutation_nscc_allele.Rmd/cosmic_driver_mutation_(gene_pathways)_sex.csv
+    Modified:   public/table/co_mutation_nscc_allele.Rmd/cosmic_driver_mutation_tmb.csv
+    Modified:   public/table/co_mutation_nscc_allele.Rmd/inactivating_mutation_race.csv
 
 </code></pre>
 <p>
@@ -662,16 +662,33 @@ Message
 Rmd
 </td>
 <td>
-213c25a
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/analysis/ras_amino_acid_prev.Rmd" target="_blank">2fda1f3</a>
 </td>
 <td>
-abalan2
+rscharpf
 </td>
 <td>
-2022-08-04
+2022-08-18
 </td>
 <td>
-add allele prev. analyses
+Initialize RAS reproducibility workflowr
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cancer-genomics/genie_ras_hallmarks/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/ras_amino_acid_prev.html" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+<td>
+Initialize RAS reproducibility workflowr
 </td>
 </tr>
 </tbody>
@@ -742,12 +759,123 @@ fig.list &lt;- multicancer %&gt;%
 fig.list</code></pre>
 <pre><code>[[1]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/prevalence-1.png" width="1920" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-prevalence-1">
+Past versions of prevalence-1.png
+</button>
+</p>
+<div id="fig-prevalence-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/prevalence-1.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[2]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/prevalence-2.png" width="1920" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-prevalence-2">
+Past versions of prevalence-2.png
+</button>
+</p>
+<div id="fig-prevalence-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/prevalence-2.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[3]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/prevalence-3.png" width="1920" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-prevalence-3">
+Past versions of prevalence-3.png
+</button>
+</p>
+<div id="fig-prevalence-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/prevalence-3.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="stratified-analyses" class="section level1">
 <h1>Stratified analyses</h1>
@@ -800,21 +928,243 @@ fig.list &lt;- models2 %&gt;%
 fig.list</code></pre>
 <pre><code>[[1]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/kras_12c-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-kras_12c-1">
+Past versions of kras_12c-1.png
+</button>
+</p>
+<div id="fig-kras_12c-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/kras_12c-1.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[2]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/kras_12c-2.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-kras_12c-2">
+Past versions of kras_12c-2.png
+</button>
+</p>
+<div id="fig-kras_12c-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/kras_12c-2.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[3]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/kras_12c-3.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-kras_12c-3">
+Past versions of kras_12c-3.png
+</button>
+</p>
+<div id="fig-kras_12c-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/kras_12c-3.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[4]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/kras_12c-4.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-kras_12c-4">
+Past versions of kras_12c-4.png
+</button>
+</p>
+<div id="fig-kras_12c-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/kras_12c-4.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[5]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/kras_12c-5.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-kras_12c-5">
+Past versions of kras_12c-5.png
+</button>
+</p>
+<div id="fig-kras_12c-5" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/kras_12c-5.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[6]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/kras_12c-6.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-kras_12c-6">
+Past versions of kras_12c-6.png
+</button>
+</p>
+<div id="fig-kras_12c-6" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/kras_12c-6.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="kras-12d" class="section level2">
 <h2>KRAS 12D</h2>
@@ -830,21 +1180,243 @@ fig.list &lt;- models2 %&gt;%
 fig.list</code></pre>
 <pre><code>[[1]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/kras_12d-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-kras_12d-1">
+Past versions of kras_12d-1.png
+</button>
+</p>
+<div id="fig-kras_12d-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/kras_12d-1.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[2]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/kras_12d-2.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-kras_12d-2">
+Past versions of kras_12d-2.png
+</button>
+</p>
+<div id="fig-kras_12d-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/kras_12d-2.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[3]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/kras_12d-3.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-kras_12d-3">
+Past versions of kras_12d-3.png
+</button>
+</p>
+<div id="fig-kras_12d-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/kras_12d-3.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[4]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/kras_12d-4.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-kras_12d-4">
+Past versions of kras_12d-4.png
+</button>
+</p>
+<div id="fig-kras_12d-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/kras_12d-4.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[5]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/kras_12d-5.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-kras_12d-5">
+Past versions of kras_12d-5.png
+</button>
+</p>
+<div id="fig-kras_12d-5" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/kras_12d-5.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[6]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/kras_12d-6.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-kras_12d-6">
+Past versions of kras_12d-6.png
+</button>
+</p>
+<div id="fig-kras_12d-6" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/kras_12d-6.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="kras-12v" class="section level2">
 <h2>KRAS 12V</h2>
@@ -860,21 +1432,243 @@ fig.list &lt;- models2 %&gt;%
 fig.list</code></pre>
 <pre><code>[[1]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/kras_12v-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-kras_12v-1">
+Past versions of kras_12v-1.png
+</button>
+</p>
+<div id="fig-kras_12v-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/kras_12v-1.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[2]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/kras_12v-2.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-kras_12v-2">
+Past versions of kras_12v-2.png
+</button>
+</p>
+<div id="fig-kras_12v-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/kras_12v-2.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[3]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/kras_12v-3.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-kras_12v-3">
+Past versions of kras_12v-3.png
+</button>
+</p>
+<div id="fig-kras_12v-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/kras_12v-3.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[4]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/kras_12v-4.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-kras_12v-4">
+Past versions of kras_12v-4.png
+</button>
+</p>
+<div id="fig-kras_12v-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/kras_12v-4.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[5]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/kras_12v-5.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-kras_12v-5">
+Past versions of kras_12v-5.png
+</button>
+</p>
+<div id="fig-kras_12v-5" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/kras_12v-5.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[6]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/kras_12v-6.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-kras_12v-6">
+Past versions of kras_12v-6.png
+</button>
+</p>
+<div id="fig-kras_12v-6" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/kras_12v-6.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="nras-61r" class="section level2">
 <h2>NRAS 61R</h2>
@@ -890,21 +1684,243 @@ fig.list &lt;- models2 %&gt;%
 fig.list</code></pre>
 <pre><code>[[1]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/nras_61r-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-nras_61r-1">
+Past versions of nras_61r-1.png
+</button>
+</p>
+<div id="fig-nras_61r-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/nras_61r-1.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[2]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/nras_61r-2.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-nras_61r-2">
+Past versions of nras_61r-2.png
+</button>
+</p>
+<div id="fig-nras_61r-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/nras_61r-2.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[3]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/nras_61r-3.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-nras_61r-3">
+Past versions of nras_61r-3.png
+</button>
+</p>
+<div id="fig-nras_61r-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/nras_61r-3.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[4]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/nras_61r-4.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-nras_61r-4">
+Past versions of nras_61r-4.png
+</button>
+</p>
+<div id="fig-nras_61r-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/nras_61r-4.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[5]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/nras_61r-5.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-nras_61r-5">
+Past versions of nras_61r-5.png
+</button>
+</p>
+<div id="fig-nras_61r-5" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/nras_61r-5.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[6]]</code></pre>
 <p><img src="figure/ras_amino_acid_prev.Rmd/nras_61r-6.png" width="768" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-nras_61r-6">
+Past versions of nras_61r-6.png
+</button>
+</p>
+<div id="fig-nras_61r-6" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/blob/2fda1f3f79e04edcf79eadab26deb082419f8be7/docs/figure/ras_amino_acid_prev.Rmd/nras_61r-6.png" target="_blank">2fda1f3</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-18
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="combined-table" class="section level1">
