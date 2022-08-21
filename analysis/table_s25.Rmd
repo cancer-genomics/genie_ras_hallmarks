@@ -12,28 +12,35 @@ editor_options:
 knitr::opts_chunk$set(autodep = TRUE, echo=FALSE)
 library(magrittr)
 library(tidyverse)
-library(gt)
+##library(gt)
 library(here)
+library(DT)
 ```
 
 
 
 ```{r data,  message=FALSE, warning=FALSE, echo=FALSE, include=FALSE}
-
-dat <- here("output", "gsea_data_wrangling.Rmd", "gsea_single_nonras.rds") %>%
+dat <- here("output",
+            "gsea_data_wrangling.Rmd",
+            "gsea_single_nonras.rds") %>%
             readRDS()
 dat  <-  dat[["COAD"]]
-
 ```
 
 
 ```{r table_s25}
+##dat %>%
+##    gt() %>%
+##    tab_style(
+##        style = list(
+##            cell_text(weight = "bold")
+##        ),
+##        locations = cells_column_labels())
 dat %>%
-    gt() %>%
-    tab_style(
-        style = list(
-            cell_text(weight = "bold")
-        ),
-        locations = cells_column_labels()) 
-
+    datatable(extensions = 'Buttons',
+              options = list(dom = 'Blfrtip',
+                             buttons = c('copy', 'csv', 'excel',
+                                         'pdf', 'print'),
+                             lengthMenu = list(c(50,25,50,-1),
+                                               c(50,25,50,"All"))))
 ```

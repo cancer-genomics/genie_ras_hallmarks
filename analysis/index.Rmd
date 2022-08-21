@@ -1,5 +1,5 @@
 ---
-title: "Genomic Landscapes and Hallmarks of Mutant RAS in Human Cancers"
+title: 'Genomic Landscapes and Hallmarks of Mutant RAS in Human Cancers'
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -31,55 +31,113 @@ editor_options:
 
 - Figure 7: [[code](../analysis/fig7.Rmd) | [pdf](figure/fig7.Rmd/fig7-1.pdf) ]
 
-
 # Supplemental Figures
 
-- Supplementary Fig S1: [[code](../analysis/fig_s1.Rmd) | [pdf](figure/fig_s1.Rmd/fig_s1-1.pdf) ]
+- Supplementary Fig S1: [ [code](../analysis/fig_s1.Rmd) | [pdf](fig_s1-1.pdf) ]
 
-- Supplementary Fig S2: [[code](../analysis/fig_s2.Rmd) | [pdf](figure/fig_s2.Rmd/fig_s2-1.pdf) ]
+- Supplementary Fig S2: [ [code](../analysis/fig_s2.Rmd) | [pdf](fig_s2-1.pdf) ]
 
-- Supplementary Fig S3: [[code](../analysis/fig_s3.Rmd) | [pdf](figure/fig_s3.Rmd/fig_s3-1.pdf) ]
+- Supplementary Fig S3: [ [code](../analysis/fig_s3.Rmd) | [pdf](fig_s3-1.pdf) ]
 
-- Supplementary Fig S4: [[code](../analysis/fig_s4.Rmd) | [pdf](figure/fig_s4.Rmd/fig_s4-1.pdf) ]
+- Supplementary Fig S4: [ [code](../analysis/fig_s4.Rmd) | [pdf](fig_s4-1.pdf) ]
 
-- Supplementary Fig S5: [[code](../analysis/fig_s5.Rmd) | [pdf](figure/fig_s5.Rmd/fig_s5-1.pdf) ]
+- Supplementary Fig S5: [ [code](../analysis/fig_s5.Rmd) | [pdf](fig_s5-1.pdf) ]
 
-- Supplementary Fig S6: [[code](../analysis/fig_s6.Rmd) | [pdf](figure/fig_s6.Rmd/fig_s6-1.pdf) ]
+- Supplementary Fig S6: [ [code](../analysis/fig_s6.Rmd) | [pdf](fig_s6-1.pdf) ]
 
-- Supplementary Fig S7: [[code](../analysis/fig_s7.Rmd) | [pdf](figure/fig_s7.Rmd/fig_s7-1.pdf) ]
+- Supplementary Fig S7: [ [code](../analysis/fig_s7.Rmd) | [pdf](fig_s7-1.pdf) ]
 
-- Supplementary Fig S8: [[code](../analysis/fig_s8.Rmd) | [pdf](figure/fig_s8.Rmd/fig_s8-1.pdf) ]
+- Supplementary Fig S8: [ [code](../analysis/fig_s8.Rmd) | [pdf](fig_s8-1.pdf) ]
 
-- Supplementary Fig S9: [[code](../analysis/fig_s9.Rmd) | [pdf](figure/fig_s9.Rmd/fig_s9-1.pdf) ]
+- Supplementary Fig S9: [ [code](../analysis/fig_s9.Rmd) | [pdf](fig_s9-1.pdf) ]
 
-- Supplementary Fig S10: [[code](../analysis/fig_s10.Rmd) | [pdf](figure/fig_s10.Rmd/fig_s10-1.pdf) ]
+- Supplementary Fig S10: [ [code](../analysis/fig_s10.Rmd) | [pdf](fig_s10-1.pdf) ]
 
-- Supplementary Fig S11: [[code](../analysis/fig_s11.Rmd) | [pdf](figure/fig_s11.Rmd/fig_s11-1.pdf) ]
+- Supplementary Fig S11: [ [code](../analysis/fig_s11.Rmd) | [pdf](fig_s11-1.pdf) ]
 
-- Supplementary Fig S12: [[code](../analysis/fig_s12.Rmd) | [pdf](figure/fig_s12.Rmd/fig_s12-1.pdf) ]
+- Supplementary Fig S12: [ [code](../analysis/fig_s12.Rmd) | [pdf](fig_s12-1.pdf) ]
 
-- Supplementary Fig S13: [[code](../analysis/fig_s13.Rmd) | [pdf](figure/fig_s13.Rmd/fig_s13-1.pdf) ]
+- Supplementary Fig S13: [ [code](../analysis/fig_s13.Rmd) | [pdf](fig_s13-1.pdf) ]
 
-- Supplementary Fig S14: [[code](../analysis/fig_s14.Rmd) | [pdf](figure/fig_s14.Rmd/fig_s14-1.pdf) ]
+- Supplementary Fig S14: [ [code](../analysis/fig_s14.Rmd) | [pdf](fig_s14-1.pdf) ]
 
-- Supplementary Fig S15: [[code](../analysis/fig_s15.Rmd) | [pdf](figure/fig_s15.Rmd/fig_s15-1.pdf) ]
+- Supplementary Fig S15: [ [code](../analysis/fig_s15.Rmd) | [pdf](fig_s15-1.pdf) ]
 
-- Supplementary Fig S16: [[code](../analysis/fig_s16.Rmd) | [pdf](figure/fig_s16.Rmd/fig_s16-1.pdf) ]
+- Supplementary Fig S16: [ [code](../analysis/fig_s16.Rmd) | [pdf](fig_s16-1.pdf) ]
 
-- Supplementary Fig S17: [[code](../analysis/fig_s17.Rmd) | [pdf](figure/fig_s17.Rmd/fig_s17-1.pdf) ]
+- Supplementary Fig S17: [ [code](../analysis/fig_s17.Rmd) | [pdf](fig_s17-1.pdf) ]
 
-- Supplementary Fig S18: [[code](../analysis/fig_s18.Rmd) | [pdf](figure/fig_s18.Rmd/fig_s18-1.pdf) ]
+- Supplementary Fig S18: [ [code](../analysis/fig_s18.Rmd) | [pdf](fig_s18-1.pdf) ]
 
-- Supplementary Fig S19: [[code](../analysis/fig_s19.Rmd) | [pdf](figure/fig_s19.Rmd/fig_s19-1.pdf) ]
+- Supplementary Fig S19: [ [code](../analysis/fig_s19.Rmd) | [pdf](fig_s19-1.pdf) ]
 
-- Supplementary Fig S20: [[code](../analysis/fig_s20.Rmd) | [pdf](figure/fig_s20.Rmd/fig_s20-1.pdf) ]
+- Supplementary Fig S20: [ [code](../analysis/fig_s20.Rmd) | [pdf](fig_s20-1.pdf) ]
 
-- Supplementary Fig S21: [[code](../analysis/fig_s21.Rmd) | [pdf](figure/fig_s21.Rmd/fig_s21-1.pdf) ]
+- Supplementary Fig S21: [ [code](../analysis/fig_s21.Rmd) | [pdf](fig_s21-1.pdf) ]
 
-- Supplementary Fig S22: [[code](../analysis/fig_s22.Rmd) | [pdf](figure/fig_s22.Rmd/fig_s22-1.pdf) ]
+- Supplementary Fig S22: [ [code](../analysis/fig_s22.Rmd) | [pdf](fig_s22-1.pdf) ]
 
-- Supplementary Fig S23: [[code](../analysis/fig_s23.Rmd) | [pdf](figure/fig_s23.Rmd/fig_s23-1.pdf) ]
+- Supplementary Fig S23: [ [code](../analysis/fig_s23.Rmd) | [pdf](fig_s23-1.pdf) ]
 
-- Supplementary Fig S24: [[code](../analysis/fig_s24.Rmd) | [pdf](figure/fig_s24.Rmd/fig_s24-1.pdf) ]
+- Supplementary Fig S24: [ [code](../analysis/fig_s24.Rmd) | [pdf](fig_s24-1.pdf) ]
 
-- Supplementary Fig S25: [[code](../analysis/fig_s25.Rmd) | [pdf](figure/fig_s25.Rmd/fig_s25-1.pdf) ]
+- Supplementary Fig S25: [ [code](../analysis/fig_s25.Rmd) | [pdf](fig_s25-1.pdf) ]
+
+# Supplemental Tables
+
+- Supplementary Table S1: [[code](../analysis/table_s1.Rmd) | [html](table_s1.html) ]
+
+- Supplementary Table S2: [[code](../analysis/table_s2.Rmd) | [html](table_s2.html) ]
+
+- Supplementary Table S3: [[code](../analysis/table_s3.Rmd) | [html](table_s3.html) ]
+
+- Supplementary Table S4: [[code](../analysis/table_s4.Rmd) | [html](table_s4.html) ]
+
+- Supplementary Table S5: [[code](../analysis/table_s5.Rmd) | [html](table_s5.html) ]
+
+- Supplementary Table S6: [[code](../analysis/table_s6.Rmd) | [html](table_s6.html) ]
+
+- Supplementary Table S7: [[code](../analysis/table_s7.Rmd) | [html](table_s7.html) ]
+
+- Supplementary Table S8: [[code](../analysis/table_s8.Rmd) | [html](table_s8.html) ]
+
+- Supplementary Table S9: [[code](../analysis/table_s9.Rmd) | [html](table_s9.html) ]
+
+- Supplementary Table S10: [[code](../analysis/table_s10.Rmd) | [html](table_s10.html) ]
+
+- Supplementary Table S11: [[code](../analysis/table_s11.Rmd) | [html](table_s11.html) ]
+
+- Supplementary Table S12: [[code](../analysis/table_s12.Rmd) | [html](table_s12.html) ]
+
+- Supplementary Table S13: [[code](../analysis/table_s13.Rmd) | [html](table_s13.html) ]
+
+- Supplementary Table S14: [[code](../analysis/table_s14.Rmd) | [html](table_s14.html) ]
+
+- Supplementary Table S15: [[code](../analysis/table_s15.Rmd) | [html](table_s15.html) ]
+
+- Supplementary Table S16: [[code](../analysis/table_s16.Rmd) | [html](table_s16.html) ]
+
+- Supplementary Table S17: [[code](../analysis/table_s17.Rmd) | [html](table_s17.html) ]
+
+- Supplementary Table S18: [[code](../analysis/table_s18.Rmd) | [html](table_s18.html) ]
+
+- Supplementary Table S19: [[code](../analysis/table_s19.Rmd) | [html](table_s19.html) ]
+
+- Supplementary Table S20: [[code](../analysis/table_s20.Rmd) | [html](table_s20.html) ]
+
+- Supplementary Table S21: [[code](../analysis/table_s21.Rmd) | [html](table_s21.html) ]
+
+- Supplementary Table S22: [[code](../analysis/table_s22.Rmd) | [html](table_s22.html) ]
+
+- Supplementary Table S23: [[code](../analysis/table_s23.Rmd) | [html](table_s23.html) ]
+
+- Supplementary Table S24: [[code](../analysis/table_s24.Rmd) | [html](table_s24.html) ]
+
+- Supplementary Table S25: [[code](../analysis/table_s25.Rmd) | [html](table_s25.html) ]
+
+- Supplementary Table S26: [[code](../analysis/table_s26.Rmd) | [html](table_s26.html) ]
+
+- Supplementary Table S27: [[code](../analysis/table_s27.Rmd) | [html](table_s27.html) ]
+
+- Supplementary Table S28: [[code](../analysis/table_s28.Rmd) | [html](table_s28.html) ]
+

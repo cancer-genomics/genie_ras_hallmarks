@@ -310,9 +310,9 @@ aria-hidden="true"></span> </a>
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 5
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 1
+aria-hidden="true"></span> 2
 </p>
 <p>
 <strong>Knit directory:</strong> <code>genie/</code> <span
@@ -335,18 +335,21 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
-<span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
-</a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
+changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate"
+<div id="strongRMarkdownfilestronguncommittedchanges"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git
-repository, you know the exact version of the code that produced these
-results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of
+the R Markdown file created these results, you’ll want to first commit
+it to the Git repo. If you’re still working on the analysis, you can
+ignore this warning. When you’re finished, you can run
+<code>wflow_publish</code> to commit the R Markdown file and build the
+HTML.</p>
 </div>
 </div>
 </div>
@@ -475,15 +478,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcancergenomicsgenierashallmarkstree540aa2caa02b1c563ffd09f196f474a3ce8adfbetargetblank540aa2ca">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcancergenomicsgenierashallmarkstree0b95576732595d3e813934756f34da93069a0da8targetblank0b95576a">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/tree/540aa2caa02b1c563ffd09f196f474a3ce8adfbe" target="_blank">540aa2c</a>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/tree/0b95576732595d3e813934756f34da93069a0da8" target="_blank">0b95576</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomcancergenomicsgenierashallmarkstree540aa2caa02b1c563ffd09f196f474a3ce8adfbetargetblank540aa2ca"
+id="strongRepositoryversionstrongahrefhttpsgithubcomcancergenomicsgenierashallmarkstree0b95576732595d3e813934756f34da93069a0da8targetblank0b95576a"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -493,7 +496,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/tree/540aa2caa02b1c563ffd09f196f474a3ce8adfbe" target="_blank">540aa2c</a>.
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/tree/0b95576732595d3e813934756f34da93069a0da8" target="_blank">0b95576</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -512,17 +515,8 @@ Ignored files:
     Ignored:    todo.org
 
 Unstaged changes:
-    Modified:   public/table/co_mutation_nscc_allele.Rmd/any_mutation_(gene_pathways)_mutation_signature.csv
-    Modified:   public/table/co_mutation_nscc_allele.Rmd/any_mutation_agecat.csv
-    Modified:   public/table/co_mutation_nscc_allele.Rmd/any_mutation_mutation_signature.csv
-    Modified:   public/table/co_mutation_nscc_allele.Rmd/any_mutation_race.csv
-    Modified:   public/table/co_mutation_nscc_allele.Rmd/any_mutation_sample_type.csv
-    Modified:   public/table/co_mutation_nscc_allele.Rmd/any_mutation_tmb.csv
-    Modified:   public/table/co_mutation_nscc_allele.Rmd/cosmic_driver_mutation_(gene_pathways).csv
-    Modified:   public/table/co_mutation_nscc_allele.Rmd/cosmic_driver_mutation_(gene_pathways)_sample_type.csv
-    Modified:   public/table/co_mutation_nscc_allele.Rmd/cosmic_driver_mutation_(gene_pathways)_sex.csv
-    Modified:   public/table/co_mutation_nscc_allele.Rmd/cosmic_driver_mutation_tmb.csv
-    Modified:   public/table/co_mutation_nscc_allele.Rmd/inactivating_mutation_race.csv
+    Modified:   analysis/index.Rmd
+    Modified:   analysis/table_s17.Rmd
 
 </code></pre>
 <p>
@@ -568,6 +562,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cancer-genomics/genie_ras_hallmarks/0b95576732595d3e813934756f34da93069a0da8/docs/table_s17.html" target="_blank">0b95576</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-20
+</td>
+<td>
+Updated Figs, Sup Figs and Sup tables
+</td>
+</tr>
 <tr>
 <td>
 Rmd

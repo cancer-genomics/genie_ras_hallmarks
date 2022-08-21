@@ -20,11 +20,11 @@ library(here)
 
 ```{r data,  message=FALSE, warning=FALSE, echo=FALSE, include=FALSE}
 extdir <- system.file("extdata", package="genie.6.1")
-gene_pathways <- read_csv(file.path(extdir, "ras_pathways.csv")) 
+gene_pathways <- read_csv(file.path(extdir, "ras_pathways.csv"))
 
 
 dat <- as.data.frame(gene_pathways) %>%
-   dplyr::rename('HUGO symbol' = hugo_symbol, 
+   dplyr::rename('HUGO symbol' = hugo_symbol,
                  'Pathway' = pathway)
 
 ```

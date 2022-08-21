@@ -285,7 +285,7 @@ RAS in Human Cancers</h1>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-ok text-success"
+workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -296,8 +296,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-</a>
+class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -310,9 +310,9 @@ class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 1
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 0
+aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong> <code>genie/</code> <span
@@ -335,33 +335,36 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
-<span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
-</a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
+changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate"
+<div id="strongRMarkdownfilestronguncommittedchanges"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git
-repository, you know the exact version of the code that produced these
-results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of
+the R Markdown file created these results, you’ll want to first commit
+it to the Git repo. If you’re still working on the analysis, you can
+ignore this warning. When you’re finished, you can run
+<code>wflow_publish</code> to commit the R Markdown file and build the
+HTML.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcancergenomicsgenierashallmarkstree540aa2caa02b1c563ffd09f196f474a3ce8adfbetargetblank540aa2ca">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomcancergenomicsgenierashallmarkstree0b95576732595d3e813934756f34da93069a0da8targetblank0b95576a">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/tree/540aa2caa02b1c563ffd09f196f474a3ce8adfbe" target="_blank">540aa2c</a>
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/tree/0b95576732595d3e813934756f34da93069a0da8" target="_blank">0b95576</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomcancergenomicsgenierashallmarkstree540aa2caa02b1c563ffd09f196f474a3ce8adfbetargetblank540aa2ca"
+id="strongRepositoryversionstrongahrefhttpsgithubcomcancergenomicsgenierashallmarkstree0b95576732595d3e813934756f34da93069a0da8targetblank0b95576a"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -371,7 +374,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/tree/540aa2caa02b1c563ffd09f196f474a3ce8adfbe" target="_blank">540aa2c</a>.
+<a href="https://github.com/cancer-genomics/genie_ras_hallmarks/tree/0b95576732595d3e813934756f34da93069a0da8" target="_blank">0b95576</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -389,18 +392,15 @@ Ignored files:
     Ignored:    .Rhistory
     Ignored:    todo.org
 
+Untracked files:
+    Untracked:  analysis/.#create_index.Rmd
+    Untracked:  analysis/index_tables.Rmd
+    Untracked:  create_index.Rmd
+    Untracked:  index.Rmd
+
 Unstaged changes:
-    Modified:   public/table/co_mutation_nscc_allele.Rmd/any_mutation_(gene_pathways)_mutation_signature.csv
-    Modified:   public/table/co_mutation_nscc_allele.Rmd/any_mutation_agecat.csv
-    Modified:   public/table/co_mutation_nscc_allele.Rmd/any_mutation_mutation_signature.csv
-    Modified:   public/table/co_mutation_nscc_allele.Rmd/any_mutation_race.csv
-    Modified:   public/table/co_mutation_nscc_allele.Rmd/any_mutation_sample_type.csv
-    Modified:   public/table/co_mutation_nscc_allele.Rmd/any_mutation_tmb.csv
-    Modified:   public/table/co_mutation_nscc_allele.Rmd/cosmic_driver_mutation_(gene_pathways).csv
-    Modified:   public/table/co_mutation_nscc_allele.Rmd/cosmic_driver_mutation_(gene_pathways)_sample_type.csv
-    Modified:   public/table/co_mutation_nscc_allele.Rmd/cosmic_driver_mutation_(gene_pathways)_sex.csv
-    Modified:   public/table/co_mutation_nscc_allele.Rmd/cosmic_driver_mutation_tmb.csv
-    Modified:   public/table/co_mutation_nscc_allele.Rmd/inactivating_mutation_race.csv
+    Modified:   analysis/index.Rmd
+    Modified:   analysis/table_s17.Rmd
 
 </code></pre>
 <p>
@@ -445,6 +445,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/cancer-genomics/genie_ras_hallmarks/0b95576732595d3e813934756f34da93069a0da8/docs/index.html" target="_blank">0b95576</a>
+</td>
+<td>
+rscharpf
+</td>
+<td>
+2022-08-20
+</td>
+<td>
+Updated Figs, Sup Figs and Sup tables
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -551,72 +568,161 @@ href="figure/fig7.Rmd/fig7-1.pdf">pdf</a> ]</p></li>
 <div id="supplemental-figures" class="section level1">
 <h1>Supplemental Figures</h1>
 <ul>
-<li><p>Supplementary Fig S1: [<a href="../analysis/fig_s1.Rmd">code</a>
-| <a href="figure/fig_s1.Rmd/fig_s1-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S2: [<a href="../analysis/fig_s2.Rmd">code</a>
-| <a href="figure/fig_s2.Rmd/fig_s2-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S3: [<a href="../analysis/fig_s3.Rmd">code</a>
-| <a href="figure/fig_s3.Rmd/fig_s3-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S4: [<a href="../analysis/fig_s4.Rmd">code</a>
-| <a href="figure/fig_s4.Rmd/fig_s4-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S5: [<a href="../analysis/fig_s5.Rmd">code</a>
-| <a href="figure/fig_s5.Rmd/fig_s5-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S6: [<a href="../analysis/fig_s6.Rmd">code</a>
-| <a href="figure/fig_s6.Rmd/fig_s6-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S7: [<a href="../analysis/fig_s7.Rmd">code</a>
-| <a href="figure/fig_s7.Rmd/fig_s7-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S8: [<a href="../analysis/fig_s8.Rmd">code</a>
-| <a href="figure/fig_s8.Rmd/fig_s8-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S9: [<a href="../analysis/fig_s9.Rmd">code</a>
-| <a href="figure/fig_s9.Rmd/fig_s9-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S10: [<a
+<li><p>Supplementary Fig S1: [ <a href="../analysis/fig_s1.Rmd">code</a>
+| <a href="fig_s1-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S2: [ <a href="../analysis/fig_s2.Rmd">code</a>
+| <a href="fig_s2-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S3: [ <a href="../analysis/fig_s3.Rmd">code</a>
+| <a href="fig_s3-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S4: [ <a href="../analysis/fig_s4.Rmd">code</a>
+| <a href="fig_s4-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S5: [ <a href="../analysis/fig_s5.Rmd">code</a>
+| <a href="fig_s5-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S6: [ <a href="../analysis/fig_s6.Rmd">code</a>
+| <a href="fig_s6-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S7: [ <a href="../analysis/fig_s7.Rmd">code</a>
+| <a href="fig_s7-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S8: [ <a href="../analysis/fig_s8.Rmd">code</a>
+| <a href="fig_s8-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S9: [ <a href="../analysis/fig_s9.Rmd">code</a>
+| <a href="fig_s9-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S10: [ <a
 href="../analysis/fig_s10.Rmd">code</a> | <a
-href="figure/fig_s10.Rmd/fig_s10-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S11: [<a
+href="fig_s10-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S11: [ <a
 href="../analysis/fig_s11.Rmd">code</a> | <a
-href="figure/fig_s11.Rmd/fig_s11-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S12: [<a
+href="fig_s11-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S12: [ <a
 href="../analysis/fig_s12.Rmd">code</a> | <a
-href="figure/fig_s12.Rmd/fig_s12-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S13: [<a
+href="fig_s12-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S13: [ <a
 href="../analysis/fig_s13.Rmd">code</a> | <a
-href="figure/fig_s13.Rmd/fig_s13-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S14: [<a
+href="fig_s13-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S14: [ <a
 href="../analysis/fig_s14.Rmd">code</a> | <a
-href="figure/fig_s14.Rmd/fig_s14-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S15: [<a
+href="fig_s14-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S15: [ <a
 href="../analysis/fig_s15.Rmd">code</a> | <a
-href="figure/fig_s15.Rmd/fig_s15-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S16: [<a
+href="fig_s15-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S16: [ <a
 href="../analysis/fig_s16.Rmd">code</a> | <a
-href="figure/fig_s16.Rmd/fig_s16-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S17: [<a
+href="fig_s16-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S17: [ <a
 href="../analysis/fig_s17.Rmd">code</a> | <a
-href="figure/fig_s17.Rmd/fig_s17-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S18: [<a
+href="fig_s17-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S18: [ <a
 href="../analysis/fig_s18.Rmd">code</a> | <a
-href="figure/fig_s18.Rmd/fig_s18-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S19: [<a
+href="fig_s18-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S19: [ <a
 href="../analysis/fig_s19.Rmd">code</a> | <a
-href="figure/fig_s19.Rmd/fig_s19-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S20: [<a
+href="fig_s19-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S20: [ <a
 href="../analysis/fig_s20.Rmd">code</a> | <a
-href="figure/fig_s20.Rmd/fig_s20-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S21: [<a
+href="fig_s20-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S21: [ <a
 href="../analysis/fig_s21.Rmd">code</a> | <a
-href="figure/fig_s21.Rmd/fig_s21-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S22: [<a
+href="fig_s21-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S22: [ <a
 href="../analysis/fig_s22.Rmd">code</a> | <a
-href="figure/fig_s22.Rmd/fig_s22-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S23: [<a
+href="fig_s22-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S23: [ <a
 href="../analysis/fig_s23.Rmd">code</a> | <a
-href="figure/fig_s23.Rmd/fig_s23-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S24: [<a
+href="fig_s23-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S24: [ <a
 href="../analysis/fig_s24.Rmd">code</a> | <a
-href="figure/fig_s24.Rmd/fig_s24-1.pdf">pdf</a> ]</p></li>
-<li><p>Supplementary Fig S25: [<a
+href="fig_s24-1.pdf">pdf</a> ]</p></li>
+<li><p>Supplementary Fig S25: [ <a
 href="../analysis/fig_s25.Rmd">code</a> | <a
-href="figure/fig_s25.Rmd/fig_s25-1.pdf">pdf</a> ]</p></li>
+href="fig_s25-1.pdf">pdf</a> ]</p></li>
+</ul>
+</div>
+<div id="supplemental-tables" class="section level1">
+<h1>Supplemental Tables</h1>
+<ul>
+<li><p>Supplementary Table S1: [<a
+href="../analysis/table_s1.Rmd">code</a> | <a
+href="table_s1.html">html</a> ]</p></li>
+<li><p>Supplementary Table S2: [<a
+href="../analysis/table_s2.Rmd">code</a> | <a
+href="table_s2.html">html</a> ]</p></li>
+<li><p>Supplementary Table S3: [<a
+href="../analysis/table_s3.Rmd">code</a> | <a
+href="table_s3.html">html</a> ]</p></li>
+<li><p>Supplementary Table S4: [<a
+href="../analysis/table_s4.Rmd">code</a> | <a
+href="table_s4.html">html</a> ]</p></li>
+<li><p>Supplementary Table S5: [<a
+href="../analysis/table_s5.Rmd">code</a> | <a
+href="table_s5.html">html</a> ]</p></li>
+<li><p>Supplementary Table S6: [<a
+href="../analysis/table_s6.Rmd">code</a> | <a
+href="table_s6.html">html</a> ]</p></li>
+<li><p>Supplementary Table S7: [<a
+href="../analysis/table_s7.Rmd">code</a> | <a
+href="table_s7.html">html</a> ]</p></li>
+<li><p>Supplementary Table S8: [<a
+href="../analysis/table_s8.Rmd">code</a> | <a
+href="table_s8.html">html</a> ]</p></li>
+<li><p>Supplementary Table S9: [<a
+href="../analysis/table_s9.Rmd">code</a> | <a
+href="table_s9.html">html</a> ]</p></li>
+<li><p>Supplementary Table S10: [<a
+href="../analysis/table_s10.Rmd">code</a> | <a
+href="table_s10.html">html</a> ]</p></li>
+<li><p>Supplementary Table S11: [<a
+href="../analysis/table_s11.Rmd">code</a> | <a
+href="table_s11.html">html</a> ]</p></li>
+<li><p>Supplementary Table S12: [<a
+href="../analysis/table_s12.Rmd">code</a> | <a
+href="table_s12.html">html</a> ]</p></li>
+<li><p>Supplementary Table S13: [<a
+href="../analysis/table_s13.Rmd">code</a> | <a
+href="table_s13.html">html</a> ]</p></li>
+<li><p>Supplementary Table S14: [<a
+href="../analysis/table_s14.Rmd">code</a> | <a
+href="table_s14.html">html</a> ]</p></li>
+<li><p>Supplementary Table S15: [<a
+href="../analysis/table_s15.Rmd">code</a> | <a
+href="table_s15.html">html</a> ]</p></li>
+<li><p>Supplementary Table S16: [<a
+href="../analysis/table_s16.Rmd">code</a> | <a
+href="table_s16.html">html</a> ]</p></li>
+<li><p>Supplementary Table S17: [<a
+href="../analysis/table_s17.Rmd">code</a> | <a
+href="table_s17.html">html</a> ]</p></li>
+<li><p>Supplementary Table S18: [<a
+href="../analysis/table_s18.Rmd">code</a> | <a
+href="table_s18.html">html</a> ]</p></li>
+<li><p>Supplementary Table S19: [<a
+href="../analysis/table_s19.Rmd">code</a> | <a
+href="table_s19.html">html</a> ]</p></li>
+<li><p>Supplementary Table S20: [<a
+href="../analysis/table_s20.Rmd">code</a> | <a
+href="table_s20.html">html</a> ]</p></li>
+<li><p>Supplementary Table S21: [<a
+href="../analysis/table_s21.Rmd">code</a> | <a
+href="table_s21.html">html</a> ]</p></li>
+<li><p>Supplementary Table S22: [<a
+href="../analysis/table_s22.Rmd">code</a> | <a
+href="table_s22.html">html</a> ]</p></li>
+<li><p>Supplementary Table S23: [<a
+href="../analysis/table_s23.Rmd">code</a> | <a
+href="table_s23.html">html</a> ]</p></li>
+<li><p>Supplementary Table S24: [<a
+href="../analysis/table_s24.Rmd">code</a> | <a
+href="table_s24.html">html</a> ]</p></li>
+<li><p>Supplementary Table S25: [<a
+href="../analysis/table_s25.Rmd">code</a> | <a
+href="table_s25.html">html</a> ]</p></li>
+<li><p>Supplementary Table S26: [<a
+href="../analysis/table_s26.Rmd">code</a> | <a
+href="table_s26.html">html</a> ]</p></li>
+<li><p>Supplementary Table S27: [<a
+href="../analysis/table_s27.Rmd">code</a> | <a
+href="table_s27.html">html</a> ]</p></li>
+<li><p>Supplementary Table S28: [<a
+href="../analysis/table_s28.Rmd">code</a> | <a
+href="table_s28.html">html</a> ]</p></li>
 </ul>
 </div>
 

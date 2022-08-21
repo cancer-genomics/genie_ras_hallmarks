@@ -1,0 +1,52 @@
+indexfile <- "---
+title: 'Genomic Landscapes and Hallmarks of Mutant RAS in Human Cancers'
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+
+# Figures
+
+- Figure 1: [[code](../analysis/fig1.Rmd) | [pdf](figure/fig1.Rmd/fig1-1.pdf) ]
+
+- Figure 2: [[code](../analysis/fig2.Rmd) | [pdf](figure/fig2.Rmd/fig2-1.pdf) ]
+
+- Figure 3: [[code](../analysis/fig3.Rmd) | [pdf](figure/fig3.Rmd/fig3-1.pdf) ]
+
+- Figure 4: [[code](../analysis/fig4.Rmd) | [pdf](figure/fig4.Rmd/fig4-1.pdf) ]
+
+- Figure 5: [[code](../analysis/fig5.Rmd) | [pdf](figure/fig5.Rmd/fig5-1.pdf) ]
+
+- Figure 6:
+    - 6c and 6e [[code](../analysis/fig6.Rmd) | [pdf](figure/fig6.Rmd/fig6ce-1.pdf) ]
+
+    - 6a  [[code](../analysis/fig6.Rmd) | [pdf](figure/fig6.Rmd/fig6abd-1.pdf) ]
+    - 6b  [[code](../analysis/fig6.Rmd) | [pdf](figure/fig6.Rmd/fig6abd-2.pdf) ]
+
+    - 6d  [[code](../analysis/fig6.Rmd) | [pdf](figure/fig6.Rmd/fig6abd-3.pdf) ]
+
+- Figure 7: [[code](../analysis/fig7.Rmd) | [pdf](figure/fig7.Rmd/fig7-1.pdf) ]
+"
+cat(indexfile, file="analysis/index.Rmd", sep="\n")
+
+header <- "# Supplemental Figures\n"
+cat(header, file="analysis/index.Rmd", sep="\n", append=TRUE)
+numbers <- 1:25
+tabname <- paste0("- Supplementary Fig S", numbers, ": ")
+code.links <- paste0("[ [code](../analysis/fig_s", numbers, ".Rmd)")
+pdf.links <- paste0(" | [pdf](fig_s", numbers, "-1.pdf) ]")
+result <- paste0(tabname, code.links, pdf.links, "\n")
+cat(result, file="analysis/index.Rmd", sep="\n", append=TRUE)
+
+header <- "# Supplemental Tables\n"
+cat(header, file="analysis/index.Rmd", sep="\n", append=TRUE)
+numbers <- 1:28
+tabname <- paste0("- Supplementary Table S", numbers, ": ")
+code.links <- paste0("[[code](../analysis/table_s", numbers, ".Rmd)")
+html.links <- paste0(" | [html](table_s", numbers, ".html) ]")
+result <- paste0(tabname, code.links, html.links, "\n")
+cat(result, file="analysis/index.Rmd", sep="\n", append=TRUE)
