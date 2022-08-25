@@ -14,6 +14,7 @@ library(magrittr)
 library(tidyverse)
 library(gt)
 library(here)
+library(DT)
 ```
 
 
@@ -40,14 +41,12 @@ dat <- comut.allele.in %>%
 ```
 
 
-```{r table_s13}
+```{r table_s13, warning=FALSE}
 dat %>%
-    gt() %>%
-    tab_style(
-        style = list(
-            cell_text(weight = "bold")
-        ),
-        locations = cells_column_labels()) %>%
-    cols_align(align="left", column="Cancer type")
-
+   datatable(extensions = 'Buttons',
+              options = list(dom = 'Blfrtip',
+                             buttons = c('copy', 'csv', 'excel',
+                                         'pdf', 'print'),
+                             lengthMenu = list(c(50,100,200,-1),
+                                               c(50,100,200,"All"))))
 ```
