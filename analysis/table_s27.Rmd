@@ -14,6 +14,7 @@ library(magrittr)
 library(tidyverse)
 library(gt)
 library(here)
+library(DT)
 ```
 
 
@@ -28,12 +29,20 @@ dat  <-  dat[["PAAD"]]
 
 
 ```{r table_s27}
+# dat %>%
+#     gt() %>%
+#     tab_style(
+#         style = list(
+#             cell_text(weight = "bold")
+#         ),
+#         locations = cells_column_labels()) 
+
 dat %>%
-    gt() %>%
-    tab_style(
-        style = list(
-            cell_text(weight = "bold")
-        ),
-        locations = cells_column_labels()) 
+    datatable(extensions = 'Buttons',
+              options = list(dom = 'Blfrtip',
+                             buttons = c('copy', 'csv', 'excel',
+                                         'pdf', 'print'),
+                             lengthMenu = list(c(50,25,50,-1),
+                                               c(50,25,50,"All"))))
 
 ```
