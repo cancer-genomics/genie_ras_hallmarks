@@ -14,6 +14,8 @@ library(magrittr)
 library(tidyverse)
 library(gt)
 library(here)
+library(DT)
+
 ```
 
 
@@ -66,12 +68,11 @@ dat <- read_tsv(here( "data", "os_annotated.tsv")) %>%
 
 ```{r table_s28}
 dat %>%
-    gt() %>%
-    tab_style(
-        style = list(
-            cell_text(weight = "bold")
-        ),
-        locations = cells_column_labels()) %>%
-    cols_align(align="left", column="Subject ID")
+    datatable(extensions = 'Buttons',
+              options = list(dom = 'Blfrtip',
+                             buttons = c('copy', 'csv', 'excel',
+                                         'pdf', 'print'),
+                             lengthMenu = list(c(50,100,200,-1),
+                                               c(50,100,200,"All"))))
 
 ```
