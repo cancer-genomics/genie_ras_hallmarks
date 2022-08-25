@@ -14,6 +14,7 @@ library(magrittr)
 library(tidyverse)
 library(gt)
 library(here)
+library(DT)
 ```
 
 ```{r data}
@@ -43,11 +44,10 @@ dat <- here("public", "table", "ras.Rmd", "multicancer.csv") %>%
 
 ```{r table_s4}
 dat %>%
-    gt() %>%
-    tab_style(
-        style = list(
-            cell_text(weight = "bold")
-        ),
-        locations = cells_column_labels()) %>%
-    cols_align(align="left", column="Cancer type")
+    datatable(extensions = 'Buttons',
+              options = list(dom = 'Blfrtip',
+                             buttons = c('copy', 'csv', 'excel',
+                                         'pdf', 'print'),
+                             lengthMenu = list(c(50,100,-1),
+                                               c(50,100,"All"))))
 ```
