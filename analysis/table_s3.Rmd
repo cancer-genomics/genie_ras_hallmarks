@@ -14,21 +14,26 @@ library(magrittr)
 library(tidyverse)
 library(gt)
 library(here)
+library(DT)
 ```
 
-```{r data}
+```{r data, include=FALSE, message=FALSE, echo=FALSE}
 discover.dat <- here("output", "methods-comparison",
                      "genie_nsclc_discover.tsv")%>%
             read_tsv()  %>%
-            mutate(method = "DISCOVER")
-discover.dat <- discover.dat[c(grep("KRAS_12-61", discover.dat$gene1 ), grep("KRAS_12-61", discover.dat$gene2 )),]
+              dplyr::select_all(~paste0("discover.", .)) %>%
+            mutate(method = "DISCOVER") 
+
+discover.dat <- discover.dat[c(grep("KRAS_12-61", discover.dat$`discover.gene1` ), grep("KRAS_12-61", discover.dat$`discover.gene2` )),]
 
 
 select.dat <- here("output", "methods-comparison",
                      "genie_nsclc_select.tsv")%>%
             read_tsv() %>%
+            dplyr::select_all(~paste0("select.", .)) %>%
             mutate(method = "SELECT")
-select.dat <- select.dat[c(grep("KRAS_12-61", select.dat$SFE_1 ), grep("KRAS_12-61", select.dat$SFE_2 )),]
+
+select.dat <- select.dat[c(grep("KRAS_12-61", select.dat$`select.SFE_1` ), grep("KRAS_12-61", select.dat$`select.SFE_2` )),]
 
 ```
 
@@ -37,10 +42,11 @@ capitalize <- Hmisc::capitalize
 tab <-   plyr::rbind.fill(discover.dat, select.dat)
 
 tab %>%
-  gt() %>%
-    tab_style(
-        style = list(
-            cell_text(weight = "bold")
-        ),
-        locations = cells_column_labels())
+    datatable(extensions = 'Buttons',
+              options = list(dom = 'Blfrtip',
+                             buttons = c('copy', 'csv', 'excel',
+                                         'pdf', 'print'),
+                             lengthMenu = list(c(50,100,-1),
+                                               c(50,100,"All"))))
+
 ```
