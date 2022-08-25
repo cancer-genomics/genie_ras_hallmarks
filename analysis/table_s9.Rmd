@@ -20,6 +20,8 @@ data(mutation_data, package="genie.6.1")
 data(ras_all2, package="genie.6.1")
 data(patient_universe, package="genie.6.1")
 library(here)
+library(DT)
+
 ```
 
 ```{r data,  message=FALSE, warning=FALSE, echo=FALSE, include=FALSE}
@@ -98,10 +100,9 @@ freq_df_hp = do.call("rbind",freq_df_hp ) %>%
               arrange(desc(n.total))
 
 freq_df_hp %>%
-   gt() %>%
-    tab_style(
-        style = list(
-            cell_text(weight = "bold")
-        ),
-        locations = cells_column_labels()) 
+    datatable(extensions = 'Buttons',
+              options = list(dom = 'Blfrti',
+                             paging = FALSE, 
+                             buttons = c('copy', 'csv', 'excel',
+                                         'pdf', 'print') ))
 ```
