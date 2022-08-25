@@ -14,6 +14,7 @@ library(magrittr)
 library(tidyverse)
 library(gt)
 library(here)
+library(DT)
 ```
 
 
@@ -42,12 +43,12 @@ dat <- comut.cosmic.gp %>%
 
 ```{r table_s19}
 dat %>%
-    gt() %>%
-    tab_style(
-        style = list(
-            cell_text(weight = "bold")
-        ),
-        locations = cells_column_labels()) %>%
-    cols_align(align="left", column="Cancer type")
+    datatable(extensions = 'Buttons',
+              options = list(dom = 'Blfrtip',
+                             buttons = c('copy', 'csv', 'excel',
+                                         'pdf', 'print'),
+                             lengthMenu = list(c(50,-1),
+                                               c(50,"All"))))
+
 
 ```
